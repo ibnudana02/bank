@@ -1,10 +1,16 @@
 <?php
+
+if ($data_nsb->daerah == 3) {
+    $kel = 'DESA ' . $data_nsb->kel;
+} else {
+    $kel = 'KEL. ' . $data_nsb->kel;
+}
 $file = base_url('upload/nasabah/');
 $pdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
 $pdf->SetTitle('eForm Rekening Tabungan - ' . $data_nsb->nm_lengkap);
 $pdf->setHeaderMargin(5);
 // set font
-$pdf->SetFont('times', '', 12);
+$pdf->SetFont('times', '', 11);
 
 $pdf->SetTopMargin(25);
 // $pdf->setFooterMargin(10);
@@ -62,6 +68,14 @@ $html =
 <tr>
 <td>Alamat sesuai Identitas</td>
 <td>: ' . $data_nsb->alamat_identitas . '</td>
+</tr>
+<tr>
+<td>Dati II</td>
+<td>: PROVINSI ' . $data_nsb->propinsi . ' ' . $data_nsb->kab . ' KEC. ' . strtoupper($data_nsb->kec) . ' ' . strtoupper($kel) . '</td>
+</tr>
+<tr>
+<td>Alamat Domisili</td>
+<td>: ' . $data_nsb->alamat_domisili . '</td>
 </tr>
 <tr>
 <td>Tempat Lahir</td>

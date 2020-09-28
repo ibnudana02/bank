@@ -47,7 +47,7 @@ class Welcome extends CI_Controller
 			// var_dump($daerah);
 			$lists = "<option value=''>Pilih</option>";
 			foreach ($daerah as $data) {
-				$lists .= "<option value='" . $data->kode . "'>";
+				$lists .= "<option value='" . $data->id_kab . "'>";
 				$lists .= $data->nama . "</option>";
 			}
 			$callback = array('list_kota' => $lists); // Masukan variabel lists tadi ke dalam array $callback dengan index array : list_kota
@@ -56,7 +56,7 @@ class Welcome extends CI_Controller
 			$daerah = $this->user->viewKec($id, $n, $m);
 			$lists = "<option value=''>Pilih</option>";
 			foreach ($daerah as $data) {
-				$lists .= "<option value='" . $data->kode . "'>";
+				$lists .= "<option value='" . $data->id_kec . "'>";
 				$lists .= $data->nama . "</option>";
 			}
 			$callback = array('list_kota' => $lists); // Masukan variabel lists tadi ke dalam array $callback dengan index array : list_kota
@@ -65,7 +65,7 @@ class Welcome extends CI_Controller
 			$daerah = $this->user->viewDesa($id, $n, $m);
 			$lists = "<option value=''>Pilih</option>";
 			foreach ($daerah as $data) {
-				$lists .= "<option value='" . $data->kode . "'>";
+				$lists .= "<option value='" . $data->id_kel . "'>";
 				$lists .= $data->nama . "</option>";
 			}
 			$callback = array('list_kota' => $lists); // Masukan variabel lists tadi ke dalam array $callback dengan index array : list_kota

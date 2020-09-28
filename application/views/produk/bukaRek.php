@@ -94,8 +94,7 @@
                                                 <label class="control-label">Berlaku Hingga</label>
                                                 <div class="input-group">
                                                     <input type="text" class="form-control datepicker" aria-describedby="start-date" name="masa_berlaku" placeholder="Masa Berlaku" value="<?= set_value('masa_berlaku'); ?>">
-                                                    <span class="input-group-addon" id="start-date"><span class="fa fa-calendar"></span></span>
-                                                    <!-- <span class="input-group-btn" id="start-date"><button class="btn btn-default">S</button></span> -->
+                                                    <span class="input-group-addon" id="start-date"><span class="fa fa-calendar" data-toggle="tooltip" data-placement="top" title="Jika berlaku seumur hidup: Isi sesuai Tgl, Bulan lahir. Untuk Tahun jangka waktu 5 tahun pada waktu mengisi"></span></span>
                                                 </div>
                                                 <?php echo form_error('masa_berlaku', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
@@ -138,7 +137,7 @@
                                                 <select name="provinsi_identitas" id="propinsi" class="form-control form-control-user">
                                                     <option value="">Pilih</option>
                                                     <?php foreach ($prop as $row) : ?>
-                                                        <option value="<?= $row->kode; ?>" <?= set_select('provinsi_identitas', $row->kode) ?>><?= ucwords($row->nama); ?></option>
+                                                        <option value="<?= $row->id_prov; ?>" <?= set_select('provinsi_identitas', $row->id_prov) ?>><?= ucwords($row->nama); ?></option>
                                                     <?php endforeach; ?>
                                                 </select>
                                                 <?php echo form_error('provinsi_identitas', '<small class="text-danger pl-3">', '</small>'); ?>

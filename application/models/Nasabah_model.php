@@ -141,8 +141,8 @@ class Nasabah_model extends CI_Model
         $this->ft_ttd = $files['ft_ttd']['file_name'];
         $this->ft_npwp = $files['ft_npwp']['file_name'];
         // print_r($files);
-        var_dump($this);
-        die;
+        // var_dump($this);
+        // die;
         $this->db->insert($this->_table, $this);
         $this->session->set_flashdata('message', '<strong>Congratulation!</strong> Kode Referensi: ' . $this->kd_ref . ' Data anda telah disimpan. Mohon tunggu verifikasi dari pihak Bank Unisritama.');
     }
@@ -211,15 +211,18 @@ class Nasabah_model extends CI_Model
         $this->db->select('*')
             ->from($this->_table)
             ->join('produk', $this->_table . '.jenis_tab=produk.id_produk');
-        // ->order_by('produk', 'asc');
         return $this->db->get();
     }
 
     public function getByIdNsb($id_nsb)
     {
-        $this->db->select('*')
+        $this->db->select('*, provinsi.nama as propinsi, kabupaten.nama as kab, kecamatan.nama as kec, kelurahan.nama as kel, kelurahan.id_jenis as daerah')
             ->from('nasabah_tab')
             ->join('produk', $this->_table . '.jenis_tab=produk.id_produk', 'left')
+            ->join('provinsi', $this->_table . '.provinsi_identitas=provinsi.id_prov', 'left')
+            ->join('kabupaten', $this->_table . '.kab_identitas=kabupaten.id_kab', 'left')
+            ->join('kecamatan', $this->_table . '.kec_identitas=kecamatan.id_kec', 'left')
+            ->join('kelurahan', $this->_table . '.kel_identitas=kelurahan.id_kel', 'left')
             ->where('id_nsb', $id_nsb);
         return $this->db->get();
     }

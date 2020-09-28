@@ -180,7 +180,7 @@ class Produk extends CI_Controller
             $data['judul'] = 'e-Form Rekening Tabungan - Bank Unisritama';
             $this->nsb->createNsb();
             $this->load->view('template/header', $data);
-            $this->load->view('produk/bukaRek', $data);
+            // $this->load->view('produk/bukaRek', $data);
             $this->load->view('template/footer');
         } else {
 
@@ -201,15 +201,18 @@ class Produk extends CI_Controller
             $data['crumb'] = 'Produk';
             $data['jenis'] = $this->produk->getTab()->result();
             $data['prop'] = $this->user->getProv();
+            $data['judul'] = 'e-Form Tabungan - Bank Unisritama';
             $this->load->view('template/header', $data);
             $this->load->view('produk/bukaRek', $data);
             $this->load->view('template/footer');
+
+            // print_r($data['judul']);
         }
     }
 
     public function createDps()
     {
-        $data['judul'] = 'Pembukaan RekeningDeposito | Bank Unisritama';
+        $data['judul'] = 'Pembukaan Rekening Deposito | Bank Unisritama';
         $data['bread'] = 'Home';
         $data['crumb'] = 'Produk';
         $data['jenis'] = $this->produk->getDep()->result();
@@ -221,7 +224,7 @@ class Produk extends CI_Controller
     }
     public function createKrd()
     {
-        $data['judul'] = 'Pembukaan RekeningDeposito | Bank Unisritama';
+        $data['judul'] = 'Pengajuan Kredit | Bank Unisritama';
         $data['bread'] = 'Home';
         $data['crumb'] = 'Produk';
         $data['jenis'] = $this->produk->getDep()->result();

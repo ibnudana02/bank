@@ -72,37 +72,30 @@ class User_model extends CI_Model
     public function getProv()
     {
         // return $this->db->get('provinsi')->result();
-        $this->db->select('kode,nama');
-        $this->db->where('LENGTH(kode)', 2);
-        return $this->db->get('wilayah_2020')->result();
+        $this->db->select('id_prov,nama');
+        return $this->db->get('provinsi')->result();
     }
 
-    public function viewKab($id, $n, $m)
+    public function viewKab($id)
     {
-        $this->db->select('kode, nama');
-        // LEFT(kode,'$n')='$id'
-        $this->db->where('LEFT(kode,' . $n . ')', $id);
-        $this->db->where('LENGTH(kode)', $m);
+        $this->db->select('*');
+        $this->db->where('id_prov', $id);
         $this->db->order_by('nama', 'asc');
-        return $this->db->get('wilayah_2020')->result();
+        return $this->db->get('kabupaten')->result();
     }
     public function viewKec($id, $n, $m)
     {
-        $this->db->select('kode, nama');
-        // LEFT(kode,'$n')='$id'
-        $this->db->where('LEFT(kode,' . $n . ')', $id);
-        $this->db->where('LENGTH(kode)', $m);
+        $this->db->select('*');
+        $this->db->where('id_kab', $id);
         $this->db->order_by('nama', 'asc');
-        return $this->db->get('wilayah_2020')->result();
+        return $this->db->get('kecamatan')->result();
     }
     public function viewDesa($id, $n, $m)
     {
-        $this->db->select('kode, nama');
-        // LEFT(kode,'$n')='$id'
-        $this->db->where('LEFT(kode,' . $n . ')', $id);
-        $this->db->where('LENGTH(kode)', $m);
+        $this->db->select('*');
+        $this->db->where('id_kec', $id);
         $this->db->order_by('nama', 'asc');
-        return $this->db->get('wilayah_2020')->result();
+        return $this->db->get('kelurahan')->result();
     }
 }
 
