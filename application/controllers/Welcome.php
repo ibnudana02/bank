@@ -43,7 +43,7 @@ class Welcome extends CI_Controller
 		// die;
 
 		if ($data == "kabupaten") {
-			$daerah = $this->user->viewKab($id, $n, $m);
+			$daerah = $this->user->viewKab($id);
 			// var_dump($daerah);
 			$lists = "<option value=''>Pilih</option>";
 			foreach ($daerah as $data) {

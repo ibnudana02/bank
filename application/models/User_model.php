@@ -71,7 +71,6 @@ class User_model extends CI_Model
 
     public function getProv()
     {
-        // return $this->db->get('provinsi')->result();
         $this->db->select('id_prov,nama');
         return $this->db->get('provinsi')->result();
     }

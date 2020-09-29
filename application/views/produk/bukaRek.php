@@ -194,7 +194,7 @@
                                                 <select name="prov_domisili" id="prop_domisili" class="form-control form-control-user">
                                                     <option value="">Pilih</option>
                                                     <?php foreach ($prop as $row) : ?>
-                                                        <option value="<?= $row->kode; ?>" <?= set_select('prov_domisili', $row->kode) ?>><?= ucwords($row->nama); ?></option>
+                                                        <option value="<?= $row->id_prov; ?>" <?= set_select('prov_domisili', $row->id_prov) ?>><?= ucwords($row->nama); ?></option>
                                                     <?php endforeach; ?>
                                                 </select>
                                                 <?php echo form_error('prov_domisili', '<small class="text-center text-danger pl-3">', '</small>'); ?>
@@ -521,7 +521,7 @@
                                     </div>
                                 </div>
                                 <div id="dokumen" class="tab-pane fade">
-                                    <p class="alert alert-danger" role="alert" style="margin-top: 25px;">Mohon isi sesuai data sebenarnya!</p>
+                                    <p class="alert alert-danger" role="alert" style="margin-top: 25px;">Mohon isi sesuai data sebenarnya! Ukuran Max file adalah 2 MB</p>
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group">
@@ -644,8 +644,8 @@
         </div>
     </div>
 </div>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-<script src="<?php echo base_url('assets/'); ?>js/vendor/jquery-1.12.4.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- <script src="<?php echo base_url('assets/'); ?>js/vendor/jquery-1.12.4.min.js" type="text/javascript"></script> -->
 <!-- <script src="<?php echo base_url('assets/'); ?>js/jquery.mask.js"></script> -->
 <script>
     $(document).ready(function() {

@@ -9,7 +9,11 @@ class Produk extends CI_Controller
         parent::__construct();
         $this->load->library('email');
 
-        $this->load->model(array('Kategori_model' => 'kategori', 'Berita_model' => 'berita', 'Produk_model' => 'produk', 'Jenis_model' => 'jenis', 'User_model' => 'user', 'Nasabah_model' => 'nsb'));
+        $this->load->model(array(
+            'Kategori_model' => 'kategori', 'Berita_model' => 'berita',
+            'Produk_model' => 'produk', 'Jenis_model' => 'jenis',
+            'User_model' => 'user', 'Nasabah_model' => 'nsb'
+        ));
     }
 
     public function index()
@@ -201,6 +205,8 @@ class Produk extends CI_Controller
             $data['crumb'] = 'Produk';
             $data['jenis'] = $this->produk->getTab()->result();
             $data['prop'] = $this->user->getProv();
+            // var_dump($data['prop']);
+            // die;
             $data['judul'] = 'e-Form Tabungan - Bank Unisritama';
             $this->load->view('template/header', $data);
             $this->load->view('produk/bukaRek', $data);
