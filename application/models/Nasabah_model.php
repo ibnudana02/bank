@@ -216,14 +216,29 @@ class Nasabah_model extends CI_Model
 
     public function getByIdNsb($id_nsb)
     {
-        $this->db->select('*, provinsi.nama as propinsi, kabupaten.nama as kab, kecamatan.nama as kec, kelurahan.nama as kel, kelurahan.id_jenis as daerah')
+        $this->db->select('*, provinsi.nama as prop, kabupaten.nama as kab_id, 
+                            kecamatan.nama as kec_id, kelurahan.nama as kel_id, 
+                            kelurahan.id_jenis as daerah, p.nama as prop_dom, kab.nama as kab_dom,
+                            kec.nama as kec_dom, kel.nama as kel_dom, kel.id_jenis as daerah1
+                            ')
             ->from('nasabah_tab')
             ->join('produk', $this->_table . '.jenis_tab=produk.id_produk', 'left')
-            ->join('provinsi', $this->_table . '.provinsi_identitas=provinsi.id_prov', 'left')
-            ->join('kabupaten', $this->_table . '.kab_identitas=kabupaten.id_kab', 'left')
-            ->join('kecamatan', $this->_table . '.kec_identitas=kecamatan.id_kec', 'left')
-            ->join('kelurahan', $this->_table . '.kel_identitas=kelurahan.id_kel', 'left')
+            ->join('provinsi', $this->_table . '.provinsi_identitas=provinsi.id_prov', 'inner')
+            ->join('kabupaten', $this->_table . '.kab_identitas=kabupaten.id_kab', 'inner')
+            ->join('kecamatan', $this->_table . '.kec_identitas=kecamatan.id_kec', 'inner')
+            ->join('kelurahan', $this->_table . '.kel_identitas=kelurahan.id_kel', 'inner')
+            ->join('provinsi as p', $this->_table . '.prov_domisili=p.id_prov', 'inner')
+            ->join('kabupaten as kab', $this->_table . '.kab_domisili=kab.id_kab', 'inner')
+            ->join('kecamatan as  kec', $this->_table . '.kec_domisili=kec.id_kec', 'inner')
+            ->join('kelurahan as  kel', $this->_table . '.kel_domisili=kel.id_kel', 'inner')
             ->where('id_nsb', $id_nsb);
+        return $this->db->get();
+    }
+
+    public function getAll()
+    {
+        $this->db->select('*');
+        $this->db->from($this->_table);
         return $this->db->get();
     }
 

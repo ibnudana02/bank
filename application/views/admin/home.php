@@ -66,9 +66,9 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                <h6><a href="#">Manajemen</a></h6>
+                                <h6><a href="<?= base_url('admin/nasabah') ?>">Data Nasabah</a></h6>
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">#</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $nasabahCount; ?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-fw fa-book fa-2x text-gray-300"></i>

@@ -155,8 +155,6 @@
                     pid = data[i].parent_job,
                     tags = data[i].tag;
 
-
-
                 chart.add({
                     id: id,
                     pid: pid,

@@ -32,6 +32,15 @@
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
+                                <div class="form-group">
+                                    <label>Atasan</label>
+                                    <select class="form-control custom-select custom-select-md" id="atasan" name="atasan">
+                                        <option value="" disabled diselected>--Pilih Atasan--</option>
+                                        <?php foreach ($jabatan as $row) : ?>
+                                            <option value="<?= $row->id_jabatan; ?>"><?= $row->jabatan; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 ">
                                         <a href="<?= base_url('admin/pegawai'); ?>" class="btn btn-google btn-user btn-block">

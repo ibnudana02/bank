@@ -62,6 +62,10 @@ $route['admin/laporan'] = 'admin/laporan/index';
 $route['admin/delete_laporan/(:any)'] = 'admin/laporan/delete/$1';
 $route['admin/add_laporan'] = 'admin/laporan/tambah_laporan';
 
+// Routes for Master Nasabah
+$route['admin/nasabah'] = 'admin/master';
+
+
 //Routes for Auth function
 $route['admin'] = 'admin/welcome/index';
 $route['admin/logout'] = 'admin/welcome/logout';

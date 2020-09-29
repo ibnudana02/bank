@@ -1,9 +1,15 @@
 <?php
 
 if ($data_nsb->daerah == 3) {
-    $kel = 'DESA ' . $data_nsb->kel;
+    $kel_id = 'DESA ' . $data_nsb->kel_id;
 } else {
-    $kel = 'KEL. ' . $data_nsb->kel;
+    $kel_id = 'KEL. ' . $data_nsb->kel_id;
+}
+
+if ($data_nsb->daerah1 == 4) {
+    $kel_dom = 'KEL. ' . $data_nsb->kel_dom;
+} else {
+    $kel_dom = 'DESA ' . $data_nsb->kel_dom;
 }
 $file = base_url('upload/nasabah/');
 $pdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
@@ -20,14 +26,15 @@ $pdf->SetCreator('BPR Unisritama');
 $pdf->SetSubject('eForm Bank Unisritama');
 $pdf->SetKeywords('eForm, online-form');
 $pdf->SetDisplayMode('real', 'default');
+$pdf->SetMargins(8, 20, 8, false);
 $pdf->AddPage();
 $html =
     '<h2 align="center">e-Form ' . ucwords($data_nsb->produk) . '</h2>
     <br>
 <table cellspacing="1" cellpadding="2">
 <tr>
-    <td>Nama Nasabah</td>
-    <td>: ' . $data_nsb->nm_lengkap . '</td>
+<td>Nama Nasabah</td>
+<td>: ' . $data_nsb->nm_lengkap . '</td>
 </tr>
 <tr>
     <td>Kode Referensi</td>
@@ -70,12 +77,16 @@ $html =
 <td>: ' . $data_nsb->alamat_identitas . '</td>
 </tr>
 <tr>
-<td>Dati II</td>
-<td>: PROVINSI ' . $data_nsb->propinsi . ' ' . $data_nsb->kab . ' KEC. ' . strtoupper($data_nsb->kec) . ' ' . strtoupper($kel) . '</td>
+<td>Dati II Identitas</td>
+<td>: PROVINSI ' . $data_nsb->prop . ' ' . $data_nsb->kab_id . ' KEC. ' . strtoupper($data_nsb->kec_id) . ' ' . strtoupper($kel_id) . '</td>
 </tr>
 <tr>
 <td>Alamat Domisili</td>
 <td>: ' . $data_nsb->alamat_domisili . '</td>
+</tr>
+<tr>
+<td>Dati II Domisili</td>
+<td>: PROVINSI ' . $data_nsb->prop_dom . ' ' . $data_nsb->kab_dom . ' KEC. ' . strtoupper($data_nsb->kec_dom) . ' ' . strtoupper($kel_dom) . '</td>
 </tr>
 <tr>
 <td>Tempat Lahir</td>

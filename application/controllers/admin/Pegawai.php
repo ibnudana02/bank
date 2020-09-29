@@ -47,6 +47,9 @@ class Pegawai extends CI_Controller
             $data['user'] = $this->db->get_where('user', ['name' => $this->session->userdata('name')])->row_array();
             $data['judul'] = 'BPR Unisritama - Administrator';
             $data['jabatan'] = $this->jabatan->getAll();
+            // $data['atasan'] = $this->pegawai->getPegawai()->result();
+            // var_dump($data['atasan']);
+            // die;
             // $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Gagal tambah pegawai!</div>');
             $this->load->view('template/admin_header', $data);
             $this->load->view('admin/tambahPegawai');
