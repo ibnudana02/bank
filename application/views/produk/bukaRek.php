@@ -178,7 +178,7 @@
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <input type="text" class="form-control form-control-user" name="pos_identitas" id="" placeholder="Kode Pos" value="<?= set_value('pos_identitas') ?>"></div>
+                                                <input type="number" class="form-control form-control-user" name="pos_identitas" id="" placeholder="Kode Pos" value="<?= set_value('pos_identitas') ?>"></div>
                                         </div>
                                         <div class="col-lg-12"></div>
 
@@ -235,7 +235,7 @@
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <input type="text" class="form-control form-control-user" name="pos_domisili" id="" placeholder="Kode Pos" value="<?= set_value('pos_domisili') ?>"></div>
+                                                <input type="number" class="form-control form-control-user" name="pos_domisili" id="" placeholder="Kode Pos" value="<?= set_value('pos_domisili') ?>"></div>
                                             <?php echo form_error('pos_domisili', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                         </div>
                                     </div>
@@ -279,7 +279,7 @@
                                         <div class="col-lg-3">
                                             <div class="form-group">
                                                 <label for="no_aw"></label>
-                                                <input type="text" class="form-control form-control-user" name="no_ahli_waris" placeholder="No Ahli Waris" style="margin-top: 5px;" value="<?= set_value('no_ahli_waris') ?>">
+                                                <input type="number" class="form-control form-control-user" name="no_ahli_waris" placeholder="No Ahli Waris" style="margin-top: 5px;" value="<?= set_value('no_ahli_waris') ?>">
                                                 <?php echo form_error('no_ahli_waris', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
@@ -468,7 +468,7 @@
                                         <div class="col-lg-3">
                                             <div class="form-group">
                                                 <label for="">Jumlah Tanggungan</label>
-                                                <input type="text" class="form-control form-control-user" name="tanggungan" placeholder="Jumlah Tanggungan" value="<?= set_value('tanggungan') ?>">
+                                                <input type="number" class="form-control form-control-user" name="tanggungan" placeholder="Jumlah Tanggungan" value="<?= set_value('tanggungan') ?>">
                                                 <?php echo form_error('tanggungan', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
