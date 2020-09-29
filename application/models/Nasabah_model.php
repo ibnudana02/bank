@@ -166,7 +166,7 @@ class Nasabah_model extends CI_Model
     {
         $config['upload_path'] = './upload/nasabah/';
         $config['allowed_types'] = 'gif|jpg|png|jpeg';
-        $config['max_size'] = 2048;
+        $config['max_size'] = 0;
         // $config['file_name'] = $this->id_nsb;
         $config['encrypt_name'] = true;
 

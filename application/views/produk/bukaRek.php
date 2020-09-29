@@ -393,7 +393,7 @@
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <input type="text" name="gaji_bln" id="" class="form-control form-control-user" placeholder="Gaji per Bulan" value="<?= set_value('gaji_bln') ?>">
+                                                <input type="number" name="gaji_bln" id="" class="form-control form-control-user" placeholder="Gaji per Bulan" value="<?= set_value('gaji_bln') ?>">
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
@@ -408,12 +408,12 @@
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <input type="text" name="telp_kantor" id="" class="form-control form-control-user" placeholder="No. Telp Kantor / Usaha" value="<?= set_value('telp_kantor') ?>">
+                                                <input type="number" name="telp_kantor" id="" class="form-control form-control-user" placeholder="No. Telp Kantor / Usaha" value="<?= set_value('telp_kantor') ?>">
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="frm-group">
-                                                <input type="text" name="email_kantor" id="" class="form-control form-control-user" placeholder="Email Kantor" value="<?= set_value('email_kantor') ?>" onkeyup="this.value = this.value.toLowerCase()">
+                                                <input type="email" name="email_kantor" id="" class="form-control form-control-user" placeholder="Email Kantor" value="<?= set_value('email_kantor') ?>" onkeyup="this.value = this.value.toLowerCase()">
                                             </div>
                                         </div>
                                         <div class="col-lg-12"></div>
@@ -508,14 +508,14 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for=""></label>
-                                                <input type="text" class="form-control form-control-user" name="email" placeholder="Email" value="<?= set_value('email') ?>" onkeyup="this.value = this.value.toLowerCase()" />
+                                                <input type="email" class="form-control form-control-user" name="email" placeholder="Email" value="<?= set_value('email') ?>" onkeyup="this.value = this.value.toLowerCase()" />
                                                 <?php echo form_error('email', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
                                                 <label for=""></label>
-                                                <input type="text" class="form-control form-control-user" name="npwp" id="npwp" placeholder="No. NPWP" value="<?= set_value('npwp') ?>"></div>
+                                                <input type="number" class="form-control form-control-user" name="npwp" id="npwp" placeholder="No. NPWP" value="<?= set_value('npwp') ?>"></div>
                                             <?php echo form_error('npwp', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                         </div>
                                     </div>

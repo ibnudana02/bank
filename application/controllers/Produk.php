@@ -163,7 +163,7 @@ class Produk extends CI_Controller
         $this->form_validation->set_rules('perusahaan', 'Nama Perusahaan / Usaha', 'trim');
         $this->form_validation->set_rules('alamat_kantor', 'Alamat Perusahaan/Usaha', 'trim');
         $this->form_validation->set_rules('telp_kantor', 'Telp Kantor', 'trim');
-        $this->form_validation->set_rules('email_kantor', 'Email Perusahaan', 'trim');
+        $this->form_validation->set_rules('email_kantor', 'Email Perusahaan', 'trim|valid_email');
         $this->form_validation->set_rules('gaji_thn', 'Penghasilan per Tahun', 'trim');
         $this->form_validation->set_rules('tambahan_penghasilan', 'Penghasilan Lainnya', 'trim');
         $this->form_validation->set_rules('tot_penghasilan', 'Total Penghasilan', 'trim');
@@ -184,7 +184,7 @@ class Produk extends CI_Controller
             $data['judul'] = 'e-Form Rekening Tabungan - Bank Unisritama';
             $this->nsb->createNsb();
             $this->load->view('template/header', $data);
-            // $this->load->view('produk/bukaRek', $data);
+            $this->load->view('produk/bukaRek', $data);
             $this->load->view('template/footer');
         } else {
 
