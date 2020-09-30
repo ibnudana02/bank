@@ -14,10 +14,10 @@
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
 
-                <?php if ($this->session->flashdata('message')) : ?>
+                <?php if ($this->session->flashdata('success')) : ?>
                     <div class="alert alert-success alert-dismissible text-center" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <?= $this->session->flashdata('message'); ?>
+                        <?= $this->session->flashdata('success'); ?>
                     </div>
                 <?php endif; ?>
                 <div class="panel panel-primary">
@@ -93,8 +93,8 @@
                                             <div class="form-group">
                                                 <label class="control-label">Berlaku Hingga</label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control datepicker" aria-describedby="start-date" name="masa_berlaku" placeholder="Masa Berlaku" value="<?= set_value('masa_berlaku'); ?>">
-                                                    <span class="input-group-addon" id="start-date"><span class="fa fa-calendar" data-toggle="tooltip" data-placement="top" title="Jika berlaku seumur hidup: Isi sesuai Tgl, Bulan lahir. Untuk Tahun jangka waktu 5 tahun pada waktu mengisi"></span></span>
+                                                    <input type="text" class="form-control datepicker" data-toggle="tooltip" data-placement="top" title="Jika berlaku seumur hidup: Isi sesuai Tgl, Bulan lahir. Untuk Tahun jangka waktu 5 tahun pada waktu mengisi" aria-describedby="start-date" name="masa_berlaku" placeholder="Masa Berlaku" value="<?= set_value('masa_berlaku'); ?>">
+                                                    <span class="input-group-addon" id="start-date"><span class="fa fa-calendar"></span></span>
                                                 </div>
                                                 <?php echo form_error('masa_berlaku', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
@@ -296,20 +296,20 @@
                                         <div class="col-lg-3">
                                             <div class="form-group">
                                                 <label for="nm_pasangan"></label>
-                                                <input type="text" name="nm_pasangan" class="form-control form-control-user" placeholder="Nama Pasangan" style="margin-top: 5px;" value="<?= set_value('nm_pasangan') ?>" onkeyup="this.value = this.value.toUpperCase()">
+                                                <input type="text" name="nm_pasangan" class="form-control form-control-user" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" placeholder="Nama Pasangan" style="margin-top: 5px;" value="<?= set_value('nm_pasangan') ?>" onkeyup="this.value = this.value.toUpperCase()">
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
                                                 <label for=""></label>
-                                                <input type="text" class="form-control form-control-user" name="tmp_lhr_pasangan" placeholder="Tempat Lahir Pasangan" style="margin-top: 5px;" value="<?= set_value('tmp_lhr_pasangan') ?>" onkeyup="this.value = this.value.toUpperCase()">
+                                                <input type="text" class="form-control form-control-user" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" name="tmp_lhr_pasangan" placeholder="Tempat Lahir Pasangan" style="margin-top: 5px;" value="<?= set_value('tmp_lhr_pasangan') ?>" onkeyup="this.value = this.value.toUpperCase()">
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
                                                 <label class="control-label"></label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control form-control-user datepicker" aria-describedby="start-date" name="tgl_lhr_pasangan" placeholder="Tanggal Lahir Pasangan" style="margin-top: 5px;" value="<?= set_value('tgl_lhr_pasangan') ?>">
+                                                    <input type="text" class="form-control form-control-user datepicker" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" aria-describedby="start-date" name="tgl_lhr_pasangan" placeholder="Tanggal Lahir Pasangan" style="margin-top: 5px;" value="<?= set_value('tgl_lhr_pasangan') ?>">
                                                     <span class="input-group-addon" id="start-date" style="margin-top: 5px;"><span class="fa fa-calendar"></span></span>
                                                 </div>
                                                 <?php echo form_error('tgl_lhr_pasangan', '<small class="text-danger pl-3">', '</small>'); ?>
@@ -328,19 +328,19 @@
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for=""></label>
-                                                <input type="number" class="form-control form-control-user" name="no_identitas_pasangan" placeholder="Nomor Identitas Pasangan" style="margin-top: 5px;" value="<?= set_value('no_identitas_pasangan') ?>">
+                                                <input type="number" class="form-control form-control-user" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" name="no_identitas_pasangan" placeholder="Nomor Identitas Pasangan" style="margin-top: 5px;" value="<?= set_value('no_identitas_pasangan') ?>">
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label for=""></label>
-                                                <input type="text" class="form-control form-control-user" name="alamat_pasangan" placeholder="Alamat Pasangan" style="margin-top: 5px;" value="<?= set_value('alamat_pasangan') ?>" onkeyup="this.value = this.value.toUpperCase()">
+                                                <input type="text" class="form-control form-control-user" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" name="alamat_pasangan" placeholder="Alamat Pasangan" style="margin-top: 5px;" value="<?= set_value('alamat_pasangan') ?>" onkeyup="this.value = this.value.toUpperCase()">
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
                                                 <label for=""></label>
-                                                <input type="number" class="form-control form-control-user" name="no_pasangan" placeholder="No. HP Pasangan" style="margin-top: 5px;" value="<?= set_value('no_pasangan') ?>" />
+                                                <input type="number" class="form-control form-control-user" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" name="no_pasangan" placeholder="No. HP Pasangan" style="margin-top: 5px;" value="<?= set_value('no_pasangan') ?>" />
                                             </div>
                                         </div>
                                     </div>
@@ -413,7 +413,7 @@
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="frm-group">
-                                                <input type="email" name="email_kantor" id="" class="form-control form-control-user" placeholder="Email Kantor" value="<?= set_value('email_kantor') ?>" onkeyup="this.value = this.value.toLowerCase()">
+                                                <input type="email" name="email_kantor" id="" class="form-control form-control-user" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" placeholder="Email Kantor" value="<?= set_value('email_kantor') ?>" onkeyup="this.value = this.value.toLowerCase()">
                                             </div>
                                         </div>
                                         <div class="col-lg-12"></div>
@@ -515,7 +515,7 @@
                                         <div class="col-lg-3">
                                             <div class="form-group">
                                                 <label for=""></label>
-                                                <input type="number" class="form-control form-control-user" name="npwp" id="npwp" placeholder="No. NPWP" value="<?= set_value('npwp') ?>"></div>
+                                                <input type="number" class="form-control form-control-user" name="npwp" id="npwp" placeholder="No. NPWP" value="<?= set_value('npwp') ?>" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada"></div>
                                             <?php echo form_error('npwp', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                         </div>
                                     </div>

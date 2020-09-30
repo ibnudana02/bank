@@ -179,40 +179,36 @@ class Produk extends CI_Controller
         $this->form_validation->set_rules('ft_diri', 'Foto Selfie', 'trim');
         $this->form_validation->set_rules('ft_ttd', 'Foto Tanda Tangan', 'trim');
         $this->form_validation->set_rules('ft_npwp', 'Foto NPWP', 'trim');
+
+        $data['agama'] = $this->db->get_enum('nasabah_tab', 'agama');
+        $data['tujuan_buka'] = $this->db->get_enum('nasabah_tab', 'tujuan_buka');
+        $data['status_rumah'] = $this->db->get_enum('nasabah_tab', 'status_rumah');
+        $data['pendidikan'] = $this->db->get_enum('nasabah_tab', 'pendidikan');
+        $data['aw'] = $this->db->get_enum('nasabah_tab', 'hb_ahli_waris');
+        $data['status'] = $this->db->get_enum('nasabah_tab', 'status_menikah');
+        $data['profesi'] = $this->db->get_enum('nasabah_tab', 'profesi');
+        $data['jenis_pekerjaan'] = $this->db->get_enum('nasabah_tab', 'jenis_pekerjaan');
+        $data['status_pekerjaan'] = $this->db->get_enum('nasabah_tab', 'status_pekerjaan');
+        $data['sumber_dana'] = $this->db->get_enum('nasabah_tab', 'sumber_dana');
+        $data['wn'] = $this->db->get_enum('nasabah_tab', 'warga_negara');
+        $data['identitas'] = $this->db->get_enum('nasabah_tab', 'jenis_identitas');
+        $data['jk'] = $this->db->get_enum('nasabah_tab', 'jenis_kelamin');
+        $data['bread'] = 'Home';
+        $data['crumb'] = 'Produk';
+        $data['jenis'] = $this->produk->getTab()->result();
+        $data['prop'] = $this->user->getProv();
+        $data['judul'] = 'e-Form Rekening Tabungan - Bank Unisritama';
+
         if ($this->form_validation->run() !== FALSE) { //jika form_validation berhasil dijalankan, fungsi save() atau simpan data dijalankan
 
-            $data['judul'] = 'e-Form Rekening Tabungan - Bank Unisritama';
             $this->nsb->createNsb();
             $this->load->view('template/header', $data);
             $this->load->view('produk/bukaRek', $data);
             $this->load->view('template/footer');
         } else {
-
-            $data['agama'] = $this->db->get_enum('nasabah_tab', 'agama');
-            $data['tujuan_buka'] = $this->db->get_enum('nasabah_tab', 'tujuan_buka');
-            $data['status_rumah'] = $this->db->get_enum('nasabah_tab', 'status_rumah');
-            $data['pendidikan'] = $this->db->get_enum('nasabah_tab', 'pendidikan');
-            $data['aw'] = $this->db->get_enum('nasabah_tab', 'hb_ahli_waris');
-            $data['status'] = $this->db->get_enum('nasabah_tab', 'status_menikah');
-            $data['profesi'] = $this->db->get_enum('nasabah_tab', 'profesi');
-            $data['jenis_pekerjaan'] = $this->db->get_enum('nasabah_tab', 'jenis_pekerjaan');
-            $data['status_pekerjaan'] = $this->db->get_enum('nasabah_tab', 'status_pekerjaan');
-            $data['sumber_dana'] = $this->db->get_enum('nasabah_tab', 'sumber_dana');
-            $data['wn'] = $this->db->get_enum('nasabah_tab', 'warga_negara');
-            $data['identitas'] = $this->db->get_enum('nasabah_tab', 'jenis_identitas');
-            $data['jk'] = $this->db->get_enum('nasabah_tab', 'jenis_kelamin');
-            $data['bread'] = 'Home';
-            $data['crumb'] = 'Produk';
-            $data['jenis'] = $this->produk->getTab()->result();
-            $data['prop'] = $this->user->getProv();
-            // var_dump($data['prop']);
-            // die;
-            $data['judul'] = 'e-Form Tabungan - Bank Unisritama';
             $this->load->view('template/header', $data);
             $this->load->view('produk/bukaRek', $data);
             $this->load->view('template/footer');
-
-            // print_r($data['judul']);
         }
     }
 
