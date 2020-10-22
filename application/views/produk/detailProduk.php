@@ -10,15 +10,21 @@
                         <h3 class="text-center"><?= ucwords($row->produk); ?></h3>
                         <div class="blog-banner">
                             <a class="blog-images">
-                                <img src="<?= base_url('upload/produk/' . $row->image); ?>" alt="">
+                                <img src="<?= base_url('upload/produk/' . $row->image); ?>" width="1100" height="450">
                             </a>
                             <div class="blog-content bor text-justify">
                                 <div class="blog-category" style="padding-top: 20px;">
-                                    <!-- <h6><span class="label label-success"><?= $row->jenis; ?></span></h6> -->
                                 </div>
-                                <!-- <h3><?= strtoupper($row->produk); ?></h3> -->
                                 <?php echo $row->deskripsi; ?>
-                                <a href="<?= base_url($row->link) ?>" class="btn btn-info btn btn-outline-success">Saya Berminat</a>
+                                <?php if ($row->jenis == 'Tabungan') {
+                                    $buka = 'Buka Tabungan';
+                                } elseif ($row->jenis == 'Kredit') {
+                                    $buka = 'Ajukan Kredit';
+                                } else {
+                                    $buka = '';
+                                }
+                                ?>
+                                <a href="<?= base_url($row->link) ?>" class="btn btn-info btn btn-outline-success"><?= $buka; ?></a>
                             </div>
                         </div>
                     </article>
