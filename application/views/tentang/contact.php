@@ -2,7 +2,7 @@
     <?php echo $script_captcha; ?>
 </head>
 <!-- Start contact Area -->
-<div class="contact-page" style="margin-top: 60px;">
+<div class="contact-page" style="margin-top: 30px;">
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3 col-xs-12" style="padding-bottom: 100px;">
