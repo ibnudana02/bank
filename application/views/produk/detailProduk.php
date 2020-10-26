@@ -20,6 +20,8 @@
                                     $buka = 'Buka Tabungan';
                                 } elseif ($row->jenis == 'Kredit') {
                                     $buka = 'Ajukan Kredit';
+                                } elseif ($row->jenis == 'Deposito') {
+                                    $buka = 'Buka Deposito';
                                 } else {
                                     $buka = '';
                                 }

@@ -3,47 +3,30 @@
     <div class="footer-area">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="col-md-5 col-sm-5 col-xs-12">
                     <div class="footer-content">
                         <div class="footer-head">
                             <div class="footer-logo">
                                 <a href="#"><img src="<?php echo base_url('assets/'); ?>img/logo/unisri-logo1.png" alt=""></a>
                             </div>
                             <p><b>PT. BPR Unisritama</b></p>
-                            <p><b>Kantor Pusat </b><br>Jl. Soekarno-Hatta No. 03, Desa Kubang Jaya, Kec. Siak Hulu, Kabupaten Kampar, Riau</p>
-                            <br>
-                            <p>Telp: <b>(0761) 63381</b><br>
-                                Email: <b>unisritamabpr@yahoo.co.id</b><br>
-                                Website: <b>www.bprunisritama.com</b>
-                            </p>
+                            <p><b>Kantor Pusat </b><br>Jl. Soekarno-Hatta No. 03, Desa Kubang Jaya, Kec. Siak Hulu, Kabupaten Kampar, Provinsi Riau<br>Telp: <b>(0761) 63381</b></p>
                         </div>
                     </div>
                 </div>
-                <!-- end single footer -->
-                <div class="col-md-4 col-sm-4 col-xs-12 fanpage">
+                <!-- end -->
+                <div class="col-md-5 col-sm-5 col-xs-12">
                     <div class="footer-content">
-                        <div class="footer-head">
-                            <h4 class="footer-title"><span>Facebook Fanpage</span></h4>
-                        </div>
-                        <div class="">
-                            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fbankunisritama%2F&tabs=timeline&width=300&height=280&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="300" height="280" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                        <div class="footer-head" style="margin-top: 113px;">
+                            <!-- <p><b>PT. BPR Unisritama</b></p> -->
+                            <p><b>Kantor Kas</b><br>Jl. Kaharuddin Nst No.113, Simpang Tiga, Kec. Bukit Raya, Kota Pekanbaru, Provinsi Riau<br>Telp: <b>(0761) 675119</b></p>
                         </div>
                     </div>
                 </div>
                 <!-- end single footer -->
                 <div class="col-md-2 col-sm-2 col-xs-12">
                     <div class="footer-content">
-                        <div class="footer-head">
-                            <h4 class="footer-title"><span>Kategori Berita</span></h4>
-                            <ul class=" footer-list">
-                                <li><a href="<?= base_url('kategori_berita/berita_terbaru') ?>">Berita Terbaru</a></li>
-                                <li><a href="<?= base_url('kategori_berita/profil') ?>">Profil Perusahaan</a></li>
-                                <li><a href="<?= base_url('kategori_berita/milad') ?>">Milad</a></li>
-                                <li><a href="<?= base_url('produk') ?>">Produk</a></li>
-                            </ul>
-                        </div>
-                        <br>
-                        <div class="footer-head">
+                        <div class="footer-head" style="margin-top: 113px;">
                             <h4 class="footer-title"><span>Follow Us</span></h4>
                             <div class="foot-social">
                                 <ul>

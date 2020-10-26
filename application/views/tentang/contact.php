@@ -2,29 +2,10 @@
     <?php echo $script_captcha; ?>
 </head>
 <!-- Start contact Area -->
-<div class="contact-page" style="margin-top: 50px;">
+<div class="contact-page" style="margin-top: 30px;">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-12">
-                <p class="classic-title">
-                    <span>Information</span>
-                </p>
-                <p><b>PT. BPR Unisritama</b></p>
-                <?php foreach ($data as $row) : ?>
-                    <p class="classic-title">
-                        <span><?= ucwords($row->kantor); ?></span>
-                    </p>
-                    <div class="contact-icon" style="margin-bottom: 10px;">
-                        <div class="contact-inner">
-                            <a href="#"><i class="icon icon-map-marker"></i><span><?= ucwords($row->alamat) ?></span></a>
-                            <a href="#"><i class="icon icon-phone"></i><span><?= $row->telp ?></span></a>
-                        </div>
-                    </div>
-                    <!-- <br> -->
-                <?php endforeach; ?>
-            </div>
-            <!-- End contact icon -->
-            <div class="col-md-6 col-sm-6 col-xs-12" style="padding-bottom: 60px;">
+            <div class="col-md-6 col-md-offset-3 col-xs-12" style="padding-bottom: 100px;">
                 <div class="contact-form">
                     <div class="row">
                         <form id="contactForm" method="POST" action="<?= base_url('contact') ?>" class="contact-form">
@@ -41,7 +22,7 @@
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                <textarea id="message" rows="7" placeholder="Massage" class="form-control" required data-error="Write your message"></textarea>
+                                <textarea id="message" rows="7" placeholder="Message" class="form-control" required data-error="Write your message"></textarea>
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="col-md-12 col-sm-12 col-xs-12">

@@ -16,7 +16,7 @@
                                 <div class="blog-category">
                                     <span>INFORMASI LAYANAN NASABAH</span>
                                 </div>
-                                <h3>PENGKINIAN DATA NASABAH</h3>
+                                <h3>PENGKINIAN DATA</h3>
                                 <p class="text-justify visi">
                                     Nasabah Bank Unisritama yang terhormat, Perkenankan kami untuk menyampaikan terima kasih atas kepercayaan dan kerjasama Anda selama ini. Terkait dengan Peraturan Otoritas Jasa Keuangan mengenai Penerapan Program Anti Pencucian Uang dan Pencegahan Pendanaan Terorisme di Sektor Jasa Keuangan, dengan ini kami harapkan kerjasamanya untuk menyampaikan setiap perubahan data/informasi yang pernah disampaikan kepada kami disertai dengan dokumen pendukung.
                                 </p>
