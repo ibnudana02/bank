@@ -17,7 +17,7 @@
                 <!-- end -->
                 <div class="col-md-5 col-sm-5 col-xs-12">
                     <div class="footer-content">
-                        <div class="footer-head" style="margin-top: 113px;">
+                        <div class="footer-head footer-detail">
                             <!-- <p><b>PT. BPR Unisritama</b></p> -->
                             <p><b>Kantor Kas</b><br>Jl. Kaharuddin Nst No.113, Simpang Tiga, Kec. Bukit Raya, Kota Pekanbaru, Provinsi Riau<br>Telp: <b>(0761) 675119</b></p>
                         </div>
@@ -26,7 +26,7 @@
                 <!-- end single footer -->
                 <div class="col-md-2 col-sm-2 col-xs-12">
                     <div class="footer-content">
-                        <div class="footer-head" style="margin-top: 113px;">
+                        <div class="footer-head footer-detail">
                             <h4 class="footer-title"><span>Follow Us</span></h4>
                             <div class="foot-social">
                                 <ul>

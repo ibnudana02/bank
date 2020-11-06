@@ -262,85 +262,98 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
-                                            <label for="hb_aw">Hubungan dengan Ahli Waris</label>
-                                            <?php
-                                            $style = 'class="form-control custom-select custom-select-md" required';
-                                            echo form_dropdown('hb_ahli_waris', $aw, '', $style);
-                                            ?>
-                                            <?php echo form_error('hb_ahli_waris', '<small class="text-center text-danger pl-3">', '</small>'); ?>
+                                            <div class="form-group">
+                                                <select name="hb_ahli_waris" id="" class="form-control form-control-user custom-select custom-select-sm">
+                                                    <option value="" selected="true" disabled="disabled">Hubungan dengan Ahli Waris</option>
+                                                    <?php foreach ($aw as $key => $value) : ?>
+                                                        <option value="<?= $value ?>"><?= $value ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                                <?php echo form_error('hb_ahli_waris', '<small class="text-center text-danger pl-3">', '</small>'); ?>
+                                            </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label for="alamat_aw"></label>
-                                                <input type="text" class="form-control form-control-user" name="alamat_ahli_waris" placeholder="Alamat Ahli Waris" style="margin-top: 5px;" value="<?= set_value('alamat_ahli_waris') ?>" onkeyup="this.value = this.value.toUpperCase()" />
+                                                <input type="text" class="form-control form-control-user" name="alamat_ahli_waris" placeholder="Alamat Ahli Waris" value="<?= set_value('alamat_ahli_waris') ?>" onkeyup="this.value = this.value.toUpperCase()" />
                                                 <?php echo form_error('alamat_ahli_waris', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <label for="no_aw"></label>
-                                                <input type="number" class="form-control form-control-user" name="no_ahli_waris" placeholder="No Ahli Waris" style="margin-top: 5px;" value="<?= set_value('no_ahli_waris') ?>">
+                                                <input type="number" class="form-control form-control-user" name="no_ahli_waris" placeholder="No Ahli Waris" value="<?= set_value('no_ahli_waris') ?>">
                                                 <?php echo form_error('no_ahli_waris', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <label for="status_pernikahan dana">Status Pernikahan</label>
-                                                <?php
-                                                $style = 'class="form-control custom-select custom-select-md" required';
-                                                echo form_dropdown('status_menikah', $status, '', $style);
-                                                ?>
+                                                <select name="status_menikah" class="form-control custom-select custom-select-sm">
+                                                    <option value="" selected="true" disabled="disabled">Status Pernikahan</option>
+                                                    <?php foreach ($status as $key => $value) : ?>
+                                                        <option value="<?= $value ?>"><?= $value ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
                                                 <?php echo form_error('status_menikah', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <label for="nm_pasangan"></label>
-                                                <input type="text" name="nm_pasangan" class="form-control form-control-user" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" placeholder="Nama Pasangan" style="margin-top: 5px;" value="<?= set_value('nm_pasangan') ?>" onkeyup="this.value = this.value.toUpperCase()">
+                                                <input type="text" name="nm_pasangan" class="form-control form-control-user" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" placeholder="Nama Pasangan" value="<?= set_value('nm_pasangan') ?>" onkeyup="this.value = this.value.toUpperCase()">
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <label for=""></label>
-                                                <input type="text" class="form-control form-control-user" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" name="tmp_lhr_pasangan" placeholder="Tempat Lahir Pasangan" style="margin-top: 5px;" value="<?= set_value('tmp_lhr_pasangan') ?>" onkeyup="this.value = this.value.toUpperCase()">
+                                                <input type="text" class="form-control form-control-user" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" name="tmp_lhr_pasangan" placeholder="Tempat Lahir Pasangan" value="<?= set_value('tmp_lhr_pasangan') ?>" onkeyup="this.value = this.value.toUpperCase()">
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <label class="control-label"></label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control form-control-user datepicker" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" aria-describedby="start-date" name="tgl_lhr_pasangan" placeholder="Tanggal Lahir Pasangan" style="margin-top: 5px;" value="<?= set_value('tgl_lhr_pasangan') ?>">
-                                                    <span class="input-group-addon" id="start-date" style="margin-top: 5px;"><span class="fa fa-calendar"></span></span>
+                                                    <input type="text" class="form-control form-control-user datepicker" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" aria-describedby="start-date" name="tgl_lhr_pasangan" placeholder="Tanggal Lahir Pasangan" value="<?= set_value('tgl_lhr_pasangan') ?>">
+                                                    <span class="input-group-addon" id="start-date"><span class="fa fa-calendar"></span></span>
                                                 </div>
-                                                <?php echo form_error('tgl_lhr_pasangan', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
+                                            <?php echo form_error('tgl_lhr_pasangan', '<small class="text-danger pl-3">', '</small>'); ?>
                                         </div>
-                                        <div class="col-lg-12"></div>
-                                        <div class="col-lg-2">
+                                        <div class="col-lg-3">
                                             <div class="form-group">
-                                                <label for="jenis_id_pasangan">Jenis Identitas</label>
-                                                <?php
-                                                $style = 'class="form-control custom-select custom-select-md" required';
-                                                echo form_dropdown('identitas_pasangan', $identitas, '', $style);
-                                                ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label for=""></label>
-                                                <input type="number" class="form-control form-control-user" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" name="no_identitas_pasangan" placeholder="Nomor Identitas Pasangan" style="margin-top: 5px;" value="<?= set_value('no_identitas_pasangan') ?>">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="form-group">
-                                                <label for=""></label>
-                                                <input type="text" class="form-control form-control-user" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" name="alamat_pasangan" placeholder="Alamat Pasangan" style="margin-top: 5px;" value="<?= set_value('alamat_pasangan') ?>" onkeyup="this.value = this.value.toUpperCase()">
+                                                <select name="identitas_pasangan" id="" class="form-control custom-select custom-select-md">
+                                                    <option value="" selected="true" disabled="disabled">Jenis Identitas</option>
+                                                    <?php foreach ($identitas as $key => $value) : ?>
+                                                        <option value="<?= $value ?>"><?= $value ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <label for=""></label>
-                                                <input type="number" class="form-control form-control-user" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" name="no_pasangan" placeholder="No. HP Pasangan" style="margin-top: 5px;" value="<?= set_value('no_pasangan') ?>" />
+                                                <input type="number" class="form-control form-control-user" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" name="no_identitas_pasangan" placeholder="Nomor Identitas Pasangan" value="<?= set_value('no_identitas_pasangan') ?>">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control form-control-user" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" name="alamat_pasangan" placeholder="Alamat Pasangan" value="<?= set_value('alamat_pasangan') ?>" onkeyup="this.value = this.value.toUpperCase()">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control form-control-user" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" name="no_pasangan" placeholder="No. HP Pasangan" value="<?= set_value('no_pasangan') ?>" />
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <select name="status_rumah" id="stt" class="form-control custom-select custom-select-md" required>
+                                                    <option value="" selected="true" disabled="disabled">Status Tempat Tinggal</option>
+                                                    <?php foreach ($status_rumah as $key => $value) : ?>
+                                                        <option value="<?= $value ?>"><?= $value ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                                <?php echo form_error('status_rumah', '<small class="text-center text-danger pl-3">', '</small>'); ?>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control form-control-user" name="tanggungan" placeholder="Jumlah Tanggungan" value="<?= set_value('tanggungan') ?>">
+                                                <?php echo form_error('tanggungan', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                     </div>
@@ -349,40 +362,44 @@
                                     <p class="alert alert-danger" role="alert" style="margin-top: 25px;">Mohon isi sesuai data sebenarnya!</p>
                                     <div class="row">
                                         <div class="col-lg-3">
-                                            <div class="form-group text-center">
-                                                <label for="profesi">Profesi</label>
-                                                <?php
-                                                $style = 'class="form-control custom-select custom-select-md" required';
-                                                echo form_dropdown('profesi', $profesi, '', $style);
-                                                ?>
+                                            <div class="form-group">
+                                                <select name="profesi" id="" class="form-control custom-select custom-select-md">
+                                                    <option value="" selected="true" disabled="disabled">Pilih Profesi</option>
+                                                    <?php foreach ($profesi as $key => $value) : ?>
+                                                        <option value="<?= $value ?>"><?= $value ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
                                                 <?php echo form_error('profesi', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
-                                            <label for="jenis_pekerjaan">Jenis Pekerjaan</label>
-                                            <?php
-                                            $style = 'class="form-control custom-select custom-select-md" required';
-                                            echo form_dropdown('jenis_pekerjaan', $jenis_pekerjaan, '', $style);
-                                            ?>
+                                            <select name="jenis_pekerjaan" class="form-control custom-select custom-select-sm">
+                                                <option value="" selected="true" disabled="disabled">Pilih Jenis Pekerjaan</option>
+                                                <?php foreach ($jenis_pekerjaan as $key => $value) : ?>
+                                                    <option value="<?= $value ?>"><?= $value ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
                                             <?php echo form_error('jenis_pekerjaan', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <label for="status_pekerjaan">Status Pekerjaan</label>
-                                                <?php
-                                                $style = 'class="form-control custom-select custom-select-md" required';
-                                                echo form_dropdown('status_pekerjaan', $status_pekerjaan, '', $style);
-                                                ?>
+                                                <select name="status_pekerjaan" class="form-control custom-select custom-select-md">
+                                                    <option value="" selected="true" disabled="disabled">Status Pekerjaan </option>
+                                                    <?php foreach ($status_pekerjaan as $key => $value) : ?>
+                                                        <option value="<?= $value ?>"><?= $value ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
                                                 <?php echo form_error('status_pekerjaan', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <label for="sumber_dana">Sumber Penghasilan</label>
-                                                <?php
-                                                $style = 'class="form-control custom-select custom-select-md" required';
-                                                echo form_dropdown('sumber_dana', $sumber_dana, '', $style);
-                                                ?>
+                                                <select name="sumber_dana" class="form-control custom-select custom-select-md" required>
+                                                    <option value="" selected="true" disabled="disabled">Sumber Penghasilan</option>
+                                                    <?php foreach ($sumber_dana as $key => $value) : ?>
+                                                        <option value="<?= $value ?>"><?= $value ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
                                                 <?php echo form_error('sumber_dana', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
@@ -417,76 +434,29 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-12"></div>
-                                        <div class="col-lg-4">
-                                            <div class="form-group">
-                                                <label for="gaji_thn">Penghasilan/Gaji Kotor per Tahun (Rp.)</label>
-                                                <select name="gaji_thn" id="gaji_thn" class="form-control custom-select custom-select-md">
-                                                    <option value="">Kecil dari 15 Juta</option>
-                                                    <option value="">Berkisar dari 15 sampai 100 Juta</option>
-                                                    <option value="">Berkisar dari 100 sampai 200 Juta</option>
-                                                    <option value="">Lebih dari 200 Juta</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="form-group">
-                                                <label for="tambahan_penghasilan">Penghasilan Lainnya per Tahun (Rp.)</label>
-                                                <select name="tambahan_penghasilan" id="tambahan_penghasilan" class="form-control custom-select custom-select-md">
-                                                    <option value="">Kecil dari 15 Juta</option>
-                                                    <option value="">Berkisar dari 15 sampai 100 Juta</option>
-                                                    <option value="">Berkisar dari 100 sampai 200 Juta</option>
-                                                    <option value="">Lebih dari 200 Juta</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="form-group">
-                                                <label for="tot_penghasilan">Total Penghasilan per Tahun (Rp.)</label>
-                                                <select name="tot_penghasilan" id="tot_penghasilan" class="form-control custom-select custom-select-md">
-                                                    <option value="">Kecil dari 15 Juta</option>
-                                                    <option value="">Berkisar dari 15 sampai 100 Juta</option>
-                                                    <option value="">Berkisar dari 100 sampai 200 Juta</option>
-                                                    <option value="">Lebih dari 200 Juta</option>
-                                                </select>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div><!-- end tab pekerjaan -->
                                 <div id="tambahan" class="tab-pane fade">
                                     <p class="alert alert-danger" role="alert" style="margin-top: 25px;">Mohon isi sesuai data sebenarnya!</p>
                                     <div class="row">
+
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <label for="status_rumah">Status Tempat Tinggal</label>
-                                                <?php
-                                                $style = 'class="form-control custom-select custom-select-md" required';
-                                                echo form_dropdown('status_rumah', $status_rumah, '', $style);
-                                                ?>
-                                                <?php echo form_error('status_rumah', '<small class="text-center text-danger pl-3">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="form-group">
-                                                <label for="">Jumlah Tanggungan</label>
-                                                <input type="number" class="form-control form-control-user" name="tanggungan" placeholder="Jumlah Tanggungan" value="<?= set_value('tanggungan') ?>">
-                                                <?php echo form_error('tanggungan', '<small class="text-center text-danger pl-3">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="form-group">
-                                                <label for="tujuan_buka">Tujuan Pembukaan Rekening</label>
-                                                <?php
-                                                $style = 'class="form-control custom-select custom-select-md" required';
-                                                echo form_dropdown('tujuan_buka', $tujuan_buka, '', $style);
-                                                ?>
+
+                                                <select name="tujuan_buka" class="form-control custom-select custom-select-md" required>
+                                                    <option value="" selected="true" disabled="disabled">Tujuan Pembukaan Rekening</option>
+                                                    <?php foreach ($tujuan_buka as $row) : ?>
+                                                        <option value="<?= $row ?>"><?= $row ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
                                                 <?php echo form_error('tujuan_buka', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <label for="jenis tabungan">Jenis Tabungan</label>
+                                                <!-- <label for="jenis tabungan">Jenis Tabungan</label> -->
                                                 <select class="form-control custom-select custom-select-md" id="jenis_tab" name="jenis_tab">
-                                                    <option value="" disabled diselected>--Pilih Jenis Produk--</option>
+                                                    <option value="" selected="true" disabled="disabled">Pilih Jenis Produk Tabungan</option>
                                                     <?php foreach ($jenis as $row) : ?>
                                                         <option value="<?= $row->id_produk; ?>"><?= ucwords($row->produk); ?></option>
                                                     <?php endforeach; ?>
@@ -494,27 +464,26 @@
                                                 <?php echo form_error('jenis_tab', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
-                                        <div class="col-lg-12"></div>
+                                        <!-- <div class="col-lg-12" style="margin-bottom: 10px;"></div> -->
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <label for="pendidikan">Pendidikan Terakhir</label>
-                                                <?php
-                                                $style = 'class="form-control custom-select custom-select-md" required';
-                                                echo form_dropdown('pendidikan', $pendidikan, '', $style);
-                                                ?>
+                                                <select class="form-control custom-select custom-select-md" id="jenis_tab" name="jenis_tab">
+                                                    <option value="" selected="true" disabled="disabled"> Pendidikan Terakhir</option>
+                                                    <?php foreach ($pendidikan as $row) : ?>
+                                                        <option value="<?= $row; ?>"><?= $row; ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
                                                 <?php echo form_error('pendidikan', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label for=""></label>
                                                 <input type="email" class="form-control form-control-user" name="email" placeholder="Email" value="<?= set_value('email') ?>" onkeyup="this.value = this.value.toLowerCase()" />
                                                 <?php echo form_error('email', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <label for=""></label>
                                                 <input type="number" class="form-control form-control-user" name="npwp" id="npwp" placeholder="No. NPWP" value="<?= set_value('npwp') ?>" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada"></div>
                                             <?php echo form_error('npwp', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                         </div>

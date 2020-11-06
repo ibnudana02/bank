@@ -4240,10 +4240,6 @@ hr {
         text-align: center;
     }
 
-    /* .top-social {
-        float: none;
-        text-align: center;
-    } */
 }
 
 .berita-load a:hover {
@@ -4289,4 +4285,23 @@ hr {
 
 .datepicker .table-condensed {
     width: fit-content;
+}
+
+.slide {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.footer-detail {
+    margin-top: 113px;
+}
+
+@media only screen and (max-width: 700px) {
+    .footer-detail {
+        margin-top: 0;
+    }
+
+    .footer-content {
+        margin-bottom: 2px !important;
+    }
 }

@@ -1,7 +1,7 @@
     <!-- Start Slider Area -->
-    <div class="intro-area">
+    <div class="intro-area slide">
         <div class="main-overly"></div>
-        <div class="intro-carousel">
+        <div class="intro-carousel ">
             <?php foreach ($slider as $row) : ?>
                 <div class="intro-content">
                     <div class="slider-images">

@@ -199,6 +199,9 @@ class Produk extends CI_Controller
         $data['prop'] = $this->user->getProv();
         $data['judul'] = 'e-Form Rekening Tabungan - Bank Unisritama';
 
+        // print_r($data['pendidikan']);
+        // die;
+
         if ($this->form_validation->run() !== FALSE) { //jika form_validation berhasil dijalankan, fungsi save() atau simpan data dijalankan
 
             $this->nsb->createNsb();
