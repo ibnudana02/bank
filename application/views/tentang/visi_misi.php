@@ -1,5 +1,5 @@
 <!-- Start overview area -->
-<div class="blog-page-area struktur">
+<div class="blog-page-area struktur ramping">
     <div class="container">
         <div class="row">
             <h2 class="text-center">Visi dan Misi</h2>

@@ -1,5 +1,5 @@
 <!-- Team area start -->
-<div class="about-area struktur">
+<div class="about-area struktur ramping">
     <div class="container">
         <div class="row">
             <h2 class="text-center">Board Manajemen</h2>

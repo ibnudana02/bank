@@ -27,9 +27,32 @@ class Master extends CI_Controller
     public function approve($id_nsb)
     {
         $d = $this->nsb->getByIdNsb($id_nsb)->row();
-        if ($d->status == 'WAITING') {
-            # code...
+        $p = $this->uri->segment(3);
+        if ($d->status == 'WAITING' && $p == 0) {
             $this->nsb->approve($id_nsb);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">eForm <strong>' . $d->nm_lengkap . '</strong> telah berhasil di Approved!</div>');
+            redirect('nasabah-tab', 'refresh');
+        } elseif ($d->status == 'WAITING' && $p == 1) {
+            $this->nsb->approve($id_nsb);
+            echo "<script>
+            window.open('" . base_url('cetak-nasabah-tab/' . $id_nsb) . "')
+            </script>";
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">eForm <strong>' . $d->nm_lengkap . '</strong> telah berhasil di Approved!</div>');
+            redirect('nasabah-tab', 'refresh');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">eForm <strong>' . $d->nm_lengkap . '</strong> tidak valid!</div>');
+            redirect('nasabah-tab', 'refresh');
+        }
+    }
+
+    public function acc_print($id_nsb)
+    {
+        $d = $this->nsb->getByIdNsb($id_nsb)->row();
+        if ($d->status == 'WAITING') {
+            $this->nsb->approve($id_nsb);
+            echo "<script>
+            window.open('" . base_url('cetak-nasabah-tab/' . $id_nsb) . "')
+            </script>";
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">eForm <strong>' . $d->nm_lengkap . '</strong> telah berhasil di Approved!</div>');
             redirect('nasabah-tab', 'refresh');
         } elseif ($d->status == 'APPROVED') {

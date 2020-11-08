@@ -1,5 +1,5 @@
 <!-- about-area start -->
-<div class="about-area struktur">
+<div class="about-area struktur ramping">
     <div class="container">
         <div id="map" style="width:100%; height: 450px;"></div>
     </div>

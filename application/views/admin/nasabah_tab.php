@@ -32,13 +32,17 @@
                                 <?php $no = 1;
                                 foreach ($data as $row) : ?>
                                     <tr>
-                                        <th><?= $no++; ?>
+                                        <th><?= $no++; ?></th>
                                         <th><?= htmlspecialchars($row->kd_ref); ?></th>
                                         <th><?= htmlspecialchars($row->nm_lengkap); ?></th>
                                         <th><?= htmlspecialchars($row->tujuan_buka); ?></th>
                                         <th><?= htmlspecialchars(strtoupper($row->produk)); ?></th>
                                         <th><?= htmlspecialchars($row->status); ?></th>
-                                        <th width><a href="<?= base_url('acc-nsb/' . $row->id_nsb) ?>" id="acc" class="btn btn-sm btn-info float-center"><i class="fas fa-check"></i></a>
+                                        <th><?php if ($row->status == 'APPROVED') {
+                                                echo '<a href="' . $row->id_nsb . '" class="btn btn-sm btn-info disabled float-center" data-target="#acc' . $row->id_nsb . '" data-toggle="modal"><i class="fas fa-check"></i></a>';
+                                            } else {
+                                                echo '<a href="' . $row->id_nsb . '" class="btn btn-sm btn-info float-center" data-target="#acc' . $row->id_nsb . '" data-toggle="modal"><i class="fas fa-check"></i></a>';
+                                            } ?>
                                             <a href="<?= base_url('cetak-nasabah-tab/' . $row->id_nsb) ?>" target="_blank" class="btn btn-sm btn-success float-center"><i class="fas fa-print"></i></a>
                                             <a href="<?php echo $row->id_nsb; ?>" class="btn btn-sm btn-danger float-center" data-target="#hapus<?php echo $row->id_nsb; ?>" data-toggle="modal"><i class="fas fa-trash"></i></a></th>
                                     </tr>
@@ -59,6 +63,24 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div id="acc<?= $row->id_nsb; ?>" class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title mt-0">Peringatan!</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h5 class="modal-body mt-0">Apakah yakin Approve data ini?</h5>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <a href="<?= base_url('acc/' . $row->id_nsb . '/0') ?>" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Approve">Approve</a>
+                                                    <a href="<?= base_url('acc/' . $row->id_nsb . '/1') ?>" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Approve & Cetak">Approve & Cetak</a>
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="tooltip" data-placement="top" title="Kembali">Batal</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
@@ -69,14 +91,3 @@
     </div>
 </div>
 <!-- /.container-fluid -->
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#acc').click(function() {
-            var status = <?php echo $row->status ?>;
-            if (status == 'APPROVED') {
-                $('a')
-            }
-        });
-        $('#acc').get
-    })
-</script>

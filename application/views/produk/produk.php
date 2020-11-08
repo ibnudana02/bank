@@ -13,7 +13,7 @@
     </div>
 </div>
 <!-- Start project Area -->
-<div class="project-area-2">
+<div class="project-area-2 ">
     <div class="container">
         <div class="row">
             <div class="project-content project-2">
