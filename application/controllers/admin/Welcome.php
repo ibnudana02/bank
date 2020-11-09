@@ -68,7 +68,7 @@ class Welcome extends CI_Controller
 					'name' => $user['name'],
 					'role_id' => $user['role_id']
 				];
-				// var_dump($data);
+				var_dump($data);
 				$this->session->set_userdata($data);
 				$this->session->set_flashdata(
 					'message',
