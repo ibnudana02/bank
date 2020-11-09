@@ -1,5 +1,5 @@
 <!-- about-area start -->
-<div class="about-area struktur ramping">
+<div class="about-area struktur">
     <div class="container">
         <div class="row">
             <h3 class="text-center">Profil Perusahaan</h3>

@@ -23,6 +23,7 @@
                                 <li><a class="pagess">Tentang Kami</a>
                                     <ul class="sub-menu">
                                         <li><a href="<?= base_url('profil') ?>">Profil Perusahaan</a></li>
+                                        <li><a href="<?= base_url('sejarah') ?>">Sejarah</a></li>
                                         <li><a href="<?= base_url('visi_misi') ?>">Visi dan Misi</a></li>
                                         <li><a href="<?= base_url('manajemen') ?>">Board Manajemen</a></li>
                                         <li><a href="<?= base_url('struktur') ?>">Struktur Organisasi</a></li>
@@ -91,6 +92,7 @@
                             <li><a class="pagess">Tentang Kami</a>
                                 <ul class="sub-menu">
                                     <li><a href="<?= base_url('profil') ?>">Profil Perusahaan</a></li>
+                                    <li><a href="<?= base_url('sejarah') ?>">Sejarah</a></li>
                                     <li><a href="<?= base_url('visi_misi') ?>">Visi dan Misi</a></li>
                                     <li><a href="<?= base_url('manajemen') ?>">Board Manajemen</a></li>
                                     <li><a href="<?= base_url('struktur') ?>">Struktur Organisasi</a></li>

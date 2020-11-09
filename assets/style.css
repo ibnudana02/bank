@@ -3999,7 +3999,7 @@ hr {
 }
 
 .struktur {
-    padding: 20px 20px;
+    padding: 20px 0px;
 }
 
 .layanan {
@@ -4303,10 +4303,5 @@ hr {
 
     .footer-content {
         margin-bottom: 2px !important;
-    }
-
-    .ramping {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
     }
 }

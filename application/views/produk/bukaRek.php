@@ -181,11 +181,13 @@
                                                 <input type="number" class="form-control form-control-user" name="pos_identitas" id="" placeholder="Kode Pos" value="<?= set_value('pos_identitas') ?>"></div>
                                         </div>
                                         <div class="col-lg-12"></div>
+
                                         <div class="col-lg-12">
                                             <div class="alert alert-info alert-dismissible" role="alert">
                                                 Mohon isi alamat domisili!
                                             </div>
                                         </div>
+
                                         <div class="col-lg-3">
                                             <div class="form-group">
                                                 <label for="Provinsi">Provinsi</label>
@@ -306,7 +308,7 @@
                                         <div class="col-lg-3">
                                             <div class="form-group">
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control form-control-user datepicker" data-toggle="tooltip" data-placement="bottom" title="Kosongkan bila tidak ada" aria-describedby="start-date" name="tgl_lhr_pasangan" placeholder="Tanggal Lahir Pasangan" value="<?= set_value('tgl_lhr_pasangan') ?>">
+                                                    <input type="text" class="form-control form-control-user datepicker" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" aria-describedby="start-date" name="tgl_lhr_pasangan" placeholder="Tanggal Lahir Pasangan" value="<?= set_value('tgl_lhr_pasangan') ?>">
                                                     <span class="input-group-addon" id="start-date"><span class="fa fa-calendar"></span></span>
                                                 </div>
                                             </div>
@@ -371,15 +373,13 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
-                                            <div class="form-group">
-                                                <select name="jenis_pekerjaan" class="form-control custom-select custom-select-sm">
-                                                    <option value="" selected="true" disabled="disabled">Pilih Jenis Pekerjaan</option>
-                                                    <?php foreach ($jenis_pekerjaan as $key => $value) : ?>
-                                                        <option value="<?= $value ?>"><?= $value ?></option>
-                                                    <?php endforeach; ?>
-                                                </select>
-                                                <?php echo form_error('jenis_pekerjaan', '<small class="text-center text-danger pl-3">', '</small>'); ?>
-                                            </div>
+                                            <select name="jenis_pekerjaan" class="form-control custom-select custom-select-sm">
+                                                <option value="" selected="true" disabled="disabled">Pilih Jenis Pekerjaan</option>
+                                                <?php foreach ($jenis_pekerjaan as $key => $value) : ?>
+                                                    <option value="<?= $value ?>"><?= $value ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                            <?php echo form_error('jenis_pekerjaan', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">

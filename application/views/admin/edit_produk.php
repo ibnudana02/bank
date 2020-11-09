@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="Link">Link - Pembukaan Produk</label>
-                                    <input type="text" class="form-control form-control-user link" disabled id="link" name="link" placeholder="Link" value="<?= $produk->link ?>">
+                                    <input type="text" class="form-control form-control-user link" id="link" name="link" placeholder="Link" value="<?= $produk->link ?>">
                                 </div>
                                 <div class="form-group">
                                     <label>Deskripsi</label>

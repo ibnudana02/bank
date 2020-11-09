@@ -75,8 +75,6 @@ $route['send-mail'] = 'produk/send';
 $route['del-nsb/(:any)'] = 'admin/master/delete/$1';
 $route['nasabah-tab'] = 'admin/master';
 $route['acc-nsb/(:any)'] = 'admin/master/approve/$1';
-$route['acc/(:any)/(:num)'] = 'admin/master/approve/$1/$2';
-$route['acc-print/(:any)'] = 'admin/master/acc_print/$1';
 $route['cetak-nasabah-tab/(:any)'] = 'admin/master/print_nasabah/$1';
 
 

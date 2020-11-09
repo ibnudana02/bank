@@ -1,5 +1,5 @@
 <!-- Start project Area -->
-<div class="about-area struktur ramping">
+<div class="about-area struktur">
     <div class="container">
         <div class="row">
             <h2 class="text-center">Penghargaan</h2>
