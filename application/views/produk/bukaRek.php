@@ -308,7 +308,7 @@
                                         <div class="col-lg-3">
                                             <div class="form-group">
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control form-control-user datepicker" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" aria-describedby="start-date" name="tgl_lhr_pasangan" placeholder="Tanggal Lahir Pasangan" value="<?= set_value('tgl_lhr_pasangan') ?>">
+                                                    <input type="text" class="form-control form-control-user datepicker" data-toggle="tooltip" data-placement="bottom" title="Kosongkan bila tidak ada" aria-describedby="start-date" name="tgl_lhr_pasangan" placeholder="Tanggal Lahir Pasangan" value="<?= set_value('tgl_lhr_pasangan') ?>">
                                                     <span class="input-group-addon" id="start-date"><span class="fa fa-calendar"></span></span>
                                                 </div>
                                             </div>
@@ -373,13 +373,15 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
-                                            <select name="jenis_pekerjaan" class="form-control custom-select custom-select-sm">
-                                                <option value="" selected="true" disabled="disabled">Pilih Jenis Pekerjaan</option>
-                                                <?php foreach ($jenis_pekerjaan as $key => $value) : ?>
-                                                    <option value="<?= $value ?>"><?= $value ?></option>
-                                                <?php endforeach; ?>
-                                            </select>
-                                            <?php echo form_error('jenis_pekerjaan', '<small class="text-center text-danger pl-3">', '</small>'); ?>
+                                            <div class="form-group">
+                                                <select name="jenis_pekerjaan" class="form-control custom-select custom-select-sm">
+                                                    <option value="" selected="true" disabled="disabled">Pilih Jenis Pekerjaan</option>
+                                                    <?php foreach ($jenis_pekerjaan as $key => $value) : ?>
+                                                        <option value="<?= $value ?>"><?= $value ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                                <?php echo form_error('jenis_pekerjaan', '<small class="text-center text-danger pl-3">', '</small>'); ?>
+                                            </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
