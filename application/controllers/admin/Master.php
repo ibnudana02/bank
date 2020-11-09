@@ -8,6 +8,14 @@ class Master extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $nama = $this->session->has_userdata('name');
+        if (empty($nama)) {
+
+            redirect('admin', 'refresh');
+        } elseif ($this->session->userdata('role_id') !== "1") {
+            $this->session->sess_destroy();
+            redirect(base_url());
+        }
         $this->load->model('Nasabah_model', 'nsb');
         $this->load->library('Pdf');
     }
@@ -28,15 +36,14 @@ class Master extends CI_Controller
     {
         $d = $this->nsb->getByIdNsb($id_nsb)->row();
         $p = $this->uri->segment(3);
+        $cetak = base_url('cetak-nasabah-tab/' . $id_nsb);
         if ($d->status == 'WAITING' && $p == 0) {
             $this->nsb->approve($id_nsb);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">eForm <strong>' . $d->nm_lengkap . '</strong> telah berhasil di Approved!</div>');
             redirect('nasabah-tab', 'refresh');
         } elseif ($d->status == 'WAITING' && $p == 1) {
             $this->nsb->approve($id_nsb);
-            echo "<script>
-            window.open('" . base_url('cetak-nasabah-tab/' . $id_nsb) . "')
-            </script>";
+            echo "<script>window.open('" . $cetak . "','_blank')</script>";
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">eForm <strong>' . $d->nm_lengkap . '</strong> telah berhasil di Approved!</div>');
             redirect('nasabah-tab', 'refresh');
         } else {
@@ -82,8 +89,6 @@ class Master extends CI_Controller
     public function print_nasabah($id_nsb)
     {
         $data['data_nsb'] = $this->nsb->getByIdNsb($id_nsb)->row();
-        // var_dump($data['data_nsb']);
-        // die;
         $this->load->view('cetakData_nsb', $data);
     }
 }
