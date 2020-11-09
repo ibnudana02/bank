@@ -54,12 +54,12 @@
 </div>
 
 <!-- Welcome service area start -->
-<div class="welcome-area bg-color-2 area-padding">
+<div class="welcome-area bg-color-2" style="margin-top: 25px;margin-bottom:40px;">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="section-headline text-center">
-                    <h4>Business consultant is offering world wide business planning. We are a solution oriented company and your needs are our greatest concern</h4>
+                    <h4>Berbagai kemudahan yang kami hadirkan kepada Nasabah.</h4>
                 </div>
             </div>
         </div>
@@ -122,7 +122,7 @@
 </div>
 <!-- Welcome service area End -->
 
-<div class="project-area">
+<div class="project-area" style="margin-top: 20px;">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
