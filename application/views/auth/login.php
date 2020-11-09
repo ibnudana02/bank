@@ -14,7 +14,7 @@
                                     <?= $this->session->flashdata('message'); ?>
                                     <form class="user" method="post" action="<?= base_url('admin/welcome'); ?>">
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user" name="email" id="email" placeholder="Enter Email Address..." value="<?= set_value('email'); ?>">
+                                            <input type="email" class="form-control form-control-user" name="email" id="email" placeholder="Enter Email Address..." value="<?= set_value('email'); ?>">
                                             <?php echo form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                                         </div>
                                         <div class="form-group">
