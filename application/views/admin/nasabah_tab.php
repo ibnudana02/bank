@@ -91,14 +91,3 @@
     </div>
 </div>
 <!-- /.container-fluid -->
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#acc').click(function() {
-            var status = <?php echo $row->status ?>;
-            if (status == 'APPROVED') {
-                $('a')
-            }
-        });
-        $('#acc').get
-    })
-</script>
