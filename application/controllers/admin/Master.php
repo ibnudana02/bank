@@ -34,13 +34,11 @@ class Master extends CI_Controller
             redirect('nasabah-tab', 'refresh');
         } elseif ($d->status == 'WAITING' && $p == 1) {
             $this->nsb->approve($id_nsb);
-            echo "<script>
-            window.open('" . base_url('cetak-nasabah-tab/' . $id_nsb) . "')
-            </script>";
+            echo "<script>window.open('" . base_url('cetak-nasabah-tab/' . $id_nsb) . "')</script>";
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">eForm <strong>' . $d->nm_lengkap . '</strong> telah berhasil di Approved!</div>');
-            redirect('nasabah-tab', 'refresh');
+            redirect('nasabah-tab', 'location');
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">eForm <strong>' . $d->nm_lengkap . '</strong> tidak valid!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">eForm <strong>' . $d->nm_lengkap . '</strong> sudah di Approve!</div>');
             redirect('nasabah-tab', 'refresh');
         }
     }
