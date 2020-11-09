@@ -28,17 +28,18 @@ class Master extends CI_Controller
     {
         $d = $this->nsb->getByIdNsb($id_nsb)->row();
         $p = $this->uri->segment(3);
+        $cetak = base_url('cetak-nasabah-tab/' . $id_nsb);
         if ($d->status == 'WAITING' && $p == 0) {
             $this->nsb->approve($id_nsb);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">eForm <strong>' . $d->nm_lengkap . '</strong> telah berhasil di Approved!</div>');
             redirect('nasabah-tab', 'refresh');
         } elseif ($d->status == 'WAITING' && $p == 1) {
             $this->nsb->approve($id_nsb);
-            echo "<script>window.open('" . base_url('cetak-nasabah-tab/' . $id_nsb) . "')</script>";
+            echo "<script>window.open('" . $cetak . "')</script>";
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">eForm <strong>' . $d->nm_lengkap . '</strong> telah berhasil di Approved!</div>');
-            redirect('nasabah-tab', 'location');
+            redirect('nasabah-tab', 'refresh');
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">eForm <strong>' . $d->nm_lengkap . '</strong> sudah di Approve!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">eForm <strong>' . $d->nm_lengkap . '</strong> tidak valid!</div>');
             redirect('nasabah-tab', 'refresh');
         }
     }
