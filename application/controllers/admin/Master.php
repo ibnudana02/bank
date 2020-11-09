@@ -28,7 +28,6 @@ class Master extends CI_Controller
     {
         $d = $this->nsb->getByIdNsb($id_nsb)->row();
         $p = $this->uri->segment(3);
-        $cetak = base_url('cetak-nasabah-tab/' . $id_nsb);
         if ($d->status == 'WAITING' && $p == 0) {
             $this->nsb->approve($id_nsb);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">eForm <strong>' . $d->nm_lengkap . '</strong> telah berhasil di Approved!</div>');
@@ -36,7 +35,7 @@ class Master extends CI_Controller
         } elseif ($d->status == 'WAITING' && $p == 1) {
             $this->nsb->approve($id_nsb);
             echo "<script>
-            window.open('" . $cetak . "', '_blank')
+            window.open('" . base_url('cetak-nasabah-tab/' . $id_nsb) . "')
             </script>";
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">eForm <strong>' . $d->nm_lengkap . '</strong> telah berhasil di Approved!</div>');
             redirect('nasabah-tab', 'refresh');
