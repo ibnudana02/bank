@@ -67,6 +67,13 @@ class Master extends CI_Controller
         // die;
         $this->load->view('cetakData_nsb', $data);
     }
+
+    public function test()
+    {
+        echo "<script>window.open('" . base_url() . "')</script>";
+
+        redirect(base_url(), 'refresh');
+    }
 }
 
 /* End of file Master.php */
