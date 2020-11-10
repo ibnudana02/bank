@@ -41,7 +41,6 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <input type="text" autofocus class="form-control form-control-user" name="nm_lengkap" id="nm_lengkap" placeholder="Nama Lengkap" value="<?= set_value('nm_lengkap'); ?>" onkeyup="this.value = this.value.toUpperCase()">
-                                                <!-- <span class="form-required">*</span> -->
                                                 <?php echo form_error('nm_lengkap', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
@@ -53,47 +52,52 @@
                                         </div>
                                         <div class="col-lg-2">
                                             <div class="form-group">
-                                                <label for="jenis_kelamin">Jenis Kelamin </label><br>
-                                                <?php
-                                                $style = 'class="form-control custom-select custom-select-md" required';
-                                                echo form_dropdown('jenis_kelamin', $jk, set_value('jenis_kelamin'), $style);
-                                                ?>
+                                                <select name="jenis_kelamin" class="form-control custom-select custom-select-md">
+                                                    <option value="" selected="true" disabled="disabled">Jenis Kelamin</option>
+                                                    <?php foreach ($jk as $key => $value) : ?>
+                                                        <option value="<?= $value ?>"><?= $value ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
                                                 <?php echo form_error('jenis_kelamin', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-lg-2">
                                             <div class="form-group">
-                                                <label for="sumber dana">Agama</label>
-                                                <?php
-                                                $style = 'class="form-control custom-select custom-select-md" required';
-                                                echo form_dropdown('agama', $agama, set_value('agama'), $style);
-                                                ?>
+                                                <select name="agama" class="form-control custom-select custom-select-md">
+                                                    <option value="" selected="true" disabled="disabled">Pilih Agama</option>
+                                                    <?php foreach ($agama as $key => $value) : ?>
+                                                        <option value="<?= $value ?>"><?= $value ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
                                                 <?php echo form_error('agama', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-lg-2">
                                             <div class="form-group">
-                                                <label for="wn">Kewarganegaraan</label>
-                                                <?php
-                                                $style = 'class="form-control custom-select custom-select-md" required';
-                                                echo form_dropdown('warga_negara', $wn, set_value('warga_negara'), $style);
-                                                ?>
+                                                <select name="warga_negara" class="form-control custom-select custom-select-md">
+                                                    <option value="" selected="true" disabled="disabled">Warga Negara</option>
+                                                    <?php foreach ($wn as $key => $value) : ?>
+                                                        <option value="<?= $value ?>"><?= $value ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
                                                 <?php echo form_error('warga_negara', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <label for="sumber dana">Jenis Identitas</label>
-                                                <?php $style = 'class="form-control custom-select custom-select-md" required';
-                                                echo form_dropdown('jenis_identitas', $identitas, set_value('jenis_identitas'), $style); ?>
+                                                <select name="jenis_identitas" class="form-control custom-select custom-select-md">
+                                                    <option value="" selected="true" disabled="disabled">Jenis Identitas</option>
+                                                    <?php foreach ($identitas as $key => $value) : ?>
+                                                        <option value="<?= $value ?>"><?= $value ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
                                                 <?php echo form_error('jenis_identitas', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <label class="control-label">Berlaku Hingga</label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control datepicker" data-toggle="tooltip" data-placement="top" title="Jika berlaku seumur hidup: Isi sesuai Tgl, Bulan lahir. Untuk Tahun jangka waktu 5 tahun pada waktu mengisi" aria-describedby="start-date" name="masa_berlaku" placeholder="Masa Berlaku" value="<?= set_value('masa_berlaku'); ?>">
+                                                    <input type="text" class="form-control datepicker" data-toggle="tooltip" data-placement="bottom" title="Jika berlaku seumur hidup: Isi sesuai Tgl, Bulan lahir. Untuk Tahun jangka waktu 5 tahun pada waktu mengisi" aria-describedby="start-date" name="masa_berlaku" placeholder="Masa Berlaku" value="<?= set_value('masa_berlaku'); ?>">
                                                     <span class="input-group-addon" id="start-date"><span class="fa fa-calendar"></span></span>
                                                 </div>
                                                 <?php echo form_error('masa_berlaku', '<small class="text-danger pl-3">', '</small>'); ?>
@@ -308,7 +312,7 @@
                                         <div class="col-lg-3">
                                             <div class="form-group">
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control form-control-user datepicker" data-toggle="tooltip" data-placement="bottom" title="Kosongkan bila tidak ada" aria-describedby="start-date" name="tgl_lhr_pasangan" placeholder="Tanggal Lahir Pasangan" value="<?= set_value('tgl_lhr_pasangan') ?>">
+                                                    <input type="text" class="form-control form-control-user datepicker" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" aria-describedby="start-date" name="tgl_lhr_pasangan" placeholder="Tanggal Lahir Pasangan" value="<?= set_value('tgl_lhr_pasangan') ?>">
                                                     <span class="input-group-addon" id="start-date"><span class="fa fa-calendar"></span></span>
                                                 </div>
                                             </div>
@@ -456,7 +460,6 @@
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <!-- <label for="jenis tabungan">Jenis Tabungan</label> -->
                                                 <select class="form-control custom-select custom-select-md" id="jenis_tab" name="jenis_tab">
                                                     <option value="" selected="true" disabled="disabled">Pilih Jenis Produk Tabungan</option>
                                                     <?php foreach ($jenis as $row) : ?>
@@ -466,7 +469,6 @@
                                                 <?php echo form_error('jenis_tab', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
-                                        <!-- <div class="col-lg-12" style="margin-bottom: 10px;"></div> -->
                                         <div class="col-lg-3">
                                             <div class="form-group">
                                                 <select class="form-control custom-select custom-select-md" id="jenis_tab" name="jenis_tab">
@@ -616,8 +618,6 @@
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- <script src="<?php echo base_url('assets/'); ?>js/vendor/jquery-1.12.4.min.js" type="text/javascript"></script> -->
-<!-- <script src="<?php echo base_url('assets/'); ?>js/jquery.mask.js"></script> -->
 <script>
     $(document).ready(function() {
         $("#propinsi").change(function() {
@@ -725,6 +725,7 @@
         $(".datepicker").datepicker({
             format: 'dd-mm-yyyy',
             autoclose: true,
+            showWeekDays: false
             // todayHighlight: true,
         });
     });
