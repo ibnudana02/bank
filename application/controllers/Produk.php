@@ -119,10 +119,10 @@ class Produk extends CI_Controller
     {
         $this->form_validation->set_rules('nm_lengkap', 'Nama Lengkap', 'required|trim', ['required' => 'Nama Lengkap harus diisi!']);
         $this->form_validation->set_rules('nm_identitas', 'Nama Identitas', 'required|trim', ['required' => 'Nama Identitas harus diisi!']);
-        $this->form_validation->set_rules('jenis_kelamin', 'Jenis Kelamin', 'required|trim');
-        $this->form_validation->set_rules('agama', 'Agama', 'required|trim');
-        $this->form_validation->set_rules('warga_negara', 'Kewarganegaraan', 'required|trim');
-        $this->form_validation->set_rules('jenis_identitas', 'Jenis Identitas', 'required|trim');
+        $this->form_validation->set_rules('jenis_kelamin', 'Jenis Kelamin', 'required|trim', ['required' => 'Jenis Kelamin harus diisi!']);
+        $this->form_validation->set_rules('agama', 'Agama', 'required|trim', ['required' => 'Agama harus diisi!']);
+        $this->form_validation->set_rules('warga_negara', 'Kewarganegaraan', 'required|trim', ['required' => 'Kewarganegaan harus diisi!']);
+        $this->form_validation->set_rules('jenis_identitas', 'Jenis Identitas', 'required|trim', ['required' => 'Jenis Identitas harus diisi!']);
         $this->form_validation->set_rules('masa_berlaku', 'Masa Berlaku', 'required|trim', ['required' => 'Masa Berlaku harus diisi!']);
         $this->form_validation->set_rules('no_identitas', 'Nomor Tanda Pengenal', 'required|trim', ['required' => 'No Identitas harus diisi!']);
         $this->form_validation->set_rules('tempat_lahir', 'Tempat lahir', 'required|trim', ['required' => 'Tempat Lahir harus diisi!']);

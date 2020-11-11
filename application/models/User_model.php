@@ -82,14 +82,14 @@ class User_model extends CI_Model
         $this->db->order_by('nama', 'asc');
         return $this->db->get('kabupaten')->result();
     }
-    public function viewKec($id, $n, $m)
+    public function viewKec($id)
     {
         $this->db->select('*');
         $this->db->where('id_kab', $id);
         $this->db->order_by('nama', 'asc');
         return $this->db->get('kecamatan')->result();
     }
-    public function viewDesa($id, $n, $m)
+    public function viewDesa($id)
     {
         $this->db->select('*');
         $this->db->where('id_kec', $id);

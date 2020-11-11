@@ -14,7 +14,7 @@
                         <h3 class="panel-title text-center">Formulir Pembukaan Rekening Tabungan</h3>
                     </div>
                     <div class="panel-body">
-                        <form name="produk" class="user" method="post" action="<?= base_url('pembukaan-rekening-tabungan'); ?>" enctype="multipart/form-data">
+                        <form name="eform" class="user" method="post" action="<?= base_url('pembukaan-rekening-tabungan'); ?>" enctype="multipart/form-data">
                             <ul class="nav nav-pills">
                                 <li class="active"><a data-toggle="tab" href="#identitas">Identitas Diri</a></li>
                                 <li><a data-toggle="tab" href="#kontak">Ahli Waris/Kontak</a></li>
@@ -37,34 +37,34 @@
                                                 <?php echo form_error('nm_identitas', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
-                                        <div class="col-lg-2">
+                                        <div class="col-lg-3">
                                             <div class="form-group">
                                                 <select name="jenis_kelamin" class="form-control custom-select custom-select-md">
                                                     <option value="" selected="true" disabled="disabled">Jenis Kelamin</option>
                                                     <?php foreach ($jk as $key => $value) : ?>
-                                                        <option value="<?= $value ?>"><?= $value ?></option>
+                                                        <option value="<?= $value ?>" <?= set_select('jenis_kelamin', $value) ?>><?= $value ?></option>
                                                     <?php endforeach; ?>
                                                 </select>
                                                 <?php echo form_error('jenis_kelamin', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
-                                        <div class="col-lg-2">
+                                        <div class="col-lg-3">
                                             <div class="form-group">
                                                 <select name="agama" class="form-control custom-select custom-select-md">
                                                     <option value="" selected="true" disabled="disabled">Pilih Agama</option>
                                                     <?php foreach ($agama as $key => $value) : ?>
-                                                        <option value="<?= $value ?>"><?= $value ?></option>
+                                                        <option value="<?= $value ?>" <?= set_select('agama', $value) ?>><?= $value ?></option>
                                                     <?php endforeach; ?>
                                                 </select>
                                                 <?php echo form_error('agama', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
-                                        <div class="col-lg-2">
+                                        <div class="col-lg-3">
                                             <div class="form-group">
                                                 <select name="warga_negara" class="form-control custom-select custom-select-md">
                                                     <option value="" selected="true" disabled="disabled">Warga Negara</option>
                                                     <?php foreach ($wn as $key => $value) : ?>
-                                                        <option value="<?= $value ?>"><?= $value ?></option>
+                                                        <option value="<?= $value ?>" <?= set_select('warga_negara', $value) ?>><?= $value ?></option>
                                                     <?php endforeach; ?>
                                                 </select>
                                                 <?php echo form_error('warga_negara', '<small class="text-danger pl-3">', '</small>'); ?>
@@ -75,7 +75,7 @@
                                                 <select name="jenis_identitas" class="form-control custom-select custom-select-md">
                                                     <option value="" selected="true" disabled="disabled">Jenis Identitas</option>
                                                     <?php foreach ($identitas as $key => $value) : ?>
-                                                        <option value="<?= $value ?>"><?= $value ?></option>
+                                                        <option value="<?= $value ?>" <?= set_select('jenis_identitas', $value) ?>><?= $value ?></option>
                                                     <?php endforeach; ?>
                                                 </select>
                                                 <?php echo form_error('jenis_identitas', '<small class="text-danger pl-3">', '</small>'); ?>
@@ -119,10 +119,10 @@
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <select class="form-control custom-select custom-select-md" id="jenis_tab" name="jenis_tab">
+                                                <select class="form-control custom-select custom-select-md" name="pendidikan">
                                                     <option value="" selected="true" disabled="disabled"> Pendidikan Terakhir</option>
-                                                    <?php foreach ($pendidikan as $row) : ?>
-                                                        <option value="<?= $row; ?>"><?= $row; ?></option>
+                                                    <?php foreach ($pendidikan as $key => $row) : ?>
+                                                        <option value="<?= $row; ?>" <?= set_select('pendidikan', $row) ?>><?= $row; ?></option>
                                                     <?php endforeach; ?>
                                                 </select>
                                                 <?php echo form_error('pendidikan', '<small class="text-center text-danger pl-3">', '</small>'); ?>
@@ -279,7 +279,7 @@
                                                 <select name="hb_ahli_waris" id="" class="form-control form-control-user custom-select custom-select-sm">
                                                     <option value="" selected="true" disabled="disabled">Hubungan dengan Ahli Waris</option>
                                                     <?php foreach ($aw as $key => $value) : ?>
-                                                        <option value="<?= $value ?>"><?= $value ?></option>
+                                                        <option value="<?= $value ?>" <?= set_select('hb_ahli_waris', $value) ?>><?= $value ?></option>
                                                     <?php endforeach; ?>
                                                 </select>
                                                 <?php echo form_error('hb_ahli_waris', '<small class="text-center text-danger pl-3">', '</small>'); ?>
@@ -302,7 +302,7 @@
                                                 <select name="status_menikah" class="form-control custom-select custom-select-sm">
                                                     <option value="" selected="true" disabled="disabled">Status Pernikahan</option>
                                                     <?php foreach ($status as $key => $value) : ?>
-                                                        <option value="<?= $value ?>"><?= $value ?></option>
+                                                        <option value="<?= $value ?>" <?= set_select('status_menikah', $value) ?>><?= $value ?></option>
                                                     <?php endforeach; ?>
                                                 </select>
                                                 <?php echo form_error('status_menikah', '<small class="text-center text-danger pl-3">', '</small>'); ?>
@@ -329,10 +329,10 @@
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <select name="identitas_pasangan" id="" class="form-control custom-select custom-select-md">
+                                                <select name="identitas_pasangan" id="identitas_pasangan" class="form-control custom-select custom-select-md">
                                                     <option value="" selected="true" disabled="disabled">Jenis Identitas</option>
                                                     <?php foreach ($identitas as $key => $value) : ?>
-                                                        <option value="<?= $value ?>"><?= $value ?></option>
+                                                        <option value="<?= $value ?>" <?= set_select('identitas_pasangan', $value) ?>><?= $value ?></option>
                                                     <?php endforeach; ?>
                                                 </select>
                                             </div>
@@ -357,7 +357,7 @@
                                                 <select name="status_rumah" id="stt" class="form-control custom-select custom-select-md" required>
                                                     <option value="" selected="true" disabled="disabled">Status Tempat Tinggal</option>
                                                     <?php foreach ($status_rumah as $key => $value) : ?>
-                                                        <option value="<?= $value ?>"><?= $value ?></option>
+                                                        <option value="<?= $value ?>" <?= set_select('status_rumah', $value) ?>><?= $value ?></option>
                                                     <?php endforeach; ?>
                                                 </select>
                                                 <?php echo form_error('status_rumah', '<small class="text-center text-danger pl-3">', '</small>'); ?>
@@ -374,8 +374,8 @@
                                             <div class="form-group">
                                                 <select name="tujuan_buka" class="form-control custom-select custom-select-md" required>
                                                     <option value="" selected="true" disabled="disabled">Tujuan Pembukaan Rekening</option>
-                                                    <?php foreach ($tujuan_buka as $row) : ?>
-                                                        <option value="<?= $row ?>"><?= $row ?></option>
+                                                    <?php foreach ($tujuan_buka as $key => $row) : ?>
+                                                        <option value="<?= $row ?>" <?= set_select('tujuan_buka', $row) ?>><?= $row ?></option>
                                                     <?php endforeach; ?>
                                                 </select>
                                                 <?php echo form_error('tujuan_buka', '<small class="text-center text-danger pl-3">', '</small>'); ?>
@@ -386,7 +386,7 @@
                                                 <select class="form-control custom-select custom-select-md" id="jenis_tab" name="jenis_tab">
                                                     <option value="" selected="true" disabled="disabled">Pilih Jenis Produk Tabungan</option>
                                                     <?php foreach ($jenis as $row) : ?>
-                                                        <option value="<?= $row->id_produk; ?>"><?= ucwords($row->produk); ?></option>
+                                                        <option value="<?= $row->id_produk; ?>" <?= set_select('jenis_tab', $row->id_produk) ?>><?= ucwords($row->produk); ?></option>
                                                     <?php endforeach; ?>
                                                 </select>
                                                 <?php echo form_error('jenis_tab', '<small class="text-center text-danger pl-3">', '</small>'); ?>
@@ -402,7 +402,7 @@
                                                 <select name="profesi" id="" class="form-control custom-select custom-select-md">
                                                     <option value="" selected="true" disabled="disabled">Pilih Profesi</option>
                                                     <?php foreach ($profesi as $key => $value) : ?>
-                                                        <option value="<?= $value ?>"><?= $value ?></option>
+                                                        <option value="<?= $value ?>" <?= set_select('profesi', $value) ?>><?= $value ?></option>
                                                     <?php endforeach; ?>
                                                 </select>
                                                 <?php echo form_error('profesi', '<small class="text-center text-danger pl-3">', '</small>'); ?>
@@ -413,7 +413,7 @@
                                                 <select name="jenis_pekerjaan" class="form-control custom-select custom-select-sm">
                                                     <option value="" selected="true" disabled="disabled">Pilih Jenis Pekerjaan</option>
                                                     <?php foreach ($jenis_pekerjaan as $key => $value) : ?>
-                                                        <option value="<?= $value ?>"><?= $value ?></option>
+                                                        <option value="<?= $value ?>" <?= set_select('jenis_pekerjaan', $value) ?>><?= $value ?></option>
                                                     <?php endforeach; ?>
                                                 </select>
                                                 <?php echo form_error('jenis_pekerjaan', '<small class="text-center text-danger pl-3">', '</small>'); ?>
@@ -424,7 +424,7 @@
                                                 <select name="status_pekerjaan" class="form-control custom-select custom-select-md">
                                                     <option value="" selected="true" disabled="disabled">Status Pekerjaan </option>
                                                     <?php foreach ($status_pekerjaan as $key => $value) : ?>
-                                                        <option value="<?= $value ?>"><?= $value ?></option>
+                                                        <option value="<?= $value ?>" <?= set_select('status_pekerjaan', $value) ?>><?= $value ?></option>
                                                     <?php endforeach; ?>
                                                 </select>
                                                 <?php echo form_error('status_pekerjaan', '<small class="text-center text-danger pl-3">', '</small>'); ?>
@@ -435,7 +435,7 @@
                                                 <select name="sumber_dana" class="form-control custom-select custom-select-md" required>
                                                     <option value="" selected="true" disabled="disabled">Sumber Penghasilan</option>
                                                     <?php foreach ($sumber_dana as $key => $value) : ?>
-                                                        <option value="<?= $value ?>"><?= $value ?></option>
+                                                        <option value="<?= $value ?>" <?= set_select('sumber_dana', $value) ?>><?= $value ?></option>
                                                     <?php endforeach; ?>
                                                 </select>
                                                 <?php echo form_error('sumber_dana', '<small class="text-center text-danger pl-3">', '</small>'); ?>
@@ -475,48 +475,48 @@
                                     </div>
                                 </div><!-- end tab pekerjaan -->
                                 <div id="dokumen" class="tab-pane fade">
-                                    <p class="alert alert-danger" role="alert" style="margin-top: 25px;">Mohon isi sesuai data sebenarnya! Ukuran Max file adalah 2 MB</p>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="image">Lampirkan Foto Tanda Pengenal (KTP, SIM, Passport)</label>
-                                                <input type="file" class="form-control-file" name="ft_identitas" required>
-                                                <?php echo form_error('ft_identitas', '<small class="text-center text-danger pl-3">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="image">Lampirkan Foto Kartu Keluarga</label>
-                                                <input type="file" class="form-control-file" name="ft_kk" required>
-                                                <?php echo form_error('ft_kk', '<small class="text-center text-danger pl-3">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="image">Lampirkan Foto Selfie</label>
-                                                <input type="file" class="form-control-file" name="ft_diri" required>
-                                                <?php echo form_error('ft_diri', '<small class="text-center text-danger pl-3">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="image">Lampirkan Foto Tanda Tangan</label>
-                                                <input type="file" class="form-control-file" name="ft_ttd" required>
-                                                <?php echo form_error('ft_ttd', '<small class="text-center text-danger pl-3">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="image">Lampirkan Foto NPWP</label>
-                                                <input type="file" class="form-control-file" name="ft_npwp">
-                                                <?php echo form_error('ft_npwp', '<small class="text-danger pl-3">', '</small>'); ?>
-                                            </div>
-                                        </div>
+                                    <p class="alert alert-danger" role="alert" style="margin-top: 25px;">Mohon isi sesuai data sebenarnya! Ukuran Max file adalah 200 KB</p>
+                                    <!-- <div class="row"> -->
+                                    <!-- <div class="col-lg-6"> -->
+                                    <div class="form-group">
+                                        <label for="image">Lampirkan Foto Tanda Pengenal (KTP, SIM, Passport)</label>
+                                        <input type="file" class="form-control-file" name="ft_identitas" required>
+                                        <?php echo form_error('ft_identitas', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                     </div>
+                                    <!-- </div> -->
+                                    <!-- <div class="col-lg-6"> -->
+                                    <div class="form-group">
+                                        <label for="image">Lampirkan Foto Kartu Keluarga</label>
+                                        <input type="file" class="form-control-file" name="ft_kk" required>
+                                        <?php echo form_error('ft_kk', '<small class="text-center text-danger pl-3">', '</small>'); ?>
+                                    </div>
+                                    <!-- </div> -->
+                                    <!-- <div class="col-lg-6"> -->
+                                    <div class="form-group">
+                                        <label for="image">Lampirkan Foto Selfie</label>
+                                        <input type="file" class="form-control-file" name="ft_diri" required>
+                                        <?php echo form_error('ft_diri', '<small class="text-center text-danger pl-3">', '</small>'); ?>
+                                    </div>
+                                    <!-- </div> -->
+                                    <!-- <div class="col-lg-6"> -->
+                                    <div class="form-group">
+                                        <label for="image">Lampirkan Foto Tanda Tangan</label>
+                                        <input type="file" class="form-control-file" name="ft_ttd" required>
+                                        <?php echo form_error('ft_ttd', '<small class="text-center text-danger pl-3">', '</small>'); ?>
+                                    </div>
+                                    <!-- </div> -->
+                                    <!-- <div class="col-lg-6"> -->
+                                    <div class="form-group">
+                                        <label for="image">Lampirkan Foto NPWP</label>
+                                        <input type="file" class="form-control-file" name="ft_npwp">
+                                        <?php echo form_error('ft_npwp', '<small class="text-danger pl-3">', '</small>'); ?>
+                                    </div>
+                                    <!-- </div> -->
+                                    <!-- </div> -->
                                     <p class="alert alert-danger" role="alert">Syaratan dan Ketentuan</p>
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <div class="scroll">
+                                            <div class="scroll" style="padding: 10px 10px;">
                                                 <p>Mohon Syarat dan Ketentuan ini dibaca secara seksama sebelum Anda menandatangani Formulir Pembukaan Rekening Tabungan Perorangan karena Anda akan terikat oleh Syarat dan Ketentuan ini setelah Anda menandatangani Formulir Pembukaan Rekening Tabungan Perorangan ini.</p>
 
                                                 <p>Syarat dan Ketentuan ini merupakan satu kesatuan dan bagian yang tidak terpisahkan dari Formulir Pembukaan Rekening Tabungan Perorangan termasuk perubahannya di kemudian hari. Syarat dan Ketentuan ini berlaku pula untuk setiap pembukaan berikutnya dari produkTabungan yang sama yang dilakukan oleh Nasabah</p>
@@ -604,7 +604,6 @@
         $("#propinsi").change(function() {
             var id = $(this).val();
             var data = "kabupaten";
-            // window.alert(id);
             $.ajax({
                 url: "<?php echo base_url('getDati'); ?>",
                 method: "POST",
@@ -614,7 +613,6 @@
                     data: data,
                 },
                 success: function(response) {
-                    // $('#kota').html(data);
                     $("#kota").html(response.list_kota).show();
                 }
             });
@@ -655,7 +653,6 @@
         $("#prop_domisili").change(function() {
             var id = $(this).val();
             var data = "kabupaten";
-            // window.alert(id);
             $.ajax({
                 url: "<?php echo base_url('getDati'); ?>",
                 method: "POST",
@@ -665,7 +662,6 @@
                     data: data,
                 },
                 success: function(response) {
-                    // $('#kota').html(data);
                     $("#kota_domisili").html(response.list_kota).show();
                 }
             });
@@ -707,7 +703,15 @@
             format: 'dd-mm-yyyy',
             autoclose: true,
             showWeekDays: false
-            // todayHighlight: true,
+        });
+
+        $("#status_menikah").change(function() {
+            var status;
+            var d = document.forms['eform']['status_menikah'].value;
+            if (d == 'Belum Menikah') {
+                status = 'Lainnya';
+            }
+            $("#identitas_pasangan").val(status);
         });
     });
 </script>

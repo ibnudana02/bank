@@ -126,9 +126,9 @@ class Nasabah_model extends CI_Model
         $this->alamat_kantor = $post['alamat_kantor'];
         $this->telp_kantor = $post['telp_kantor'];
         $this->email_kantor = $post['email_kantor'];
-        $this->gaji_thn = $post['gaji_thn'];
-        $this->tambahan_penghasilan = $post['tambahan_penghasilan'];
-        $this->tot_penghasilan = $post['tot_penghasilan'];
+        // $this->gaji_thn = $post['gaji_thn'];
+        // $this->tambahan_penghasilan = $post['tambahan_penghasilan'];
+        // $this->tot_penghasilan = $post['tot_penghasilan'];
         $this->status_rumah = $post['status_rumah'];
         $this->tanggungan = $post['tanggungan'];
         $this->tujuan_buka = $post['tujuan_buka'];
