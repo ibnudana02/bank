@@ -34,8 +34,12 @@
                                         <th><?= $no++; ?>
                                         <th><?= htmlspecialchars(strtoupper($row->layanan)); ?></th>
                                         <th><?= html_entity_decode(strtoupper($row->deskripsi)); ?></th>
-                                        <th width><a href="<?php echo $row->id_layanan; ?>" class="btn btn-sm btn-info float-center" data-target="#edit<?php echo $row->id_layanan; ?>" data-toggle="modal">Edit</a>
-                                            <a href="<?php echo $row->id_layanan; ?>" class="btn btn-sm btn-danger float-center" data-target="#hapus<?php echo $row->id_layanan; ?>" data-toggle="modal">Hapus</a></th>
+                                        <th>
+                                            <div class="btn-group" role="group">
+                                                <a href="<?php echo $row->id_layanan; ?>" class="btn btn-sm btn-info float-center" data-target="#edit<?php echo $row->id_layanan; ?>" data-toggle="modal"><i class="fas fa-edit"></i></a>
+                                                <a href="<?php echo $row->id_layanan; ?>" class="btn btn-sm btn-danger float-center" data-target="#hapus<?php echo $row->id_layanan; ?>" data-toggle="modal"><i class="fas fa-trash"></i></a>
+                                            </div>
+                                        </th>
                                     </tr>
                                     <div id="hapus<?= $row->id_layanan; ?>" class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered">

@@ -1,6 +1,4 @@
-<!-- Begin Page Content -->
 <div class="container-fluid">
-    <!-- Page Heading -->
     <?php if ($this->session->flashdata('message')) : ?>
         <div class="alert alert-success alert-dismissible fade show" role="alert"><?= $this->session->flashdata('message') ?>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -11,14 +9,12 @@
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span></button></div>
     <?php endif; ?>
-    <!-- DataTales Example -->
     <div class="row">
         <div class="col-lg">
             <div class="card shadow mb-4 table-responsive-md">
                 <div class="card-header py-3">
                     <div class="row">
                         <div class="col-8">
-                            <!-- <h6 class="mx-auto font-weight-bold text-primary">List User</h6> -->
                             <h4 class="font-weight-bold text-primary">List Report</h4>
                         </div>
                         <div class="col-4"><a href="<?= base_url('admin/add_laporan'); ?>" class="btn btn-facebook float-right">Tambah Laporan</a></div>
@@ -32,7 +28,6 @@
                                     <th>No.</th>
                                     <th>Laporan</th>
                                     <th>Tipe</th>
-                                    <th>Preview</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -44,9 +39,13 @@
                                         <th><?= $no++; ?></th>
                                         <th><?= strtoupper($row->laporan); ?></th>
                                         <th><?= $row->tipe; ?></th>
-                                        <th><a href="<?= $row->id_laporan ?>" class="btn btn-sm btn-primary float-center" data-target="#view<?php echo $row->id_laporan; ?>" data-toggle="modal">View</a></th>
-                                        <th width><a href="<?php echo $row->id_laporan; ?>" class="btn btn-sm btn-info float-center" data-target="#edit<?php echo $row->id_laporan; ?>" data-toggle="modal">Edit</a>
-                                            <a href="<?php echo $row->id_laporan; ?>" class="btn btn-sm btn-danger float-center" data-target="#hapus<?php echo $row->id_laporan; ?>" data-toggle="modal">Hapus</a></th>
+                                        <th>
+                                            <div class="btn-group">
+                                                <a href="<?= $row->id_laporan ?>" class="btn btn-sm btn-primary float-center" data-target="#view<?php echo $row->id_laporan; ?>" data-toggle="modal"><i class="fas fa-search-location"></i></a>
+                                                <a href="<?php echo $row->id_laporan; ?>" class="btn btn-sm btn-info float-center" data-target="#edit<?php echo $row->id_laporan; ?>" data-toggle="modal"><i class="fas fa-edit"></i></a>
+                                                <a href="<?php echo $row->id_laporan; ?>" class="btn btn-sm btn-danger float-center" data-target="#hapus<?php echo $row->id_laporan; ?>" data-toggle="modal"><i class="fas fa-trash"></i></a>
+                                            </div>
+                                        </th>
                                     </tr>
                                     <div id="hapus<?= $row->id_laporan; ?>" class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered">

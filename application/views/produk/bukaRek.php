@@ -1,15 +1,4 @@
-<head>
-    <style>
-        .form-required {
-            color: #cd201f;
-        }
-
-        .form-required:before {
-            content: ' ';
-        }
-    </style>
-</head>
-<div class="blog-page-area struktur">
+<div class="blog-page-area eform">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
@@ -22,7 +11,7 @@
                 <?php endif; ?>
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Formulir Pembukaan Rekening Tabungan</h3>
+                        <h3 class="panel-title text-center">Formulir Pembukaan Rekening Tabungan</h3>
                     </div>
                     <div class="panel-body">
                         <form name="produk" class="user" method="post" action="<?= base_url('pembukaan-rekening-tabungan'); ?>" enctype="multipart/form-data">
@@ -30,9 +19,7 @@
                                 <li class="active"><a data-toggle="tab" href="#identitas">Identitas Diri</a></li>
                                 <li><a data-toggle="tab" href="#kontak">Ahli Waris/Kontak</a></li>
                                 <li><a data-toggle="tab" href="#pekerjaan">Pekerjaan</a></li>
-                                <li><a data-toggle="tab" href="#tambahan">Data Tambahan</a></li>
-                                <li><a data-toggle="tab" href="#dokumen">Dokumen & Persetujuan</a></li>
-                                <!-- <li><a data-toggle="tab" href="#accept">Persetujuan</a></li> -->
+                                <li><a data-toggle="tab" href="#dokumen">Berkas Persetujuan</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div id="identitas" class="tab-pane fade in active">
@@ -129,6 +116,28 @@
                                                 <input type="number" class="form-control form-control-user" name="no_hp" placeholder="No. Hp/Telp" value="<?= set_value('no_hp'); ?>" />
                                                 <?php echo form_error('no_hp', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <select class="form-control custom-select custom-select-md" id="jenis_tab" name="jenis_tab">
+                                                    <option value="" selected="true" disabled="disabled"> Pendidikan Terakhir</option>
+                                                    <?php foreach ($pendidikan as $row) : ?>
+                                                        <option value="<?= $row; ?>"><?= $row; ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                                <?php echo form_error('pendidikan', '<small class="text-center text-danger pl-3">', '</small>'); ?>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control form-control-user" name="email" placeholder="Email" value="<?= set_value('email') ?>" onkeyup="this.value = this.value.toLowerCase()" />
+                                                <?php echo form_error('email', '<small class="text-center text-danger pl-3">', '</small>'); ?>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control form-control-user" name="npwp" id="npwp" placeholder="No. NPWP" value="<?= set_value('npwp') ?>" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada"></div>
+                                            <?php echo form_error('npwp', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="alert alert-info alert-dismissible" role="alert">
@@ -360,6 +369,29 @@
                                                 <?php echo form_error('tanggungan', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
+
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <select name="tujuan_buka" class="form-control custom-select custom-select-md" required>
+                                                    <option value="" selected="true" disabled="disabled">Tujuan Pembukaan Rekening</option>
+                                                    <?php foreach ($tujuan_buka as $row) : ?>
+                                                        <option value="<?= $row ?>"><?= $row ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                                <?php echo form_error('tujuan_buka', '<small class="text-center text-danger pl-3">', '</small>'); ?>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <select class="form-control custom-select custom-select-md" id="jenis_tab" name="jenis_tab">
+                                                    <option value="" selected="true" disabled="disabled">Pilih Jenis Produk Tabungan</option>
+                                                    <?php foreach ($jenis as $row) : ?>
+                                                        <option value="<?= $row->id_produk; ?>"><?= ucwords($row->produk); ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                                <?php echo form_error('jenis_tab', '<small class="text-center text-danger pl-3">', '</small>'); ?>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div id="pekerjaan" class="tab-pane fade">
@@ -442,57 +474,6 @@
                                         <div class="col-lg-12"></div>
                                     </div>
                                 </div><!-- end tab pekerjaan -->
-                                <div id="tambahan" class="tab-pane fade">
-                                    <p class="alert alert-danger" role="alert" style="margin-top: 25px;">Mohon isi sesuai data sebenarnya!</p>
-                                    <div class="row">
-
-                                        <div class="col-lg-3">
-                                            <div class="form-group">
-
-                                                <select name="tujuan_buka" class="form-control custom-select custom-select-md" required>
-                                                    <option value="" selected="true" disabled="disabled">Tujuan Pembukaan Rekening</option>
-                                                    <?php foreach ($tujuan_buka as $row) : ?>
-                                                        <option value="<?= $row ?>"><?= $row ?></option>
-                                                    <?php endforeach; ?>
-                                                </select>
-                                                <?php echo form_error('tujuan_buka', '<small class="text-center text-danger pl-3">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="form-group">
-                                                <select class="form-control custom-select custom-select-md" id="jenis_tab" name="jenis_tab">
-                                                    <option value="" selected="true" disabled="disabled">Pilih Jenis Produk Tabungan</option>
-                                                    <?php foreach ($jenis as $row) : ?>
-                                                        <option value="<?= $row->id_produk; ?>"><?= ucwords($row->produk); ?></option>
-                                                    <?php endforeach; ?>
-                                                </select>
-                                                <?php echo form_error('jenis_tab', '<small class="text-center text-danger pl-3">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="form-group">
-                                                <select class="form-control custom-select custom-select-md" id="jenis_tab" name="jenis_tab">
-                                                    <option value="" selected="true" disabled="disabled"> Pendidikan Terakhir</option>
-                                                    <?php foreach ($pendidikan as $row) : ?>
-                                                        <option value="<?= $row; ?>"><?= $row; ?></option>
-                                                    <?php endforeach; ?>
-                                                </select>
-                                                <?php echo form_error('pendidikan', '<small class="text-center text-danger pl-3">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <input type="email" class="form-control form-control-user" name="email" placeholder="Email" value="<?= set_value('email') ?>" onkeyup="this.value = this.value.toLowerCase()" />
-                                                <?php echo form_error('email', '<small class="text-center text-danger pl-3">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="form-group">
-                                                <input type="number" class="form-control form-control-user" name="npwp" id="npwp" placeholder="No. NPWP" value="<?= set_value('npwp') ?>" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada"></div>
-                                            <?php echo form_error('npwp', '<small class="text-center text-danger pl-3">', '</small>'); ?>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div id="dokumen" class="tab-pane fade">
                                     <p class="alert alert-danger" role="alert" style="margin-top: 25px;">Mohon isi sesuai data sebenarnya! Ukuran Max file adalah 2 MB</p>
                                     <div class="row">

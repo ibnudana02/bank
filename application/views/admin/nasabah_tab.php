@@ -38,13 +38,17 @@
                                         <th><?= htmlspecialchars($row->tujuan_buka); ?></th>
                                         <th><?= htmlspecialchars(strtoupper($row->produk)); ?></th>
                                         <th><?= htmlspecialchars($row->status); ?></th>
-                                        <th><?php if ($row->status == 'APPROVED') {
-                                                echo '<a href="' . $row->id_nsb . '" class="btn btn-sm btn-info disabled float-center" data-target="#acc' . $row->id_nsb . '" data-toggle="modal"><i class="fas fa-check"></i></a>';
-                                            } else {
-                                                echo '<a href="' . $row->id_nsb . '" class="btn btn-sm btn-info float-center" data-target="#acc' . $row->id_nsb . '" data-toggle="modal"><i class="fas fa-check"></i></a>';
-                                            } ?>
-                                            <a href="<?= base_url('cetak-nasabah-tab/' . $row->id_nsb) ?>" target="_blank" class="btn btn-sm btn-success float-center"><i class="fas fa-print"></i></a>
-                                            <a href="<?php echo $row->id_nsb; ?>" class="btn btn-sm btn-danger float-center" data-target="#hapus<?php echo $row->id_nsb; ?>" data-toggle="modal"><i class="fas fa-trash"></i></a></th>
+                                        <th>
+                                            <div class="btn-group" role="group" aria-label="Basic example">
+                                                <?php if ($row->status == 'APPROVED') {
+                                                    echo '<a href="' . $row->id_nsb . '" class="btn btn-sm btn-info disabled float-center" data-target="#acc' . $row->id_nsb . '" data-toggle="modal"><i class="fas fa-check"></i></a>';
+                                                } else {
+                                                    echo '<a href="' . $row->id_nsb . '" class="btn btn-sm btn-info float-center" data-target="#acc' . $row->id_nsb . '" data-toggle="modal"><i class="fas fa-check"></i></a>';
+                                                } ?>
+                                                <a href="<?= base_url('cetak-nasabah-tab/' . $row->id_nsb) ?>" target="_blank" class="btn btn-sm btn-success float-center"><i class="fas fa-print"></i></a>
+                                                <a href="<?php echo $row->id_nsb; ?>" class="btn btn-sm btn-danger float-center" data-target="#hapus<?php echo $row->id_nsb; ?>" data-toggle="modal"><i class="fas fa-trash"></i></a>
+                                            </div>
+                                        </th>
                                     </tr>
                                     <div id="hapus<?= $row->id_nsb; ?>" class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered">

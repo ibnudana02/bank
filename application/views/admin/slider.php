@@ -1,9 +1,5 @@
-<!-- Begin Page Content -->
 <div class="container-fluid">
-
-    <!-- Page Heading -->
     <?= $this->session->flashdata('message'); ?>
-    <!-- DataTales Example -->
     <div class="row">
         <div class="col-lg">
             <div class="card shadow mb-4">
@@ -35,8 +31,12 @@
                                         <th><?= ucwords($row->slider); ?></th>
                                         <th><img src="<?= base_url('upload/slider/' . $row->image); ?>" alt="" width="70px" height="70px"></th>
                                         <th><?= htmlspecialchars($row->aktif); ?></th>
-                                        <th width><a href="<?php echo $row->id_slider; ?>" class="btn btn-sm btn-info float-center" data-target="#edit<?php echo $row->id_slider; ?>" data-toggle="modal">Edit</a>
-                                            <a href="<?php echo $row->id_slider; ?>" class="btn btn-sm btn-danger float-center" data-target="#hapus<?php echo $row->id_slider; ?>" data-toggle="modal">Hapus</a></th>
+                                        <th>
+                                            <div class="btn-group" role="group">
+                                                <a href="<?php echo $row->id_slider; ?>" class="btn btn-sm btn-info float-center" data-target="#edit<?php echo $row->id_slider; ?>" data-toggle="modal"><i class="fas fa-edit"></i></a>
+                                                <a href="<?php echo $row->id_slider; ?>" class="btn btn-sm btn-danger float-center" data-target="#hapus<?php echo $row->id_slider; ?>" data-toggle="modal"><i class="fas fa-trash"></i></a>
+                                            </div>
+                                        </th>
                                     </tr>
                                     <div id="hapus<?= $row->id_slider; ?>" class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered">
