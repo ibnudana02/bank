@@ -69,8 +69,6 @@ class Pegawai extends CI_Controller
             $data['heading'] = 'Edit Pegawai';
             $data['jabatan'] = $this->jabatan->getAll();
             $data['data'] = $this->pegawai->getById($id);
-            var_dump($data['data']);
-            // die;
             if (!$data['data']) show_404();
             $data['user'] = $this->db->get_where('user', ['name' => $this->session->userdata('name')])->row_array();
             $this->load->view('template/admin_header', $data);
