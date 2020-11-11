@@ -1,14 +1,14 @@
 <head>
     <?php echo $script_captcha; ?>
 </head>
-<div class="contact-page struktur">
+<div class="contact-page ">
     <div class="container">
-        <div class="row struktur">
-            <h3 class="text-center">Contact Us</h3>
-        </div>
         <div class="row">
-            <div class="col-md-6 col-md-offset-3 col-xs-12" style="padding-bottom: 100px;">
-                <div class="contact-form">
+            <div class="col-md-6 col-md-offset-3 col-xs-12">
+                <div class="contact-form kontak">
+                    <div class="row">
+                        <h3 class="text-center struktur">Hubungi Kami</h3>
+                    </div>
                     <div class="row">
                         <form id="contactForm" method="POST" action="<?= base_url('contact') ?>" class="contact-form">
                             <div class="col-md-6 col-sm-6 col-xs-12">

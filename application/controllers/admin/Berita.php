@@ -60,8 +60,8 @@ class Berita extends CI_Controller
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Perubahan berhasil disimpan!</div>');
             redirect('admin/berita', 'refresh');
         } else {
-            $data['title'] = 'Tambah Berita';
-            $data['heading'] = 'Tambah Berita';
+            $data['title'] = 'Edit Berita';
+            $data['heading'] = 'Edit Berita';
             $data['kategori'] = $this->kategori->getAll();
             $data['data'] = $this->berita->getById($id);
             if (!$data['data']) show_404();

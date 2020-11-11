@@ -42,6 +42,8 @@ $route['admin/jabatan'] = 'admin/jabatan/jabatan';
 // Routes for Pegawai
 $route['admin/pegawai'] = 'admin/pegawai';
 $route['admin/add_pegawai'] = 'admin/pegawai/tambahPegawai';
+$route['admin/editPeg/(:any)'] = 'admin/pegawai/edit/$1';
+$route['admin/delPeg/(:any)'] = 'admin/pegawai/delete/$1';
 
 // Routes for Awards
 $route['admin/add_awards'] = 'admin/awards/tambahAwards';

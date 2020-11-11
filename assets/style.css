@@ -4256,13 +4256,6 @@ hr {
     margin-left: 34%;
 }
 
-/* @media (max-width: 767px) {
-    .berita-more {
-        position: absolute;
-        bottom: 5px;
-        margin-left: 85px;
-    }
-} */
 
 .berita-more :hover {
     text-decoration: underline;
@@ -4316,4 +4309,8 @@ hr {
     .eform {
         padding: 20px 0px;
     }
+}
+
+.kontak {
+    padding: 30px 0px;
 }

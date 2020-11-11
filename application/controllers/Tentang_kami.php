@@ -38,8 +38,9 @@ class Tentang_kami extends CI_Controller
     public function manajemen()
     {
         $data['judul'] = 'Board Manajemen | Bank Unisritama';
+        $data['pegawai'] = $this->pegawai->getMan()->result();
         $this->load->view('template/header', $data);
-        $this->load->view('tentang/board');
+        $this->load->view('tentang/board', $data);
         $this->load->view('template/footer');
     }
 
