@@ -242,6 +242,13 @@ class Nasabah_model extends CI_Model
         return $this->db->get();
     }
 
+    public function getNsb()
+    {
+        $this->db->select('*');
+        $this->db->from($this->_table);
+        return $this->db->get();
+    }
+
     private function createRef()
     {
         $this->db->select('RIGHT(nasabah_tab.kd_ref,4) as kode', FALSE);
@@ -267,7 +274,6 @@ class Nasabah_model extends CI_Model
         $this->db->set('status', 'Approved');
         $this->db->where('id_nsb', $id_nsb);
         $this->db->update($this->_table);
-        // $this->session->set_flashdata('message', '');
     }
 
     public function sendMail()

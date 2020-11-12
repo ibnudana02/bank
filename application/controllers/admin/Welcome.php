@@ -35,6 +35,9 @@ class Welcome extends CI_Controller
 		$data['awardsCount'] = $this->awards->getAll()->num_rows();
 		$data['laporanCount'] = $this->laporan->getAll()->num_rows();
 		$data['nasabahCount'] = $this->nsb->getAll()->num_rows();
+		$data['statNasabah'] = $this->nsb->getAll()->result();
+		echo json_encode($data['statNasabah']);
+		die;
 		$this->load->view('template/admin_header', $data);
 		$this->load->view('admin/home');
 		$this->load->view('template/admin_footer');

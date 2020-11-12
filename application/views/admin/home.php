@@ -148,16 +148,8 @@
                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                         </a>
-                        <!-- <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                            <div class="dropdown-header">Dropdown Header:</div>
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div> -->
                     </div>
                 </div>
-                <!-- Card Body -->
                 <div class="card-body">
                     <div class="chart-area">
                         <canvas id="myAreaChart"></canvas>
@@ -167,6 +159,7 @@
         </div>
     </div>
 </div>
+<?php ?>
 <script src="<?= base_url('assets/admin/'); ?>vendor/chart.js/Chart.min.js"></script>
 <script>
     Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
@@ -196,6 +189,7 @@
         }
         return s.join(dec);
     }
+    var data = <?php json_encode($statNasabah) ?>;
     var ctx = document.getElementById("myAreaChart");
     var myLineChart = new Chart(ctx, {
         type: 'line',
@@ -214,7 +208,7 @@
                 pointHoverBorderColor: "rgba(78, 115, 223, 1)",
                 pointHitRadius: 10,
                 pointBorderWidth: 2,
-                data: [0, 10000, 5000, 15000, 10000, 20000, 15000, 25000, 20000, 30000, 25000, 40000],
+                data: [0, 10000, 5000, 15000, 10000, 20000, 15000, 25000, 20000, 30000, 25000, 30000],
             }],
         },
         options: {
