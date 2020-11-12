@@ -15,9 +15,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-body col-12 mx-auto">
+                <div class="card-body col-lg mx-auto">
                     <div class="table-responsive">
-                        <div class="col-10 mx-auto">
+                        <div class="col-10 mx-auto mobil">
                             <form name="produk" class="user" method="post" action="<?= base_url('admin/add_produk'); ?>" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label>Produk</label>

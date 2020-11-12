@@ -1,20 +1,14 @@
-<!-- header-area start -->
 <div id="sticker" class="header-area hidden-xs">
     <div class="container">
         <div class="row">
-            <!-- logo start -->
             <div class="col-md-3 col-sm-3">
                 <div class="logo">
-                    <!-- Brand -->
                     <a class="navbar-brand page-scroll sticky-logo" href="<?= base_url() ?>">
-                        <!-- <img src="<?php echo base_url('assets/'); ?>img/logo/logo.png" alt=""> -->
                         <img src="<?php echo base_url('assets/'); ?>img/logo/unisri-logo.png" alt="">
                     </a>
                 </div>
             </div>
-            <!-- logo end -->
             <div class="col-md-9 col-sm-9">
-                <!-- mainmenu start -->
                 <nav class="navbar navbar-default">
                     <div class="collapse navbar-collapse" id="navbar-example">
                         <div class="main-menu">
@@ -36,23 +30,23 @@
                                         <li><a href="<?= base_url('payment-point') ?>">Payment Point Online Bank</a></li>
                                         <li class="dropdown"><a class="dropbtn" href="<?= base_url('deposito') ?>">Deposito</a>
                                             <div class="dropdown-content">
-                                                <a href="<?= base_url('produk/deposito-masyarakat') ?>">Deposito Masyarakat</a>
-                                                <a href="<?= base_url('produk/deposito-bank-lain') ?>">Deposito Bank Lain</a>
+                                                <?php foreach ($deposito as $key => $value) : ?>
+                                                    <a href="<?= base_url('produk/' . $value->slug) ?>"><?= $value->produk ?></a>
+                                                <?php endforeach; ?>
                                             </div>
                                         </li>
                                         <li class="dropdown"><a class="dropbtn" href="<?= base_url('tabungan') ?>">Tabungan</a>
                                             <div class="dropdown-content">
-                                                <a href="<?= base_url('produk/tabungan-sejahtera') ?>">Tabungan Sejahtera</a>
-                                                <a href="<?= base_url('produk/tabungan-umroh') ?>">Tabungan Umroh</a>
-                                                <a href="<?= base_url('produk/tabunganku') ?>">TabunganKu</a>
-                                                <a href="<?= base_url('produk/tabungan-qurban-warga') ?>">Tabungan Qurban</a>
+                                                <?php foreach ($tabungan as $key => $value) : ?>
+                                                    <a href="<?= base_url('produk/' . $value->slug) ?>"><?= $value->produk ?></a>
+                                                <?php endforeach; ?>
                                             </div>
                                         </li>
                                         <li class="dropdown"><a class="dropbtn" href="<?= base_url('kredit') ?>">Kredit</a>
                                             <div class="dropdown-content">
-                                                <a href="<?= base_url('produk/kredit-bakulan') ?>">Kredit Bakulan</a>
-                                                <a href="<?= base_url('produk/kredit-konsumtif') ?>">Kredit Konsumtif</a>
-                                                <a href="<?= base_url('produk/kredit-produktif') ?>">Kredit Produktif</a>
+                                                <?php foreach ($kredit as $key => $value) : ?>
+                                                    <a href="<?= base_url('produk/' . $value->slug) ?>"><?= $value->produk ?></a>
+                                                <?php endforeach; ?>
                                             </div>
                                         </li>
                                     </ul>
@@ -70,13 +64,10 @@
                         </div>
                     </div>
                 </nav>
-                <!-- mainmenu end -->
             </div>
         </div>
     </div>
 </div>
-<!-- header-area end -->
-<!-- mobile-menu-area start -->
 <div class="mobile-menu-area hidden-lg hidden-md hidden-sm">
     <div class="container">
         <div class="row">
@@ -105,23 +96,23 @@
                                     <li><a href="<?= base_url('payment-point') ?>">Payment Point Online Bank</a></li>
                                     <li class="dropdown"><a class="dropbtn" href="<?= base_url('deposito') ?>">Deposito</a>
                                         <div class="dropdown-content">
-                                            <a href="<?= base_url('produk/deposito-masyarakat') ?>">Deposito Masyarakat</a>
-                                            <a href="<?= base_url('produk/deposito-bank-lain') ?>">Deposito Bank Lain</a>
+                                            <?php foreach ($deposito as $key => $value) : ?>
+                                                <a href="<?= base_url('produk/' . $value->slug) ?>"><?= $value->produk ?></a>
+                                            <?php endforeach; ?>
                                         </div>
                                     </li>
                                     <li class="dropdown"><a class="dropbtn" href="<?= base_url('tabungan') ?>">Tabungan</a>
                                         <div class="dropdown-content">
-                                            <a href="<?= base_url('produk/tabungan-sejahtera') ?>">Tabungan Sejahtera</a>
-                                            <a href="<?= base_url('produk/tabungan-umroh') ?>">Tabungan Umroh</a>
-                                            <a href="<?= base_url('produk/tabunganku') ?>">TabunganKu</a>
-                                            <a href="<?= base_url('produk/tabungan-qurban-warga') ?>">Tabungan Qurban</a>
+                                            <?php foreach ($tabungan as $key => $value) : ?>
+                                                <a href="<?= base_url('produk/' . $value->slug) ?>"><?= $value->produk ?></a>
+                                            <?php endforeach; ?>
                                         </div>
                                     </li>
                                     <li class="dropdown"><a class="dropbtn" href="<?= base_url('kredit') ?>">Kredit</a>
                                         <div class="dropdown-content">
-                                            <a href="<?= base_url('produk/kredit-bakulan') ?>">Kredit Bakulan</a>
-                                            <a href="<?= base_url('produk/kredit-konsumtif') ?>">Kredit Konsumtif</a>
-                                            <a href="<?= base_url('produk/kredit-produktif') ?>">Kredit Produktif</a>
+                                            <?php foreach ($kredit as $key => $value) : ?>
+                                                <a href="<?= base_url('produk/' . $value->slug) ?>"><?= $value->produk ?></a>
+                                            <?php endforeach; ?>
                                         </div>
                                     </li>
                                 </ul>
@@ -142,4 +133,3 @@
         </div>
     </div>
 </div>
-<!-- mobile-menu-area end -->

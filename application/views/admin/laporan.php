@@ -17,7 +17,7 @@
                         <div class="col-8">
                             <h4 class="font-weight-bold text-primary">List Report</h4>
                         </div>
-                        <div class="col-4"><a href="<?= base_url('admin/add_laporan'); ?>" class="btn btn-facebook float-right">Tambah Laporan</a></div>
+                        <div class="col-4"><a href="<?= base_url('admin/add_laporan'); ?>" class="btn btn-sm btn-primary float-right"><i class="fas fa-plus-square"></i></a></div>
                     </div>
                 </div>
                 <div class="card-body table-responsive">

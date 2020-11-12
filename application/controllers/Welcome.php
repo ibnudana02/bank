@@ -17,6 +17,9 @@ class Welcome extends CI_Controller
 		$data['data'] = $this->layanan->getAll()->result();
 		$data['slider'] = $this->slider->getAll()->result();
 		$data['berita'] = $this->berita->getAll()->result();
+		$data['tabungan'] = $this->produk->getTab()->result();
+		$data['deposito'] = $this->produk->getDep()->result();
+		$data['kredit'] = $this->produk->getKrd()->result();
 		$this->load->view('template/header', $data);
 		$this->load->view('template/slider', $data);
 		$this->load->view('home');
@@ -27,7 +30,6 @@ class Welcome extends CI_Controller
 	{
 		$data['judul'] = 'BPR Unisritama - Mitra Ekonomi Kerakyatan';
 		$this->load->view('template/header', $data);
-		// $this->load->view('produk/tabungan', $data);
 		$this->load->view('unik');
 		$this->load->view('template/footer');
 	}
@@ -37,14 +39,8 @@ class Welcome extends CI_Controller
 		$id = $this->input->post('id');
 		$data = $this->input->post('data');
 
-
-		// $n = strlen($id);
-		// $m = ($n == 2 ? 5 : ($n == 5 ? 8 : 13));
-		// die;
-
 		if ($data == "kabupaten") {
 			$daerah = $this->user->viewKab($id);
-			// var_dump($daerah);
 			$lists = "<option value=''>Pilih</option>";
 			foreach ($daerah as $data) {
 				$lists .= "<option value='" . $data->id_kab . "' " . set_select('kab_identitas', $data->id_kab) . ">";

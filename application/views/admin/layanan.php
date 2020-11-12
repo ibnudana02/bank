@@ -13,7 +13,7 @@
                             <!-- <h6 class="mx-auto font-weight-bold text-primary">List User</h6> -->
                             <h4 class="font-weight-bold text-primary">List Produk</h4>
                         </div>
-                        <div class="col-4"><a href="<?= base_url('admin/add_layanan'); ?>" class="btn btn-facebook float-right">Add Produk</a></div>
+                        <div class="col-4"><a href="<?= base_url('admin/add_layanan'); ?>" class="btn btn-sm btn-primary float-right"><i class="fas fa-plus-square"></i></a></div>
                     </div>
                 </div>
                 <div class="card-body">

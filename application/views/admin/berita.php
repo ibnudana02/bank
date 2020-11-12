@@ -12,7 +12,7 @@
                             <!-- <h6 class="mx-auto font-weight-bold text-primary">List User</h6> -->
                             <h4 class="font-weight-bold text-primary">List Berita</h4>
                         </div>
-                        <div class="col-4"><a href="<?= base_url('admin/add_berita'); ?>" class="btn btn-facebook float-right">Tambah Berita</a></div>
+                        <div class="col-4"><a href="<?= base_url('admin/add_berita'); ?>" class="btn btn-sm btn-primary float-right"><i class="fas fa-plus-square"></i></a></div>
                     </div>
                 </div>
                 <div class="card-body table-responsive">

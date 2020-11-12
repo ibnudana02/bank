@@ -163,7 +163,8 @@ class Produk_model extends CI_Model
         $this->db->select('*')
             ->from($this->_table)
             ->join('jenis', 'produk.jenis=jenis.id_jenis')
-            ->where('id_jenis', '5e95459d30794');
+            ->where('id_jenis', '5e95459d30794')
+            ->order_by('produk', 'asc');
         return $this->db->get();
     }
 
@@ -172,7 +173,8 @@ class Produk_model extends CI_Model
         $this->db->select('*')
             ->from($this->_table)
             ->join('jenis', 'produk.jenis=jenis.id_jenis')
-            ->where('id_jenis', '5e954595bcb46');
+            ->where('id_jenis', '5e954595bcb46')
+            ->order_by('produk', 'asc');
         return $this->db->get();
     }
 
