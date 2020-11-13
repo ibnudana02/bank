@@ -242,9 +242,26 @@ class Nasabah_model extends CI_Model
         return $this->db->get();
     }
 
-    public function getNsb()
+    public function getJumlah()
     {
-        $this->db->select('*');
+        // $this->db->select('MONTH(upload_date) AS bulan, COUNT(*) AS jumlah_bulanan');
+        // SELECT  COUNT(IF( YEAR(tgl_byr) = 2016, jml_byr, NULL)) AS item_2016,        
+        $this->db->select('
+        COUNT(IF(MONTH(upload_date) = 01, upload_date,null)) AS bulan_1,
+        COUNT(IF(MONTH(upload_date) = 02, upload_date,null)) AS bulan_2,
+        COUNT(IF(MONTH(upload_date) = 03, upload_date,null)) AS bulan_3,
+        COUNT(IF(MONTH(upload_date) = 04, upload_date,null)) AS bulan_4,
+        COUNT(IF(MONTH(upload_date) = 04, upload_date,null)) AS bulan_4,
+        COUNT(IF(MONTH(upload_date) = 05, upload_date,null)) AS bulan_5,
+        COUNT(IF(MONTH(upload_date) = 06, upload_date,null)) AS bulan_6,
+        COUNT(IF(MONTH(upload_date) = 07, upload_date,null)) AS bulan_7,
+        COUNT(IF(MONTH(upload_date) = 08, upload_date,null)) AS bulan_8,
+        COUNT(IF(MONTH(upload_date) = 09, upload_date,null)) AS bulan_9,
+        COUNT(IF(MONTH(upload_date) = 10, upload_date,null)) AS bulan_10,
+        COUNT(IF(MONTH(upload_date) = 11, upload_date,null)) AS bulan_11,
+        COUNT(IF(MONTH(upload_date) = 12, upload_date,null)) AS bulan_12,
+        ');
+        // $this->db->group_by('MONTH(upload_date)');
         $this->db->from($this->_table);
         return $this->db->get();
     }
