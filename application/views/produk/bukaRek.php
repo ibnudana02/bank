@@ -8,6 +8,11 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <?= $this->session->flashdata('success'); ?>
                     </div>
+                <?php elseif ($this->session->flashdata('message')) : ?>
+                    <div class="alert alert-danger alert-dismissible text-center" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <?= $this->session->flashdata('message'); ?>
+                    </div>
                 <?php endif; ?>
                 <div class="panel panel-primary">
                     <div class="panel-heading">
@@ -15,7 +20,7 @@
                     </div>
                     <div class="panel-body">
                         <form name="eform" class="user" method="post" action="<?= base_url('pembukaan-rekening-tabungan'); ?>" enctype="multipart/form-data">
-                            <ul class="nav nav-pills">
+                            <ul class="nav nav-pills nav-justified">
                                 <li class="active"><a data-toggle="tab" href="#identitas">Identitas Diri</a></li>
                                 <li><a data-toggle="tab" href="#kontak">Ahli Waris/Kontak</a></li>
                                 <li><a data-toggle="tab" href="#pekerjaan">Pekerjaan</a></li>
@@ -27,13 +32,13 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" autofocus class="form-control form-control-user" name="nm_lengkap" id="nm_lengkap" placeholder="Nama Lengkap" value="<?= set_value('nm_lengkap'); ?>" onkeyup="this.value = this.value.toUpperCase()">
+                                                <input type="text" autofocus class="form-control form-control-user" name="nm_lengkap" id="nm_lengkap" placeholder="Nama Lengkap" value="<?= set_value('nm_lengkap'); ?>">
                                                 <?php echo form_error('nm_lengkap', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control form-control-user" name="nm_identitas" id="nm_identitas" placeholder="Nama Sesuai Identitas" value="<?= set_value('nm_identitas'); ?>" onkeyup="this.value = this.value.toUpperCase()">
+                                                <input type="text" class="form-control form-control-user" name="nm_identitas" id="nm_identitas" placeholder="Nama Sesuai Identitas" value="<?= set_value('nm_identitas'); ?>">
                                                 <?php echo form_error('nm_identitas', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
@@ -98,7 +103,7 @@
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <input type="text" class="form-control form-control-user" name="tempat_lahir" placeholder="Tempat Lahir" value="<?= set_value('tempat_lahir') ?>" onkeyup="this.value = this.value.toUpperCase()">
+                                                <input type="text" class="form-control form-control-user" name="tempat_lahir" placeholder="Tempat Lahir" value="<?= set_value('tempat_lahir') ?>">
                                                 <?php echo form_error('tempat_lahir', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
@@ -185,22 +190,21 @@
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control form-control-user" name="alamat_identitas" placeholder="Alamat sesuai Tanda Pengenal" value="<?= set_value('alamat_identitas') ?>" onkeyup="this.value = this.value.toUpperCase()">
+                                                <input type="text" class="form-control form-control-user" name="alamat_identitas" placeholder="Alamat sesuai Tanda Pengenal" value="<?= set_value('alamat_identitas') ?>">
                                                 <?php echo form_error('alamat_identitas', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
                                                 <input type="number" class="form-control form-control-user" name="pos_identitas" id="" placeholder="Kode Pos" value="<?= set_value('pos_identitas') ?>"></div>
+                                            <?php echo form_error('pos_identitas', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                         </div>
                                         <div class="col-lg-12"></div>
-
                                         <div class="col-lg-12">
                                             <div class="alert alert-info alert-dismissible" role="alert">
                                                 Mohon isi alamat domisili!
                                             </div>
                                         </div>
-
                                         <div class="col-lg-3">
                                             <div class="form-group">
                                                 <label for="Provinsi">Provinsi</label>
@@ -242,7 +246,7 @@
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control form-control-user" name="alamat_domisili" placeholder="Alamat Domisili" value="<?= set_value('alamat_domisili') ?>" onkeyup="this.value = this.value.toUpperCase()" />
+                                                <input type="text" class="form-control form-control-user" name="alamat_domisili" placeholder="Alamat Domisili" value="<?= set_value('alamat_domisili') ?>" />
                                                 <?php echo form_error('alamat_domisili', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
@@ -258,19 +262,19 @@
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <div class="form-group">
-                                                <input type="text" class="form-control form-control-user" name="nm_ayah" placeholder="Nama Ayah Kandung" value="<?= set_value('nm_ayah') ?>" onkeyup="this.value = this.value.toUpperCase()">
+                                                <input type="text" class="form-control form-control-user" name="nm_ayah" placeholder="Nama Ayah Kandung" value="<?= set_value('nm_ayah') ?>">
                                                 <?php echo form_error('nm_ayah', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="form-group">
-                                                <input type="text" class="form-control form-control-user" name="nm_ibu" placeholder="Nama Gadis Ibu Kandung" value="<?= set_value('nm_ibu') ?>" onkeyup="this.value = this.value.toUpperCase()">
+                                                <input type="text" class="form-control form-control-user" name="nm_ibu" placeholder="Nama Gadis Ibu Kandung" value="<?= set_value('nm_ibu') ?>">
                                                 <?php echo form_error('nm_ibu', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="form-group">
-                                                <input type="text" class="form-control form-control-user" name="nm_ahli_waris" placeholder="Nama Ahli Waris" value="<?= set_value('nm_ahli_waris') ?>" onkeyup="this.value = this.value.toUpperCase()">
+                                                <input type="text" class="form-control form-control-user" name="nm_ahli_waris" placeholder="Nama Ahli Waris" value="<?= set_value('nm_ahli_waris') ?>">
                                                 <?php echo form_error('nm_ahli_waris', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
@@ -287,7 +291,7 @@
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control form-control-user" name="alamat_ahli_waris" placeholder="Alamat Ahli Waris" value="<?= set_value('alamat_ahli_waris') ?>" onkeyup="this.value = this.value.toUpperCase()" />
+                                                <input type="text" class="form-control form-control-user" name="alamat_ahli_waris" placeholder="Alamat Ahli Waris" value="<?= set_value('alamat_ahli_waris') ?>" />
                                                 <?php echo form_error('alamat_ahli_waris', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
@@ -299,7 +303,7 @@
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <select name="status_menikah" class="form-control custom-select custom-select-sm">
+                                                <select name="status_menikah" id="status_menikah" class="form-control custom-select custom-select-sm">
                                                     <option value="" selected="true" disabled="disabled">Status Pernikahan</option>
                                                     <?php foreach ($status as $key => $value) : ?>
                                                         <option value="<?= $value ?>" <?= set_select('status_menikah', $value) ?>><?= $value ?></option>
@@ -308,17 +312,19 @@
                                                 <?php echo form_error('status_menikah', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
-                                        <div class="col-lg-3">
+                                        <div class="col-lg-3 identitas_pasangan">
                                             <div class="form-group">
-                                                <input type="text" name="nm_pasangan" class="form-control form-control-user" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" placeholder="Nama Pasangan" value="<?= set_value('nm_pasangan') ?>" onkeyup="this.value = this.value.toUpperCase()">
+                                                <input type="text" name="nm_pasangan" class="form-control form-control-user" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" placeholder="Nama Pasangan" value="<?= set_value('nm_pasangan') ?>">
+                                                <?php echo form_error('nm_pasangan', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
-                                        <div class="col-lg-3">
+                                        <div class="col-lg-3 identitas_pasangan">
                                             <div class="form-group">
-                                                <input type="text" class="form-control form-control-user" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" name="tmp_lhr_pasangan" placeholder="Tempat Lahir Pasangan" value="<?= set_value('tmp_lhr_pasangan') ?>" onkeyup="this.value = this.value.toUpperCase()">
+                                                <input type="text" class="form-control form-control-user" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" name="tmp_lhr_pasangan" placeholder="Tempat Lahir Pasangan" value="<?= set_value('tmp_lhr_pasangan') ?>">
+                                                <?php echo form_error('tmp_lahir_pasangan', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
-                                        <div class="col-lg-3">
+                                        <div class="col-lg-3 identitas_pasangan">
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <input type="text" class="form-control form-control-user datepicker" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" aria-describedby="start-date" name="tgl_lhr_pasangan" placeholder="Tanggal Lahir Pasangan" value="<?= set_value('tgl_lhr_pasangan') ?>">
@@ -327,29 +333,33 @@
                                             </div>
                                             <?php echo form_error('tgl_lhr_pasangan', '<small class="text-danger pl-3">', '</small>'); ?>
                                         </div>
-                                        <div class="col-lg-3">
+                                        <div class="col-lg-3 identitas_pasangan">
                                             <div class="form-group">
-                                                <select name="identitas_pasangan" id="identitas_pasangan" class="form-control custom-select custom-select-md">
+                                                <select name="identitas_pasangan" id="identitas_pasangan" class="form-control custom-select custom-select-md identitas_pasangan" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada">
                                                     <option value="" selected="true" disabled="disabled">Jenis Identitas</option>
                                                     <?php foreach ($identitas as $key => $value) : ?>
                                                         <option value="<?= $value ?>" <?= set_select('identitas_pasangan', $value) ?>><?= $value ?></option>
                                                     <?php endforeach; ?>
                                                 </select>
+                                                <?php echo form_error('identitas_pasangan', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
-                                        <div class="col-lg-3">
+                                        <div class="col-lg-3 identitas_pasangan">
                                             <div class="form-group">
                                                 <input type="number" class="form-control form-control-user" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" name="no_identitas_pasangan" placeholder="Nomor Identitas Pasangan" value="<?= set_value('no_identitas_pasangan') ?>">
+                                                <?php echo form_error('no_identitas_pasangan', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-6 identitas_pasangan">
                                             <div class="form-group">
-                                                <input type="text" class="form-control form-control-user" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" name="alamat_pasangan" placeholder="Alamat Pasangan" value="<?= set_value('alamat_pasangan') ?>" onkeyup="this.value = this.value.toUpperCase()">
+                                                <input type="text" class="form-control form-control-user" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" name="alamat_pasangan" placeholder="Alamat Pasangan" value="<?= set_value('alamat_pasangan') ?>">
+                                                <?php echo form_error('alamat_pasangan', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
-                                        <div class="col-lg-3">
+                                        <div class="col-lg-3 identitas_pasangan">
                                             <div class="form-group">
                                                 <input type="number" class="form-control form-control-user" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" name="no_pasangan" placeholder="No. HP Pasangan" value="<?= set_value('no_pasangan') ?>" />
+                                                <?php echo form_error('no_pasangan', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
@@ -443,32 +453,38 @@
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <input type="text" name="jabatan" id="" class="form-control form-control-user" placeholder="Jabatan" value="<?= set_value('jabatan') ?>" onkeyup="this.value = this.value.toUpperCase()">
+                                                <input type="text" name="jabatan" id="" class="form-control form-control-user" placeholder="Jabatan" value="<?= set_value('jabatan') ?>">
+                                                <?php echo form_error('jabatan', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
                                                 <input type="number" name="gaji_bln" id="" class="form-control form-control-user" placeholder="Gaji per Bulan" value="<?= set_value('gaji_bln') ?>">
+                                                <?php echo form_error('gaji_bln', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" name="perusahaan" id="" class="form-control form-control-user" placeholder="Nama Perusahaan / Usaha" value="<?= set_value('perusahaan') ?>" onkeyup="this.value = this.value.toUpperCase()">
+                                                <input type="text" name="perusahaan" id="" class="form-control form-control-user" placeholder="Nama Perusahaan / Usaha" value="<?= set_value('perusahaan') ?>">
+                                                <?php echo form_error('perusahaan', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-lg-5">
                                             <div class="form-group">
-                                                <input type="text" name="alamat_kantor" class="form-control form-control-user" placeholder="Alamat Perusahaan / Usaha" value="<?= set_value('alamat_kantor') ?>" onkeyup="this.value = this.value.toUpperCase()">
+                                                <input type="text" name="alamat_kantor" class="form-control form-control-user" placeholder="Alamat Perusahaan / Usaha" value="<?= set_value('alamat_kantor') ?>">
+                                                <?php echo form_error('alamat_kantor', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
                                                 <input type="number" name="telp_kantor" id="" class="form-control form-control-user" placeholder="No. Telp Kantor / Usaha" value="<?= set_value('telp_kantor') ?>">
+                                                <?php echo form_error('telp_kantor', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="frm-group">
                                                 <input type="email" name="email_kantor" id="" class="form-control form-control-user" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada" placeholder="Email Kantor" value="<?= set_value('email_kantor') ?>" onkeyup="this.value = this.value.toLowerCase()">
+                                                <?php echo form_error('email_kantor', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-lg-12"></div>
@@ -708,10 +724,13 @@
         $("#status_menikah").change(function() {
             var status;
             var d = document.forms['eform']['status_menikah'].value;
+            console.log(d);
             if (d == 'Belum Menikah') {
-                status = 'Lainnya';
+                $(".identitas_pasangan").hide();
+            } else {
+                $(".identitas_pasangan").show();
             }
-            $("#identitas_pasangan").val(status);
+            // $("#identitas_pasangan").val(status);
         });
     });
 </script>

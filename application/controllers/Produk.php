@@ -164,9 +164,6 @@ class Produk extends CI_Controller
         $this->form_validation->set_rules('alamat_kantor', 'Alamat Perusahaan/Usaha', 'trim');
         $this->form_validation->set_rules('telp_kantor', 'Telp Kantor', 'trim');
         $this->form_validation->set_rules('email_kantor', 'Email Perusahaan', 'trim|valid_email');
-        $this->form_validation->set_rules('gaji_thn', 'Penghasilan per Tahun', 'trim');
-        $this->form_validation->set_rules('tambahan_penghasilan', 'Penghasilan Lainnya', 'trim');
-        $this->form_validation->set_rules('tot_penghasilan', 'Total Penghasilan', 'trim');
         $this->form_validation->set_rules('status_rumah', 'Status Tempat Tinggal', 'required|trim', ['required' => 'status_rumah harus diisi!']);
         $this->form_validation->set_rules('tanggungan', 'Tanggungan', 'required|trim', ['required' => 'Jumlah Tanggungan harus diisi!']);
         $this->form_validation->set_rules('tujuan_buka', 'Tujuan Pembukaan', 'required|trim', ['required' => 'Tujuan Pembukaan Rek harus diisi!']);
@@ -202,10 +199,10 @@ class Produk extends CI_Controller
         // print_r($data['pendidikan']);
         // die;
 
-        if ($this->form_validation->run() !== FALSE) { //jika form_validation berhasil dijalankan, fungsi save() atau simpan data dijalankan
+        if ($this->form_validation->run() == true) { //jika form_validation berhasil dijalankan, fungsi save() atau simpan data dijalankan
 
             $this->nsb->createNsb();
-            $this->load->view('template/header', $data);
+            $this->load->view('template/header');
             $this->load->view('produk/bukaRek', $data);
             $this->load->view('template/footer');
         } else {

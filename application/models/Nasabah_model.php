@@ -57,9 +57,6 @@ class Nasabah_model extends CI_Model
     public $alamat_kantor;
     public $telp_kantor;
     public $email_kantor;
-    public $gaji_thn;
-    public $tambahan_penghasilan;
-    public $tot_penghasilan;
     public $status_rumah;
     public $tanggungan;
     public $tujuan_buka;
@@ -70,7 +67,7 @@ class Nasabah_model extends CI_Model
     public $ft_diri;
     public $ft_ttd;
     public $ft_npwp;
-    // public $nama;
+    public $upload_date;
 
     public function createNsb()
     {
@@ -126,9 +123,6 @@ class Nasabah_model extends CI_Model
         $this->alamat_kantor = $post['alamat_kantor'];
         $this->telp_kantor = $post['telp_kantor'];
         $this->email_kantor = $post['email_kantor'];
-        // $this->gaji_thn = $post['gaji_thn'];
-        // $this->tambahan_penghasilan = $post['tambahan_penghasilan'];
-        // $this->tot_penghasilan = $post['tot_penghasilan'];
         $this->status_rumah = $post['status_rumah'];
         $this->tanggungan = $post['tanggungan'];
         $this->tujuan_buka = $post['tujuan_buka'];
@@ -140,8 +134,9 @@ class Nasabah_model extends CI_Model
         $this->ft_diri = $files['ft_diri']['file_name'];
         $this->ft_ttd = $files['ft_ttd']['file_name'];
         $this->ft_npwp = $files['ft_npwp']['file_name'];
+        $this->upload_date = date('Y-m-d');
         // print_r($files);
-        // var_dump($this);
+        var_dump($this);
         // die;
         $this->db->insert($this->_table, $this);
         $this->session->set_flashdata('success', '<strong>Congratulation!</strong> Kode Referensi: ' . $this->kd_ref . ' Data anda telah disimpan. Mohon tunggu verifikasi dari pihak Bank Unisritama.');
@@ -195,7 +190,6 @@ class Nasabah_model extends CI_Model
         } else {
             $ft_ttd = $this->upload->data();
         }
-
         if (!$this->upload->do_upload('ft_npwp')) {
             $this->session->flashdata('message', $this->upload->display_errors());
             redirect('pembukaan-rekening-tabungan');
@@ -262,6 +256,17 @@ class Nasabah_model extends CI_Model
         COUNT(IF(MONTH(upload_date) = 12, upload_date,null)) AS bulan_12,
         ');
         // $this->db->group_by('MONTH(upload_date)');
+        $this->db->from($this->_table);
+        return $this->db->get();
+    }
+
+    public function getTujuan()
+    {
+        $this->db->select('
+        COUNT(IF(tujuan_buka= "Simpanan", tujuan_buka, null)) AS simpanan,
+        COUNT(IF(tujuan_buka= "Penerimaan Gaji", tujuan_buka, null)) AS gaji,
+        COUNT(IF(tujuan_buka= "Penyaluran Kredit", tujuan_buka, null)) AS kredit,
+        ');
         $this->db->from($this->_table);
         return $this->db->get();
     }
