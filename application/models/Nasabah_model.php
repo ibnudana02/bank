@@ -137,7 +137,7 @@ class Nasabah_model extends CI_Model
         $this->ft_npwp = $files['ft_npwp']['file_name'];
         $this->upload_date = date('Y-m-d');
         $this->status = 'WAITING';
-        print_r($files);
+        // print_r($files);
         // echo json_encode($files);
         // die;
         $this->db->insert($this->_table, $this);
