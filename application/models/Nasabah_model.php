@@ -67,6 +67,7 @@ class Nasabah_model extends CI_Model
     public $ft_diri;
     public $ft_ttd;
     public $ft_npwp;
+    public $status;
     public $upload_date;
 
     public function createNsb()
@@ -135,8 +136,9 @@ class Nasabah_model extends CI_Model
         $this->ft_ttd = $files['ft_ttd']['file_name'];
         $this->ft_npwp = $files['ft_npwp']['file_name'];
         $this->upload_date = date('Y-m-d');
-        // print_r($files);
-        var_dump($this);
+        $this->status = 'WAITING';
+        print_r($files);
+        // echo json_encode($files);
         // die;
         $this->db->insert($this->_table, $this);
         $this->session->set_flashdata('success', '<strong>Congratulation!</strong> Kode Referensi: ' . $this->kd_ref . ' Data anda telah disimpan. Mohon tunggu verifikasi dari pihak Bank Unisritama.');
@@ -167,36 +169,41 @@ class Nasabah_model extends CI_Model
 
         $this->upload->initialize($config);
         if (!$this->upload->do_upload('ft_identitas')) {
-            $this->session->set_flashdata('message', $this->upload->display_errors());
+            $this->session->set_flashdata('success', $this->upload->display_errors());
             redirect('pembukaan-rekening-tabungan');
         } else {
             $ft_identitas = $this->upload->data();
         }
         if (!$this->upload->do_upload('ft_kk')) {
-            $this->session->set_flashdata('message', $this->upload->display_errors());
+            $this->session->set_flashdata('success', $this->upload->display_errors());
             redirect('pembukaan-rekening-tabungan');
         } else {
             $ft_kk = $this->upload->data();
         }
         if (!$this->upload->do_upload('ft_diri')) {
-            $this->session->set_flashdata('message', $this->upload->display_errors());
+            $this->session->set_flashdata('success', $this->upload->display_errors());
             redirect('pembukaan-rekening-tabungan');
         } else {
             $ft_diri = $this->upload->data();
         }
         if (!$this->upload->do_upload('ft_ttd')) {
-            $this->session->set_flashdata('message', $this->upload->display_errors());
+            $this->session->set_flashdata('success', $this->upload->display_errors());
             redirect('pembukaan-rekening-tabungan');
         } else {
             $ft_ttd = $this->upload->data();
         }
-        if (!$this->upload->do_upload('ft_npwp')) {
-            $this->session->flashdata('message', $this->upload->display_errors());
-            redirect('pembukaan-rekening-tabungan');
+        if (empty(isset($_FILES['ft_npwp']['file_name']))) {
+            $ft_npwp = array('file_name' => 'NULL');
         } else {
-            $ft_npwp = $this->upload->data();
+            if (!$this->upload->do_upload('ft_npwp')) {
+                $this->session->flashdata('success', '<strong>Foto NPWP gagal di Upload!</strong>');
+                redirect('pembukaan-rekening-tabungan');
+            } else {
+                $ft_npwp = $this->upload->data();
+            }
         }
         $files = array('ft_identitas' => $ft_identitas, 'ft_kk' => $ft_kk, 'ft_diri' => $ft_diri, 'ft_ttd' => $ft_ttd, 'ft_npwp' => $ft_npwp);
+        // echo json_encode($files);
         return $files;
     }
 

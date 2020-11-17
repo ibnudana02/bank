@@ -8,11 +8,6 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <?= $this->session->flashdata('success'); ?>
                     </div>
-                <?php elseif ($this->session->flashdata('message')) : ?>
-                    <div class="alert alert-danger alert-dismissible text-center" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <?= $this->session->flashdata('message'); ?>
-                    </div>
                 <?php endif; ?>
                 <div class="panel panel-primary">
                     <div class="panel-heading">
@@ -727,10 +722,11 @@
             console.log(d);
             if (d == 'Belum Menikah') {
                 $(".identitas_pasangan").hide();
+                status = 'Lainnya';
+                $("#identitas_pasangan").val(status);
             } else {
                 $(".identitas_pasangan").show();
             }
-            // $("#identitas_pasangan").val(status);
         });
     });
 </script>

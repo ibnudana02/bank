@@ -124,7 +124,7 @@ class Produk extends CI_Controller
         $this->form_validation->set_rules('warga_negara', 'Kewarganegaraan', 'required|trim', ['required' => 'Kewarganegaan harus diisi!']);
         $this->form_validation->set_rules('jenis_identitas', 'Jenis Identitas', 'required|trim', ['required' => 'Jenis Identitas harus diisi!']);
         $this->form_validation->set_rules('masa_berlaku', 'Masa Berlaku', 'required|trim', ['required' => 'Masa Berlaku harus diisi!']);
-        $this->form_validation->set_rules('no_identitas', 'Nomor Tanda Pengenal', 'required|trim', ['required' => 'No Identitas harus diisi!']);
+        $this->form_validation->set_rules('no_identitas', 'Nomor Tanda Pengenal', 'required|trim|alpha_numeric', ['required' => 'No Identitas harus diisi!']);
         $this->form_validation->set_rules('tempat_lahir', 'Tempat lahir', 'required|trim', ['required' => 'Tempat Lahir harus diisi!']);
         $this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'required|trim', ['required' => 'Tanggal Lahir harus diisi!']);
         $this->form_validation->set_rules('no_hp', 'No. HP', 'required|trim', ['required' => 'No. HP harus diisi!']);
@@ -153,16 +153,16 @@ class Produk extends CI_Controller
         $this->form_validation->set_rules('identitas_pasangan', 'Identitas Pasangan', 'trim');
         $this->form_validation->set_rules('no_identitas_pasangan', 'No. Identitas Pasangan', 'trim');
         $this->form_validation->set_rules('alamat_pasangan', 'Alamat Pasangan', 'trim');
-        $this->form_validation->set_rules('no_pasangan', 'No. HP Pasangan', 'trim');
+        $this->form_validation->set_rules('no_pasangan', 'No. HP Pasangan', 'trim|alpha_numeric');
         $this->form_validation->set_rules('profesi', 'Profesi', 'required|trim', ['required' => 'Profesi harus diisi!']);
         $this->form_validation->set_rules('jenis_pekerjaan', 'Jenis Pekerjaan', 'required|trim', ['required' => 'Jenis Pekerjaan harus diisi!']);
         $this->form_validation->set_rules('status_pekerjaan', 'Status Pekerjaan', 'required|trim', ['required' => 'Status Pekerjaan harus diisi!']);
         $this->form_validation->set_rules('sumber_dana', 'Sumber Penghasilan', 'required|trim', ['required' => 'Sumber Penghasilan harus diisi!']);
         $this->form_validation->set_rules('jabatan', 'Jabatan', 'trim');
-        $this->form_validation->set_rules('gaji_bln', 'Gaji per Bulan', 'trim');
+        $this->form_validation->set_rules('gaji_bln', 'Gaji per Bulan', 'trim|alpha_numeric');
         $this->form_validation->set_rules('perusahaan', 'Nama Perusahaan / Usaha', 'trim');
         $this->form_validation->set_rules('alamat_kantor', 'Alamat Perusahaan/Usaha', 'trim');
-        $this->form_validation->set_rules('telp_kantor', 'Telp Kantor', 'trim');
+        $this->form_validation->set_rules('telp_kantor', 'Telp Kantor', 'trim|alpha_numeric');
         $this->form_validation->set_rules('email_kantor', 'Email Perusahaan', 'trim|valid_email');
         $this->form_validation->set_rules('status_rumah', 'Status Tempat Tinggal', 'required|trim', ['required' => 'status_rumah harus diisi!']);
         $this->form_validation->set_rules('tanggungan', 'Tanggungan', 'required|trim', ['required' => 'Jumlah Tanggungan harus diisi!']);
@@ -196,13 +196,15 @@ class Produk extends CI_Controller
         $data['prop'] = $this->user->getProv();
         $data['judul'] = 'e-Form Rekening Tabungan - Bank Unisritama';
 
-        // print_r($data['pendidikan']);
-        // die;
-
-        if ($this->form_validation->run() == true) { //jika form_validation berhasil dijalankan, fungsi save() atau simpan data dijalankan
-
+        if ($this->form_validation->run() == true) {
+            // if (empty($_FILES['ft_npwp'][''])) {
+            //     echo 'Foto npwp kosong';
+            // }
+            // print_r($post);
+            // echo json_encode($post);
+            // die;
             $this->nsb->createNsb();
-            $this->load->view('template/header');
+            $this->load->view('template/header', $data);
             $this->load->view('produk/bukaRek', $data);
             $this->load->view('template/footer');
         } else {
@@ -235,22 +237,6 @@ class Produk extends CI_Controller
         $this->load->view('template/header', $data);
         $this->load->view('produk/bukaKrd', $data);
         $this->load->view('template/footer');
-    }
-
-    public function listkota()
-    {
-        $id = 11;
-        $kota = $this->user->viewByProvinsi($id);
-        // var_dump($kota);
-        echo json_encode($kota);
-    }
-
-    public function getKota()
-    {
-        $id = $this->input->post('prop');
-        $kota = $this->user->viewByProvinsi($id);
-        var_dump($kota);
-        echo json_encode($kota);
     }
 
     public function send()
