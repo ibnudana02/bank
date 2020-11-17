@@ -4301,6 +4301,12 @@ hr {
         margin-bottom: 2px !important;
     }
 
+    .datepicker .table-condensed {
+        /* width: 340px; */
+        /* width: fit-content; */
+        width: 240px;
+    }
+
     .ramping {
         padding-left: 20px !important;
         padding-right: 20px !important;
@@ -4309,8 +4315,6 @@ hr {
     .eform {
         padding: 20px 0px;
     }
-
-
 }
 
 .kontak {

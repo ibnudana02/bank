@@ -454,7 +454,7 @@
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <input type="number" name="gaji_bln" id="" class="form-control form-control-user" placeholder="Gaji per Bulan" value="<?= set_value('gaji_bln') ?>">
+                                                <input type="number" name="gaji_bln" id="" class="form-control form-control-user money" placeholder="Gaji per Bulan" value="<?= set_value('gaji_bln') ?>">
                                                 <?php echo form_error('gaji_bln', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
@@ -529,9 +529,7 @@
                                         <div class="col-lg-12">
                                             <div class="scroll" style="padding: 10px 10px;">
                                                 <p>Mohon Syarat dan Ketentuan ini dibaca secara seksama sebelum Anda menandatangani Formulir Pembukaan Rekening Tabungan Perorangan karena Anda akan terikat oleh Syarat dan Ketentuan ini setelah Anda menandatangani Formulir Pembukaan Rekening Tabungan Perorangan ini.</p>
-
                                                 <p>Syarat dan Ketentuan ini merupakan satu kesatuan dan bagian yang tidak terpisahkan dari Formulir Pembukaan Rekening Tabungan Perorangan termasuk perubahannya di kemudian hari. Syarat dan Ketentuan ini berlaku pula untuk setiap pembukaan berikutnya dari produkTabungan yang sama yang dilakukan oleh Nasabah</p>
-
                                                 <p><strong>1. Syarat-Syarat Umum</strong><br />
                                                     a. Nasabah adalah perorangan yang telah berusia di atas 17 tahun dan mempunyai kartu identitas (KTP/Paspor/KITAS) yang masih berlaku dan/atau yayasan (selanjutnya disebut &ldquo;Nasabah&rdquo;).<br />
                                                     b. Sebagai bukti kepemilikan TABUNGAN, Bank Unisritama akan menerbitkan buku TABUNGAN dan Kartu Tabungan.<br />
