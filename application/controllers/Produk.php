@@ -14,6 +14,9 @@ class Produk extends CI_Controller
             'Produk_model' => 'produk', 'Jenis_model' => 'jenis',
             'User_model' => 'user', 'Nasabah_model' => 'nsb'
         ));
+        $data['tabungan'] = $this->produk->getTab()->result();
+        $data['deposito'] = $this->produk->getDep()->result();
+        $data['kredit'] = $this->produk->getKrd()->result();
     }
 
     public function index()

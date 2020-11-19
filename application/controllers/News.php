@@ -12,6 +12,9 @@ class News extends CI_Controller
             'Kategori_model' => 'kategori', 'Berita_model' => 'berita', 'Produk_model' => 'produk',
             'Laporan_model' => 'laporan'
         ));
+        $data['tabungan'] = $this->produk->getTab()->result();
+        $data['deposito'] = $this->produk->getDep()->result();
+        $data['kredit'] = $this->produk->getKrd()->result();
     }
 
 

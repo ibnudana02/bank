@@ -7,7 +7,13 @@ class Tentang_kami extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model(array('Pegawai_model' => 'pegawai', 'Awards_model' => 'awards', 'Tentang_model' => 'kantor'));
+        $this->load->model(array(
+            'Pegawai_model' => 'pegawai', 'Awards_model' => 'awards',
+            'Tentang_model' => 'kantor', 'Produk_model' => 'produk'
+        ));
+        $data['tabungan'] = $this->produk->getTab()->result();
+        $data['deposito'] = $this->produk->getDep()->result();
+        $data['kredit'] = $this->produk->getKrd()->result();
     }
 
 

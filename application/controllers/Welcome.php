@@ -17,9 +17,9 @@ class Welcome extends CI_Controller
 		$data['data'] = $this->layanan->getAll()->result();
 		$data['slider'] = $this->slider->getAll()->result();
 		$data['berita'] = $this->berita->getAll()->result();
-		// $data['tabungan'] = $this->produk->getTab()->result();
-		// $data['deposito'] = $this->produk->getDep()->result();
-		// $data['kredit'] = $this->produk->getKrd()->result();
+		$data['tabungan'] = $this->produk->getTab()->result();
+		$data['deposito'] = $this->produk->getDep()->result();
+		$data['kredit'] = $this->produk->getKrd()->result();
 		$this->load->view('template/header', $data);
 		$this->load->view('template/slider', $data);
 		$this->load->view('home');
