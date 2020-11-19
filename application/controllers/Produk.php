@@ -190,6 +190,7 @@ class Produk extends CI_Controller
         $this->form_validation->set_rules('ft_ttd', 'Foto Tanda Tangan', 'trim');
         $this->form_validation->set_rules('ft_npwp', 'Foto NPWP', 'trim');
 
+        $data = $this->data;
         $data['agama'] = $this->db->get_enum('nasabah_tab', 'agama');
         $data['tujuan_buka'] = $this->db->get_enum('nasabah_tab', 'tujuan_buka');
         $data['status_rumah'] = $this->db->get_enum('nasabah_tab', 'status_rumah');
@@ -208,7 +209,6 @@ class Produk extends CI_Controller
         $data['jenis'] = $this->produk->getTab()->result();
         $data['prop'] = $this->user->getProv();
         $data['judul'] = 'e-Form Rekening Tabungan - Bank Unisritama';
-        $data = $this->data;
 
         if ($this->form_validation->run() == true) {
             $this->nsb->createNsb();
