@@ -1,5 +1,6 @@
 <?php
 //declare var untuk global
+$this->load->model('Produk_model', 'produk');;
 $tabungan = $this->produk->getTab()->result();
 $deposito = $this->produk->getDep()->result();
 $kredit = $this->produk->getKrd()->result();
