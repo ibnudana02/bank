@@ -65,5 +65,7 @@
 <!-- /.container-fluid -->
 <script src="<?= base_url('assets/'); ?>ckeditor/ckeditor.js"></script>
 <script>
-    CKEDITOR.replace('editor');
+    CKEDITOR.replace('editor', {
+        filebrowserImageBrowseUrl: '<?php echo base_url('assets/kcfinder/browse.php'); ?>'
+    });
 </script>

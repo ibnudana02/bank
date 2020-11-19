@@ -27,20 +27,32 @@
                                 <div class="form-group">
                                     <label>Jenis Produk</label>
                                     <select class="form-control custom-select custom-select-md" id="jenis" name="jenis">
-                                        <option value="" disabled diselected>--Pilih Jenis Produk--</option>
+                                        <option value="" selected="true" disabled="disabled">--Pilih Jenis Produk--</option>
                                         <?php foreach ($data as $row) : ?>
-                                            <option value="<?= $row->id_jenis; ?>"><?= $row->jenis; ?></option>
+                                            <option value="<?= $row->id_jenis; ?>" <?= set_select('jenis', $row->id_jenis) ?>><?= $row->jenis; ?></option>
                                         <?php endforeach; ?>
                                     </select>
+                                    <?php echo form_error('jenis', '<small class="text-danger pl-5">', '</small>'); ?>
                                 </div>
                                 <div class="form-group">
                                     <label for="Link">Link - Pembukaan Produk</label>
-                                    <input type="text" class="form-control form-control-user link" disabled id="link" name="link" placeholder="Link" value="<?= set_value('link'); ?>">
+                                    <input type="text" class="form-control form-control-user" readonly id="link" name="link" placeholder="Link" value="<?= set_value('link'); ?>">
+                                    <?php echo form_error('link', '<small class="text-danger pl-5">', '</small>'); ?>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Peruntukan Produk</label>
+                                    <select class="form-control custom-select custom-select-md" id="untuk" name="untuk">
+                                        <option value="" selected="true" disabled="disabled">--Pilih Peruntukan Produk--</option>
+                                        <?php foreach ($untuk as $key => $value) : ?>
+                                            <option value="<?= $value; ?>" <?= set_select('untuk', $value) ?>><?= ucwords($value); ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                    <?php echo form_error('untuk', '<small class="text-danger pl-5">', '</small>'); ?>
                                 </div>
                                 <div class="form-group">
                                     <label>Deskripsi</label>
                                     <!-- <textarea id="editor" name="deskripsi"></textarea> -->
-                                    <textarea name="deskripsi" id="editor" rows="3" class="form-control" required data-error="Write your deskripsi"></textarea>
+                                    <textarea name="deskripsi" id="editor" rows="3" class="form-control" required data-error="Write your deskripsi" value="<?php echo set_value('deskripsi') ?>"></textarea>
                                 </div>
                                 <?php echo form_error('image', '<small class="text-danger pl-5">', '</small>'); ?>
                                 <div class="form-group">
@@ -89,6 +101,7 @@
                 link = "";
             }
             $("#link").val(link);
+            // console.log(link);
         });
     });
 </script>

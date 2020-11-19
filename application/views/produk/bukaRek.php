@@ -377,7 +377,7 @@
 
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <select name="tujuan_buka" class="form-control custom-select custom-select-md" required>
+                                                <select name="tujuan_buka" id="tujuan" class="form-control custom-select custom-select-md" required>
                                                     <option value="" selected="true" disabled="disabled">Tujuan Pembukaan Rekening</option>
                                                     <?php foreach ($tujuan_buka as $key => $row) : ?>
                                                         <option value="<?= $row ?>" <?= set_select('tujuan_buka', $row) ?>><?= $row ?></option>
@@ -390,9 +390,9 @@
                                             <div class="form-group">
                                                 <select class="form-control custom-select custom-select-md" id="jenis_tab" name="jenis_tab">
                                                     <option value="" selected="true" disabled="disabled">Pilih Jenis Produk Tabungan</option>
-                                                    <?php foreach ($jenis as $row) : ?>
+                                                    <!-- <?php foreach ($jenis as $row) : ?>
                                                         <option value="<?= $row->id_produk; ?>" <?= set_select('jenis_tab', $row->id_produk) ?>><?= ucwords($row->produk); ?></option>
-                                                    <?php endforeach; ?>
+                                                    <?php endforeach; ?> -->
                                                 </select>
                                                 <?php echo form_error('jenis_tab', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
@@ -707,6 +707,22 @@
                     $("#lurah_domisili").html(response.list_kota).show();
                 }
             });
+        });
+        $("#tujuan").change(function() {
+            var data = $(this).val();
+            console.log(data);
+            $.ajax({
+                url: "<?= base_url('getJenis'); ?>",
+                method: "POST",
+                dataType: "JSON",
+                data: {
+                    // id: id,
+                    data: data,
+                },
+                success: function(response) {
+                    $("#jenis_tab").html(response.list_jenis).show();
+                }
+            })
         });
         $(".datepicker").datepicker({
             format: 'dd-mm-yyyy',

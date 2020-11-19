@@ -106,5 +106,6 @@ $route['struktur'] = 'tentang_kami/struktur';
 $route['awards'] = 'tentang_kami/awards';
 $route['location'] = 'tentang_kami/location';
 $route['contact'] = 'tentang_kami/contact';
+$route['getJenis'] = 'welcome/getJenis';
 $route['(.*)'] = 'custom404';
 $route['translate_uri_dashes'] = FALSE;

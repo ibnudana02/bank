@@ -7,10 +7,12 @@ class Produk_model extends CI_Model
     private $_table = 'produk';
     public $produk;
     public $deskripsi;
+    public $slug;
+    public $link;
+    public $untuk;
     public $jenis;
     public $image;
     public $penulis;
-    public $link;
     public $created_on;
     public $update_by;
     public $update_on;
@@ -24,13 +26,13 @@ class Produk_model extends CI_Model
         $this->deskripsi = $post['deskripsi'];
         $out = explode(" ", $this->produk);
         $this->slug = implode("-", $out);
-        $this->link = $post['link'];
+        $this->link = htmlspecialchars($post['link']);
+        $this->untuk = $post['untuk'];
         $this->jenis = $post['jenis'];
         $this->image = $this->_uploadImage();
         $this->penulis = $this->session->userdata('name');
         $this->created_on = date('Y-m-d H:i:s');
         $this->update_by = '';
-        $this->update_on = date('Y-m-d H:i:s');
         $this->db->insert($this->_table, $this);
     }
 
@@ -50,8 +52,8 @@ class Produk_model extends CI_Model
         } else {
             $this->image = $post["old_image"];
         }
-        $this->penulis = $this->session->userdata('name');
-        $this->created_on = date('Y-m-d H:i:s');
+        // $this->penulis = $this->session->userdata('name');
+        // $this->created_on = date('Y-m-d H:i:s');
         $this->update_by = $this->session->userdata('name');
         $this->update_on = date('Y-m-d H:i:s');
         return $this->db->update($this->_table, $this, array('id_produk' => $post['id']));

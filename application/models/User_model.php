@@ -96,6 +96,23 @@ class User_model extends CI_Model
         $this->db->order_by('nama', 'asc');
         return $this->db->get('kelurahan')->result();
     }
+
+    public function getSimpanan()
+    {
+        $data = array('5eaa93a989a72', '5e96bb4b21ce7', '5eaa93647a4cb');
+        $this->db->select('*');
+        $this->db->where_in('id_produk', $data);
+        $this->db->order_by('produk', 'asc');
+        return $this->db->get('produk')->result();
+    }
+    public function getUmum()
+    {
+        $data = array('5eaa92ba0efa1', '5ee0aba96f640');
+        $this->db->select('*');
+        $this->db->where_in('id_produk', $data);
+        $this->db->order_by('produk', 'asc');
+        return $this->db->get('produk')->result();
+    }
 }
 
 /* End of file User_model.php */
