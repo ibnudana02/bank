@@ -1,4 +1,7 @@
-<!-- about-area start -->
+<head>
+    <link rel="stylesheet" href="<?= base_url('assets/leaflet/leaflet.css') ?>">
+    <script src="<?= base_url('assets/leaflet/leaflet.js') ?>"></script>
+</head><!-- about-area start -->
 <div class="about-area struktur">
     <div class="container">
         <div id="map" style="width:100%; height: 450px;"></div>
