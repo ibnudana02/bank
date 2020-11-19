@@ -3,6 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Produk extends CI_Controller
 {
+    var $data = array();
 
     public function __construct()
     {
@@ -14,9 +15,11 @@ class Produk extends CI_Controller
             'Produk_model' => 'produk', 'Jenis_model' => 'jenis',
             'User_model' => 'user', 'Nasabah_model' => 'nsb'
         ));
-        $data['tabungan'] = $this->produk->getTab()->result();
-        $data['deposito'] = $this->produk->getDep()->result();
-        $data['kredit'] = $this->produk->getKrd()->result();
+        $this->data = array(
+            'tabungan' => $this->produk->getTab()->result(),
+            'deposito' => $this->produk->getDep()->result(),
+            'kredit' => $this->produk->getKrd()->result(),
+        );
     }
 
     public function index()
@@ -27,6 +30,7 @@ class Produk extends CI_Controller
 
     public function pmb()
     {
+        $data = $this->data;
         $data['judul'] = 'Pembayaran Mahasiswa | Bank Unisritama';
         $data['category'] = $this->kategori->getAll(); //Ambil data kategori
         $data['berita'] = $this->berita->getLima(); //Ambil data berita
@@ -42,7 +46,7 @@ class Produk extends CI_Controller
         $data['category'] = $this->kategori->getAll(); //Ambil data kategori
         $data['berita'] = $this->berita->getLima(); //Ambil data berita
         $data['row'] =  $this->produk->getPayment(); //Ambil data berita
-        // var_dump($data['row']);
+        $data = $this->data;
         $this->load->view('template/header', $data);
         $this->load->view('produk/pmb', $data);
         $this->load->view('template/footer');
@@ -50,6 +54,7 @@ class Produk extends CI_Controller
 
     public function deposito()
     {
+        $data = $this->data;
         $data['judul'] = 'Deposito | Bank Unisritama';
         $data['bread'] = 'Home';
         $data['crumb'] = 'Deposito';
@@ -61,6 +66,7 @@ class Produk extends CI_Controller
 
     public function tabungan()
     {
+        $data = $this->data;
         $data['judul'] = 'Tabungan | Bank Unisritama';
         $data['bread'] = 'Home';
         $data['crumb'] = 'Tabungan';
@@ -72,6 +78,7 @@ class Produk extends CI_Controller
 
     public function kredit()
     {
+        $data = $this->data;
         $data['judul'] = 'Kredit | Bank Unisritama';
         $data['bread'] = 'Home';
         $data['crumb'] = 'Kredit';
@@ -83,6 +90,7 @@ class Produk extends CI_Controller
 
     public function dana()
     {
+        $data = $this->data;
         $data['judul'] = 'Produk Dana | Bank Unisritama';
         $data['bread'] = 'Home';
         $data['crumb'] = 'Produk Dana';
@@ -94,6 +102,7 @@ class Produk extends CI_Controller
 
     public function produk()
     {
+        $data = $this->data;
         $data['judul'] = 'Produk | Bank Unisritama';
         $data['bread'] = 'Home';
         $data['crumb'] = 'Produk';
@@ -106,6 +115,7 @@ class Produk extends CI_Controller
     public function detailProduk($slug)
     {
         // $row = $this->produk->getById($id);
+        $data = $this->data;
         $row = $this->produk->getBySlug($slug);
         $data['judul'] = ucwords($row->produk) . ' | Bank Unisritama';
         $data['dps'] = $this->produk->getDep()->result();
@@ -198,14 +208,9 @@ class Produk extends CI_Controller
         $data['jenis'] = $this->produk->getTab()->result();
         $data['prop'] = $this->user->getProv();
         $data['judul'] = 'e-Form Rekening Tabungan - Bank Unisritama';
+        $data = $this->data;
 
         if ($this->form_validation->run() == true) {
-            // if (empty($_FILES['ft_npwp'][''])) {
-            //     echo 'Foto npwp kosong';
-            // }
-            // print_r($post);
-            // echo json_encode($post);
-            // die;
             $this->nsb->createNsb();
             $this->load->view('template/header', $data);
             $this->load->view('produk/bukaRek', $data);
@@ -219,6 +224,7 @@ class Produk extends CI_Controller
 
     public function createDps()
     {
+        $data = $this->data;
         $data['judul'] = 'Pembukaan Rekening Deposito | Bank Unisritama';
         $data['bread'] = 'Home';
         $data['crumb'] = 'Produk';
@@ -236,7 +242,7 @@ class Produk extends CI_Controller
         $data['crumb'] = 'Produk';
         $data['jenis'] = $this->produk->getDep()->result();
         $data['prop'] = $this->user->getProv();
-        // $data['kab'] = $this->user->viewByProvinsi();
+        $data = $this->data;
         $this->load->view('template/header', $data);
         $this->load->view('produk/bukaKrd', $data);
         $this->load->view('template/footer');
