@@ -14,7 +14,7 @@
                 </div>
                 <div class="card-body col-12 mx-auto">
                     <div class="table-responsive">
-                        <div class="col-10 mx-auto">
+                        <div class="col-lg-12 col-xs-12 mx-auto">
                             <div class="form-group user">
                                 <label>Nama</label>
                                 <input type="text" class="form-control form-control-user" value="<?= $data['name']; ?>" disabled>
@@ -35,12 +35,25 @@
                                 <label>Email</label>
                                 <input type="text" class="form-control form-control-user" value="<?= $data['email']; ?>" disabled>
                             </div>
-                            <div class="form-group">
-
-                            </div>
-                            <div class="form-group user">
-                                <label for="Image">Gambar</label><br>
-                                <img src="<?= base_url('upload/user/' . $data['image']); ?>" class="rounded" alt="" height="100px" width="100px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <div class="row">
+                        <div class="col-8">
+                            <h4 class="font-weight-bold text-primary">Photo User</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body col-xs-12 mx-auto">
+                    <div class="table-responsive">
+                        <div class="col-lg-12 col-xs-12 mx-auto">
+                            <div class="form-group user text-center">
+                                <img src="<?= base_url('upload/user/' . $data['image']); ?>" class="img-fluid">
                             </div>
                         </div>
                     </div>

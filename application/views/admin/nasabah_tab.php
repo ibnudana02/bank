@@ -9,7 +9,7 @@
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col-12">
                             <h4 class="font-weight-bold text-primary">Daftar Nasabah eForm</h4>
                         </div>
                     </div>

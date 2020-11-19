@@ -10,14 +10,14 @@
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col-12">
                             <h4 class="mx-auto font-weight-bold text-primary">Edit Produk</h4>
                         </div>
                     </div>
                 </div>
                 <div class="card-body col-12 mx-auto">
                     <div class="table-responsive">
-                        <div class="col-10 mx-auto">
+                        <div class="col-12 col-xs-12 mx-auto">
                             <form name="produk" class="user" method="post" action="" enctype="multipart/form-data">
                                 <input type="hidden" name="id" value="<?php echo $produk->id_produk ?>" />
                                 <div class="form-group">

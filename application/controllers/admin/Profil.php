@@ -23,7 +23,8 @@ class Profil extends CI_Controller
         $data['heading'] = 'Profil';
         $data['user'] = $this->db->get_where('user', ['name' => $this->session->userdata('name')])->row_array();
         $data['data'] = $this->user->getProfil()->row_array();
-        // var_dump($data['data']);
+        // var_dump($data['data']['id_user']);
+        // die;
         $data['judul'] = 'BPR Unisritama - Administrator';
         $this->load->view('template/admin_header', $data);
         $this->load->view('admin/profil');

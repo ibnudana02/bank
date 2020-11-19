@@ -8,14 +8,14 @@
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col-12">
                             <h4 class="mx-auto font-weight-bold text-primary">Tambah slider</h4>
                         </div>
                     </div>
                 </div>
                 <div class="card-body col-12 mx-auto">
                     <div class="table-responsive">
-                        <div class="col-10 mx-auto">
+                        <div class="col-12 col-xs-12 mx-auto">
                             <form class="user" method="post" action="<?= base_url('admin/add_slider'); ?>" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label>Slider</label>

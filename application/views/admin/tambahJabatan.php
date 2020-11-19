@@ -7,18 +7,18 @@
     <?= $this->session->flashdata('message'); ?>
     <!-- DataTales Example -->
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-xl-12">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col-12">
                             <h4 class="font-weight-bold text-primary">Tambah Jabatan</h4>
                         </div>
                     </div>
                 </div>
                 <div class="card-body col-12 mx-auto">
                     <div class="table-responsive">
-                        <div class="col-10 mx-auto">
+                        <div class="col-xs-12 col-lg-12 mx-auto">
                             <form class="user" method="post" action="<?= base_url('admin/add_jabatan'); ?>">
                                 <div class="form-group">
                                     <label>Jabatan</label>

@@ -11,9 +11,10 @@ class Master extends CI_Controller
         parent::__construct();
         $nama = $this->session->has_userdata('name');
         if (empty($nama)) {
-
-            redirect('admin', 'refresh');
+            $this->session->set_flashdata('message', 'You dont have Permission to access this Page!');
+            redirect(base_url(), 'refresh');
         } elseif ($this->session->userdata('role_id') !== "1") {
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">You dont have Permission to access this Page! </div>');
             $this->session->sess_destroy();
             redirect(base_url());
         }

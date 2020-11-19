@@ -11,7 +11,7 @@
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col-12">
                             <!-- <h6 class="mx-auto font-weight-bold text-primary">List User</h6> -->
                             <h4 class="font-weight-bold text-primary">Tambah Kategori</h4>
                         </div>
@@ -19,7 +19,7 @@
                 </div>
                 <div class="card-body col-12 mx-auto">
                     <div class="table-responsive">
-                        <div class="col-10 mx-auto">
+                        <div class="col-12 col-xs-12 mx-auto">
                             <form class="user" method="post" action="<?= base_url('admin/add_kategori'); ?>">
                                 <div class="form-group">
                                     <label>Kategori</label>

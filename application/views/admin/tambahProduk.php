@@ -10,14 +10,14 @@
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col-12">
                             <h4 class="mx-auto font-weight-bold text-primary">Tambah Produk</h4>
                         </div>
                     </div>
                 </div>
                 <div class="card-body col-lg mx-auto">
                     <div class="table-responsive">
-                        <div class="col-10 mx-auto mobil">
+                        <div class="col-12 col-xs-12 mx-auto mobil">
                             <form name="produk" class="user" method="post" action="<?= base_url('admin/add_produk'); ?>" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label>Produk</label>
