@@ -14,9 +14,14 @@ class Master extends CI_Controller
             $this->session->set_flashdata('message', 'You dont have Permission to access this Page!');
             redirect(base_url(), 'refresh');
         } elseif ($this->session->userdata('role_id') !== "1") {
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">You dont have Permission to access this Page! </div>');
-            $this->session->sess_destroy();
-            redirect(base_url());
+            if ($this->session->userdata('role_id') == "2") {
+                # code...
+                $this->session->set_flashdata('message', 'Enjoy the page!');
+            } else {
+                $this->session->unset_userdata('$nama');
+                $this->session->set_flashdata('message', 'You dont have Permission to access this Page!');
+                redirect(base_url());
+            }
         }
         $this->load->model('Nasabah_model', 'nsb');
         $this->load->library('Pdf');

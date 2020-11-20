@@ -42,11 +42,11 @@ class Produk extends CI_Controller
 
     public function ppob()
     {
+        $data = $this->data;
         $data['judul'] = 'Payment Point Online Bank | Bank Unisritama';
         $data['category'] = $this->kategori->getAll(); //Ambil data kategori
         $data['berita'] = $this->berita->getLima(); //Ambil data berita
         $data['row'] =  $this->produk->getPayment(); //Ambil data berita
-        $data = $this->data;
         $this->load->view('template/header', $data);
         $this->load->view('produk/pmb', $data);
         $this->load->view('template/footer');

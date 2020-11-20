@@ -12,24 +12,24 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <?php if ($user['role_id'] == 1) : ?>
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            Admin
-        </div>
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Admin
+    </div>
 
-        <!-- Nav Item - Charts -->
-        <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('admin/dashboard'); ?>">
-                <i class="fas fa-fw fa-chart-bar"></i>
-                <span>Dashboard</span></a>
-        </li>
-        <!-- Nav Item - Charts -->
-        <li class="nav-item">
-            <a class="nav-link" href="<?= base_url(); ?>" target="_blank">
-                <i class="fas fa-fw fa-chart-bar"></i>
-                <span>Lihat Website</span></a>
-        </li>
+    <!-- Nav Item - Charts -->
+    <li class="nav-item">
+        <a class="nav-link" href="<?= base_url('admin/dashboard'); ?>">
+            <i class="fas fa-fw fa-chart-bar"></i>
+            <span>Dashboard</span></a>
+    </li>
+    <!-- Nav Item - Charts -->
+    <li class="nav-item">
+        <a class="nav-link" href="<?= base_url(); ?>" target="_blank">
+            <i class="fas fa-fw fa-external-link-alt"></i>
+            <span>Lihat Website</span></a>
+    </li>
+    <?php if ($user['role_id'] == 1) : ?>
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#masterData" aria-expanded="true" aria-controls="masterData">
