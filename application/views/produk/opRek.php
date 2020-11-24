@@ -1,8 +1,7 @@
-<div class="blog-page-area eform">
+<div class="blog-page-area eform" style="padding: 30px 0;">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-
                 <?php if ($this->session->flashdata('success')) : ?>
                     <div class="alert alert-success alert-dismissible text-center" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -11,113 +10,36 @@
                 <?php endif; ?>
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title text-center">Formulir Pembukaan Rekening Tabungan</h3>
+                        <h3 class="panel-title">Formulir Pembukaan Rekening Tabungan</h3>
                     </div>
                     <div class="panel-body">
                         <form name="eform" class="user" method="post" action="<?= base_url('pembukaan-rekening-tabungan'); ?>" enctype="multipart/form-data">
                             <ul class="nav nav-tabs">
                                 <li class="active"><a data-toggle="tab" href="#identitas">Data Diri</a></li>
-                                <!-- <li><a data-toggle="tab" href="#kontak">Ahli Waris/Kontak</a></li> -->
                                 <li><a data-toggle="tab" href="#pekerjaan">Data Pekerjaan</a></li>
-                                <!-- <li><a data-toggle="tab" href="#dokumen">Berkas Persetujuan</a></li> -->
                             </ul>
                             <div class="tab-content">
                                 <div id="identitas" class="tab-pane fade in active">
-                                    <p class="alert alert-danger" role="alert" style="margin-top: 25px;">Mohon isi sesuai data sebenarnya!</p>
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" autofocus class="form-control form-control-user" name="nm_lengkap" id="nm_lengkap" placeholder="Nama Lengkap" value="<?= set_value('nm_lengkap'); ?>">
-                                                <?php echo form_error('nm_lengkap', '<small class="text-danger pl-3">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control form-control-user" name="nm_identitas" id="nm_identitas" placeholder="Nama Sesuai Identitas" value="<?= set_value('nm_identitas'); ?>">
-                                                <?php echo form_error('nm_identitas', '<small class="text-danger pl-3">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="form-group">
-                                                <select name="jenis_kelamin" class="form-control custom-select custom-select-md">
-                                                    <option value="" selected="true" disabled="disabled">Jenis Kelamin</option>
-                                                    <?php foreach ($jk as $key => $value) : ?>
-                                                        <option value="<?= $value ?>" <?= set_select('jenis_kelamin', $value) ?>><?= $value ?></option>
-                                                    <?php endforeach; ?>
-                                                </select>
-                                                <?php echo form_error('jenis_kelamin', '<small class="text-danger pl-3">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="form-group">
-                                                <select name="agama" class="form-control custom-select custom-select-md">
-                                                    <option value="" selected="true" disabled="disabled">Pilih Agama</option>
-                                                    <?php foreach ($agama as $key => $value) : ?>
-                                                        <option value="<?= $value ?>" <?= set_select('agama', $value) ?>><?= $value ?></option>
-                                                    <?php endforeach; ?>
-                                                </select>
-                                                <?php echo form_error('agama', '<small class="text-danger pl-3">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="form-group">
-                                                <select name="warga_negara" class="form-control custom-select custom-select-md">
-                                                    <option value="" selected="true" disabled="disabled">Warga Negara</option>
-                                                    <?php foreach ($wn as $key => $value) : ?>
-                                                        <option value="<?= $value ?>" <?= set_select('warga_negara', $value) ?>><?= $value ?></option>
-                                                    <?php endforeach; ?>
-                                                </select>
-                                                <?php echo form_error('warga_negara', '<small class="text-danger pl-3">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="form-group">
-                                                <select name="jenis_identitas" class="form-control custom-select custom-select-md">
-                                                    <option value="" selected="true" disabled="disabled">Jenis Identitas</option>
-                                                    <?php foreach ($identitas as $key => $value) : ?>
-                                                        <option value="<?= $value ?>" <?= set_select('jenis_identitas', $value) ?>><?= $value ?></option>
-                                                    <?php endforeach; ?>
-                                                </select>
-                                                <?php echo form_error('jenis_identitas', '<small class="text-danger pl-3">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control datepicker" data-toggle="tooltip" data-placement="bottom" title="Jika berlaku seumur hidup: Isi sesuai Tgl, Bulan lahir. Untuk Tahun jangka waktu 5 tahun pada waktu mengisi" aria-describedby="start-date" name="masa_berlaku" placeholder="Masa Berlaku" value="<?= set_value('masa_berlaku'); ?>">
-                                                    <span class="input-group-addon" id="start-date"><span class="fa fa-calendar"></span></span>
-                                                </div>
-                                                <?php echo form_error('masa_berlaku', '<small class="text-danger pl-3">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
+                                        <div class="col-lg-12 col-xs-12">
                                             <div class="form-group">
                                                 <input type="number" class="form-control form-control-user" name="no_identitas" id="no_identitas" placeholder="Nomor Tanda Pengenal" value="<?= set_value('no_identitas') ?>">
                                                 <?php echo form_error('no_identitas', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
-                                        <div class="col-lg-3">
+                                        <div class="col-lg-12 col-xs-12">
                                             <div class="form-group">
-                                                <input type="text" class="form-control form-control-user" name="tempat_lahir" placeholder="Tempat Lahir" value="<?= set_value('tempat_lahir') ?>">
-                                                <?php echo form_error('tempat_lahir', '<small class="text-danger pl-3">', '</small>'); ?>
+                                                <input type="text" autofocus class="form-control form-control-user" name="nm_lengkap" id="nm_lengkap" placeholder="Nama" value="<?= set_value('nm_lengkap'); ?>">
+                                                <?php echo form_error('nm_lengkap', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
-                                        <div class="col-lg-3">
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control datepicker" aria-describedby="start-date" name="tgl_lahir" placeholder="Tanggal Lahir" value="<?= set_value('tgl_lahir'); ?>">
-                                                    <span class="input-group-addon" id="start-date"><span class="fa fa-calendar"></span></span>
-                                                </div>
-                                                <?php echo form_error('tgl_lahir', '<small class="text-danger pl-3">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
+                                        <div class="col-lg-12 col-xs-12">
                                             <div class="form-group">
                                                 <input type="number" class="form-control form-control-user" name="no_hp" placeholder="No. Hp/Telp" value="<?= set_value('no_hp'); ?>" />
                                                 <?php echo form_error('no_hp', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
-                                        <div class="col-lg-3">
+                                        <div class="col-lg-12 col-xs-12">
                                             <div class="form-group">
                                                 <select class="form-control custom-select custom-select-md" name="pendidikan">
                                                     <option value="" selected="true" disabled="disabled"> Pendidikan Terakhir</option>
@@ -128,83 +50,37 @@
                                                 <?php echo form_error('pendidikan', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-12 col-xs-12">
                                             <div class="form-group">
                                                 <input type="email" class="form-control form-control-user" name="email" placeholder="Email" value="<?= set_value('email') ?>" onkeyup="this.value = this.value.toLowerCase()" />
                                                 <?php echo form_error('email', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
-                                        <div class="col-lg-3">
+                                        <div class="col-lg-12 col-xs-12">
                                             <div class="form-group">
                                                 <input type="number" class="form-control form-control-user" name="npwp" id="npwp" placeholder="No. NPWP" value="<?= set_value('npwp') ?>" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada"></div>
                                             <?php echo form_error('npwp', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                         </div>
-                                        <div class="col-lg-12">
-                                            <div class="alert alert-info alert-dismissible" role="alert">
-                                                Mohon isi alamat sesuai tanda pengenal!
+                                        <div class="col-lg-8">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control form-control-user" name="alamat_domisili" placeholder="Alamat Terkini" value="<?= set_value('alamat_domisili') ?>" />
+                                                <?php echo form_error('alamat_domisili', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-12">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control form-control-user" name="rt" id="rt" placeholder="RT" value="<?= set_value('npwp') ?>" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada"></div>
+                                            <?php echo form_error('rt', '<small class="text-center text-danger pl-3">', '</small>'); ?>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-12">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control form-control-user" name="rw" id="rw" placeholder="RW" value="<?= set_value('npwp') ?>" data-toggle="tooltip" data-placement="top" title="Kosongkan bila tidak ada"></div>
+                                            <?php echo form_error('rw', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <label for="Provinsi">Provinsi</label>
-                                                <select name="provinsi_identitas" id="propinsi" class="form-control form-control-user">
-                                                    <option value="">Pilih</option>
-                                                    <?php foreach ($prop as $row) : ?>
-                                                        <option value="<?= $row->id_prov; ?>" <?= set_select('provinsi_identitas', $row->id_prov) ?>><?= ucwords($row->nama); ?></option>
-                                                    <?php endforeach; ?>
-                                                </select>
-                                                <?php echo form_error('provinsi_identitas', '<small class="text-danger pl-3">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="form-group">
-                                                <label for="Kabupaten/Kota">Kabupaten/Kota</label>
-                                                <select name="kab_identitas" id="kota" class="form-control form-control-user">
-                                                    <option value="">Pilih</option>
-                                                </select>
-                                                <?php echo form_error('kab_identitas', '<small class="text-danger pl-3">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="form-group">
-                                                <label for="Kecamatan">Kecamatan</label>
-                                                <select name="kec_identitas" id="camat" class="form-control form-control-user">
-                                                    <option value="">Pilih</option>
-                                                </select>
-                                                <?php echo form_error('kec_identitas', '<small class="text-danger pl-3">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="form-group">
-                                                <label for="Desa/Kelurahan">Desa/Kelurahan</label>
-                                                <select name="kel_identitas" id="lurah" class="form-control form-control-user">
-                                                    <option value="">Pilih</option>
-                                                </select>
-                                                <?php echo form_error('kel_identitas', '<small class="text-danger pl-3">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control form-control-user" name="alamat_identitas" placeholder="Alamat sesuai Tanda Pengenal" value="<?= set_value('alamat_identitas') ?>">
-                                                <?php echo form_error('alamat_identitas', '<small class="text-center text-danger pl-3">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="form-group">
-                                                <input type="number" class="form-control form-control-user" name="pos_identitas" id="" placeholder="Kode Pos" value="<?= set_value('pos_identitas') ?>"></div>
-                                            <?php echo form_error('pos_identitas', '<small class="text-center text-danger pl-3">', '</small>'); ?>
-                                        </div>
-                                        <div class="col-lg-12"></div>
-                                        <div class="col-lg-12">
-                                            <div class="alert alert-info alert-dismissible" role="alert">
-                                                Mohon isi alamat domisili!
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="form-group">
-                                                <label for="Provinsi">Provinsi</label>
                                                 <select name="prov_domisili" id="prop_domisili" class="form-control form-control-user">
-                                                    <option value="">Pilih</option>
+                                                    <option value="" selected="true" disabled="disabled"> Pilih Provinsi</option>
                                                     <?php foreach ($prop as $row) : ?>
                                                         <option value="<?= $row->id_prov; ?>" <?= set_select('prov_domisili', $row->id_prov) ?>><?= ucwords($row->nama); ?></option>
                                                     <?php endforeach; ?>
@@ -214,7 +90,6 @@
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <label for="Kabupaten/Kota">Kabupaten/Kota</label>
                                                 <select name="kab_domisili" id="kota_domisili" class="form-control form-control-user">
                                                     <option value="">Pilih</option>
                                                 </select>
@@ -223,7 +98,6 @@
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <label for="Kecamatan">Kecamatan</label>
                                                 <select name="kec_domisili" id="camat_domisili" class="form-control form-control-user">
                                                     <option value="">Pilih</option>
                                                 </select>
@@ -232,23 +106,27 @@
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <label for="Desa/Kelurahan">Desa/Kelurahan</label>
                                                 <select name="kel_domisili" id="lurah_domisili" class="form-control form-control-user">
                                                     <option value="">Pilih</option>
                                                 </select>
                                                 <?php echo form_error('kel_domisili', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control form-control-user" name="alamat_domisili" placeholder="Alamat Domisili" value="<?= set_value('alamat_domisili') ?>" />
-                                                <?php echo form_error('alamat_domisili', '<small class="text-center text-danger pl-3">', '</small>'); ?>
-                                            </div>
-                                        </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
                                                 <input type="number" class="form-control form-control-user" name="pos_domisili" id="" placeholder="Kode Pos" value="<?= set_value('pos_domisili') ?>"></div>
                                             <?php echo form_error('pos_domisili', '<small class="text-center text-danger pl-3">', '</small>'); ?>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <select name="tujuan_buka" id="tujuan" class="form-control custom-select custom-select-md" required>
+                                                    <option value="" selected="true" disabled="disabled">Tujuan Pembukaan Rekening</option>
+                                                    <?php foreach ($tujuan_buka as $key => $row) : ?>
+                                                        <option value="<?= $row ?>" <?= set_select('tujuan_buka', $row) ?>><?= $row ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                                <?php echo form_error('tujuan_buka', '<small class="text-center text-danger pl-3">', '</small>'); ?>
+                                            </div>
                                         </div>
                                     </div>
                                 </div> <!-- end tab identitas -->
@@ -377,22 +255,8 @@
 
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <select name="tujuan_buka" id="tujuan" class="form-control custom-select custom-select-md" required>
-                                                    <option value="" selected="true" disabled="disabled">Tujuan Pembukaan Rekening</option>
-                                                    <?php foreach ($tujuan_buka as $key => $row) : ?>
-                                                        <option value="<?= $row ?>" <?= set_select('tujuan_buka', $row) ?>><?= $row ?></option>
-                                                    <?php endforeach; ?>
-                                                </select>
-                                                <?php echo form_error('tujuan_buka', '<small class="text-center text-danger pl-3">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="form-group">
                                                 <select class="form-control custom-select custom-select-md" id="jenis_tab" name="jenis_tab">
                                                     <option value="" selected="true" disabled="disabled">Pilih Jenis Produk Tabungan</option>
-                                                    <!-- <?php foreach ($jenis as $row) : ?>
-                                                        <option value="<?= $row->id_produk; ?>" <?= set_select('jenis_tab', $row->id_produk) ?>><?= ucwords($row->produk); ?></option>
-                                                    <?php endforeach; ?> -->
                                                 </select>
                                                 <?php echo form_error('jenis_tab', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                             </div>
@@ -400,7 +264,6 @@
                                     </div>
                                 </div>
                                 <div id="pekerjaan" class="tab-pane fade">
-                                    <p class="alert alert-danger" role="alert" style="margin-top: 25px;">Mohon isi sesuai data sebenarnya!</p>
                                     <div class="row">
                                         <div class="col-lg-3">
                                             <div class="form-group">
@@ -486,44 +349,31 @@
                                     </div>
                                 </div><!-- end tab pekerjaan -->
                                 <div id="dokumen" class="tab-pane fade">
-                                    <p class="alert alert-danger" role="alert" style="margin-top: 25px;">Mohon isi sesuai data sebenarnya! Ukuran Max file adalah 200 KB</p>
-                                    <!-- <div class="row"> -->
-                                    <!-- <div class="col-lg-6"> -->
                                     <div class="form-group">
                                         <label for="image">Lampirkan Foto Tanda Pengenal (KTP, SIM, Passport)</label>
                                         <input type="file" class="form-control-file" name="ft_identitas" required>
                                         <?php echo form_error('ft_identitas', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                     </div>
-                                    <!-- </div> -->
-                                    <!-- <div class="col-lg-6"> -->
                                     <div class="form-group">
                                         <label for="image">Lampirkan Foto Kartu Keluarga</label>
                                         <input type="file" class="form-control-file" name="ft_kk" required>
                                         <?php echo form_error('ft_kk', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                     </div>
-                                    <!-- </div> -->
-                                    <!-- <div class="col-lg-6"> -->
                                     <div class="form-group">
                                         <label for="image">Lampirkan Foto Selfie</label>
                                         <input type="file" class="form-control-file" name="ft_diri" required>
                                         <?php echo form_error('ft_diri', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                     </div>
-                                    <!-- </div> -->
-                                    <!-- <div class="col-lg-6"> -->
                                     <div class="form-group">
                                         <label for="image">Lampirkan Foto Tanda Tangan</label>
                                         <input type="file" class="form-control-file" name="ft_ttd" required>
                                         <?php echo form_error('ft_ttd', '<small class="text-center text-danger pl-3">', '</small>'); ?>
                                     </div>
-                                    <!-- </div> -->
-                                    <!-- <div class="col-lg-6"> -->
                                     <div class="form-group">
                                         <label for="image">Lampirkan Foto NPWP</label>
                                         <input type="file" class="form-control-file" name="ft_npwp">
                                         <?php echo form_error('ft_npwp', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
-                                    <!-- </div> -->
-                                    <!-- </div> -->
                                     <p class="alert alert-danger" role="alert">Syaratan dan Ketentuan</p>
                                     <div class="row">
                                         <div class="col-lg-12">
@@ -610,55 +460,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     $(document).ready(function() {
-        $("#propinsi").change(function() {
-            var id = $(this).val();
-            var data = "kabupaten";
-            $.ajax({
-                url: "<?php echo base_url('getDati'); ?>",
-                method: "POST",
-                dataType: "JSON",
-                data: {
-                    id: id,
-                    data: data,
-                },
-                success: function(response) {
-                    $("#kota").html(response.list_kota).show();
-                }
-            });
-        });
-
-        $("#kota").change(function() {
-            var id = $(this).val();
-            var data = "kecamatan";
-            $.ajax({
-                url: "<?= base_url('getDati'); ?>",
-                method: "POST",
-                dataType: "JSON",
-                data: {
-                    id: id,
-                    data: data,
-                },
-                success: function(response) {
-                    $("#camat").html(response.list_kota).show();
-                }
-            });
-        });
-        $("#camat").change(function() {
-            var id = $(this).val();
-            var data = "desa";
-            $.ajax({
-                url: "<?= base_url('getDati'); ?>",
-                method: "POST",
-                dataType: "JSON",
-                data: {
-                    id: id,
-                    data: data,
-                },
-                success: function(response) {
-                    $("#lurah").html(response.list_kota).show();
-                }
-            });
-        });
         $("#prop_domisili").change(function() {
             var id = $(this).val();
             var data = "kabupaten";
@@ -675,7 +476,6 @@
                 }
             });
         });
-
         $("#kota_domisili").change(function() {
             var id = $(this).val();
             var data = "kecamatan";
@@ -729,7 +529,6 @@
             autoclose: true,
             showWeekDays: false
         });
-
         $("#status_menikah").change(function() {
             var status;
             var d = document.forms['eform']['status_menikah'].value;

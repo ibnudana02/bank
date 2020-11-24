@@ -213,11 +213,11 @@ class Produk extends CI_Controller
         if ($this->form_validation->run() == true) {
             $this->nsb->createNsb();
             $this->load->view('template/header', $data);
-            $this->load->view('produk/bukaRek', $data);
+            $this->load->view('produk/opRek', $data);
             $this->load->view('template/footer');
         } else {
             $this->load->view('template/header', $data);
-            $this->load->view('produk/bukaRek', $data);
+            $this->load->view('produk/opRek', $data);
             $this->load->view('template/footer');
         }
     }

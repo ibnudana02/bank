@@ -41,7 +41,7 @@ class Welcome extends CI_Controller
 
 		if ($data == "kabupaten") {
 			$daerah = $this->user->viewKab($id);
-			$lists = "<option value=''>Pilih</option>";
+			$lists = "<option value='' selected='true' disabled='disabled'> Pilih Kabupaten</option>";
 			foreach ($daerah as $data) {
 				$lists .= "<option value='" . $data->id_kab . "' " . set_select('kab_identitas', $data->id_kab) . ">";
 				$lists .= $data->nama . "</option>";
@@ -50,7 +50,7 @@ class Welcome extends CI_Controller
 			echo json_encode($callback);
 		} elseif ($data == "kecamatan") {
 			$daerah = $this->user->viewKec($id);
-			$lists = "<option value=''>Pilih</option>";
+			$lists = "<option value='' selected='true' disabled='disabled'> Pilih Kecamatan</option>";
 			foreach ($daerah as $data) {
 				$lists .= "<option value='" . $data->id_kec . "'>";
 				$lists .= $data->nama . "</option>";
@@ -59,7 +59,7 @@ class Welcome extends CI_Controller
 			echo json_encode($callback);
 		} elseif ($data = "desa") {
 			$daerah = $this->user->viewDesa($id);
-			$lists = "<option value=''>Pilih</option>";
+			$lists = "<option value='' selected='true' disabled='disabled'> Pilih Desa/Kelurahan</option>";
 			foreach ($daerah as $data) {
 				$lists .= "<option value='" . $data->id_kel . "'>";
 				$lists .= $data->nama . "</option>";
