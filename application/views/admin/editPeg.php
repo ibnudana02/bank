@@ -13,7 +13,7 @@
                 <div class="card-body col-12 mx-auto">
                     <div class="table-responsive">
                         <div class="col-12 col-xs-12 mx-auto">
-                            <form class="user" method="post" action="<?= base_url('admin/add_pegawai'); ?>">
+                            <form class="user" method="post" action="<?= base_url('admin/add_pegawai'); ?>" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label>Nama Pegawai</label>
                                     <input type="text" class="form-control form-control-user" name="nama" id="nama" value="<?= $data->nama ?>">
@@ -40,6 +40,11 @@
                                                     } ?>value="<?= $row->id_jabatan; ?>"><?= $row->jabatan; ?></option>
                                         <?php endforeach; ?>
                                     </select>
+                                </div>
+                                <?php echo form_error('foto', '<small class="text-danger pl-5">', '</small>'); ?>
+                                <div class="form-group">
+                                    <label for="image">Gambar</label>
+                                    <input type="file" class="form-control-file" name="foto" value="<?= set_value('foto'); ?>">
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 ">

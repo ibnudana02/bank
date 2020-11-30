@@ -115,4 +115,11 @@ class Welcome extends CI_Controller
 			}
 		}
 	}
+
+	public function new()
+	{
+		$this->load->view('template/new_header', FALSE);
+		$this->load->view('new', FALSE);
+		$this->load->view('template/new_footer', FALSE);
+	}
 }

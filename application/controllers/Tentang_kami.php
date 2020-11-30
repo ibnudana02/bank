@@ -76,9 +76,9 @@ class Tentang_kami extends CI_Controller
         $data['script_captcha'] = $this->recaptcha->getScriptTag();
         $recaptcha = $this->input->post('g-recaptcha-response');
         $response = $this->recaptcha->verifyResponse($recaptcha);
-        $this->load->view('template/header', $data);
-        $this->load->view('tentang/contact', $data);
-        $this->load->view('template/footer');
+        $this->load->view('template/new_header', FALSE);
+        $this->load->view('tentang/contact', FALSE);
+        $this->load->view('template/new_footer', FALSE);
     }
 
     public function struktur()
