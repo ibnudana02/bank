@@ -10,6 +10,16 @@ class Welcome extends CI_Controller
 		$this->load->model(array('Layanan_model' => 'layanan', 'Slider_model' => 'slider', 'Berita_model' => 'berita', 'Produk_model' => 'produk', 'User_model' => 'user'));
 	}
 
+	public function index()
+	{
+		$data['judul'] = 'BPR Unisritama - Mitra Ekonomi Kerakyatan';
+		$data['slider'] = $this->slider->getAll()->result();
+		$data['berita'] = $this->berita->getAll()->result();
+		$this->load->view('template/new_header', $data, FALSE);
+		$this->load->view('template/new_slider', $data, FALSE);
+		$this->load->view('new', FALSE);
+		$this->load->view('template/new_footer', FALSE);
+	}
 
 	public function old()
 	{
@@ -114,15 +124,5 @@ class Welcome extends CI_Controller
 				echo "<script type='text/javascript'>window.parent.CKEDITOR.tools.callFunction($function_number, '$url', '$message');</script>";
 			}
 		}
-	}
-
-	public function index()
-	{
-		$data['judul'] = 'BPR Unisritama - Mitra Ekonomi Kerakyatan';
-		$data['slider'] = $this->slider->getAll()->result();
-		$this->load->view('template/new_header', $data, FALSE);
-		$this->load->view('template/new_slider', $data, FALSE);
-		$this->load->view('new', FALSE);
-		$this->load->view('template/new_footer', FALSE);
 	}
 }

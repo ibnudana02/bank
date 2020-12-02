@@ -34,3 +34,60 @@
         </div>
     </div>
 </section>
+<section class="page-content">
+    <div class="container">
+        <div class="row">
+            <div class="content col-lg">
+                <div class="carousel" data-items="3">
+                    <?php foreach ($berita as $row) : ?>
+                        <div class="post-item border">
+                            <div class="post-item-wrap">
+                                <div class="post-image">
+                                    <a href="<?= 'berita/' . $row->slug ?>">
+                                        <img alt="" src="<?= base_url('upload/berita/' . $row->image) ?>"></a>
+                                    <span class="post-meta-category"><a href="#"><?= $row->kategori ?></a></span>
+                                </div>
+                                <div class="post-item-description">
+                                    <span class="post-meta-date"><i class="fa fa-calendar-o"></i>Jan 21, 2017</span>
+                                    <h2><a href="#"><?= ucwords($row->judul) ?></a></h2>
+                                    <p><?= html_entity_decode(substr($row->isi, 0, 80)) ?></p>
+                                    <a href="#" class="item-link">Read More <i class="icon-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="background-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg col-xs">
+                <div class="carousel client-logos" data-items="5">
+                    <div>
+                        <a href="#"><img alt="" src="<?= base_url('assets/') ?>img/client/ayokebank.jpg">
+                        </a>
+                    </div>
+                    <div>
+                        <a href=" #"><img alt="" src="<?= base_url('assets/') ?>img/client/YLPI.jpg">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#"><img alt="" src="<?= base_url('assets/') ?>img/client/perbarindo.jpg">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#"><img alt="" src="<?= base_url('assets/') ?>img/client/ojk.jpg">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#"><img alt="" src="<?= base_url('assets/') ?>img/client/lps.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
