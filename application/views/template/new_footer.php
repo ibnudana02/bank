@@ -4,44 +4,44 @@
             <div class="row">
                 <div class="col-lg-5">
                     <div class="widget">
-                        <div class="widget-title">Polo HTML5 Template</div>
-                        <p class="mb-5">Built with love in Fort Worth, Texas, USA<br>
-                            All rights reserved. Copyright © 2019. INSPIRO.</p>
+                        <div class="widget-title">PT. Bank Perkreditan Rakyat Unisritama</div>
+                        <p class="mb-5">B<br>
+                            All rights reserved.</p>
                     </div>
                 </div>
                 <div class="col-lg-7">
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="widget">
-                                <div class="widget-title">Discover</div>
+                                <div class="widget-title">Tentang</div>
                                 <ul class="list">
-                                    <li><a href="#">Features</a></li>
-                                    <li><a href="#">Layouts</a></li>
-                                    <li><a href="#">Corporate</a></li>
-                                    <li><a href="#">Updates</a></li>
-                                    <li><a href="#">Pricing</a></li>
-                                    <li><a href="#">Customers</a></li>
+                                    <li><a href="#">Profil</a></li>
+                                    <li><a href="#">Visi & Misi</a></li>
+                                    <li><a href="#">Manajemen</a></li>
+                                    <li><a href="#">Struktur</a></li>
+                                    <li><a href="#">Penghargaan</a></li>
+                                    <li><a href="#">Lokasi Kantor</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="widget">
-                                <div class="widget-title">Features</div>
+                                <div class="widget-title">Produk</div>
                                 <ul class="list">
-                                    <li><a href="#">Layouts</a></li>
-                                    <li><a href="#">Headers</a></li>
-                                    <li><a href="#">Widgets</a></li>
-                                    <li><a href="#">Footers</a></li>
+                                    <li><a href="#">Tabungan</a></li>
+                                    <li><a href="#">Deposito</a></li>
+                                    <li><a href="#">Kredit</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="widget">
-                                <div class="widget-title">Pages</div>
+                                <div class="widget-title">News</div>
                                 <ul class="list">
-                                    <li><a href="#">Portfolio</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Shop</a></li>
+                                    <li><a href="#">Berita</a></li>
+                                    <li><a href="#">Laporan Keuangan</a></li>
+                                    <li><a href="#">GCG Report</a></li>
+                                    <li><a href="#">Pengkinian Data</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -49,9 +49,7 @@
                             <div class="widget">
                                 <div class="widget-title">Support</div>
                                 <ul class="list">
-                                    <li><a href="#">Help Desk</a></li>
-                                    <li><a href="#">Documentation</a></li>
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="#">Hubungi Kami</a></li>
                                 </ul>
                             </div>
                         </div>

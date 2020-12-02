@@ -7575,7 +7575,7 @@ h6.font-parisienne {
 }
 
 #footer .footer-content {
-    padding: 60px 0 40px
+    padding: 60px 0 0
 }
 
 #footer .widget .widget-title,
@@ -7594,8 +7594,8 @@ h6.font-parisienne {
 }
 
 #footer .copyright-content {
-    min-height: 80px;
-    padding: 30px 0;
+    min-height: 20px;
+    padding: 10px 0;
     background-color: #eff1f4;
     font-size: 13px
 }
