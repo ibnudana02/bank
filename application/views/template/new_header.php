@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="<?php echo base_url('assets/'); ?>img/logo/ico.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>POLO | The Multi-Purpose HTML5 Template</title>
+    <title><?= $judul; ?></title>
 
     <link href="<?= base_url('assets/new/') ?>css/plugins.css" rel="stylesheet">
     <link href="<?= base_url('assets/new/') ?>css/style.css" rel="stylesheet">
