@@ -11,7 +11,7 @@ class Welcome extends CI_Controller
 	}
 
 
-	public function index()
+	public function old()
 	{
 		$data['judul'] = 'BPR Unisritama - Mitra Ekonomi Kerakyatan';
 		$data['data'] = $this->layanan->getAll()->result();
@@ -116,9 +116,11 @@ class Welcome extends CI_Controller
 		}
 	}
 
-	public function new()
+	public function index()
 	{
+		$data['slider'] = $this->slider->getAll()->result();
 		$this->load->view('template/new_header', FALSE);
+		$this->load->view('template/new_slider', $data, FALSE);
 		$this->load->view('new', FALSE);
 		$this->load->view('template/new_footer', FALSE);
 	}

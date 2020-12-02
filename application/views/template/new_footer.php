@@ -7,7 +7,6 @@
                         <div class="widget-title">Polo HTML5 Template</div>
                         <p class="mb-5">Built with love in Fort Worth, Texas, USA<br>
                             All rights reserved. Copyright © 2019. INSPIRO.</p>
-                        <a href="https://themeforest.net/item/polo-responsive-multipurpose-html5-template/13708923" class="btn btn-inverted" target="_blank">Purchase Now</a>
                     </div>
                 </div>
                 <div class="col-lg-7">
@@ -63,7 +62,7 @@
     </div>
     <div class="copyright-content">
         <div class="container">
-            <div class="copyright-text text-center">&copy; 2019 POLO - Responsive Multi-Purpose HTML5 Template. All Rights Reserved.<a href="http://www.inspiro-media.com/" target="_blank" rel="noopener"> INSPIRO</a> </div>
+            <div class="copyright-text text-center">&copy; 2020 All Rights Reserved.</div>
         </div>
     </div>
 </footer>
