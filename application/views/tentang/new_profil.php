@@ -37,7 +37,7 @@
             <div class="col-lg-3">
                 <div class="team-member">
                     <div class="team-image">
-                        <img src="<?= base_url('assets/new/images/team/8.jpg') ?>">
+                        <img src="<?= base_url('assets/') ?>img/client/YLPI.jpg">
                     </div>
                     <div class="team-desc">
                         <h3>YLPI RIAU</h3>
