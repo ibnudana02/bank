@@ -28,6 +28,7 @@
                             <div class="widget">
                                 <div class="widget-title">Produk</div>
                                 <ul class="list">
+                                    <li><a href="#">Layanan</a></li>
                                     <li><a href="#">Tabungan</a></li>
                                     <li><a href="#">Deposito</a></li>
                                     <li><a href="#">Kredit</a></li>

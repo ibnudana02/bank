@@ -24,9 +24,9 @@ class Tentang_kami extends CI_Controller
     {
         $data = $this->data;
         $data['judul'] = 'Profil Perusahaan | Bank Unisritama';
-        $this->load->view('template/header', $data);
-        $this->load->view('tentang/profil');
-        $this->load->view('template/footer');
+        $this->load->view('template/new_header', $data);
+        $this->load->view('tentang/new_profil');
+        $this->load->view('template/new_footer');
     }
 
     public function sejarah()

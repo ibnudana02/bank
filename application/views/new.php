@@ -4,7 +4,7 @@
             <h2>Produk & Layanan</h2>
         </div>
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-4 p-b-20">
                 <div class="text-box text-box-light">
                     <a href="#">
                         <i class="far fa-paper-plane"></i>
@@ -13,7 +13,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 p-b-20">
                 <div class="text-box text-box-light">
                     <a href="#">
                         <i class="fas fa-chart-pie"></i>
@@ -22,7 +22,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 p-b-20">
                 <div class="text-box text-box-light">
                     <a href="#">
                         <i class="far fa-lightbulb"></i>
@@ -34,7 +34,7 @@
         </div>
     </div>
 </section>
-<section class="page-content">
+<section class="page-content p-t-80">
     <div class="container">
         <div class="row">
             <div class="content col-lg">
@@ -48,10 +48,10 @@
                                     <span class="post-meta-category"><a href="#"><?= $row->kategori ?></a></span>
                                 </div>
                                 <div class="post-item-description">
-                                    <span class="post-meta-date"><i class="fa fa-calendar-o"></i>Jan 21, 2017</span>
-                                    <h2><a href="#"><?= ucwords($row->judul) ?></a></h2>
+                                    <span class="post-meta-date"><i class="fa fa-calendar-o"></i><?php echo date('M d, Y', strtotime($row->created_on)) ?></span>
+                                    <h2><a href="<?= 'berita/' . $row->slug ?>"><?= ucwords($row->judul) ?></a></h2>
                                     <p><?= html_entity_decode(substr($row->isi, 0, 80)) ?></p>
-                                    <a href="#" class="item-link">Read More <i class="icon-chevron-right"></i></a>
+                                    <a href="<?= 'berita/' . $row->slug ?>" class="item-link">Read More <i class="icon-chevron-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -61,7 +61,7 @@
         </div>
     </div>
 </section>
-<section class="background-grey">
+<section class="p-t-10 p-b-10">
     <div class="container">
         <div class="row">
             <div class="col-lg col-xs">

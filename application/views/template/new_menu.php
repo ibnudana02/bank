@@ -3,10 +3,10 @@
     <div class="container">
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li class="dropdown-submenu"><a href="#">Tentang Kami</a>
+                <li><a href="<?= base_url() ?>">Home</a></li>
+                <li class="dropdown"><a href="#">Tentang Kami</a>
                     <ul class="dropdown-menu">
-                        <li class="dropdown-submenu"><a href="#">Profil Perusahaan</a></li>
+                        <li class="dropdown-submenu"><a href="<?= base_url('profil') ?>">Profil Perusahaan</a></li>
                         <li class="dropdown-submenu"><a href="#">Visi dan Misi</a></li>
                         <li class="dropdown-submenu"><a href="#">Board Manajemen</a></li>
                         <li class="dropdown-submenu"><a href="#">Struktur Organisasi</a></li>
