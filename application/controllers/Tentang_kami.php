@@ -87,8 +87,8 @@ class Tentang_kami extends CI_Controller
     {
         $data = $this->data;
         $data['judul'] = 'Lokasi | Bank Unisritama';
-        $this->load->view('template/header', $data);
+        $this->load->view('template/new_header', $data);
         $this->load->view('tentang/location');
-        $this->load->view('template/footer');
+        $this->load->view('template/new_footer');
     }
 }
