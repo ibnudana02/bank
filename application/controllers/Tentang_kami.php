@@ -29,22 +29,13 @@ class Tentang_kami extends CI_Controller
         $this->load->view('template/new_footer');
     }
 
-    public function sejarah()
-    {
-        $data = $this->data;
-        $data['judul'] = 'Sejarah Pendirian | Bank Unisritama';
-        $this->load->view('template/header', $data);
-        $this->load->view('tentang/sejarah');
-        $this->load->view('template/footer');
-    }
-
     public function visi_misi()
     {
         $data = $this->data;
         $data['judul'] = 'Visi dan Misi | Bank Unisritama';
-        $this->load->view('template/header', $data);
-        $this->load->view('tentang/visi_misi');
-        $this->load->view('template/footer');
+        $this->load->view('template/new_header', $data);
+        $this->load->view('tentang/new_visi');
+        $this->load->view('template/new_footer');
     }
 
     public function manajemen()
@@ -52,9 +43,9 @@ class Tentang_kami extends CI_Controller
         $data = $this->data;
         $data['judul'] = 'Board Manajemen | Bank Unisritama';
         $data['pegawai'] = $this->pegawai->getMan()->result();
-        $this->load->view('template/header', $data);
-        $this->load->view('tentang/board', $data);
-        $this->load->view('template/footer');
+        $this->load->view('template/new_header', $data);
+        $this->load->view('tentang/manajemen', $data);
+        $this->load->view('template/new_footer');
     }
 
     public function awards()
@@ -62,9 +53,9 @@ class Tentang_kami extends CI_Controller
         $data = $this->data;
         $data['judul'] = 'Penghargaan | Bank Unisritama';
         $data['data'] = $this->awards->getAll()->result();
-        $this->load->view('template/header', $data);
+        $this->load->view('template/new_header', $data);
         $this->load->view('tentang/awards');
-        $this->load->view('template/footer');
+        $this->load->view('template/new_footer');
     }
 
     public function contact()
@@ -87,9 +78,9 @@ class Tentang_kami extends CI_Controller
         $data['judul'] = 'Struktur Organisasi | Bank Unisritama';
         $data['data'] = $this->pegawai->getAll()->result();
         $d = $this->pegawai->getAll();
-        $this->load->view('template/header', $data);
-        $this->load->view('tentang/struktur');
-        $this->load->view('template/footer');
+        $this->load->view('template/new_header', $data);
+        $this->load->view('tentang/new_struktur');
+        $this->load->view('template/new_footer');
     }
 
     public function location()

@@ -7,11 +7,11 @@
                 <li class="dropdown"><a href="#">Tentang Kami</a>
                     <ul class="dropdown-menu">
                         <li class="dropdown-submenu"><a href="<?= base_url('profil') ?>">Profil Perusahaan</a></li>
-                        <li class="dropdown-submenu"><a href="#">Visi dan Misi</a></li>
-                        <li class="dropdown-submenu"><a href="#">Board Manajemen</a></li>
-                        <li class="dropdown-submenu"><a href="#">Struktur Organisasi</a></li>
-                        <li class="dropdown-submenu"><a href="#">Penghargaan</a></li>
-                        <li class="dropdown-submenu"><a href="#">Lokasi Kantor</a></li>
+                        <li class="dropdown-submenu"><a href="<?= base_url('visi_misi') ?>">Visi dan Misi</a></li>
+                        <li class="dropdown-submenu"><a href="<?= base_url('manajemen') ?>">Board Manajemen</a></li>
+                        <li class="dropdown-submenu"><a href="<?= base_url('struktur') ?>">Struktur Organisasi</a></li>
+                        <li class="dropdown-submenu"><a href="<?= base_url('awards') ?>">Penghargaan</a></li>
+                        <li class="dropdown-submenu"><a href="<?= base_url('location') ?>">Lokasi Kantor</a></li>
                     </ul>
                 </li>
                 <li class="dropdown mega-menu-item"><a href="#">Produk dan Layanan</a>

@@ -1,12 +1,12 @@
 <head>
     <link rel="stylesheet" href="<?= base_url('assets/leaflet/leaflet.css') ?>">
     <script src="<?= base_url('assets/leaflet/leaflet.js') ?>"></script>
-</head><!-- about-area start -->
-<div class="about-area struktur">
+</head>
+<section id="page-content">
     <div class="container">
         <div id="map" style="width:100%; height: 450px;"></div>
     </div>
-</div>
+</section>
 
 <script>
     var mymap = L.map('map').setView([0.435672, 101.434622], 14);
