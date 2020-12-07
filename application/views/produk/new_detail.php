@@ -30,17 +30,13 @@
                                             <i class="fab fa-facebook-f"></i>
                                             <span>Facebook</span>
                                         </a>
-                                        <a class="btn btn-xs btn-slide btn-twitter" href="#" data-width="100">
+                                        <a class="btn btn-xs btn-slide btn-twitter" href="https://twitter.com/intent/tweet?url=<?= urlencode(current_url()) ?>" data-width="100">
                                             <i class="fab fa-twitter"></i>
                                             <span>Twitter</span>
                                         </a>
-                                        <a class="btn btn-xs btn-slide btn-instagram" href="#" data-width="118">
-                                            <i class="fab fa-instagram"></i>
-                                            <span>Instagram</span>
-                                        </a>
-                                        <a class="btn btn-xs btn-slide btn-googleplus" href="mailto:#" data-width="80">
-                                            <i class="icon-mail"></i>
-                                            <span>Mail</span>
+                                        <a class="btn btn-xs btn-slide btn-whatsapp" href="whatsapp://send?text=<?= current_url() ?>" data-width="118">
+                                            <i class="fab fa-whatsapp"></i>
+                                            <span>Whatsapp</span>
                                         </a>
                                     </div>
                                 </div>
@@ -121,13 +117,9 @@
                             </div> -->
                         </div>
                     </div>
-
                 </div>
             </div>
-
-
             <div class="sidebar sticky-sidebar col-lg-3">
-
                 <div class="widget  widget-newsletter">
                     <form id="widget-search-form-sidebar" action="https://inspirothemes.com/polo/search-results-page.html" method="get">
                         <div class="input-group">
@@ -138,8 +130,6 @@
                         </div>
                     </form>
                 </div>
-
-
                 <div class="widget">
                     <div class="tabs">
                         <ul class="nav nav-tabs" id="tabs-posts" role="tablist">
