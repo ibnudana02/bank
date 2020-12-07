@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-lg-4 p-b-20">
                 <div class="text-box text-box-light">
-                    <a href="#">
+                    <a href="<?= base_url('kredit') ?>">
                         <i class="far fa-paper-plane"></i>
                         <h3>Kredit </h3>
                         <p>Solusi kebutuhan modal usaha Anda, kredit kendaraan bermotor, biaya pendidikan dan keperluan mendesak lainnya.</p>
@@ -15,7 +15,7 @@
             </div>
             <div class="col-lg-4 p-b-20">
                 <div class="text-box text-box-light">
-                    <a href="#">
+                    <a href="<?= base_url('tabungan') ?>">
                         <i class="fas fa-chart-pie"></i>
                         <h3>Tabungan </h3>
                         <p>Saving Dana anda dengan Aman sekaligus bisa berinvestasi dengan Suku Bunga bersaing dan Pastinya dijamin LPS.</p>

@@ -107,9 +107,11 @@ class Produk extends CI_Controller
         $data['bread'] = 'Home';
         $data['crumb'] = 'Produk';
         $data['data'] = $this->produk->getAll();
-        $this->load->view('template/header', $data);
-        $this->load->view('produk/produk', $data);
-        $this->load->view('template/footer');
+        // print_r($data['data']);
+        // die;
+        $this->load->view('template/new_header', $data);
+        $this->load->view('produk/new_produk', $data);
+        $this->load->view('template/new_footer');
     }
 
     public function detailProduk($slug)
@@ -123,9 +125,9 @@ class Produk extends CI_Controller
         $data['krd'] = $this->produk->getKrd()->result();
         $data['berita'] = $this->berita->getLima();
         $data['row'] = $row;
-        $this->load->view('template/header', $data);
-        $this->load->view('produk/detailProduk', $data);
-        $this->load->view('template/footer');
+        $this->load->view('template/new_header', $data);
+        $this->load->view('produk/new_detail', $data);
+        $this->load->view('template/new_footer');
     }
 
     public function createTab()
