@@ -1,4 +1,4 @@
-<footer id="footer">
+<footer id="footer" class="background-grey">
     <div class="footer-content">
         <div class="container">
             <div class="row">
@@ -7,6 +7,16 @@
                         <div class="widget-title">PT. Bank Perkreditan Rakyat Unisritama</div>
                         <p class="mb-5">B<br>
                             All rights reserved.</p>
+                        <div class="social-icons social-icons-colored">
+                            <ul>
+                                <li class="social-facebook"><a href="https://www.facebook.com/bankunisritama" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                <li class="social-wa"><a href="https://wa.me/6282391031212" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                                <li class="social-twitter"><a href="https://twitter.com/bpr_unisritama" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                <li class="social-instagram"><a href="https://www.instagram.com/bpr_unisritama/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                <li class="social-linkedin"><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                                <li class="social-youtube"><a href="https://www.youtube.com/channel/UCDXod80EPm_B-YndX4AMlIw" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-7">
@@ -59,7 +69,7 @@
             </div>
         </div>
     </div>
-    <div class="copyright-content">
+    <div class="copyright-content background-darkgrey">
         <div class="container">
             <div class="copyright-text text-center">&copy; 2020 All Rights Reserved.</div>
         </div>

@@ -9798,7 +9798,11 @@ div.dataTables_wrapper div.dataTables_length select {
 }
 
 .background-grey {
-    background-color: #f7f9fb !important
+    background-color: #e3e5e7 !important
+}
+
+.background-darkgrey {
+    background-color: #c5c6c7 !important
 }
 
 .background-dark {
@@ -13798,7 +13802,7 @@ ul.nav li.dropdown:hover>ul.dropdown-menu {
 
 .social-icons.social-icons-colored .social-wa a,
 .social-icons.social-icons-colored-hover .social-wa a:hover {
-    background-color: #25D366
+    background-color: #25d366
 }
 
 .social-icons.social-icons-colored .social-twitter a,
@@ -13818,12 +13822,12 @@ ul.nav li.dropdown:hover>ul.dropdown-menu {
 
 .social-icons.social-icons-colored .social-youtube a,
 .social-icons.social-icons-colored-hover .social-youtube a:hover {
-    background-color: #ef4e41
+    background-color: #f33629
 }
 
 .social-icons.social-icons-colored .social-instagram a,
 .social-icons.social-icons-colored-hover .social-instagram a:hover {
-    background-color: #e53d00
+    background-color: #e1306c
 }
 
 .social-icons.social-icons-colored .social-gplus a,

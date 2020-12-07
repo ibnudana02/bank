@@ -17,11 +17,11 @@ class Berita_model extends CI_Model
 
     public function getAll()
     {
-        $this->db->select('*')
+        $this->db->select('*, berita.image as gambar, user.image as profil')
             ->from($this->_table)
-            ->join('kategori', 'kategori.id_kategori = berita.id_kategori');
+            ->join('kategori', 'kategori.id_kategori = berita.id_kategori')
+            ->join('user', 'user.id_user=berita.penulis', 'left');
         $this->db->order_by($this->_table . '.created_on', 'desc');
-
         return $this->db->get();
     }
 

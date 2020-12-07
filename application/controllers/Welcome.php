@@ -7,17 +7,27 @@ class Welcome extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model(array('Layanan_model' => 'layanan', 'Slider_model' => 'slider', 'Berita_model' => 'berita', 'Produk_model' => 'produk', 'User_model' => 'user'));
+		$this->load->model(array(
+			'Layanan_model' => 'layanan', 'Slider_model' => 'slider',
+			'Berita_model' => 'berita', 'Produk_model' => 'produk', 'User_model' => 'user'
+		));
+		$this->data = array(
+			'tabungan' => $this->produk->getTab()->result(),
+			'deposito' => $this->produk->getDep()->result(),
+			'kredit' => $this->produk->getKrd()->result(),
+			'layanan' => $this->produk->getLayanan()->result(),
+		);
 	}
 
 	public function index()
 	{
+		$data = $this->data;
 		$data['judul'] = 'BPR Unisritama - Mitra Ekonomi Kerakyatan';
 		$data['slider'] = $this->slider->getAll()->result();
 		$data['berita'] = $this->berita->getAll()->result();
 		$this->load->view('template/new_header', $data, FALSE);
 		$this->load->view('template/new_slider', $data, FALSE);
-		$this->load->view('new', FALSE);
+		$this->load->view('new', $data, FALSE);
 		$this->load->view('template/new_footer', FALSE);
 	}
 

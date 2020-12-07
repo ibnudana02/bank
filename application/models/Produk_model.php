@@ -141,6 +141,15 @@ class Produk_model extends CI_Model
         return $this->db->get()->row();
     }
 
+    public function getLayanan()
+    {
+        $this->db->select('*')
+            ->from($this->_table)
+            ->join('jenis', $this->_table . '.jenis=jenis.id_jenis');
+        $this->db->where($this->_table . '.jenis', '5ebc8092d915b');
+        return $this->db->get();
+    }
+
     public function getPayment()
     {
         $this->db->select('*')

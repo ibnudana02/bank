@@ -17,10 +17,10 @@
 
     <div class="body-inner">
 
-        <div id="topbar" class="hidden-sm">
+        <div id="topbar" class=" d-none background-grey">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 text-md-left text-center">
+                    <div class="col-md-6 text-center">
                         <ul class="top-menu">
                             <li><a href="#">Phone: (0761)-63381</a></li>
                             <li><a href="#">Email: unisritamabpr@yahoo.co.id</a></li>
@@ -33,7 +33,6 @@
                                 <li class="social-wa"><a href="https://wa.me/6282391031212"><i class="fab fa-whatsapp"></i></a></li>
                                 <li class="social-twitter"><a href="https://twitter.com/bpr_unisritama"><i class="fab fa-twitter"></i></a></li>
                                 <li class="social-instagram"><a href="https://www.instagram.com/bpr_unisritama/"><i class="fab fa-instagram"></i></a></li>
-                                <li class="social-facebook"><a href="https://www.instagram.com/bpr_unisritama/"><i class="fab fa-instagram"></i></a></li>
                                 <li class="social-linkedin"><a href="#"><i class="fab fa-linkedin"></i></a></li>
                                 <li class="social-youtube"><a href="https://www.youtube.com/channel/UCDXod80EPm_B-YndX4AMlIw"><i class="fab fa-youtube"></i></a></li>
                             </ul>

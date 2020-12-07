@@ -27,11 +27,11 @@
                                             <i class="fab fa-facebook-f"></i>
                                             <span>Facebook</span>
                                         </a>
-                                        <a class="btn btn-xs btn-slide btn-twitter" href="https://twitter.com/intent/tweet?url=<?= urlencode(current_url()) ?>" data-width="100">
+                                        <a class="btn btn-xs btn-slide btn-twitter" href="https://twitter.com/intent/tweet?url=<?= urlencode(current_url()) ?>" target="_blank">
                                             <i class="fab fa-twitter"></i>
                                             <span>Twitter</span>
                                         </a>
-                                        <a class="btn btn-xs btn-slide btn-whatsapp" href="whatsapp://send?text=<?= current_url() ?>" data-width="118">
+                                        <a class="btn btn-xs btn-slide btn-whatsapp" href="whatsapp://send?text=<?= current_url() ?>" target="_blank">
                                             <i class="fab fa-whatsapp"></i>
                                             <span>Whatsapp</span>
                                         </a>
@@ -58,36 +58,22 @@
                 <div class="widget">
                     <div class="tabs">
                         <ul class="nav nav-tabs nav-justified" id="tabs-posts" role="tablist">
-                            <!-- <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#popular" role="tab" aria-controls="popular" aria-selected="true">Popular</a>
-                            </li> -->
                             <li class="nav-item">
-                                <a class="nav-link active" id="contact-tab" data-toggle="tab" href="#recent" role="tab" aria-controls="recent" aria-selected="false">Recent</a>
+                                <a class="nav-link active" id="contact-tab" data-toggle="tab" href="#recent" role="tab" aria-controls="recent" aria-selected="false">Recent Berita</a>
                             </li>
                         </ul>
                         <div class="tab-content" id="tabs-posts-content">
-                            <div class="tab-pane fade show active" id="popular" role="tabpanel" aria-labelledby="popular-tab">
+                            <div class="tab-pane fade show active" id="recent" role="tabpanel" aria-labelledby="recent-tab">
                                 <div class="post-thumbnail-list">
-                                    <div class="post-thumbnail-entry">
-                                        <img alt="" src="images/blog/thumbnail/5.jpg">
-                                        <div class="post-thumbnail-content">
-                                            <a href="#">A true story, that never been told!</a>
-                                            <span class="post-date"><i class="icon-clock"></i> 6m ago</span>
-                                            <span class="post-category"><i class="fa fa-tag"></i> Technology</span>
+                                    <?php foreach ($berita as $value) : ?>
+                                        <div class="post-thumbnail-entry">
+                                            <img alt="" src="<?= base_url('upload/berita/' . $value->image) ?>">
+                                            <div class="post-thumbnail-content">
+                                                <a href="<?= base_url('berita/' . $value->slug)  ?>"><?= ucwords($value->judul) ?></a>
+                                                <span class="post-date"><i class="icon-calendar"></i> <?php echo date('D, d M Y', strtotime($value->created_on)) ?></span>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="recent" role="tabpanel" aria-labelledby="recent-tab">
-                                <div class="post-thumbnail-list">
-                                    <div class="post-thumbnail-entry">
-                                        <img alt="" src="images/blog/thumbnail/7.jpg">
-                                        <div class="post-thumbnail-content">
-                                            <a href="#">The most happiest time of the day!</a>
-                                            <span class="post-date"><i class="icon-clock"></i> 11h ago</span>
-                                            <span class="post-category"><i class="fa fa-tag"></i> Lifestyle</span>
-                                        </div>
-                                    </div>
+                                    <?php endforeach; ?>
                                 </div>
                             </div>
                         </div>

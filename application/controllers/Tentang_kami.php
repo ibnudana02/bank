@@ -16,6 +16,7 @@ class Tentang_kami extends CI_Controller
             'tabungan' => $this->produk->getTab()->result(),
             'deposito' => $this->produk->getDep()->result(),
             'kredit' => $this->produk->getKrd()->result(),
+            'layanan' => $this->produk->getLayanan()->result(),
         );
     }
 
@@ -67,8 +68,8 @@ class Tentang_kami extends CI_Controller
         $data['script_captcha'] = $this->recaptcha->getScriptTag();
         $recaptcha = $this->input->post('g-recaptcha-response');
         $response = $this->recaptcha->verifyResponse($recaptcha);
-        $this->load->view('template/new_header', FALSE);
-        $this->load->view('tentang/contact', FALSE);
+        $this->load->view('template/new_header', $data, FALSE);
+        $this->load->view('tentang/contact', $data, FALSE);
         $this->load->view('template/new_footer', FALSE);
     }
 
@@ -88,7 +89,7 @@ class Tentang_kami extends CI_Controller
         $data = $this->data;
         $data['judul'] = 'Lokasi | Bank Unisritama';
         $this->load->view('template/new_header', $data);
-        $this->load->view('tentang/location');
+        $this->load->view('tentang/location', $data);
         $this->load->view('template/new_footer');
     }
 }

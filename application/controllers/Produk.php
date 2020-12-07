@@ -19,6 +19,9 @@ class Produk extends CI_Controller
             'tabungan' => $this->produk->getTab()->result(),
             'deposito' => $this->produk->getDep()->result(),
             'kredit' => $this->produk->getKrd()->result(),
+            'layanan' => $this->produk->getLayanan()->result(),
+            'berita' => $this->berita->getLima(),
+
         );
     }
 
@@ -35,9 +38,9 @@ class Produk extends CI_Controller
         $data['category'] = $this->kategori->getAll(); //Ambil data kategori
         $data['berita'] = $this->berita->getLima(); //Ambil data berita
         $data['row'] =  $this->produk->getPmb(); //Ambil data berita
-        $this->load->view('template/header', $data); //passing data to header view
-        $this->load->view('produk/pmb', $data); //passing data to content view
-        $this->load->view('template/footer');
+        $this->load->view('template/new_header', $data); //passing data to header view
+        $this->load->view('produk/new_pmb', $data); //passing data to content view
+        $this->load->view('template/new_footer');
     }
 
     public function ppob()
@@ -47,9 +50,9 @@ class Produk extends CI_Controller
         $data['category'] = $this->kategori->getAll(); //Ambil data kategori
         $data['berita'] = $this->berita->getLima(); //Ambil data berita
         $data['row'] =  $this->produk->getPayment(); //Ambil data berita
-        $this->load->view('template/header', $data);
+        $this->load->view('template/new_header', $data);
         $this->load->view('produk/pmb', $data);
-        $this->load->view('template/footer');
+        $this->load->view('template/new_footer');
     }
 
     public function deposito()
@@ -59,9 +62,9 @@ class Produk extends CI_Controller
         $data['bread'] = 'Home';
         $data['crumb'] = 'Deposito';
         $data['data'] = $this->produk->getDep()->result();
-        $this->load->view('template/header', $data);
-        $this->load->view('produk/produk', $data);
-        $this->load->view('template/footer');
+        $this->load->view('template/new_header', $data);
+        $this->load->view('produk/new_produk', $data);
+        $this->load->view('template/new_footer');
     }
 
     public function tabungan()
@@ -83,9 +86,9 @@ class Produk extends CI_Controller
         $data['bread'] = 'Home';
         $data['crumb'] = 'Kredit';
         $data['data'] = $this->produk->getKrd()->result();
-        $this->load->view('template/header', $data);
-        $this->load->view('produk/produk', $data);
-        $this->load->view('template/footer');
+        $this->load->view('template/new_header', $data);
+        $this->load->view('produk/new_produk', $data);
+        $this->load->view('template/new_footer');
     }
 
     public function dana()
@@ -95,9 +98,9 @@ class Produk extends CI_Controller
         $data['bread'] = 'Home';
         $data['crumb'] = 'Produk Dana';
         $data['data'] = $this->produk->getDana()->result();
-        $this->load->view('template/header', $data);
-        $this->load->view('produk/produk', $data);
-        $this->load->view('template/footer');
+        $this->load->view('template/new_header', $data);
+        $this->load->view('produk/new_produk', $data);
+        $this->load->view('template/new_footer');
     }
 
     public function produk()
