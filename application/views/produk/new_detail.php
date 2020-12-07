@@ -20,7 +20,7 @@
                                     <span class="post-meta-date"><i class="fa fa-calendar-o"></i><?php echo date('M d, Y', strtotime($row->created_on)) ?></span>
                                     <span class="post-meta-category"><a href="#"><i class="fa fa-tag"></i><?= $row->jenis ?></a></span>
                                     <div class="post-meta-share">
-                                        <a class="btn btn-xs btn-slide btn-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?= base_url() ?>">
+                                        <a class="btn btn-xs btn-slide btn-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?= current_url(); ?>" target="_blank">
                                             <i class="fab fa-facebook-f"></i>
                                             <span>Facebook</span>
                                         </a>
