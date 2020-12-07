@@ -5,7 +5,6 @@
                 <div class="portfolio-item img-zoom ct-marketing ct-media ct-branding ct-marketing ct-webdesign">
                     <div class="portfolio-item-wrap">
                         <div class="portfolio-image">
-                            <!-- <a href="#"><img src="<?= base_url('assets/new/') ?>images/portfolio/70.jpg" alt=""></a> -->
                             <a href="#"><img src="<?= base_url('upload/produk/' . $row->image); ?>" alt=""></a>
                         </div>
                         <div class="portfolio-description">
@@ -19,4 +18,5 @@
             <?php endforeach; ?>
         </div>
     </div>
+    <div class="seperator"><i class="fa fa-chevron-down"></i></div>
 </section>

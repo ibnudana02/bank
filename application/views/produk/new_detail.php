@@ -2,7 +2,7 @@
     <meta property="og:url" content="<?= current_url() ?>" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="<?= $row->produk ?>" />
-    <meta property="og:description" content="<?= substr($row->deskripsi, 0, 30) ?>" />
+    <meta property="og:description" content="<?= htmlspecialchars(substr($row->deskripsi, 0, 30)) ?>" />
     <meta property="og:image" content="<?= base_url('upload/produk/' . $row->image); ?>" />
 </head>
 <section id="page-content" class="sidebar-right">
@@ -17,7 +17,6 @@
                         <div class="post-item-wrap">
                             <div class="post-image" data-animate="bounce">
                                 <a href="#">
-                                    <!-- <img alt="" src="<?= base_url('assets/new/') ?>images/blog/1.jpg"> -->
                                     <img alt="" src="<?= base_url('upload/produk/' . $row->image); ?>">
                                 </a>
                             </div>

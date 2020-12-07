@@ -71,9 +71,9 @@ class Produk extends CI_Controller
         $data['bread'] = 'Home';
         $data['crumb'] = 'Tabungan';
         $data['data'] = $this->produk->getTab()->result();
-        $this->load->view('template/header', $data);
-        $this->load->view('produk/produk', $data);
-        $this->load->view('template/footer');
+        $this->load->view('template/new_header', $data);
+        $this->load->view('produk/new_produk', $data);
+        $this->load->view('template/new_footer');
     }
 
     public function kredit()
