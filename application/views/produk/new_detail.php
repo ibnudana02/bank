@@ -1,3 +1,10 @@
+<head>
+    <meta property="og:url" content="<?= current_url() ?>" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="<?= $row->produk ?>" />
+    <meta property="og:description" content="<?= substr($row->deskripsi, 0, 30) ?>" />
+    <meta property="og:image" content="<?= base_url('upload/produk/' . $row->image); ?>" />
+</head>
 <section id="page-content" class="sidebar-right">
     <div class="container">
         <div class="row">
