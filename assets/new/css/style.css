@@ -13796,6 +13796,11 @@ ul.nav li.dropdown:hover>ul.dropdown-menu {
     background-color: #5d82d1
 }
 
+.social-icons.social-icons-colored .social-wa a,
+.social-icons.social-icons-colored-hover .social-wa a:hover {
+    background-color: #25D366
+}
+
 .social-icons.social-icons-colored .social-twitter a,
 .social-icons.social-icons-colored-hover .social-twitter a:hover {
     background-color: #40bff5
