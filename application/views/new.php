@@ -44,7 +44,7 @@
                             <div class="post-item-wrap">
                                 <div class="post-image">
                                     <a href="<?= 'berita/' . $row->slug ?>">
-                                        <img alt="" src="<?= base_url('upload/berita/' . $row->image) ?>"></a>
+                                        <img alt="" src="<?= base_url('upload/berita/' . $row->gambar) ?>"></a>
                                     <span class="post-meta-category"><a href="#"><?= $row->kategori ?></a></span>
                                 </div>
                                 <div class="post-item-description">

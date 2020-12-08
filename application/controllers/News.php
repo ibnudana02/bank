@@ -17,6 +17,7 @@ class News extends CI_Controller
             'tabungan' => $this->produk->getTab()->result(),
             'deposito' => $this->produk->getDep()->result(),
             'kredit' => $this->produk->getKrd()->result(),
+            'layanan' => $this->produk->getLayanan()->result(),
         );
     }
 
@@ -52,9 +53,9 @@ class News extends CI_Controller
         $data['category'] = $this->kategori->getAll(); //Ambil data kategori
         $data['berita'] = $this->berita->getLima(); //Ambil data berita
         $data['row'] = $row;
-        $this->load->view('template/header', $data);
-        $this->load->view('news/detailBerita', $data);
-        $this->load->view('template/footer');
+        $this->load->view('template/new_header', $data);
+        $this->load->view('news/new_detail', $data);
+        $this->load->view('template/new_footer');
     }
 
     public function kategoriBerita($kategori)
