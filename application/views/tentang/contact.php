@@ -4,7 +4,7 @@
             <?php $title = explode('|', $judul) ?>
         </div>
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6" data-animate="swing">
                 <h3 class="text-uppercase"><?= $title[0] ?></h3>
                 <p>The most happiest time of the day!. Suspendisse condimentum porttitor cursus. Duis nec nulla
                     turpis. Nulla lacinia laoreet odio, non lacinia nisl malesuada vel. Aenean malesuada
@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6" data-animate="zoomIn">
                 <form class="widget-contact-form" novalidate action="#" role="form" method="post">
                     <div class="row">
                         <div class="form-group col-md-6">

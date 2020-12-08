@@ -1,22 +1,22 @@
 <section id="page-content">
     <div class="container">
-        <div class="page-title text-center">
+        <div class="page-title text-center" data-animate="swing">
             <h1>Berita - Terbaru</h1>
             <br>
         </div>
-        <div id="blog" class="grid-layout post-3-columns m-b-30" data-item="post-item">
+        <div id="blog" class="grid-layout post-3-columns m-b-30" data-item="post-item" data-animate="zoomIn">
             <?php foreach ($berita as $key => $value) : ?>
                 <div class="col-md-4 post-item border shadow">
                     <div class="post-item-wrap">
                         <div class="post-image">
-                            <a href="#">
+                            <a href="<?= base_url('berita/' . $value->slug) ?>">
                                 <img alt="" src="<?= base_url('upload/berita/' . $value->gambar) ?>">
                             </a>
                             <span class="post-meta-category"><a href="#"><?= $value->kategori ?></a></span>
                         </div>
                         <div class="post-item-description">
                             <span class="post-meta-date"><i class="fa fa-calendar-o"></i><?php echo date('M d, Y', strtotime($value->created_on)) ?></span>
-                            <h2><a href="#"><?= $value->judul ?>
+                            <h2><a href="<?= base_url('berita/' . $value->slug) ?>"><?= ucwords($value->judul) ?>
                                 </a></h2>
                             <p><?= substr(html_entity_decode($value->isi), 0, 40) ?></p>
                             <div class="post-author"> <img src="<?= base_url('upload/user/' . $value->profil) ?>">

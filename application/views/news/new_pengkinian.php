@@ -1,9 +1,9 @@
 <head>
     <meta property="og:url" content="<?= current_url() ?>" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="<?= $row->produk ?>" />
-    <meta property="og:description" content="<?= htmlspecialchars(substr($row->deskripsi, 0, 30)) ?>" />
-    <meta property="og:image" content="<?= base_url('upload/produk/' . $row->image); ?>" />
+    <meta property="og:title" content="Pengkinian Data" />
+    <meta property="og:description" content="Pengkinian Data Nasabah Bank Unisritama" />
+    <meta property="og:image" content="<?= base_url('upload/b6.jpg'); ?>" />
 </head>
 <section id="page-content" class="sidebar-right">
     <div class="container">
@@ -12,16 +12,16 @@
                 <div id="blog" class="single-post">
                     <div class="post-item">
                         <div class="post-item-wrap">
-                            <div class="post-image" data-animate="bounce">
+                            <div class="post-image" data-animate="zoomIn">
                                 <a href="#">
-                                    <img alt="" src="<?= base_url('upload/produk/' . $row->image); ?>">
+                                    <img alt="" src="<?= base_url('upload/b6.jpg'); ?>">
                                 </a>
                             </div>
                             <div class="post-item-description">
-                                <h2><?= ucwords($row->produk); ?></h2>
+                                <h2>Pengkinian Data</h2>
                                 <div class="post-meta">
-                                    <span class="post-meta-date"><i class="fa fa-calendar-o"></i><?php echo date('M d, Y', strtotime($row->created_on)) ?></span>
-                                    <span class="post-meta-category"><a href="#"><i class="fa fa-tag"></i><?= $row->jenis ?></a></span>
+                                    <span class="post-meta-date"><i class="fa fa-calendar-o"></i>Jul 12, 2020</span>
+                                    <span class="post-meta-category"><a href="#"><i class="fa fa-tag"></i>Informasi</a></span>
                                     <div class="post-meta-share">
                                         <a class="btn btn-xs btn-slide btn-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?= current_url(); ?>" target="_blank">
                                             <i class="fab fa-facebook-f"></i>
@@ -37,19 +37,44 @@
                                         </a>
                                     </div>
                                 </div>
-                                <?php echo $row->deskripsi; ?>
+                                <div class="blog-content">
+                                    <div class="blog-category">
+                                        <span>INFORMASI LAYANAN NASABAH</span>
+                                    </div>
+                                    <h3>PENGKINIAN DATA</h3>
+                                    <p class="text-justify visi">
+                                        Nasabah Bank Unisritama yang terhormat, Perkenankan kami untuk menyampaikan terima kasih atas kepercayaan dan kerjasama Anda selama ini. Terkait dengan Peraturan Otoritas Jasa Keuangan mengenai Penerapan Program Anti Pencucian Uang dan Pencegahan Pendanaan Terorisme di Sektor Jasa Keuangan, dengan ini kami harapkan kerjasamanya untuk menyampaikan setiap perubahan data/informasi yang pernah disampaikan kepada kami disertai dengan dokumen pendukung.
+                                    </p>
+                                    <p class="text-justify visi">
+                                        Perlu kami informasikan bahwa sesuai dengan peraturan dimaksud, bank wajib menolak transaksi, membatalkan transaksi dan/atau menutup hubungan usaha, apabila :
+                                        <ul class="marker-list">
+                                            <li>Nasabah tidak memenuhi permintaan informasi dan dokumen pendukung;</li>
+                                            <li>Diketahui dan/atau patut diduga menggunakan dokumen palsu;</li>
+                                            <li>Menyampaikan informasi yang diragukan kebenarannya;</li>
+                                            <li>Berbentuk shell bank atau bank yang mengizinkan rekeningnya digunakan oleh shell bank; </li>
+                                            <li>Memiliki aktivitas transaksi yang berkaitan dengan tindak pidana pencucian uang dan pendanaan terorisme; dan </li>
+                                            <li>Memiliki sumber dana transaksi yang diketahui dan/atau patut diduga berasal dari tindak pidana. </li>
+                                        </ul>
+                                    </p>
+                                    <p class="text-justify visi">
+                                        Formulir pengkinian data dapat Anda peroleh di kantor Bank Unisritama terdekat atau dengan mengunduh formulir dibawah ini: <br>
 
-                                <?php if ($row->jenis == 'Tabungan') {
-                                    $buka = 'Buka Tabungan';
-                                } elseif ($row->jenis == 'Kredit') {
-                                    $buka = 'Ajukan Kredit';
-                                } elseif ($row->jenis == 'Deposito') {
-                                    $buka = 'Buka Deposito';
-                                } else {
-                                    $buka = '';
-                                }
-                                ?>
-                                <a href="<?= base_url($row->link) ?>" id="btn-open" class="btn"><i class="icon-send"></i> &nbsp; <?= $buka ?> </a>
+                                        <ul class="marker-list">
+                                            <li><a href="#">Formulir Perubahan Data Nasabah Perorangan</a></li>
+                                            <li><a href="#">Formulir Perubahan Data Nasabah Non-Perorangan</a></li>
+                                        </ul>
+                                    </p>
+                                    <p class="text-justify visi">
+                                        Formulir yang sudah dilengkapi mohon diserahkan ke kantor Bank Unisritama terdekat atau dikirim melalui email unisritamabpr@yahoo.co.id <br>
+                                        Untuk informasi lebih lanjut, dapat menghubungi Customer Service kami di Telepon: 0761-63381
+                                    </p>
+                                    <p class="text-justify visi">
+                                        Demikian yang dapat kami sampaikan. Atas perhatian dan kerjasamanya, kami ucapkan terima kasih. <br>
+                                        Hormat kami,<br>
+                                        <br><strong>PT. BPR Unisritama</strong>
+                                    </p>
+                                    <hr>
+                                </div>
                             </div>
                             <div class="seperator"><i class="fa fa-chevron-down"></i></div>
                         </div>
@@ -57,7 +82,7 @@
                 </div>
             </div>
             <div class="sidebar sticky-sidebar col-lg-3">
-                <div class="widget  widget-newsletter">
+                <div class="widget widget-newsletter">
                     <form id="widget-search-form-sidebar" action="#" method="get">
                         <div class="input-group">
                             <input type="text" aria-required="true" name="q" class="form-control widget-search-form" placeholder="Search for pages...">

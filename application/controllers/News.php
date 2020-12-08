@@ -26,11 +26,10 @@ class News extends CI_Controller
     {
         $data = $this->data;
         $data['judul'] = 'Pengkinian Nasabah';
-        $data['category'] = $this->kategori->getAll(); //Ambil data kategori
         $data['berita'] = $this->berita->getLima(); //Ambil data berita
-        $this->load->view('template/header', $data);
-        $this->load->view('news/pengkinian_data', $data);
-        $this->load->view('template/footer');
+        $this->load->view('template/new_header', $data);
+        $this->load->view('news/new_pengkinian', $data);
+        $this->load->view('template/new_footer');
     }
 
     public function berita()
@@ -38,8 +37,6 @@ class News extends CI_Controller
         $data = $this->data;
         $data['judul'] = 'Berita Terbaru | Bank Unisritama';
         $data['berita'] = $this->berita->getAll()->result();
-        // print_r($data['berita']);
-        // die;
         $this->load->view('template/new_header', $data);
         $this->load->view('news/new_berita', $data);
         $this->load->view('template/new_footer');
@@ -50,7 +47,6 @@ class News extends CI_Controller
         $data = $this->data;
         $row = $this->berita->getBySlug($slug);
         $data['judul'] = ucwords($row->judul) . ' | Bank Unisritama';
-        $data['category'] = $this->kategori->getAll(); //Ambil data kategori
         $data['berita'] = $this->berita->getLima(); //Ambil data berita
         $data['row'] = $row;
         $this->load->view('template/new_header', $data);
@@ -74,18 +70,18 @@ class News extends CI_Controller
         $data = $this->data;
         $data['judul'] = 'Laporan Tata Kelola | Bank Unisritama';
         $data['data'] = $this->laporan->getGcg()->result();
-        $this->load->view('template/header', $data);
-        $this->load->view('news/gcg', $data);
-        $this->load->view('template/footer');
+        $this->load->view('template/new_header', $data);
+        $this->load->view('news/new_gcg', $data);
+        $this->load->view('template/new_footer');
     }
     public function publikasi()
     {
         $data = $this->data;
         $data['judul'] = 'Laporan Publikasi | Bank Unisritama';
         $data['data'] = $this->laporan->getPub()->result();
-        $this->load->view('template/header', $data);
-        $this->load->view('news/gcg', $data);
-        $this->load->view('template/footer');
+        $this->load->view('template/new_header', $data);
+        $this->load->view('news/new_gcg', $data);
+        $this->load->view('template/new_footer');
     }
 
     public function unduh($id_laporan)
@@ -93,7 +89,7 @@ class News extends CI_Controller
         $d = $this->laporan->getById($id_laporan);
         $file = $d->dokumen;
         $data = file_get_contents("upload/laporan/" . $file);
-        force_download($file, $data);
+        force_download(ucwords($d->laporan) . '.pdf', $data);
     }
 }
 

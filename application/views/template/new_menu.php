@@ -56,10 +56,10 @@
                 </li>
                 <li class="dropdown"><a href="#">News</a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Berita</a></li>
-                        <li><a href="#">Laporan Keuangan</a></li>
-                        <li><a href="#">GCG Report</a></li>
-                        <li><a href="#">Pengkinian Data</a></li>
+                        <li><a href="<?= base_url('berita') ?>">Berita</a></li>
+                        <li><a href="<?= base_url('publikasi') ?>">Laporan Publikasi</a></li>
+                        <li><a href="<?= base_url('gcg') ?>">GCG Report</a></li>
+                        <li><a href="<?= base_url('pengkinian-data') ?>">Pengkinian Data</a></li>
                     </ul>
                 </li>
                 <li><a href="<?= base_url('contact') ?>">Hubungi Kami</a></li>

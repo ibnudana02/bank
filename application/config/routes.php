@@ -13,7 +13,7 @@ $route['admin/corporate'] = 'admin/corporate';
 $route['pembayaran_mahasiswa_uir'] = 'produk/pmb';
 $route['payment-point'] = 'produk/ppob';
 $route['admin/profil'] = 'admin/profil';
-$route['pengkinian_nasabah'] = 'news/pengkinian_data';
+$route['pengkinian-data'] = 'news/pengkinian_data';
 
 
 $route['admin/registration'] = 'admin/welcome/registration';
@@ -82,6 +82,7 @@ $route['cetak-nasabah-tab/(:any)'] = 'admin/master/print_nasabah/$1';
 
 
 $route['gcg'] = 'news/gcg';
+$route['unduh-gcg/(:any)'] = 'news/unduh/$1';
 $route['publikasi'] = 'news/publikasi';
 $route['berita'] = 'news/berita';
 $route['berita/(:any)'] = 'news/detailBerita/$1';

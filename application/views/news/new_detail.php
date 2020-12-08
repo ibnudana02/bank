@@ -12,7 +12,7 @@
                 <div id="blog" class="single-post">
                     <div class="post-item">
                         <div class="post-item-wrap">
-                            <div class="post-image" data-animate="bounce">
+                            <div class="post-image" data-animate="zoomIn">
                                 <a href="#">
                                     <img alt="" src="<?= base_url('upload/berita/' . $row->image); ?>">
                                 </a>
