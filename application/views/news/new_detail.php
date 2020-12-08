@@ -2,8 +2,8 @@
     <meta property="og:url" content="<?= current_url() ?>" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="<?= $row->judul ?>" />
-    <meta property="og:description" content="<?= htmlspecialchars(substr($row->isi, 0, 30)) ?>" />
-    <meta property="og:image" content="<?= base_url('upload/produk/' . $row->image); ?>" />
+    <meta property="og:description" content="<?= htmlspecialchars_decode(substr($row->isi, 0, 30)) ?>" />
+    <meta property="og:image" content="<?= base_url('upload/berita/' . $row->image); ?>" />
 </head>
 <section id="page-content" class="sidebar-right">
     <div class="container">
