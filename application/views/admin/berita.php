@@ -37,10 +37,10 @@
                                     <tr>
                                         <th><?= $no++; ?></th>
                                         <th><?php echo $row->update_on; ?></th>
-                                        <th><img src="<?= base_url('upload/berita/' . $row->image); ?>" width="70" height="70"> </th>
+                                        <th><img src="<?= base_url('upload/berita/' . $row->gambar); ?>" width="70" height="70"> </th>
                                         <th><?= htmlspecialchars($row->kategori); ?></th>
                                         <th><?= html_entity_decode($row->judul); ?></th>
-                                        <th><?= htmlspecialchars($row->penulis); ?></th>
+                                        <th><?= htmlspecialchars($row->name); ?></th>
                                         <th><?= html_entity_decode(substr($row->isi, 0, 42)); ?></th>
                                         <th>
                                             <div class="btn-group" role="group">

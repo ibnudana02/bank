@@ -49,6 +49,8 @@
                                         <a href="#" class="thumbnail">
                                             <img src="<?= base_url('upload/berita/' . $data->image); ?>" height="100px" width="120px">
                                             <input type="hidden" name="old_image" value="<?= $data->image; ?>">
+                                            <input type="hidden" name="penulis" value="<?= $data->penulis ?>">
+                                            <input type="hidden" name="created_on" value="<?= $data->created_on ?>">
                                         </a>
                                     </div>
                                 </div>

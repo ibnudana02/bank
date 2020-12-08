@@ -16,7 +16,7 @@
             <br>
             <div class="col-lg-6" data-animate="zoomIn">
                 <div id="mapKas" style="width:100%; height: 450px;"></div>
-                <h3 class="text-center">Kantor Pelayanan Kas</h3>
+                <h3 class="text-center">Kantor Kas UIR</h3>
             </div>
         </div>
     </div>
@@ -39,7 +39,7 @@
     // 0.424466, 101.435681 pusat 0.424509, 101.435762
     // 0.447179, 101.453663 kas 0.447404, 101.453733
     var marker = L.marker([0.424466, 101.435681]).addTo(mymap).bindPopup("Kantor Pusat");
-    var marker = L.marker([0.447179, 101.453663]).addTo(kas).bindPopup("Kantor KAS");
+    var marker = L.marker([0.447179, 101.453663]).addTo(kas).bindPopup("Kantor Kas UIR");
 
     mymap.on('click', onMapClick);
 </script>

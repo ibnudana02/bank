@@ -76,7 +76,7 @@ class Berita_model extends CI_Model
         $this->slug = implode("-", $out);
         $this->isi = htmlspecialchars($post['isi']);
         $this->image = $this->_uploadImage();
-        $this->penulis = $this->session->userdata('name');
+        $this->penulis = $this->session->userdata('id_user');
         $this->created_on = date('Y-m-d H:i:s');
         $this->update_by = '';
         $this->update_on = date('Y-m-d H:i:s');
@@ -98,9 +98,9 @@ class Berita_model extends CI_Model
         } else {
             $this->image = $post["old_image"];
         }
-        $this->penulis = $this->session->userdata('name');
+        $this->penulis = $post['penulis'];
         $this->created_on = date('Y-m-d H:i:s');
-        $this->update_by = $this->session->userdata('name');
+        $this->update_by = $this->session->userdata('id_user');
         $this->update_on = date('Y-m-d H:i:s');
         return $this->db->update($this->_table, $this, array('id_berita' => $post['id_berita']));
     }

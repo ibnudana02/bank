@@ -95,3 +95,16 @@
         </div>
     </div>
 </section>
+<script src="<?= base_url('assets/new/') ?>js/jquery.js"></script>
+<script>
+    $(document).ready(function() {
+        var buka = "<?php echo $row->jenis; ?>";
+        console.log(buka);
+        if (buka != 'Layanan') {
+            $("#btn-open").show();
+        } else {
+            $("#btn-open").hide();
+        }
+
+    });
+</script>

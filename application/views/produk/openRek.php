@@ -122,21 +122,13 @@
                             </div>
                             <h3>Confirmation</h3>
                             <div class="wizard-content">
-                                <div class="h5 mb-4">Confimration</div>
+                                <div class="h5 mb-4">Confirmation</div>
                                 <p>Customize your experience by confirming your personalization settings and the
                                     data
                                     stored with your account. You can always learn more about these options,
                                     adjust
                                     them, and review your activity in your Account</p>
                                 <p>These settings apply wherever you are signed in to your new Account.</p>
-                                <div class="form-group mb-1 mt-5">
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" name="reminders" id="reminders1" class="custom-control-input">
-                                        <label class="custom-control-label" for="reminders1">Send me occasional
-                                            reminders
-                                            about these settings</a></label>
-                                    </div>
-                                </div>
                                 <div class="form-group">
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" name="terms_conditions" id="terms_conditions1" class="custom-control-input">
@@ -159,6 +151,7 @@
 
 <link href="<?= base_url('assets/new/') ?>plugins/jquery-steps/jquery.steps.css" rel="stylesheet">
 <script src="<?= base_url('assets/new/') ?>plugins/jquery-steps/jquery.steps.min.js"></script>
+
 <script>
     $('#wizard1').steps({
         headerTag: 'h3',
