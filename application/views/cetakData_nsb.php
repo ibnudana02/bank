@@ -1,5 +1,4 @@
 <?php
-
 if ($data_nsb->daerah == 3) {
     $kel_id = 'DESA ' . $data_nsb->kel_id;
 } else {
@@ -80,7 +79,7 @@ $html =
 <td align="center">NPWP: <br><img src="' . $file . $data_nsb->ft_npwp . '" width="220px" height="140px"></td></tr>
 <tr><td align="center" colspan="2">Sample Tanda Tangan: <br/><img src="' . $file . $data_nsb->ft_ttd . '" width="220px" height="140px"></td></tr>
 <tr><th height="100px"></th></tr>
-<tr><td colspan="2" align="right">Pekanbaru, ' . date("d F Y") . '</td></tr>
+<tr><td colspan="2" align="right">Pekanbaru, ' .  tanggal(date("Y-m-d")) . '</td></tr>
 <tr><th height="70px"></th></tr>
 </table>
 <div align="center">
