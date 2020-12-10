@@ -192,7 +192,8 @@ class Nasabah_model extends CI_Model
         } else {
             $ft_ttd = $this->upload->data();
         }
-        if (empty(isset($_FILES['ft_npwp']['file_name']))) {
+        // if (empty($_FILES['ft_npwp']['file_name'])) {
+        if (!file_exists($_FILES['ft_npwp']['tmp_name']) || !is_uploaded_file($_FILES['ft_npwp']['tmp_name'])) {
             $ft_npwp = array('file_name' => 'NULL');
         } else {
             if (!$this->upload->do_upload('ft_npwp')) {
@@ -203,7 +204,8 @@ class Nasabah_model extends CI_Model
             }
         }
         $files = array('ft_identitas' => $ft_identitas, 'ft_kk' => $ft_kk, 'ft_diri' => $ft_diri, 'ft_ttd' => $ft_ttd, 'ft_npwp' => $ft_npwp);
-        // echo json_encode($files);
+        // print_r($files);
+        // die;
         return $files;
     }
 
