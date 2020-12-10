@@ -17,9 +17,9 @@
                         <form name="eform" class="user" method="post" action="<?= base_url('pembukaan-rekening-tabungan'); ?>" enctype="multipart/form-data">
                             <ul class="nav nav-tabs">
                                 <li class="active"><a data-toggle="tab" href="#identitas">Data Diri</a></li>
-                                <!-- <li><a data-toggle="tab" href="#kontak">Ahli Waris/Kontak</a></li> -->
+                                <li><a data-toggle="tab" href="#kontak">Ahli Waris/Kontak</a></li>
                                 <li><a data-toggle="tab" href="#pekerjaan">Data Pekerjaan</a></li>
-                                <!-- <li><a data-toggle="tab" href="#dokumen">Berkas Persetujuan</a></li> -->
+                                <li><a data-toggle="tab" href="#dokumen">Berkas Persetujuan</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div id="identitas" class="tab-pane fade in active">
@@ -607,7 +607,8 @@
         </div>
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+<script src="<?= base_url('assets/new/') ?>js/jquery.js"></script>
 <script>
     $(document).ready(function() {
         $("#propinsi").change(function() {

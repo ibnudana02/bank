@@ -230,26 +230,55 @@ class Produk extends CI_Controller
     public function createDps()
     {
         $data = $this->data;
-        $data['judul'] = 'Pembukaan Rekening Deposito | Bank Unisritama';
+        $data['agama'] = $this->db->get_enum('nasabah_tab', 'agama');
+        $data['tujuan_buka'] = $this->db->get_enum('nasabah_tab', 'tujuan_buka');
+        $data['status_rumah'] = $this->db->get_enum('nasabah_tab', 'status_rumah');
+        $data['pendidikan'] = $this->db->get_enum('nasabah_tab', 'pendidikan');
+        $data['aw'] = $this->db->get_enum('nasabah_tab', 'hb_ahli_waris');
+        $data['status'] = $this->db->get_enum('nasabah_tab', 'status_menikah');
+        $data['profesi'] = $this->db->get_enum('nasabah_tab', 'profesi');
+        $data['jenis_pekerjaan'] = $this->db->get_enum('nasabah_tab', 'jenis_pekerjaan');
+        $data['status_pekerjaan'] = $this->db->get_enum('nasabah_tab', 'status_pekerjaan');
+        $data['sumber_dana'] = $this->db->get_enum('nasabah_tab', 'sumber_dana');
+        $data['wn'] = $this->db->get_enum('nasabah_tab', 'warga_negara');
+        $data['identitas'] = $this->db->get_enum('nasabah_tab', 'jenis_identitas');
+        $data['jk'] = $this->db->get_enum('nasabah_tab', 'jenis_kelamin');
         $data['bread'] = 'Home';
         $data['crumb'] = 'Produk';
-        $data['jenis'] = $this->produk->getDep()->result();
+        $data['jenis'] = $this->produk->getTab()->result();
         $data['prop'] = $this->user->getProv();
         // $data['kab'] = $this->user->viewByProvinsi();
         $this->load->view('template/header', $data);
-        $this->load->view('produk/bukaDps', $data);
+        $this->load->view('produk/opRek', $data);
         $this->load->view('template/footer');
     }
     public function createKrd()
     {
+        $data = $this->data;
+        $data['agama'] = $this->db->get_enum('nasabah_tab', 'agama');
+        $data['tujuan_buka'] = $this->db->get_enum('nasabah_tab', 'tujuan_buka');
+        $data['status_rumah'] = $this->db->get_enum('nasabah_tab', 'status_rumah');
+        $data['pendidikan'] = $this->db->get_enum('nasabah_tab', 'pendidikan');
+        $data['aw'] = $this->db->get_enum('nasabah_tab', 'hb_ahli_waris');
+        $data['status'] = $this->db->get_enum('nasabah_tab', 'status_menikah');
+        $data['profesi'] = $this->db->get_enum('nasabah_tab', 'profesi');
+        $data['jenis_pekerjaan'] = $this->db->get_enum('nasabah_tab', 'jenis_pekerjaan');
+        $data['status_pekerjaan'] = $this->db->get_enum('nasabah_tab', 'status_pekerjaan');
+        $data['sumber_dana'] = $this->db->get_enum('nasabah_tab', 'sumber_dana');
+        $data['wn'] = $this->db->get_enum('nasabah_tab', 'warga_negara');
+        $data['identitas'] = $this->db->get_enum('nasabah_tab', 'jenis_identitas');
+        $data['jk'] = $this->db->get_enum('nasabah_tab', 'jenis_kelamin');
+        $data['bread'] = 'Home';
+        $data['crumb'] = 'Produk';
+        $data['jenis'] = $this->produk->getTab()->result();
+        $data['prop'] = $this->user->getProv();
         $data['judul'] = 'Pengajuan Kredit | Bank Unisritama';
         $data['bread'] = 'Home';
         $data['crumb'] = 'Produk';
         $data['jenis'] = $this->produk->getDep()->result();
         $data['prop'] = $this->user->getProv();
-        $data = $this->data;
         $this->load->view('template/header', $data);
-        $this->load->view('produk/bukaKrd', $data);
+        $this->load->view('produk/bukaRek', $data);
         $this->load->view('template/footer');
     }
 
