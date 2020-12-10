@@ -2,10 +2,11 @@
     <link rel="stylesheet" href="<?= base_url('assets/leaflet/leaflet.css') ?>">
     <script src="<?= base_url('assets/leaflet/leaflet.js') ?>"></script>
 </head>
+<?php $title = explode('|', $judul) ?>
 <section id="page-content">
     <div class="container">
         <div class="heading-text heading-section text-center" data-animate="rubberBand">
-            <h2>Board Manajemen</h2>
+            <h2><?= $title[0] ?></h2>
         </div>
         <br>
         <div class="row">
@@ -21,6 +22,7 @@
         </div>
     </div>
 </section>
+<div class="seperator"><i class="fa fa-chevron-down"></i></div>
 
 <script>
     var mymap = L.map('map').setView([0.424509, 101.435762], 18);

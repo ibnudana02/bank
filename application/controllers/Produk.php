@@ -230,6 +230,7 @@ class Produk extends CI_Controller
     public function createDps()
     {
         $data = $this->data;
+        $data['judul'] = 'e-Form Rekening Tabungan - Bank Unisritama';
         $data['agama'] = $this->db->get_enum('nasabah_tab', 'agama');
         $data['tujuan_buka'] = $this->db->get_enum('nasabah_tab', 'tujuan_buka');
         $data['status_rumah'] = $this->db->get_enum('nasabah_tab', 'status_rumah');
