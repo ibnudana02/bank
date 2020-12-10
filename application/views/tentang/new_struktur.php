@@ -3,12 +3,12 @@
 </head>
 <section id="page-content">
     <div class="container">
-        <div class="heading-text heading-section text-center">
+        <div class="heading-text heading-section text-center" data-animate="rubberBand">
             <?php $title = explode('|', $judul) ?>
             <h2><?= $title[0] ?></h2>
         </div>
         <hr>
-        <div id="tree"></div>
+        <div id="tree" data-animate="zoomIn"></div>
     </div>
 </section>
 <script>

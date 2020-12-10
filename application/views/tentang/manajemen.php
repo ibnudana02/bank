@@ -1,7 +1,8 @@
 <section id="page-content">
     <div class="container">
         <div class="heading-text heading-section text-center" data-animate="rubberBand">
-            <h2>Board Manajemen</h2>
+            <?php $title = explode('|', $judul) ?>
+            <h2><?= $title[0] ?></h2>
         </div>
         <br>
         <div class="row team-members m-b-40">

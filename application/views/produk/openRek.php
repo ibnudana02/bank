@@ -1,5 +1,9 @@
 <section id="page-content">
     <div class="container">
+        <div class="heading-text heading-section text-center">
+            <?php $title = explode('|', $judul) ?>
+            <h4><?= $title[0] ?></h4>
+        </div>
         <div class="row justify-content-center">
             <div class="content col-md-11">
                 <div class="card">

@@ -2,7 +2,8 @@
 <div class="about-area struktur">
     <div class="container">
         <div class="row">
-            <h2 class="text-center">Board Manajemen</h2>
+            <?php $title = explode('|', $judul) ?>
+            <h2 class="text-center"><?= $title[0] ?></h2>
         </div>
         <hr>
         <div class="row">

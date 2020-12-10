@@ -1,6 +1,5 @@
 <section>
     <div class="container">
-
         <div class="heading-text heading-line text-center" data-animate="bounce">
             <h4>Visi</h4>
         </div>
