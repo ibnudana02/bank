@@ -50,7 +50,7 @@
                                 <div class="widget-title">News</div>
                                 <ul class="list">
                                     <li><a href="#">Berita</a></li>
-                                    <li><a href="#">Laporan Keuangan</a></li>
+                                    <li><a href="#">Laporan Publikasi</a></li>
                                     <li><a href="#">GCG Report</a></li>
                                     <li><a href="#">Pengkinian Data</a></li>
                                 </ul>
