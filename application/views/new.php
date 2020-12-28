@@ -1,10 +1,10 @@
 <section id="page-content" class="p-b-0 p-t-60">
-    <div class="container">
+    <div class="container-fluid">
         <div class="heading-text heading-section text-center">
             <h4>Produk & Layanan</h4>
         </div>
         <div class="row">
-            <div class="col-lg-4 p-b-20">
+            <div class="col-lg-3 p-b-20">
                 <div class="text-box text-box-light">
                     <a href="<?= base_url('kredit') ?>">
                         <i class="far fa-paper-plane"></i>
@@ -14,7 +14,7 @@
                 </div>
                 <div class="shape-divider" data-style="4" data-height="220"></div>
             </div>
-            <div class="col-lg-4 p-b-20">
+            <div class="col-lg-3 p-b-20">
                 <div class="text-box text-box-light">
                     <a href="<?= base_url('tabungan') ?>">
                         <i class="fas fa-chart-pie"></i>
@@ -24,12 +24,22 @@
                 </div>
                 <div class="shape-divider" data-style="4" data-height="220"></div>
             </div>
-            <div class="col-lg-4 p-b-20">
+            <div class="col-lg-3 p-b-20">
                 <div class="text-box text-box-light">
                     <a href="#">
                         <i class="far fa-lightbulb"></i>
                         <h3>Layanan</h3>
                         <p>Pembayaran Kewajiban Mahasiswa Universitas Islam Riau, Top Up OVO, Listrik Pra dan Pasca Bayar, Telkom dan Pembayaran Lainnya.</p>
+                    </a>
+                </div>
+                <div class="shape-divider" data-style="4" data-height="220"></div>
+            </div>
+            <div class="col-lg-3 p-b-20">
+                <div class="text-box text-box-light">
+                    <a href="#">
+                        <i class="far fa-file-contract"></i>
+                        <h3>Layanan Digital</h3>
+                        <p>Layanan digital e-Form memudahkan nasabah membuka rekening tabungan dan pinjaman. Daftar online sekarang juga.</p>
                     </a>
                 </div>
                 <div class="shape-divider" data-style="4" data-height="220"></div>
@@ -73,28 +83,28 @@
     </div>
 </section>
 <section class="p-t-15 p-b-15">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-lg col-xs">
                 <div class="carousel client-logos" data-items="5">
                     <div>
-                        <a href="#"><img alt="" src="<?= base_url('assets/') ?>img/client/ayokebank.jpg">
+                        <a href="#" target="_blank"><img alt="" src="<?= base_url('assets/') ?>img/client/ayokebank.jpg">
                         </a>
                     </div>
                     <div>
-                        <a href=" #"><img alt="" src="<?= base_url('assets/') ?>img/client/YLPI.jpg">
+                        <a href="https://uir.ac.id/yayasan" target="_blank"><img alt="" src="<?= base_url('assets/') ?>img/client/YLPI.jpg">
                         </a>
                     </div>
                     <div>
-                        <a href="#"><img alt="" src="<?= base_url('assets/') ?>img/client/perbarindo.jpg">
+                        <a href="https://perbarindo.org" target="_blank"><img alt="" src="<?= base_url('assets/') ?>img/client/perbarindo.jpg">
                         </a>
                     </div>
                     <div>
-                        <a href="#"><img alt="" src="<?= base_url('assets/') ?>img/client/ojk.jpg">
+                        <a href="https://www.ojk.go.id" target="_blank"><img alt="" src="<?= base_url('assets/') ?>img/client/ojk.jpg">
                         </a>
                     </div>
                     <div>
-                        <a href="#"><img alt="" src="<?= base_url('assets/') ?>img/client/lps.png">
+                        <a href="https://www.lps.go.id" target="_blank"><img alt="" src="<?= base_url('assets/') ?>img/client/lps.png">
                         </a>
                     </div>
                 </div>
