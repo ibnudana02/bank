@@ -20,5 +20,10 @@ class Bot extends CI_Controller
 
             file_get_contents($apiURL . "/sendmessage?chat_id=" . $chatID . "&text=Haloo, test webhooks <code>bprunisritama.com</code>.&parse_mode=HTML");
         }
+
+        if (strpos($message, "/saldo") === 0) {
+
+            file_get_contents($apiURL . "/sendmessage?chat_id=" . $chatID . "&text=Bank Unisritama (Saldo), test webhooks <code>bprunisritama.com</code>.&parse_mode=HTML");
+        }
     }
 }
