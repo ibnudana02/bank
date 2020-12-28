@@ -14,8 +14,6 @@ class Bot extends CI_Controller
         $TOKEN = "1411964277:AAHPT_tyxz9hS0d4EGzyJQLezWXtHCB_gQo";
         $apiURL = "https://api.telegram.org/bot$TOKEN";
         $update = json_decode(file_get_contents("php://input"), TRUE);
-        print_r($update);
-        die;
         $chatID = $update["message"]["chat"]["id"];
         $message = $update["message"]["text"];
 
@@ -31,7 +29,7 @@ class Bot extends CI_Controller
             //     # code...
             // }
 
-            file_get_contents($apiURL . "/sendmessage?chat_id=" . $chatID . "&text=Bank Unisritama (Saldo), test webhooks <code>bprunisritama.com</code>.&parse_mode=HTML");
+            file_get_contents($apiURL . "/sendmessage?chat_id=" . $chatID . "&text=" . $update . "<code>bprunisritama.com</code>.&parse_mode=HTML");
         }
     }
 }
