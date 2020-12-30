@@ -135,4 +135,10 @@ class Welcome extends CI_Controller
 			}
 		}
 	}
+
+	public function saldo($norek)
+	{
+		$d = $this->user->cekSaldo($norek);
+		echo $d->saldo;
+	}
 }

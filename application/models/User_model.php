@@ -13,6 +13,14 @@ class User_model extends CI_Model
     public $role_id;
     public $image;
     public $date_created;
+    private $db3;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->db3 = $this->load->database('wh', TRUE);
+    }
+
 
     public function getProfil()
     {
@@ -112,6 +120,39 @@ class User_model extends CI_Model
         $this->db->where_in('id_produk', $data);
         $this->db->order_by('produk', 'asc');
         return $this->db->get('produk')->result();
+    }
+
+    public function cekUser($norek, $username)
+    {
+        $this->db3->select('Nama');
+        $this->db3->where('NIK', $username);
+        $this->db3->where('rektab', $norek);
+        return $this->db3->get('nasabahsms');
+    }
+    public function cekNsb($norek, $username)
+    {
+        // $db3 = $this->load->database('wh', TRUE);
+        $this->db3->select('Nama');
+        $this->db3->where('username', $username);
+        $this->db3->where('rektab', $norek);
+        return $this->db3->get('nasabahsms');
+    }
+
+    public function cekSaldo($norek)
+    {
+        $db2 = $this->load->database('core', TRUE);
+        $db2->select('*')
+            ->from('rekening');
+        $db2->where('norek', $norek);
+        return $db2->get()->row();
+    }
+    public function getd()
+    {
+        $curdate = "20201228";
+        $this->db2->select('saldo');
+        $this->db2->where('norek', '00101034327');
+        return $this->db2->get('rekening_20201228');
+        # code...
     }
 }
 
