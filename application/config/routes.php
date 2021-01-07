@@ -108,7 +108,5 @@ $route['awards'] = 'tentang_kami/awards';
 $route['location'] = 'tentang_kami/location';
 $route['contact'] = 'tentang_kami/contact';
 $route['getJenis'] = 'welcome/getJenis';
-$route['saldo/(:any)'] = 'welcome/saldo/1';
-$route['bot'] = 'bot';
 $route['(.*)'] = 'custom404';
 $route['translate_uri_dashes'] = FALSE;

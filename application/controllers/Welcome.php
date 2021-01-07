@@ -136,9 +136,9 @@ class Welcome extends CI_Controller
 		}
 	}
 
-	public function saldo($norek)
+	public function tes()
 	{
-		$d = $this->user->cekSaldo($norek);
-		echo $d->saldo;
+
+		echo $this->input->ip_address();
 	}
 }

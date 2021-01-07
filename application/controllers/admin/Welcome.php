@@ -70,6 +70,7 @@ class Welcome extends CI_Controller
 				$data = [
 					'id_user' => $user['id_user'],
 					'name' => $user['name'],
+					'username' => $user['username'],
 					'role_id' => $user['role_id']
 				];
 				$this->session->set_userdata($data);
