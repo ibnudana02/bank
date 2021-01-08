@@ -20,6 +20,7 @@
                         <i class="fas fa-chart-pie"></i>
                         <h3>Tabungan </h3>
                         <p>Saving Dana anda dengan Aman sekaligus bisa berinvestasi dengan Suku Bunga bersaing dan Pastinya dijamin LPS.</p>
+                        <!-- <a href="<?= base_url('pembukaan-rekening-tabungan') ?>" class="btn">e-Form Rekening <i class="icon-chevron-right"></i></a> -->
                     </a>
                 </div>
                 <div class="shape-divider" data-style="4" data-height="220"></div>
@@ -31,6 +32,7 @@
                         <h3>Layanan</h3>
                         <p>Pembayaran Kewajiban Mahasiswa Universitas Islam Riau, Top Up OVO, Listrik Pra dan Pasca Bayar, Telkom dan Pembayaran Lainnya.</p>
                     </a>
+
                 </div>
                 <div class="shape-divider" data-style="4" data-height="220"></div>
             </div>
