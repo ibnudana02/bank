@@ -39,37 +39,31 @@
         </div>
     </div>
 </section>
-<div class="line m-0"></div>
 <section class="p-b-0 p-t-10">
-    <div data-bg-image="<?= base_url('assets/new/') ?>images/parallax/7.jpg" class="p-t-50">
-        <div class="container-fluid">
-            <div class="heading-text heading-section text-center">
-                <h4>Berita Terkini</h4>
-            </div>
-            <div class="row">
-                <div class="content col-lg">
-                    <div class="carousel" data-items="4">
-                        <?php foreach ($berita as $row) : ?>
-                            <div class="post-item border">
-                                <div class="post-item-wrap">
-                                    <div class="post-image">
-                                        <a href="<?= 'berita/' . $row->slug ?>">
-                                            <img alt="" src="<?= base_url('upload/berita/' . $row->gambar) ?>"></a>
-                                        <span class="post-meta-category"><a href="#"><?= $row->kategori ?></a></span>
-                                    </div>
-                                    <div class="post-item-description">
-                                        <span class="post-meta-date"><i class="fa fa-calendar-o"></i><?php echo date('M d, Y', strtotime($row->created_on)) ?></span>
-                                        <h2><a href="<?= 'berita/' . $row->slug ?>"><?= ucwords($row->judul) ?></a></h2>
-                                        <p><?= html_entity_decode(substr($row->isi, 0, 80)) ?></p>
-                                        <!-- <a href="<?= 'berita/' . $row->slug ?>" class="item-link">Read More <i class="icon-chevron-right"></i></a> -->
-                                        <a href="<?= 'berita/' . $row->slug ?>" class="btn">Read More <i class="icon-chevron-right"></i></a>
-                                    </div>
+    <div class="container">
+        <div class="heading-text heading-section text-center">
+            <h4>Berita Terkini</h4>
+        </div>
+        <div class="row">
+            <div class="content col-lg">
+                <div class="carousel" data-items="4">
+                    <?php foreach ($berita as $row) : ?>
+                        <div class="post-item border shadow">
+                            <div class="post-item-wrap">
+                                <div class="post-image">
+                                    <a href="<?= 'berita/' . $row->slug ?>">
+                                        <img alt="" src="<?= base_url('upload/berita/' . $row->gambar) ?>"></a>
+                                    <span class="post-meta-category"><a href="#"><?= $row->kategori ?></a></span>
+                                </div>
+                                <div class="post-item-description">
+                                    <span class="post-meta-date"><i class="fa fa-calendar-o"></i><?php echo date('M d, Y', strtotime($row->created_on)) ?></span>
+                                    <h2><a href="<?= 'berita/' . $row->slug ?>"><?= ucwords($row->judul) ?></a></h2>
+                                    <a href="<?= 'berita/' . $row->slug ?>" class="btn">Read More <i class="icon-chevron-right"></i></a>
                                 </div>
                             </div>
-                        <?php endforeach; ?>
-                    </div>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
-                <div class="shape-divider" data-style="1" data-height="220"></div>
             </div>
         </div>
     </div>
