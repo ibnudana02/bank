@@ -11,6 +11,8 @@
 
     <link href="<?= base_url('assets/new/') ?>css/plugins.css" rel="stylesheet">
     <link href="<?= base_url('assets/new/') ?>css/style.css" rel="stylesheet">
+    <link href="<?= base_url('assets/new/') ?>css/owl.carousel.css" rel="stylesheet">
+    <link href="<?= base_url('assets/new/') ?>css/owl.transitions.css" rel="stylesheet">
 </head>
 
 <body>

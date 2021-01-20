@@ -40,12 +40,12 @@
     </div>
 </section>
 <section class="p-b-0 p-t-10">
-    <div class="container">
+    <div class="container-fluid">
         <div class="heading-text heading-section text-center">
             <h4>Berita Terkini</h4>
         </div>
         <div class="row">
-            <div class="content col-lg">
+            <div class="content col">
                 <div class="carousel" data-items="4">
                     <?php foreach ($berita as $row) : ?>
                         <div class="post-item border shadow">
