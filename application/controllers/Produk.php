@@ -139,24 +139,14 @@ class Produk extends CI_Controller
         $this->form_validation->set_rules('ketentuan', 'Syarat & Ketentuan', 'trim|required');
         if ($this->form_validation->run() === TRUE) {
             if (!$this->input->post('ketentuan')) {
-                // echo "Please read and accept our terms and conditions.";
                 $this->session->set_flashdata('message', '<strong>Please read and accept our terms and conditions.</strong>');
-                // Redirect
                 $this->load->view('template/header_eform', $data);
                 $this->load->view('produk/syaratKetentuan');
                 $this->load->view('template/footer_eform');
             } else {
-                // $this->session->set_flashdata('message', '<strong>Next Step!!!.</strong>');
-                // echo 'next step';
-
                 redirect('jenisRekening', 'refresh');
-
-                // $this->load->view('template/header_eform', $data);
-                // $this->load->view('produk/syaratKetentuan');
-                // $this->load->view('template/footer_eform');
             }
         } else {
-            // redirect('jenisRekening', 'refresh');
             $this->load->view('template/header_eform', $data);
             $this->load->view('produk/syaratKetentuan');
             $this->load->view('template/footer_eform');
@@ -167,8 +157,29 @@ class Produk extends CI_Controller
     {
         $data['judul'] = 'e-Form - Bank Unisritama';
         $data['jenis'] = $this->produk->getTab()->result();
+        $this->form_validation->set_rules('jenis', 'Jenis Rekening', 'trim|required');
+        if ($this->form_validation->run() === TRUE) {
+            if (!$this->input->post('jenis')) {
+                $this->session->set_flashdata('message', '<strong>Please read and accept our terms and conditions.</strong>');
+                $this->load->view('template/header_eform', $data);
+                $this->load->view('produk/jenisRekening');
+                $this->load->view('template/footer_eform');
+            } else {
+                redirect('statusNasabah', 'refresh');
+            }
+        } else {
+            $this->load->view('template/header_eform', $data);
+            $this->load->view('produk/jenisRekening');
+            $this->load->view('template/footer_eform');
+        }
+    }
+
+    public function statusNasabah()
+    {
+        $data['judul'] = 'e-Form - Bank Unisritama';
+        $this->session->set_flashdata('message', '<strong>Next.</strong>');
         $this->load->view('template/header_eform', $data);
-        $this->load->view('produk/jenisRekening');
+        $this->load->view('produk/statusNasabah');
         $this->load->view('template/footer_eform');
     }
 

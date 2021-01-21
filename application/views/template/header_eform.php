@@ -48,7 +48,10 @@
         <header id="header" class="header-always-fixed">
             <div class="header-inner">
                 <div class="container">
-                    <div id="logo" class="logo-fix"> <a href="<?= base_url() ?>"><img src="<?php echo base_url('assets/'); ?>img/logo/bprs.png" class="logo-default" alt=""></a> </div>
+                    <div id="logo" class="logo-fix">
+                        <a href="<?= base_url() ?>"><img src="<?php echo base_url('assets/'); ?>img/logo/bprs.png" class="logo-default" alt=""></a>
+                        <!-- <span>Layanan Digital</span> -->
+                    </div>
                     <!-- <?php $this->load->view('template/menu_eform'); ?> -->
                 </div>
             </div>

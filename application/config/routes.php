@@ -92,7 +92,9 @@ $route['kategori_berita/(:any)'] = 'news/kategoriBerita/$1';
 //Routes for Page Tentang
 $route['syaratKetentuan'] = 'produk/syarat';
 $route['jenisRekening'] = 'produk/jenisRekening';
-$route['pembukaan-rekening-tabungan'] = 'produk/createTab';
+$route['statusNasabah'] = 'produk/statusNasabah';
+$route['dataDiri'] = 'produk/createTab';
+$route['pembukaan-rekening-tabungan'] = 'produk/syarat';
 $route['pembukaan-rekening-deposito'] = 'produk/createDps';
 $route['pengajuan-aplikasi-kredit'] = 'produk/createKrd';
 $route['produk'] = 'produk/produk';

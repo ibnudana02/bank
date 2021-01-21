@@ -22,7 +22,7 @@
                             ?>
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" name="jenis" id="<?= $data->id_produk ?>" value="<?= $data->id_produk ?>" type="radio">&nbsp;&nbsp;<?= ucwords($data->produk); ?>
+                                        <input class="form-check-input" name="jenis" id="<?= $data->id_produk ?>" value="<?= $data->slug ?>" type="radio">&nbsp;&nbsp;<?= ucwords($data->produk); ?>
                                     </label>
                                     <button id="<?= $data->slug ?>" class="btn btn-sm btn-info float-right" type="button">INFO</button>
                                 </div>
@@ -32,7 +32,7 @@
                         <div class="card-footer">
                             <div class="row justify-content-center">
                                 <div class="btnKembali">
-                                    <button id="btnKembali" class="btn btn-danger" type="button" name="input" value="input"><i class="fa fa-arrow-left"></i> Sebelumnya</button>
+                                    <button id="btnKembali" class="btn btn-danger" type="button"><i class="fa fa-arrow-left"></i> Sebelumnya</button>
                                 </div>&nbsp;&nbsp;
                                 <div class="btnLanjut">
                                     <button id="btnLanjut" class="btn btn-google" type="submit" name="input" value="input" disabled>Selanjutnya <i class="fa fa-arrow-right"></i></button>
@@ -51,14 +51,23 @@
         var jenis = '';
 
         function checkRadio(jenis) {
-            if (jenis === "2000-0001") {
-                $("#rd01").prop('checked', true);
+            if (jenis === "tabungan-qurban-warga") {
+                $("#5eaa93647a4cb").prop('checked', true);
             }
-            if (jenis === "2300-0001") {
-                $("#rd02").prop('checked', true);
+            if (jenis === "tabungan-sejahtera") {
+                $("#5eaa92ba0efa1").prop('checked', true);
             }
-            if (jenis === "2003-1001") {
-                $("#rd03").prop('checked', true);
+            if (jenis === "tabungan-sejahtera-kas") {
+                $("#5ee0aba96f640").prop('checked', true);
+            }
+            if (jenis === "tabungan-simpel") {
+                $("#5fb5ff891c02c").prop('checked', true);
+            }
+            if (jenis === "tabungan-umroh") {
+                $("#5eaa93a989a72").prop('checked', true);
+            }
+            if (jenis === "tabunganku") {
+                $("#5e96bb4b21ce7").prop('checked', true);
             }
         }
 
