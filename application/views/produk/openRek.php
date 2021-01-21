@@ -9,7 +9,7 @@
                 <div class="card">
                     <div class="card-body">
                         <form id="wizard7" class="wizard needs-validation" data-style="1" novalidate>
-                            <h3>Account Information</h3>
+                            <h3>Data Diri</h3>
                             <div class="wizard-content">
                                 <div class="h5 mb-4">Please fill with your account details</div>
                                 <div class="form-row">

@@ -133,6 +133,45 @@ class Produk extends CI_Controller
         $this->load->view('template/new_footer');
     }
 
+    public function syarat()
+    {
+        $data['judul'] = 'e-Form - Bank Unisritama';
+        $this->form_validation->set_rules('ketentuan', 'Syarat & Ketentuan', 'trim|required');
+        if ($this->form_validation->run() === TRUE) {
+            if (!$this->input->post('ketentuan')) {
+                // echo "Please read and accept our terms and conditions.";
+                $this->session->set_flashdata('message', '<strong>Please read and accept our terms and conditions.</strong>');
+                // Redirect
+                $this->load->view('template/header_eform', $data);
+                $this->load->view('produk/syaratKetentuan');
+                $this->load->view('template/footer_eform');
+            } else {
+                // $this->session->set_flashdata('message', '<strong>Next Step!!!.</strong>');
+                // echo 'next step';
+
+                redirect('jenisRekening', 'refresh');
+
+                // $this->load->view('template/header_eform', $data);
+                // $this->load->view('produk/syaratKetentuan');
+                // $this->load->view('template/footer_eform');
+            }
+        } else {
+            // redirect('jenisRekening', 'refresh');
+            $this->load->view('template/header_eform', $data);
+            $this->load->view('produk/syaratKetentuan');
+            $this->load->view('template/footer_eform');
+        }
+    }
+
+    public function jenisRekening()
+    {
+        $data['judul'] = 'e-Form - Bank Unisritama';
+        $data['jenis'] = $this->produk->getTab()->result();
+        $this->load->view('template/header_eform', $data);
+        $this->load->view('produk/jenisRekening');
+        $this->load->view('template/footer_eform');
+    }
+
     public function createTab()
     {
         $this->form_validation->set_rules('nm_lengkap', 'Nama Lengkap', 'required|trim', ['required' => 'Nama Lengkap harus diisi!']);

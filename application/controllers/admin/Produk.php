@@ -38,7 +38,7 @@ class Produk extends CI_Controller
     {
         $this->form_validation->set_rules('produk', 'Produk', 'required|trim');
         $this->form_validation->set_rules('jenis', 'Jenis', 'required|trim');
-        $this->form_validation->set_rules('link', 'Link', 'required|trim');
+        $this->form_validation->set_rules('link', 'Link', 'trim');
         $this->form_validation->set_rules('untuk', 'Peruntukan', 'required|trim');
         $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required|trim');
         $produk = $this->produk; //produk model disimpan dalam variable

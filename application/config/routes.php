@@ -90,6 +90,8 @@ $route['produk/(:any)'] = 'produk/detailProduk/$1';
 $route['kategori_berita/(:any)'] = 'news/kategoriBerita/$1';
 
 //Routes for Page Tentang
+$route['syaratKetentuan'] = 'produk/syarat';
+$route['jenisRekening'] = 'produk/jenisRekening';
 $route['pembukaan-rekening-tabungan'] = 'produk/createTab';
 $route['pembukaan-rekening-deposito'] = 'produk/createDps';
 $route['pengajuan-aplikasi-kredit'] = 'produk/createKrd';

@@ -1386,7 +1386,7 @@ section.dark,
     position: relative;
     z-index: 1;
     transition: all .4s ease-in-out;
-    height: 80px
+    height: 80px;
 }
 
 #header .header-inner #logo a>img,
@@ -20252,4 +20252,17 @@ body[data-bg-image] {
 
 .dark #search .search-form .form-control {
     color: #333 !important
+}
+
+.eform-header {
+    padding: 0.7rem 2rem !important;
+}
+
+.btnLanjut {
+    text-align: right;
+}
+
+.logo-fix {
+    background-color: white;
+    box-shadow: 0 12px 6px rgba(0, 0, 0, .06);
 }
