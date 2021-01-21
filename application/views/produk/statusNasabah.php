@@ -20,15 +20,16 @@
                             <h4 class="text-center">Apakah anda nasabah Bank Unisritama atau telah memiliki rekening di Bank Unisritama?</h4>
                             <br>
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="btnYa">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-4">
+                                    <div class="btnYa btn-sNasabah">
                                         <form action="#" method="post">
                                             <button id="btnYa" class="btn btn-success btn-block" type="submit"> Ya &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i></button>
                                         </form>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="btnTidak">
+                                <div class="col-md-4">
+                                    <div class="btnTidak btn-sNasabah">
                                         <form action="<?= base_url('dataDiri') ?>" method="post">
                                             <button id="btnTidak" class="btn btn-primary btn-block" type="submit">Tidak &nbsp;<i class="fa fa-times"></i></button>
                                         </form>

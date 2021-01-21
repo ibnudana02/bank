@@ -20266,3 +20266,20 @@ body[data-bg-image] {
     background-color: white;
     box-shadow: 0 12px 6px rgba(0, 0, 0, .06);
 }
+
+@media only screen and (max-width: 767px) {
+    .wizard[data-style="1"]>.steps ul {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0rem
+    }
+
+    .card-body {
+        padding: 0 !important;
+    }
+
+    .btn-sNasabah {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}
