@@ -4,19 +4,20 @@
 </head>
 <?php $title = explode('|', $judul) ?>
 <section id="page-content">
-    <div class="container">
+    <div class="container-fluid">
         <div class="heading-text heading-section text-center" data-animate="rubberBand">
             <h2><?= $title[0] ?></h2>
         </div>
         <br>
         <div class="row">
-            <div class="col-lg-6" data-animate="zoomIn">
-                <div id="map" style="width:100%; height: 450px;"></div>
+            <div class="col-lg-6 peta" data-animate="zoomIn">
+                <div id="map" style="width:100%; height: 380px;"></div>
                 <h3 class="text-center">Kantor Pusat</h3>
             </div>
             <br>
-            <div class="col-lg-6" data-animate="zoomIn">
-                <div id="mapKas" style="width:100%; height: 450px;"></div>
+            <br>
+            <div class="col-lg-6 peta" data-animate="zoomIn">
+                <div id="mapKas" style="width:100%; height: 380px;"></div>
                 <h3 class="text-center">Kantor Kas UIR</h3>
             </div>
         </div>
