@@ -1,9 +1,5 @@
-<section id="page-content">
+<section id="page-content" class="background-grey p-t-30">
     <div class="container">
-        <div class="heading-text heading-section text-center">
-            <?php $title = explode('|', $judul) ?>
-            <h4><?= $title[0] ?></h4>
-        </div>
         <div class="row ">
             <div class="content col-12">
                 <div class="card">
@@ -62,7 +58,7 @@
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <!-- <div class="form-group col-md-6">
                                         <label for="nama">Perkiraan Nilai Transaksi Dalam 1 Tahun</label>
                                         <select class="form-control" name="tujuan_buka" id="" required>
                                             <option value="" selected="true" disabled="disabled">Tujuan Pembukaan Rekening</option>
@@ -70,14 +66,11 @@
                                                 <option value="<?= $row ?>" <?= set_select('tujuan_buka', $row) ?>><?= $row ?></option>
                                             <?php endforeach; ?>
                                         </select>
-                                    </div>
-                                </div>
-                                <div class="form-row">
+                                    </div> -->
                                     <div class="form-group col-md-6">
                                         <label for="nama">NPWP <small>Optional, Jika tidak ada kosongkan</small></label>
                                         <input type="text" class="form-control" name="npwp" id="npwp">
                                     </div>
-
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
@@ -110,7 +103,7 @@
                             </div>
                             <h3>Personal Information</h3>
                             <div class="wizard-content">
-                                <div class="h5 mb-4">Informasi Data Diri</div>
+                                <div class="h5 mb-4">Data Pekerjaan</div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="name">Name</label>
@@ -252,7 +245,6 @@
                 "Thank you, your account has been registed successfully", "success");
         }
     });
-    //Validation
     wizard7.validate({
         errorClass: 'is-invalid',
         validClass: 'is-valid',

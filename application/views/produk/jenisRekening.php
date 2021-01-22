@@ -37,7 +37,7 @@
                             <button id="btnKembali" class="btn btn-danger btnMobile" type="button"><i class="fa fa-arrow-left"></i> Sebelumnya</button>
                         </div>
                         <div class="col-md-6">
-                            <button id="btnLanjut" class="btn btn-google btnMobile" type="submit" name="input" value="input" disabled>Selanjutnya <i class="fa fa-arrow-right"></i></button>
+                            <button id="btnLanjut" class="btn btn-google btnMobile float-right" type="submit" name="input" value="input" disabled>Selanjutnya <i class="fa fa-arrow-right"></i></button>
                         </div>
                     </div>
 

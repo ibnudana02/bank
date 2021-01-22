@@ -1,4 +1,4 @@
-<section id="page-content" class="background-grey p-b-0">
+<section id="page-content" class="background-grey p-b-50 p-t-50">
     <div class="container-fluid ">
         <?php if ($this->session->flashdata('message')) : ?>
             <div class="row justify-content-center">

@@ -177,7 +177,7 @@ class Produk extends CI_Controller
     public function statusNasabah()
     {
         $data['judul'] = 'e-Form - Bank Unisritama';
-        $this->session->set_flashdata('message', '<strong>Next.</strong>');
+        // $this->session->set_flashdata('message', '<strong>Next.</strong>');
         $this->load->view('template/header_eform', $data);
         $this->load->view('produk/statusNasabah');
         $this->load->view('template/footer_eform');
