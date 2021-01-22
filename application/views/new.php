@@ -37,20 +37,6 @@
                 <div class="shape-divider" data-style="4" data-height="220"></div>
             </div>
         </div>
-        <div class="row">
-            <div class="flip-box">
-                <div class="flip-box-inner">
-                    <div class="flip-box-front">
-                        <h2>Front Side</h2>
-                        <h3>Kredit </h3>
-                        <p>Solusi kebutuhan modal usaha Anda, kredit kendaraan bermotor, biaya pendidikan dan keperluan mendesak lainnya.</p>
-                    </div>
-                    <div class="flip-box-back">
-                        <h2>Back Side</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 <section class="p-b-0 p-t-10">

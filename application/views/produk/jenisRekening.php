@@ -17,29 +17,30 @@
                             <h4>Ketentuan Pembukaan Rekening</h4>
                         </div>
                         <div class="card-body">
-                            <?php foreach ($jenis as $data) :
-                                $no = 1;
-                            ?>
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" name="jenis" id="<?= $data->id_produk ?>" value="<?= $data->slug ?>" type="radio">&nbsp;&nbsp;<?= ucwords($data->produk); ?>
-                                    </label>
-                                    <button id="<?= $data->slug ?>" class="btn btn-sm btn-info float-right" type="button">INFO</button>
-                                </div>
-                                <br>
-                            <?php endforeach; ?>
-                        </div>
-                        <div class="card-footer">
-                            <div class="row justify-content-center">
-                                <div class="btnKembali">
-                                    <button id="btnKembali" class="btn btn-danger" type="button"><i class="fa fa-arrow-left"></i> Sebelumnya</button>
-                                </div>&nbsp;&nbsp;
-                                <div class="btnLanjut">
-                                    <button id="btnLanjut" class="btn btn-google" type="submit" name="input" value="input" disabled>Selanjutnya <i class="fa fa-arrow-right"></i></button>
-                                </div>
+                            <div class="syarat">
+                                <?php foreach ($jenis as $data) :
+                                    $no = 1;
+                                ?>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" name="jenis" id="<?= $data->id_produk ?>" value="<?= $data->slug ?>" type="radio">&nbsp;&nbsp;<?= ucwords($data->produk); ?>
+                                        </label>
+                                        <button id="<?= $data->slug ?>" class="btn btn-sm btn-info float-right" type="button">INFO</button>
+                                    </div>
+                                    <br>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button id="btnKembali" class="btn btn-danger btnMobile" type="button"><i class="fa fa-arrow-left"></i> Sebelumnya</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button id="btnLanjut" class="btn btn-google btnMobile" type="submit" name="input" value="input" disabled>Selanjutnya <i class="fa fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </form>

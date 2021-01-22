@@ -8,44 +8,109 @@
             <div class="content col-12">
                 <div class="card">
                     <div class="card-body">
-                        <form id="wizard7" class="wizard needs-validation" data-style="1" novalidate>
+                        <form id="wizard1" class="wizard needs-validation" data-style="1" novalidate>
                             <h3>Data Diri</h3>
                             <div class="wizard-content">
-                                <div class="h5 mb-4">Please fill with your account details</div>
+                                <div class="h5 mb-4">Informasi Data Diri</div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label for="username">Username</label>
-                                        <input type="text" class="form-control" name="username" placeholder="Enter username" required>
+                                        <label for="nik">NIK</label>
+                                        <input type="text" class="form-control" name="nik" maxlength="16" required>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="email">Email address</label>
-                                        <input type="email" class="form-control" name="email" placeholder="Enter your email">
+                                        <label for="nama">Nama</label>
+                                        <input type="text" class="form-control" name="nama" required>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label for="password">Password</label>
-                                        <div class="input-group show-hide-password">
-                                            <input class="form-control" name="password" placeholder="Enter password" type="password">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text"><i class="icon-eye-off" aria-hidden="true" style="cursor: pointer;"></i></span>
-                                            </div>
-                                        </div>
+                                        <label for="nama">Email</label>
+                                        <input type="email" class="form-control" name="email" required>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="password2">Confirm Password</label>
-                                        <div class="input-group show-hide-password">
-                                            <input class="form-control" name="password2" placeholder="Enter password" type="password">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text"><i class="icon-eye-off" aria-hidden="true" style="cursor: pointer;"></i></span>
-                                            </div>
-                                        </div>
+                                        <label for="nama">No. Handphone</label>
+                                        <input type="text" class="form-control" name="hp" maxlength="13" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="nama">Pendidikan Terakhir</label>
+                                        <select class="form-control" name="pendidikan" required>
+                                            <option value="" selected="true"> </option>
+                                            <?php foreach ($pendidikan as $key => $row) : ?>
+                                                <option value="<?= $row; ?>" <?= set_select('pendidikan', $row) ?>><?= $row; ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label for="nama">Tujuan Pembukaan Rekening</label>
+                                        <select class="form-control" name="tujuan_buka" id="" required>
+                                            <option value="" selected="true" disabled="disabled">Tujuan Pembukaan Rekening</option>
+                                            <?php foreach ($tujuan_buka as $key => $row) : ?>
+                                                <option value="<?= $row ?>" <?= set_select('tujuan_buka', $row) ?>><?= $row ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="nama">Sumber Dana</label>
+                                        <select class="form-control" name="sumber_dana" required>
+                                            <option value="" selected="true" disabled="disabled">Sumber Penghasilan</option>
+                                            <?php foreach ($sumber_dana as $key => $value) : ?>
+                                                <option value="<?= $value ?>" <?= set_select('sumber_dana', $value) ?>><?= $value ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="nama">Perkiraan Nilai Transaksi Dalam 1 Tahun</label>
+                                        <select class="form-control" name="tujuan_buka" id="" required>
+                                            <option value="" selected="true" disabled="disabled">Tujuan Pembukaan Rekening</option>
+                                            <?php foreach ($tujuan_buka as $key => $row) : ?>
+                                                <option value="<?= $row ?>" <?= set_select('tujuan_buka', $row) ?>><?= $row ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="nama">NPWP <small>Optional, Jika tidak ada kosongkan</small></label>
+                                        <input type="text" class="form-control" name="npwp" id="npwp">
+                                    </div>
+
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="nama">Alamat Saat Ini</label>
+                                        <input type="text" class="form-control" name="alamat_domisili" id="alamat_domisili" required>
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="nama">RT</label>
+                                        <input type="text" class="form-control" name="rt" id="rt" required>
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="nama">RW</label>
+                                        <input type="text" class="form-control" name="rw" id="rw" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-5">
+                                        <label for="desa">Desa/Kelurahan</label>
+                                        <input type="text" class="form-control" name="kel_domisili" required>
+                                    </div>
+                                    <div class="form-group col-md-5">
+                                        <label for="desa">Kecamatan</label>
+                                        <input type="text" class="form-control" name="kec_domisili" required>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="desa">Kode Pos</label>
+                                        <input type="text" class="form-control" name="pos_domisili" required>
                                     </div>
                                 </div>
                             </div>
                             <h3>Personal Information</h3>
                             <div class="wizard-content">
-                                <div class="h5 mb-4">Please fill with your personal info</div>
+                                <div class="h5 mb-4">Informasi Data Diri</div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="name">Name</label>
@@ -163,7 +228,8 @@
 
 <script>
     //Advanced - with validation
-    var wizard7 = $('#wizard7');
+    // var wizard7 = $('#wizard7');
+    var wizard7 = $('#wizard1');
     wizard7.steps({
         headerTag: "h3",
         bodyTag: '.wizard-content',
@@ -193,13 +259,41 @@
         errorElement: "div",
         rules: {
             // Step 1 - Account information
-            username: {
+            nik: {
+                required: true,
+                digits: true,
+                minlength: 16,
+                maxlength: 16
+            },
+            nama: {
                 required: true
             },
             email: {
                 required: true,
                 email: true,
                 minlength: 8
+            },
+            hp: {
+                required: true,
+                digits: true,
+                minlength: 10,
+                maxlength: 13
+            },
+            alamat_domisili: {
+                required: true,
+            },
+            rt: {
+                required: true,
+                digits: true,
+                maxlength: 3
+            },
+            rw: {
+                required: true,
+                digits: true,
+                maxlength: 3
+            },
+            pendidikan: {
+                required: true,
             },
             password: {
                 required: true,
