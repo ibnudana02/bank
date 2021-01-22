@@ -182,8 +182,8 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6">
-                            <button id="btnLanjut" class="btn btn-google btnMobile" type="submit" name="input" value="input" disabled>Selanjutnya <i class="fa fa-arrow-right"></i></button>
+                        <div class="col-md">
+                            <button id="btnLanjut" class="btn btn-google btnMobile float-right" type="submit" name="input" value="input" disabled>Selanjutnya <i class="fa fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
