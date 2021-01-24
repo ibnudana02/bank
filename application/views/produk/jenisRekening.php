@@ -14,20 +14,21 @@
                 <div class="content col-md-10">
                     <div class="card">
                         <div class="card-header eform-header">
-                            <h4>Ketentuan Pembukaan Rekening</h4>
+                            <h4>Jenis Rekening Tabungan</h4>
                         </div>
                         <div class="card-body">
                             <div class="syarat">
-                                <?php foreach ($jenis as $data) :
-                                    $no = 1;
-                                ?>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" name="jenis" id="<?= $data->id_produk ?>" value="<?= $data->slug ?>" type="radio">&nbsp;&nbsp;<?= ucwords($data->produk); ?>
-                                        </label>
-                                        <button id="<?= $data->slug ?>" class="btn btn-sm btn-info float-right" type="button">INFO</button>
+                                <?php foreach ($jenis as $data) : ?>
+                                    <div class="col-sm pb-3">
+                                        <div class="custom-controls-stacked">
+                                            <label class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="jenis" id="<?= $data->id_produk ?>" value="<?= $data->slug ?>">
+                                                <span class="custom-control-label"><?= strtoupper($data->produk); ?></span>
+                                                <button id="<?= $data->slug ?>" class="btn btn-sm btn-light float-right" type="button">INFO</button>
+                                            </label>
+                                        </div>
                                     </div>
-                                    <br>
+                                    <!-- <br> -->
                                 <?php endforeach; ?>
                             </div>
                         </div>
