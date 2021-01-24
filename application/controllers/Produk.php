@@ -168,6 +168,7 @@ class Produk extends CI_Controller
                 redirect('statusNasabah', 'refresh');
             }
         } else {
+            $this->session->set_flashdata('message', '<strong>Please read and accept our terms and conditions.</strong>');
             $this->load->view('template/header_eform', $data);
             $this->load->view('produk/jenisRekening');
             $this->load->view('template/footer_eform');

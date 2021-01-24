@@ -175,8 +175,14 @@
                                     <li>Bank dan Nasabah dengan ini sepakat bahwa segala gugatan akandiajukan di Pengadilan Negeri di wilayah hukum dimana Kantor Cabang BNI pembuka Rekening Nasabah berada.</li>
                                     <li>Penundukan pada domisili tersebut di atas tidak membatasi hak Bank untuk mengajukan gugatan terhadap Nasabah dalam domisili lainnya dalam wilayah Indonesia maupun luar Indonesia. Dengan menandatangani Formulir Ketentuan Umum dan Persyaratan Pembukaan Rekening ini, saya/kami menyatakan dengan ini menerima dan setuju mengikatkan diri pada semua syarat dan ketentuan umum yang tertuang dalam Formulir ini.</li>
                                 </ol>
-                                <div class="form-check">
+                                <!-- <div class="form-check">
                                     <label class="form-check-label"><input type="checkbox" class="form-check-input" id="ketentuan" name="ketentuan" value="setuju" <?php echo set_checkbox('ketentuan', 'setuju', FALSE); ?>> &nbsp;&nbsp;Saya Setuju</label>
+                                </div> -->
+                                <div class="form-group mb-1">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" name="ketentuan" id="ketentuan" class="custom-control-input">
+                                        <label class="custom-control-label" for="ketentuan">&nbsp;Saya Setuju</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
