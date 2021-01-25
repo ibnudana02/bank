@@ -4,7 +4,7 @@
             <div class="content col-12">
                 <div class="card">
                     <div class="card-body">
-                        <form id="wizard1" class="wizard needs-validation" data-style="1" novalidate>
+                        <form id="wizard7" class="wizard needs-validation" data-style="1" novalidate>
                             <h3>Data Diri</h3>
                             <div class="wizard-content">
                                 <div class="h3 mb-3">Informasi Data Diri</div>
