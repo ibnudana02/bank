@@ -28,9 +28,9 @@
             <div class="col-lg p-b-20">
                 <div class="text-box text-box-light">
                     <a href="#">
-                        <i class="far fa-lightbulb"></i>
-                        <h3>Layanan</h3>
-                        <p>Pembayaran Kewajiban Mahasiswa Universitas Islam Riau, Top Up OVO, Listrik Pra dan Pasca Bayar, Telkom dan Pembayaran Lainnya.</p>
+                        <i class="fa fa-mobile-alt"></i>
+                        <h3>Layanan Digital</h3>
+                        <p>Buka rekening tabungan kini bisa melalui aplikasi. Praktis, cepat dan mudah. Jadilah bagian dari transformasi Bank Unisritama.</p>
                     </a>
 
                 </div>

@@ -17383,7 +17383,8 @@ body.breakpoint-sm hr.space-xxlg {
 }
 
 .form-control {
-    border: 1px solid #e6e8eb;
+    /* border: 1px solid #e6e8eb; */
+    border: 1px solid #696a69;
     border-radius: 5px
 }
 
@@ -17459,9 +17460,9 @@ select {
 .form-group label:not(.error) {
     font-size: 13px;
     letter-spacing: .04em;
-    font-weight: 400;
+    font-weight: 450;
     margin-bottom: 4px;
-    color: #777
+    /* color: #777 */
 }
 
 .form-inline button {
