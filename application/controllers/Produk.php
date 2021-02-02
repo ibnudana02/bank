@@ -253,7 +253,7 @@ class Produk extends CI_Controller
         $data['pendidikan'] = $this->db->get_enum('nasabah_tab', 'pendidikan');
         $data['aw'] = $this->db->get_enum('nasabah_tab', 'hb_ahli_waris');
         $data['status'] = $this->db->get_enum('nasabah_tab', 'status_menikah');
-        $data['profesi'] = $this->db->get_enum('nasabah_tab', 'profesi');
+        $data['profesi'] = $this->produk->getProfesi()->result();
         $data['jenis_pekerjaan'] = $this->db->get_enum('nasabah_tab', 'jenis_pekerjaan');
         $data['status_pekerjaan'] = $this->db->get_enum('nasabah_tab', 'status_pekerjaan');
         $data['sumber_dana'] = $this->db->get_enum('nasabah_tab', 'sumber_dana');

@@ -109,31 +109,76 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <label for="nama">Jenis Pekerjaan</label>
-                                        <select class="form-control" style="text-transform: uppercase" name="profesi" required>
+                                        <select class="form-control" style="text-transform: uppercase" name="profesi" id="profesi" required>
                                             <option value="" selected="true" disabled="disabled"> </option>
-                                            <?php foreach ($profesi as $key => $value) : ?>
-                                                <option value="<?= $value ?>" <?= set_select('profesi', $value) ?>><?= $value ?></option>
+                                            <?php foreach ($profesi as $value) : ?>
+                                                <option value="<?= $value->id ?>" <?= set_select('profesi', $value->id) ?>><?= $value->nm_pekerjaan ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="surname">Surname</label>
-                                        <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
+                                    <div id="bekerja">
+                                        <div class="form-group col-md-12">
+                                            <label for="surname">Penghasilan per Tahun</label>
+                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <label for="surname">Nama Kantor</label>
+                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <label for="surname">Alamat Kantor</label>
+                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
+                                        </div>
+                                        <div class="form-group col-md-10">
+                                            <label for="surname">Alamat Kantor</label>
+                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="surname">Kode Pos</label>
+                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <label for="surname">Jabatan</label>
+                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <label for="surname">Mulai Bekerja</label>
+                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <label for="surname">Telpon Kantor</label>
+                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="gender">Gender</label>
-                                        <select class="form-control" name="gender">
-                                            <option>Select your gender</option>
-                                            <option>Female</option>
-                                            <option>Male</option>
-                                            <option>Rather not say</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="gender">Date of Birth</label>
-                                        <input class="form-control" type="date" name="dateofbirth">
+                                    <div id="pemberiDana">
+                                        <div class="form-group col-md-12">
+                                            <label for="surname">Nama Pemberi Dana</label>
+                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <label for="surname">Jenis Identitas</label>
+                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <label for="surname">Nomor Identitas</label>
+                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <label for="surname">NPWP <small>(Optional, jika tidak ada kosongkan</small></label>
+                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
+                                        </div>
+                                        <div class="form-group col-md-8">
+                                            <label for="surname">Alamat Tempat Tinggal Pemberi Dana</small></label>
+                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="surname">RT</small></label>
+                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="surname">RW</small></label>
+                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -274,4 +319,36 @@
         }
     });
     $('.wizard').find(".actions ul > li > a").addClass("btn");
+</script>
+<script type="text/javascript">
+    var profesi = $('#profesi').val();
+    var pemberiKerja = document.getElementById("bekerja");
+    var pemberiDana = document.getElementById("pemberiDana");
+    var reset = document.getElementById("formPekerjaan");
+
+    if (profesi === "") {
+        pemberiKerja.style.display = "none";
+        pemberiDana.style.display = "none";
+    } else if (profesi === "3" || profesi === "4" || profesi === "5") {
+        pemberiKerja.style.display = "none";
+        pemberiDana.style.display = "block";
+    } else {
+        pemberiKerja.style.display = "block";
+        pemberiDana.style.display = "none";
+    }
+
+    $('#jenisPekerjaan').change(function() {
+        var value = $(this).val();
+        $("#formPekerjaan").bootstrapValidator('resetForm', false);
+        if (value === "") {
+            pemberiKerja.style.display = "none";
+            pemberiDana.style.display = "none";
+        } else if (value === "08" || value === "09" || value === "10") {
+            pemberiKerja.style.display = "none";
+            pemberiDana.style.display = "block";
+        } else {
+            pemberiKerja.style.display = "block";
+            pemberiDana.style.display = "none";
+        }
+    });
 </script>

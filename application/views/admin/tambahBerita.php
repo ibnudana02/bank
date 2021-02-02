@@ -40,16 +40,24 @@
                                 <?php echo form_error('image', '<small class="text-danger pl-5">', '</small>'); ?>
                                 <div class="form-group">
                                     <label for="image">Gambar</label>
-                                    <input type="file" class="form-control-file" name="image" value="<?= set_value('image'); ?>">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="file" class="form-control-file" name="image" id="preview_gambar" value="<?= set_value('image'); ?>">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <span>Preview</span>
+                                            <img src="#" id="gambar_nodin" width="400" alt="Gambar" />
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 ">
-                                        <a href="<?= base_url('admin/berita'); ?>" class="btn btn-google btn-user btn-block">
+                                        <a href="<?= base_url('admin/berita'); ?>" class="btn btn-google btn-block">
                                             Cancel
                                         </a>
                                     </div>
                                     <div class="col-sm-6">
-                                        <button type="submit" class="btn btn-facebook btn-user btn-block">
+                                        <button type="submit" class="btn btn-facebook btn-block">
                                             Save
                                         </button>
                                     </div>
@@ -68,4 +76,20 @@
     CKEDITOR.replace('editor', {
         filebrowserImageBrowseUrl: '<?php echo base_url('assets/kcfinder/browse.php'); ?>'
     });
+
+    $("#preview_gambar").change(function() {
+        bacaGambar(this);
+    });
+
+    function bacaGambar(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#gambar_nodin').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 </script>

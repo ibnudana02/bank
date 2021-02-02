@@ -198,6 +198,12 @@ class Produk_model extends CI_Model
         $this->db->or_where_in('id_jenis', '5e9545a2ecf3e');
         return $this->db->get();
     }
+
+    public function getProfesi()
+    {
+        $this->db->select('id, nm_pekerjaan');
+        return $this->db->get('pekerjaan');
+    }
 }
 
 /* End of file Porduk_model.php */
