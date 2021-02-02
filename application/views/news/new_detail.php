@@ -1,9 +1,12 @@
 <head>
+    <meta property="fb:app_id" content="1283434705339233" />
     <meta property="og:url" content="<?= current_url() ?>" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="<?= $row->judul ?>" />
     <meta property="og:description" content="<?= htmlspecialchars_decode(substr($row->isi, 0, 30)) ?>" />
     <meta property="og:image" content="<?= base_url('upload/berita/' . $row->image); ?>" />
+    <meta property="og:image:width" content="500" />
+    <meta property="og:image:height" content="500" />
 </head>
 <section id="page-content" class="sidebar-right">
     <div class="container">
@@ -20,7 +23,7 @@
                             <div class="post-item-description">
                                 <h2><?= ucwords($row->judul); ?></h2>
                                 <div class="post-meta">
-                                    <span class="post-meta-date"><i class="fa fa-calendar-o"></i><?php echo date('M d, Y', strtotime($row->created_on)) ?></span>
+                                    <span class="post-meta-date"><i class="fa fa-calendar-o"></i><?php echo date('H:i - M d, Y', strtotime($row->created_on)) ?></span>
                                     <span class="post-meta-category"><a href="#"><i class="fa fa-tag"></i><?= $row->kategori ?></a></span>
                                     <div class="post-meta-share">
                                         <a class="btn btn-xs btn-slide btn-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?= current_url(); ?>" target="_blank">

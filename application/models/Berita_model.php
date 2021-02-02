@@ -48,7 +48,7 @@ class Berita_model extends CI_Model
             ->from($this->_table);
         $this->db->join('kategori', $this->_table . '.id_kategori = kategori.id_kategori', 'left');
         $this->db->where('slug', $slug);
-        return $this->db->get()->row();
+        return $this->db->get();
     }
 
     public function getKategori($kategori)

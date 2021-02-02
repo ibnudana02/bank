@@ -45,13 +45,22 @@ class News extends CI_Controller
     public function detailBerita($slug)
     {
         $data = $this->data;
-        $row = $this->berita->getBySlug($slug);
-        $data['judul'] = ucwords($row->judul) . ' | Bank Unisritama';
+        $detail = $this->berita->getBySlug($slug);
+        $row = $this->berita->getBySlug($slug)->row();
         $data['berita'] = $this->berita->getLima(); //Ambil data berita
         $data['row'] = $row;
-        $this->load->view('template/new_header', $data);
-        $this->load->view('news/new_detail', $data);
-        $this->load->view('template/new_footer');
+        if ($detail->num_rows() > 0) {
+            $data['judul'] = ucwords($row->judul) . ' | Bank Unisritama';
+            $this->load->view('template/new_header', $data);
+            $this->load->view('news/new_detail', $data);
+            $this->load->view('template/new_footer');
+        } else {
+            // redirect('custom404', 'refresh');
+            $data['judul'] = 'Not Found';
+            $this->load->view('template/new_header', $data);
+            $this->load->view('template/error');
+            $this->load->view('template/new_footer');
+        }
     }
 
     public function kategoriBerita($kategori)
