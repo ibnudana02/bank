@@ -10,6 +10,7 @@ class Berita_model extends CI_Model
     public $slug;
     public $isi;
     public $image;
+    public $thumb;
     public $penulis;
     public $created_on;
     public $update_by;
@@ -75,7 +76,11 @@ class Berita_model extends CI_Model
         $out = explode(" ", $this->judul);
         $this->slug = implode("-", $out);
         $this->isi = htmlspecialchars($post['isi']);
-        $this->image = $this->_uploadImage();
+        $files = $this->_uploadImage();
+        // print_r($files);
+        // die;
+        $this->image = $files['image'];
+        $this->thumb = $files['thumbnail'];
         $this->penulis = $this->session->userdata('id_user');
         $this->created_on = date('Y-m-d H:i:s');
         $this->update_by = '';
@@ -121,17 +126,19 @@ class Berita_model extends CI_Model
         } else {
             $gbr = $this->upload->data();
             //Compress Image
-            // $config['image_library'] = 'gd2';
-            // $config['source_image'] = './upload/berita/' . $gbr['file_name'];
-            // $config['create_thumb'] = FALSE;
-            // $config['maintain_ratio'] = FALSE;
-            // // $config['quality'] = '70%';
-            // $config['width'] = 1200;
-            // $config['height'] = 760;
-            // $this->load->library('image_lib', $config);
-            // $this->image_lib->resize();
+            $set['image_library'] = 'gd2';
+            $set['source_image'] = './upload/berita/' . $gbr['file_name'];
+            $set['create_thumb'] = TRUE;
+            $set['maintain_ratio'] = FALSE;
+            $set['width'] = 600;
+            $set['height'] = 314;
+            $this->load->library('image_lib', $set);
+            $this->image_lib->resize();
 
-            return $gbr['file_name'];
+            $image = array('image' => $gbr['file_name'], 'thumbnail' => $gbr['raw_name'] . '_thumb' . $gbr['file_ext']);
+            // print_r($image);
+            // die;
+            return $image;
         }
     }
 
@@ -144,9 +151,9 @@ class Berita_model extends CI_Model
     private function _deleteImage($id)
     {
         $berita = $this->getById($id);
-        if ($berita->image != null) {
-            $filename = explode(".", $berita->image)[0];
-            return array_map('unlink', glob(FCPATH . "upload/berita/$filename.*"));
+        if ($berita->image != null && $berita->thumb != null) {
+            unlink("./upload/berita/" . $berita->image);
+            unlink("./upload/berita/" . $berita->thumb);
         }
     }
 }
