@@ -138,7 +138,10 @@ class Welcome extends CI_Controller
 
 	public function tes()
 	{
-
-		echo $this->input->ip_address();
+		$this->load->model('berita_model', 'berita');
+		$slug = 'masih-dibuka-lowongan-marketing-dana-dan-marketing-kredit';
+		$data = $this->berita->getBySlug($slug)->row();
+		echo html_entity_decode($data->isi);
+		// echo $this->input->ip_address();
 	}
 }
