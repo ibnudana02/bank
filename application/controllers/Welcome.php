@@ -141,7 +141,7 @@ class Welcome extends CI_Controller
 		$this->load->model('berita_model', 'berita');
 		$slug = 'masih-dibuka-lowongan-marketing-dana-dan-marketing-kredit';
 		$data = $this->berita->getBySlug($slug)->row();
-		echo html_entity_decode($data->isi);
+		echo html_entity_decode(substr(ucfirst($data->isi), 0, 100));
 		// echo $this->input->ip_address();
 	}
 }
