@@ -4,6 +4,8 @@
     <meta property="og:title" content="<?= $row->produk ?>" />
     <meta property="og:description" content="<?= htmlspecialchars(substr($row->deskripsi, 0, 30)) ?>" />
     <meta property="og:image" content="<?= base_url('upload/produk/' . $row->image); ?>" />
+    <meta property="og:image:width" content="300" />
+    <meta property="og:image:height" content="300" />
 </head>
 <section id="page-content" class="sidebar-right">
     <div class="container">

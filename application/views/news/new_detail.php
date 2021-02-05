@@ -5,8 +5,8 @@
     <meta property="og:title" content="<?= $row->judul ?>" />
     <meta property="og:description" content="<?= htmlspecialchars_decode(substr($row->isi, 0, 30)) ?>" />
     <meta property="og:image" content="<?= base_url('upload/berita/' . $row->image); ?>" />
-    <meta property="og:image:width" content="500" />
-    <meta property="og:image:height" content="500" />
+    <meta property="og:image:width" content="300" />
+    <meta property="og:image:height" content="300" />
 </head>
 <section id="page-content" class="sidebar-right">
     <div class="container">
