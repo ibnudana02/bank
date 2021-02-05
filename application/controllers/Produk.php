@@ -128,6 +128,7 @@ class Produk extends CI_Controller
         $data['krd'] = $this->produk->getKrd()->result();
         $data['berita'] = $this->berita->getLima();
         $data['row'] = $row;
+        $data['metaProduk'] = $row;
         $this->load->view('template/new_header', $data);
         $this->load->view('produk/new_detail', $data);
         $this->load->view('template/new_footer');

@@ -49,6 +49,7 @@ class News extends CI_Controller
         $row = $this->berita->getBySlug($slug)->row();
         $data['berita'] = $this->berita->getLima(); //Ambil data berita
         $data['row'] = $row;
+        $data['metaNews'] = $row;
         if ($detail->num_rows() > 0) {
             $data['judul'] = ucwords($row->judul) . ' | Bank Unisritama';
             $this->load->view('template/new_header', $data);

@@ -4,6 +4,16 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <?php
+    $metaProduk = '';
+    $metaNews = '';
+    if ($metaProduk != '') {
+        $this->load->view('produk/meta', FALSE);
+    } elseif ($metaNews != '') {
+        $this->load->view('news/meta');
+    } else {
+        $this->load->view('template/meta');
+    } ?>
     <link rel="icon" type="image/png" href="<?php echo base_url('assets/'); ?>img/logo/ico.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 

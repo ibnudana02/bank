@@ -1,12 +1,14 @@
-<head>
+<!-- <head>
+    <meta property="fb:app_id" content="1283434705339233" />
     <meta property="og:url" content="<?= current_url() ?>" />
     <meta property="og:title" content="<?= $row->produk ?>" />
+    <meta property="og:site_name" content="Bank Unisritama" />
     <meta property="og:description" content="<?= htmlspecialchars(substr($row->deskripsi, 0, 30)) ?>" />
     <meta property="og:image" content="<?= base_url('upload/produk/' . $row->thumb); ?>" />
     <meta property="og:image:width" content="300" />
     <meta property="og:image:height" content="300" />
     <meta property="og:type" content="website" />
-</head>
+</head> -->
 <section id="page-content" class="sidebar-right">
     <div class="container">
         <div class="row">

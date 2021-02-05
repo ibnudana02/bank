@@ -1,4 +1,4 @@
-<head>
+<!-- <head>
     <meta property="fb:app_id" content="1283434705339233" />
     <meta property="og:url" content="<?= current_url() ?>" />
     <meta property="og:title" content="<?= $row->judul ?>" />
@@ -7,7 +7,7 @@
     <meta property="og:image:width" content="300" />
     <meta property="og:image:height" content="300" />
     <meta property="og:type" content="website" />
-</head>
+</head> -->
 <section id="page-content" class="sidebar-right">
     <div class="container">
         <div class="row">
