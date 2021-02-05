@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <?php
-    $metaProduk = '';
-    $metaNews = '';
-    if ($metaProduk != '') {
+    // $metaProduk = '';
+    // $metaNews = '';
+    if (isset($metaProduk->id_produk) != '') {
         $this->load->view('produk/meta', FALSE);
-    } elseif ($metaNews != '') {
+    } elseif (isset($metaNews->id_berita) != '') {
         $this->load->view('news/meta');
     } else {
         $this->load->view('template/meta');

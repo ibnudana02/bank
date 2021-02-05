@@ -129,6 +129,8 @@ class Produk extends CI_Controller
         $data['berita'] = $this->berita->getLima();
         $data['row'] = $row;
         $data['metaProduk'] = $row;
+        // var_dump($data['metaProduk']);
+        // die;
         $this->load->view('template/new_header', $data);
         $this->load->view('produk/new_detail', $data);
         $this->load->view('template/new_footer');
