@@ -130,8 +130,8 @@ class Berita_model extends CI_Model
             $set['source_image'] = './upload/berita/' . $gbr['file_name'];
             $set['create_thumb'] = TRUE;
             $set['maintain_ratio'] = FALSE;
-            $set['width'] = 600;
-            $set['height'] = 314;
+            $set['width'] = 300;
+            $set['height'] = 300;
             $this->load->library('image_lib', $set);
             $this->image_lib->resize();
 
