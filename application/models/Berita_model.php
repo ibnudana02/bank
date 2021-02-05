@@ -77,8 +77,6 @@ class Berita_model extends CI_Model
         $this->slug = implode("-", $out);
         $this->isi = htmlspecialchars($post['isi']);
         $files = $this->_uploadImage();
-        // print_r($files);
-        // die;
         $this->image = $files['image'];
         $this->thumb = $files['thumbnail'];
         $this->penulis = $this->session->userdata('id_user');
@@ -99,7 +97,10 @@ class Berita_model extends CI_Model
         $this->slug = implode("-", $out);
         $this->isi = htmlspecialchars($post['isi']);
         if (!empty($_FILES["image"]["name"])) {
-            $this->image = $this->_uploadImage();
+            $this->_deleteImage($post['id_berita']);
+            $files = $this->_uploadImage();
+            $this->image = $files['image'];
+            $this->thumb = $files['thumbnail'];
         } else {
             $this->image = $post["old_image"];
         }
@@ -116,7 +117,7 @@ class Berita_model extends CI_Model
         $config['allowed_types'] = 'gif|jpg|png|jpeg';
         $config['file_name'] = $this->id_berita;
         $config['overwrite'] = true;
-        $config['max_size'] = 2048;
+        $config['max_size'] = 1024;
 
         $this->upload->initialize($config);
 

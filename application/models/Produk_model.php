@@ -12,6 +12,7 @@ class Produk_model extends CI_Model
     public $untuk;
     public $jenis;
     public $image;
+    public $thumb;
     public $penulis;
     public $created_on;
     public $update_by;
@@ -29,7 +30,9 @@ class Produk_model extends CI_Model
         $this->link = htmlspecialchars($post['link']);
         $this->untuk = $post['untuk'];
         $this->jenis = $post['jenis'];
-        $this->image = $this->_uploadImage();
+        $files = $this->_uploadImage();
+        $this->image = $files['image'];
+        $this->thumb = $files['thumbnail'];
         $this->penulis = $this->session->userdata('name');
         $this->created_on = date('Y-m-d H:i:s');
         $this->update_by = '';
@@ -48,12 +51,12 @@ class Produk_model extends CI_Model
         $this->link = $post['link'];
         $this->jenis = $post['jenis'];
         if (!empty($_FILES["image"]["name"])) {
-            $this->image = $this->_uploadImage();
+            $files = $this->_uploadImage();
+            $this->image = $files['image'];
+            $this->thumb = $files['thumbnail'];
         } else {
             $this->image = $post["old_image"];
         }
-        // $this->penulis = $this->session->userdata('name');
-        // $this->created_on = date('Y-m-d H:i:s');
         $this->update_by = $this->session->userdata('name');
         $this->update_on = date('Y-m-d H:i:s');
         return $this->db->update($this->_table, $this, array('id_produk' => $post['id']));
@@ -107,14 +110,17 @@ class Produk_model extends CI_Model
             //Compress Image
             $config['image_library'] = 'gd2';
             $config['source_image'] = './upload/produk/' . $gbr['file_name'];
-            $config['create_thumb'] = FALSE;
+            $config['create_thumb'] = TRUE;
             $config['maintain_ratio'] = FALSE;
-            $config['width'] = 1200;
-            $config['height'] = 760;
+            $config['width'] = 300;
+            $config['height'] = 300;
             $this->load->library('image_lib', $config);
             $this->image_lib->resize();
 
-            return $gbr['file_name'];
+            $image = array('image' => $gbr['file_name'], 'thumbnail' => $gbr['raw_name'] . '_thumb' . $gbr['file_ext']);
+
+            // return $gbr['file_name'];
+            return $image;
         }
     }
 
