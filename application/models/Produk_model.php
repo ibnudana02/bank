@@ -85,9 +85,9 @@ class Produk_model extends CI_Model
     private function _deleteImage($id)
     {
         $produk = $this->getById($id);
-        if ($produk->image != null) {
-            $filename = explode(".", $produk->image)[0];
-            return array_map('unlink', glob(FCPATH . "upload/produk/$filename.*"));
+        if ($produk->image != null && $produk->thumb != null) {
+            unlink("./upload/produk/" . $produk->image);
+            unlink("./upload/produk/" . $produk->thumb);
         }
     }
 
@@ -118,8 +118,6 @@ class Produk_model extends CI_Model
             $this->image_lib->resize();
 
             $image = array('image' => $gbr['file_name'], 'thumbnail' => $gbr['raw_name'] . '_thumb' . $gbr['file_ext']);
-
-            // return $gbr['file_name'];
             return $image;
         }
     }

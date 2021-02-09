@@ -5,7 +5,7 @@
                 <div class="card">
                     <div class="card-body">
                         <form id="wizard7" class="wizard needs-validation" data-style="1" novalidate>
-                            <h3>Data Diri</h3>
+                            <!-- <h3>Data Diri</h3>
                             <div class="wizard-content">
                                 <div class="h3 mb-3">Informasi Data Diri</div>
                                 <div class="form-row">
@@ -102,91 +102,128 @@
                                         <input type="number" class="form-control" value="<?php echo set_value('pos_domisili'); ?>" name="pos_domisili" required>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <h3>Personal Information</h3>
                             <div class="wizard-content">
                                 <div class="h5 mb-4">Data Pekerjaan</div>
-                                <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="nama">Jenis Pekerjaan</label>
+                                    <select class="form-control" style="text-transform: uppercase" name="profesi" id="profesi" required>
+                                        <option value="" selected="true" disabled="disabled"> </option>
+                                        <?php foreach ($profesi as $value) : ?>
+                                            <option value="<?= $value->id ?>" <?= set_select('profesi', $value->id) ?>><?= $value->nm_pekerjaan ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <div id="bekerja">
                                     <div class="form-group col-md-12">
-                                        <label for="nama">Jenis Pekerjaan</label>
-                                        <select class="form-control" style="text-transform: uppercase" name="profesi" id="profesi" required>
-                                            <option value="" selected="true" disabled="disabled"> </option>
-                                            <?php foreach ($profesi as $value) : ?>
-                                                <option value="<?= $value->id ?>" <?= set_select('profesi', $value->id) ?>><?= $value->nm_pekerjaan ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
+                                        <label for="surname">Penghasilan per Tahun</label>
+                                        <input type="text" class="form-control" name="surname">
                                     </div>
-                                    <div id="bekerja">
-                                        <div class="form-group col-md-12">
-                                            <label for="surname">Penghasilan per Tahun</label>
-                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
-                                        </div>
-                                        <div class="form-group col-md-12">
-                                            <label for="surname">Nama Kantor</label>
-                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
-                                        </div>
-                                        <div class="form-group col-md-12">
-                                            <label for="surname">Alamat Kantor</label>
-                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
-                                        </div>
+                                    <div class="form-group col-md-12">
+                                        <label for="surname">Nama Kantor</label>
+                                        <input type="text" class="form-control" name="surname">
+                                    </div>
+                                    <div class="form-row m-r-10 m-l-10">
                                         <div class="form-group col-md-10">
                                             <label for="surname">Alamat Kantor</label>
-                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
+                                            <input type="text" class="form-control" name="surname">
                                         </div>
                                         <div class="form-group col-md-2">
                                             <label for="surname">Kode Pos</label>
-                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
-                                        </div>
-                                        <div class="form-group col-md-12">
-                                            <label for="surname">Jabatan</label>
-                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
-                                        </div>
-                                        <div class="form-group col-md-12">
-                                            <label for="surname">Mulai Bekerja</label>
-                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
-                                        </div>
-                                        <div class="form-group col-md-12">
-                                            <label for="surname">Telpon Kantor</label>
-                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
+                                            <input type="text" class="form-control" name="surname">
                                         </div>
                                     </div>
-                                    <div id="pemberiDana">
-                                        <div class="form-group col-md-12">
-                                            <label for="surname">Nama Pemberi Dana</label>
-                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
-                                        </div>
-                                        <div class="form-group col-md-12">
-                                            <label for="surname">Jenis Identitas</label>
-                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
-                                        </div>
-                                        <div class="form-group col-md-12">
-                                            <label for="surname">Nomor Identitas</label>
-                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
-                                        </div>
-                                        <div class="form-group col-md-12">
-                                            <label for="surname">NPWP <small>(Optional, jika tidak ada kosongkan</small></label>
-                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
-                                        </div>
+                                    <div class="form-group col-md-12">
+                                        <label for="surname">Jabatan</label>
+                                        <input type="text" class="form-control" name="surname">
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label for="surname">Mulai Bekerja</label>
+                                        <input type="date" class="form-control" name="surname">
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label for="surname">Telpon Kantor</label>
+                                        <input type="text" class="form-control" name="surname">
+                                    </div>
+                                </div>
+                                <div id="pemberiDana">
+                                    <div class="form-group col-md-12">
+                                        <label for="surname">Nama Pemberi Dana</label>
+                                        <input type="text" class="form-control" name="surname">
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label for="surname">Jenis Identitas</label>
+                                        <input type="text" class="form-control" name="surname">
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label for="surname">Nomor Identitas</label>
+                                        <input type="text" class="form-control" name="surname">
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label for="surname">NPWP <small>(Optional, jika tidak ada kosongkan</small></label>
+                                        <input type="text" class="form-control" name="surname">
+                                    </div>
+                                    <div class="form-row m-r-10 m-l-10">
                                         <div class="form-group col-md-8">
                                             <label for="surname">Alamat Tempat Tinggal Pemberi Dana</small></label>
-                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
+                                            <input type="text" class="form-control" name="surname">
                                         </div>
                                         <div class="form-group col-md-2">
                                             <label for="surname">RT</small></label>
-                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
+                                            <input type="text" class="form-control" name="surname">
                                         </div>
                                         <div class="form-group col-md-2">
                                             <label for="surname">RW</small></label>
-                                            <input type="text" class="form-control" name="surname" placeholder="Enter your Surname">
+                                            <input type="text" class="form-control" name="surname">
                                         </div>
                                     </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="telephone">Telephone</label>
-                                        <input class="form-control" type="tel" name="telephone" placeholder="Enter your Telephone number">
+                                    <div class="form-row m-r-10 m-l-10">
+                                        <div class="form-group col-md-3">
+                                            <label for="surname">Provinsi</small></label>
+                                            <select name="provinsi_identitas" id="propinsi" class="form-control">
+                                                <option value="">Pilih</option>
+                                                <?php foreach ($prop as $row) : ?>
+                                                    <option value="<?= $row->id_prov; ?>" <?= set_select('provinsi_identitas', $row->id_prov) ?>><?= ucwords($row->nama); ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="Kabupaten/Kota">Kabupaten/Kota</label>
+                                            <select name="kab_identitas" id="kota" class="form-control">
+                                                <option value="">Pilih</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="Kabupaten/Kota">Kecamatan</label>
+                                            <select name="kec_identitas" id="camat" class="form-control">
+                                                <option value="">Pilih</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="Kabupaten/Kota">Desa/Kelurahan</label>
+                                            <select name="kel_identitas" id="desa" class="form-control">
+                                                <option value="">Pilih</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label for="sumber dana">Sumber Dana</label>
+                                        <select name="sumber_dana" id="sumber_dana" class="form-control">
+                                            <option value="">Pilih</option>
+                                            <?php foreach ($sumber_dana as $value) : ?>
+                                                <option value="<?= $value ?>"><?= $value ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label for="surname">Penghasilan per Tahun</label>
+                                        <input type="text" class="form-control" name="surname">
                                     </div>
                                 </div>
+                                <!-- <div id="captcha">
+                                    <?= $img ?>
+                                </div> -->
                             </div>
 
                             <h3>Confirmation</h3>
@@ -322,33 +359,87 @@
 </script>
 <script type="text/javascript">
     var profesi = $('#profesi').val();
-    var pemberiKerja = document.getElementById("bekerja");
+    console.log(profesi);
+    // var pemberiKerja = document.getElementById("bekerja");
+    var pemberiKerja = $('#bekerja');
     var pemberiDana = document.getElementById("pemberiDana");
-    var reset = document.getElementById("formPekerjaan");
+    // var reset = document.getElementById("formPekerjaan");
 
-    if (profesi === "") {
-        pemberiKerja.style.display = "none";
-        pemberiDana.style.display = "none";
+    if (profesi === null) {
+        $('#bekerja').hide();
+        $('#pemberiDana').hide();
     } else if (profesi === "3" || profesi === "4" || profesi === "5") {
-        pemberiKerja.style.display = "none";
-        pemberiDana.style.display = "block";
+        $('#bekerja').hide();
+        $('#pemberiDana').show();
     } else {
-        pemberiKerja.style.display = "block";
-        pemberiDana.style.display = "none";
+        $('#bekerja').show();
+        $('#pemberiDana').hide();
     }
 
-    $('#jenisPekerjaan').change(function() {
+    $('#profesi').change(function() {
         var value = $(this).val();
-        $("#formPekerjaan").bootstrapValidator('resetForm', false);
+        console.log(value);
         if (value === "") {
-            pemberiKerja.style.display = "none";
-            pemberiDana.style.display = "none";
-        } else if (value === "08" || value === "09" || value === "10") {
-            pemberiKerja.style.display = "none";
-            pemberiDana.style.display = "block";
+            $('#bekerja').hide();
+            $('#pemberiDana').hide();
+            // pemberiDana.style.display = "none";
+        } else if (value === "3" || value === "4" || value === "5") {
+            $('#bekerja').hide();
+            $('#pemberiDana').show();
         } else {
-            pemberiKerja.style.display = "block";
-            pemberiDana.style.display = "none";
+            $('#bekerja').show();
+            $('#pemberiDana').hide();
         }
+    });
+    $(document).ready(function() {
+        $("#propinsi").change(function() {
+            var id = $(this).val();
+            var data = "kabupaten";
+            $.ajax({
+                url: "<?php echo base_url('getDati'); ?>",
+                method: "POST",
+                dataType: "JSON",
+                data: {
+                    id: id,
+                    data: data,
+                },
+                success: function(response) {
+                    $("#kota").html(response.list_kota).show();
+                }
+            });
+        });
+
+        $("#kota").change(function() {
+            var id = $(this).val();
+            var data = "kecamatan";
+            $.ajax({
+                url: "<?= base_url('getDati'); ?>",
+                method: "POST",
+                dataType: "JSON",
+                data: {
+                    id: id,
+                    data: data,
+                },
+                success: function(response) {
+                    $("#camat").html(response.list_kota).show();
+                }
+            });
+        });
+        $("#camat").change(function() {
+            var id = $(this).val();
+            var data = "desa";
+            $.ajax({
+                url: "<?= base_url('getDati'); ?>",
+                method: "POST",
+                dataType: "JSON",
+                data: {
+                    id: id,
+                    data: data,
+                },
+                success: function(response) {
+                    $("#desa").html(response.list_kota).show();
+                }
+            });
+        });
     });
 </script>

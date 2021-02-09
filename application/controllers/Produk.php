@@ -9,6 +9,8 @@ class Produk extends CI_Controller
     {
         parent::__construct();
         $this->load->library('email');
+        $this->load->helper('captcha');
+
 
         $this->load->model(array(
             'Kategori_model' => 'kategori', 'Berita_model' => 'berita',

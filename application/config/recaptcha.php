@@ -4,10 +4,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 // To use reCAPTCHA, you need to sign up for an API key pair for your site.
 // link: http://www.google.com/recaptcha/admin
 
-// $config['recaptcha_site_key'] = '6LfW2e4UAAAAABXxoqUqW_DWlExJVnucIB7CeZ7c';
-$config['recaptcha_site_key'] = '6LeBzO8UAAAAAC6dvxpg7N1aRgq6eH5SkHfS7pyi';
-// $config['recaptcha_secret_key'] = '6LfW2e4UAAAAAFLC-sHUuS-edcZ6bx246g1jN6hS';
-$config['recaptcha_secret_key'] = '6LeBzO8UAAAAAJZ-GsHsd-mD_HEoA3ak8-slFL4s';
+$config['recaptcha_site_key'] = '6LeKx04aAAAAAAjk2kBzU0ePUrTNPvjcOUTC_D9P'; //localhost
+// $config['recaptcha_site_key'] = '6Lccx04aAAAAAIhVDEkFpfRhorCCXAhE7LfCO34d';
+$config['recaptcha_secret_key'] = '6LeKx04aAAAAAMbXOWEaQYSOshS2feyqEedjlCaw'; //localhost
+// $config['recaptcha_secret_key'] = '6Lccx04aAAAAAMX_ZeAcahR-cZDl4nqzPo6S-9JT';
 // reCAPTCHA supported 40+ languages listed here:
 // https://developers.google.com/recaptcha/docs/language
 $config['recaptcha_lang'] = 'en';
