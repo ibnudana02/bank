@@ -5,7 +5,7 @@
                 <div class="card">
                     <div class="card-body">
                         <form id="wizard7" class="wizard needs-validation" data-style="1" novalidate>
-                            <!-- <h3>Data Diri</h3>
+                            <h3>Data Diri</h3>
                             <div class="wizard-content">
                                 <div class="h3 mb-3">Informasi Data Diri</div>
                                 <div class="form-row">
@@ -102,7 +102,7 @@
                                         <input type="number" class="form-control" value="<?php echo set_value('pos_domisili'); ?>" name="pos_domisili" required>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
                             <h3>Personal Information</h3>
                             <div class="wizard-content">
                                 <div class="h5 mb-4">Data Pekerjaan</div>
