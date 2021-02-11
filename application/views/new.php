@@ -27,7 +27,7 @@
             </div>
             <div class="col-lg p-b-20">
                 <div class="text-box text-box-light">
-                    <a href="#">
+                    <a href="<?= base_url('eform') ?>">
                         <i class="fa fa-mobile-alt"></i>
                         <h3>Layanan Digital</h3>
                         <p>Buka rekening tabungan kini bisa melalui aplikasi. Praktis, cepat dan mudah. Jadilah bagian dari transformasi Bank Unisritama.</p>
