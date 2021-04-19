@@ -16,11 +16,12 @@
                         <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>No.</th>
+                                    <th>No</th>
                                     <th>Nama Pegawai</th>
-                                    <th>Jabatan</th>
-                                    <th>Foto</th>
-                                    <th>Social Media</th>
+                                    <th>NIK</th>
+                                    <th>Email</th>
+                                    <th>No. HP</th>
+                                    <!-- <th>Jabatan</th> -->
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -28,16 +29,12 @@
                                 <?php $no = 1;
                                 foreach ($data as $row) : ?>
                                     <tr>
-                                        <th><?= $no++; ?>
+                                        <th><?= $no++ ?></th>
                                         <th><?= html_entity_decode($row->nama); ?></th>
-                                        <th><?= htmlspecialchars($row->jabatan); ?></th>
-                                        <th><img src="<?= base_url('upload/pegawai/' . $row->foto); ?>" width="70" height="70"></th>
-                                        <th>
-                                            <div class="btn-group" role="group">
-                                                <a href="" class="btn btn-sm btn-facebook float-center"><i class="fa fa-facebook"></i></a>
-                                                <a href="" class="btn btn-sm btn-info float-center"><i class="fas fa-instagram"></i></a>
-                                            </div>
-                                        </th>
+                                        <th><?= html_entity_decode($row->nik); ?></th>
+                                        <th><?= html_entity_decode($row->email); ?></th>
+                                        <th><?= html_entity_decode($row->no_emp); ?></th>
+                                        <!-- <th></?= htmlspecialchars($row->jabatan); ?></th> -->
                                         <th>
                                             <div class="btn-group" role="group">
                                                 <a href="<?php echo $row->id_pegawai; ?>" class="btn btn-sm btn-info float-center" data-target="#edit<?php echo $row->id_pegawai; ?>" data-toggle="modal"><i class="fas fa-edit"></i></a>

@@ -49,42 +49,6 @@
                     </div>
                 </div>
             </div>
-            <div class="sidebar sticky-sidebar col-lg-3">
-                <div class="widget  widget-newsletter">
-                    <form id="widget-search-form-sidebar" action="#" method="get">
-                        <div class="input-group">
-                            <input type="text" aria-required="true" name="q" class="form-control widget-search-form" placeholder="Search for pages...">
-                            <div class="input-group-append">
-                                <button class="btn" type="submit"><i class="fa fa-search"></i></button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="widget">
-                    <div class="tabs">
-                        <ul class="nav nav-tabs nav-justified" id="tabs-posts" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="contact-tab" data-toggle="tab" href="#recent" role="tab" aria-controls="recent" aria-selected="false">Recent Berita</a>
-                            </li>
-                        </ul>
-                        <div class="tab-content" id="tabs-posts-content">
-                            <div class="tab-pane fade show active" id="recent" role="tabpanel" aria-labelledby="recent-tab">
-                                <div class="post-thumbnail-list">
-                                    <?php foreach ($berita as $value) : ?>
-                                        <div class="post-thumbnail-entry">
-                                            <img alt="" src="<?= base_url('upload/berita/' . $value->image) ?>">
-                                            <div class="post-thumbnail-content">
-                                                <a href="<?= base_url('berita/' . $value->slug)  ?>"><?= ucwords($value->judul) ?></a>
-                                                <span class="post-date"><i class="icon-calendar"></i> <?php echo date('D, d M Y', strtotime($value->created_on)) ?></span>
-                                            </div>
-                                        </div>
-                                    <?php endforeach; ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>

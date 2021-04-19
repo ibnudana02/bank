@@ -6,14 +6,50 @@
     <?= $this->session->flashdata('message'); ?>
     <!-- DataTales Example -->
     <div class="row">
-        <div class="col-lg">
+        <div class="col-lg-5">
+            <div class="card shadow mb-2">
+                <div class="card-header py-3">
+                    <div class="row">
+                        <h4 class="font-weight-bold text-primary">Tambah Jabatan</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <div class="col-xs-12 col-lg-12 mx-auto">
+                            <form class="user" method="post" action="<?= base_url('admin/add_jabatan'); ?>">
+                                <div class="form-group">
+                                    <label>Jabatan</label>
+                                    <input type="text" class="form-control " name="jabatan" id="jabatan" placeholder="Enter Jabatan" value="<?= set_value('kategorijabatan'); ?>">
+                                    <?php echo form_error('jabatan', '<small class="text-danger pl-3">', '</small>'); ?>
+                                </div>
+                                <div class="form-group">
+                                    <label>Alias</label>
+                                    <input type="text" class="form-control " name="alias" id="alias" placeholder="Enter Alias" value="<?= set_value('alias'); ?>">
+                                    <?php echo form_error('alias', '<small class="text-danger pl-3">', '</small>'); ?>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 ">
+                                        <a href="<?= base_url('admin/jabatan'); ?>" class="btn btn-google btn-block">
+                                            Cancel
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <button type="submit" class="btn btn-facebook  btn-block">
+                                            Save
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <div class="row">
-                        <div class="col-8">
-                            <h4 class="font-weight-bold text-primary">List Jabatan</h4>
-                        </div>
-                        <div class="col-4"><a href="<?= base_url('admin/add_jabatan'); ?>" class="btn btn-sm btn-primary float-right"><i class="fas fa-plus-square"></i></a></div>
+                        <h4 class="font-weight-bold text-primary">Daftar Jabatan</h4>
                     </div>
                 </div>
                 <div class="card-body">
@@ -21,17 +57,14 @@
                         <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>No.</th>
                                     <th>Jabatan</th>
                                     <th>Alias</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $no = 1;
-                                foreach ($data as $row) : ?>
+                                <?php foreach ($data as $row) : ?>
                                     <tr>
-                                        <th><?= $no++; ?>
                                         <th><?= html_entity_decode($row->jabatan); ?></th>
                                         <th><?= htmlspecialchars($row->alias); ?></th>
                                         <th>

@@ -91,6 +91,7 @@ $route['kategori_berita/(:any)'] = 'news/kategoriBerita/$1';
 
 //Routes for Page Tentang
 $route['syaratKetentuan'] = 'eform';
+$route['eform'] = 'eform';
 $route['jenisRekening'] = 'eform/jenisRekening';
 $route['statusNasabah'] = 'eform/statusNasabah';
 $route['dataDiri'] = 'produk/createTab';

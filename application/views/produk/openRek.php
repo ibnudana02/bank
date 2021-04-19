@@ -150,39 +150,39 @@
                                 <div id="pemberiDana">
                                     <div class="form-group col-md-12">
                                         <label for="surname">Nama Pemberi Dana</label>
-                                        <input type="text" class="form-control" name="surname">
+                                        <input type="text" class="form-control" name="nama_dana">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="surname">Jenis Identitas</label>
-                                        <input type="text" class="form-control" name="surname">
+                                        <input type="text" class="form-control" name="identitas_dana">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="surname">Nomor Identitas</label>
-                                        <input type="text" class="form-control" name="surname">
+                                        <input type="text" class="form-control" name="nik_dana">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="surname">NPWP <small>(Optional, jika tidak ada kosongkan</small></label>
-                                        <input type="text" class="form-control" name="surname">
+                                        <input type="text" class="form-control" name="npwp">
                                     </div>
                                     <div class="form-row m-r-10 m-l-10">
                                         <div class="form-group col-md-8">
                                             <label for="surname">Alamat Tempat Tinggal Pemberi Dana</small></label>
-                                            <input type="text" class="form-control" name="surname">
+                                            <input type="text" class="form-control" name="alamat_dana">
                                         </div>
                                         <div class="form-group col-md-2">
                                             <label for="surname">RT</small></label>
-                                            <input type="text" class="form-control" name="surname">
+                                            <input type="text" class="form-control" name="rt_dana">
                                         </div>
                                         <div class="form-group col-md-2">
                                             <label for="surname">RW</small></label>
-                                            <input type="text" class="form-control" name="surname">
+                                            <input type="text" class="form-control" name="rw_dana">
                                         </div>
                                     </div>
                                     <div class="form-row m-r-10 m-l-10">
                                         <div class="form-group col-md-3">
                                             <label for="surname">Provinsi</small></label>
                                             <select name="provinsi_identitas" id="propinsi" class="form-control">
-                                                <option value="">Pilih</option>
+                                                <option value="" selected="true" disabled="disabled">Pilih</option>
                                                 <?php foreach ($prop as $row) : ?>
                                                     <option value="<?= $row->id_prov; ?>" <?= set_select('provinsi_identitas', $row->id_prov) ?>><?= ucwords($row->nama); ?></option>
                                                 <?php endforeach; ?>
@@ -210,7 +210,7 @@
                                     <div class="form-group col-md-12">
                                         <label for="sumber dana">Sumber Dana</label>
                                         <select name="sumber_dana" id="sumber_dana" class="form-control">
-                                            <option value="">Pilih</option>
+                                            <option value="" selected="true" disabled="disabled">Pilih</option>
                                             <?php foreach ($sumber_dana as $value) : ?>
                                                 <option value="<?= $value ?>"><?= $value ?></option>
                                             <?php endforeach; ?>
@@ -218,12 +218,17 @@
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="surname">Penghasilan per Tahun</label>
-                                        <input type="text" class="form-control" name="surname">
-                                    </div>
+                                        <!-- <input type="text" class="form-control" name="surname"> -->
+                                        <select name="penghasilan_tahun" id="penghasilan_tahun" class="form-control">
+                                            <option value="" selected="true" disabled="disabled">Pilih</option>
+                                            <option value=""> Kurang dari Rp 36 Juta</option>
+                                            <option value=""> Rp 36 Juta sd < Rp 60 Juta</option> <option value=""> Rp 60 Juta sd Rp 150 Juta</option>
+                                            <option value=""> Lebih dari Rp 150 Juta</option>
+                                        </select> </div>
                                 </div>
                                 <!-- <div id="captcha">
-                                    <?= $img ?>
-                                </div> -->
+                                                    <?= $img ?>
+                                    </div> -->
                             </div>
 
                             <h3>Confirmation</h3>
@@ -359,7 +364,7 @@
 </script>
 <script type="text/javascript">
     var profesi = $('#profesi').val();
-    console.log(profesi);
+    // console.log(profesi);
     // var pemberiKerja = document.getElementById("bekerja");
     var pemberiKerja = $('#bekerja');
     var pemberiDana = document.getElementById("pemberiDana");
@@ -378,7 +383,7 @@
 
     $('#profesi').change(function() {
         var value = $(this).val();
-        console.log(value);
+        // console.log(value);
         if (value === "") {
             $('#bekerja').hide();
             $('#pemberiDana').hide();
