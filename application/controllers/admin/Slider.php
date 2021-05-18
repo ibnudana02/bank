@@ -30,7 +30,7 @@ class Slider extends CI_Controller
         $data['data'] = $this->slider->getAll()->result();
         // print_r($data['data']);
         $this->load->view('template/admin_header', $data);
-        $this->load->view('admin/Slider');
+        $this->load->view('admin/slider');
         $this->load->view('template/admin_footer');
     }
 
