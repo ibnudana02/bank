@@ -10,7 +10,7 @@
                         <div class="social-icons social-icons-colored">
                             <ul>
                                 <li class="social-facebook"><a href="https://www.facebook.com/bankunisritama" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                <li class="social-wa"><a href="https://wa.me/6282391031212" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                                <li class="social-wa"><a href="https://wa.me/6282384564001" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
                                 <li class="social-twitter"><a href="https://twitter.com/bpr_unisritama" target="_blank"><i class="fab fa-twitter"></i></a></li>
                                 <li class="social-instagram"><a href="https://www.instagram.com/bpr_unisritama/" target="_blank"><i class="fab fa-instagram"></i></a></li>
                                 <li class="social-linkedin"><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>

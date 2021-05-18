@@ -136,12 +136,19 @@ class Welcome extends CI_Controller
 		}
 	}
 
+	public function tes1()
+	{
+		# code...
+		$this->load->view('sse');
+	}
+
 	public function tes()
 	{
-		$this->load->model('berita_model', 'berita');
-		$slug = 'masih-dibuka-lowongan-marketing-dana-dan-marketing-kredit';
-		$data = $this->berita->getBySlug($slug)->row();
-		echo html_entity_decode(substr(ucfirst($data->isi), 0, 100));
-		// echo $this->input->ip_address();
+		header('Content-Type: text/event-stream');
+		header('Cache-Control: no-cache');
+
+		$time = date('r');
+		echo "data: The server time is: {$time}\n\n";
+		flush();
 	}
 }
