@@ -5,16 +5,17 @@
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <div class="row">
-                        <h4 class="font-weight-bold text-primary">Tambah Pegawai</h4>
+                        <h4 class="font-weight-bold text-primary">Edit Pegawai</h4>
                     </div>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <div class="col-12 col-xs-12 mx-auto">
-                            <form class="user" method="post" action="<?= base_url('admin/add_pegawai'); ?>">
+                            <form class="user" method="post" enctype="multipart/form-data" action="<?= current_url() ?>">
                                 <div class="form-group">
                                     <label>Nama Pegawai</label>
-                                    <input type="text" class="form-control" name="nama" id="nama" placeholder="Enter Nama Pegawai" value="<?= set_value('nama'); ?>">
+                                    <input type="hidden" class="form-control" name="id_pegawai" value="<?= $pegawai->id_pegawai ?>">
+                                    <input type="text" class="form-control" name="nama" id="nama" placeholder="Enter Nama Pegawai" value="<?= $pegawai->nama ?>">
                                     <?php echo form_error('nama', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                                 <div class="form-group">
@@ -22,7 +23,9 @@
                                     <select class="form-control custom-select custom-select-md" id="jabatan" name="jabatan">
                                         <option value="" disabled diselected>--Pilih Jabatan--</option>
                                         <?php foreach ($jabatan as $row) : ?>
-                                            <option value="<?= $row->id_jabatan; ?>"><?= $row->jabatan; ?></option>
+                                            <option <?php if ($row->id_jabatan == $pegawai->id_jabatan) {
+                                                        echo 'selected="selected"';
+                                                    } ?> value="<?= $row->id_jabatan; ?>"><?= $row->jabatan; ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
@@ -42,9 +45,15 @@
                                     <select class="form-control custom-select custom-select-md" id="atasan" name="atasan">
                                         <option value="" disabled diselected>--Pilih Atasan--</option>
                                         <?php foreach ($atasan as $row) : ?>
-                                            <option value="<?= $row->id_pegawai; ?>"><?= $row->jabatan; ?></option>
+                                            <option <?php if ($row->id_pegawai == $pegawai->parent_job) {
+                                                        echo 'selected="selected"';
+                                                    } ?> value="<?= $row->id_pegawai; ?>"><?= $row->jabatan; ?></option>
                                         <?php endforeach; ?>
                                     </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="gambar">Gambar</label>
+                                    <input type="file" class="form-control-file" name="gambar" value="<?= set_value('gambar'); ?>">
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 ">

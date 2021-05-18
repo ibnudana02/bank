@@ -16,15 +16,15 @@
                 <div class="card-body">
                     <div class="table-responsive">
                         <div class="col-xs-12 col-lg-12 mx-auto">
-                            <form class="user" method="post" action="<?= base_url('admin/add_jabatan'); ?>">
+                            <form class="user" method="post" action="<?= current_url(); ?>">
                                 <div class="form-group">
                                     <label>Jabatan</label>
-                                    <input type="text" class="form-control " name="jabatan" id="jabatan" placeholder="Enter Jabatan" value="<?= set_value('jabatan'); ?>">
+                                    <input type="text" class="form-control " name="jabatan" id="jabatan" placeholder="Enter Jabatan" value="<?= $d->jabatan ?>">
                                     <?php echo form_error('jabatan', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                                 <div class="form-group">
                                     <label>Alias</label>
-                                    <input type="text" class="form-control " name="alias" id="alias" placeholder="Enter Alias" value="<?= set_value('alias'); ?>">
+                                    <input type="text" class="form-control " name="alias" id="alias" placeholder="Enter Alias" value="<?= $d->alias ?>">
                                     <?php echo form_error('alias', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                                 <div class="form-group row">
@@ -87,7 +87,7 @@
                                                     <h5 class="modal-body mt-0">Yakin menghapus data ini?</h5>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <a href="<?= base_url('admin/delete_jab/' . $row->id_jabatan) ?>" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Delete Jabatan">Hapus</a>
+                                                    <a href="<?= base_url('admin/delete_kategori/' . $row->id_jabatan) ?>" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Delete User">Hapus</a>
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="tooltip" data-placement="top" title="Kembali">Tidak</button>
                                                 </div>
                                             </div>

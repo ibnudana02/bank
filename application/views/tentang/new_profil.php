@@ -27,12 +27,12 @@
         </div>
     </div>
 </section>
-<section class="p-t-30">
+<section class="pt-3">
     <div class="container">
         <div class="heading-text heading-section text-center">
             <h2>PEMEGANG SAHAM</h2>
         </div>
-        <div class="row team-members team-members-shadow m-b-40">
+        <div class="row team-members team-members-shadow">
             <div class="col-lg-3"></div>
             <div class="col-lg-3">
                 <div class="team-member">
@@ -42,7 +42,7 @@
                     <div class="team-desc">
                         <h3>YLPI RIAU</h3>
                         <span>YAYASAN PENDIDIKAN</span>
-                        <p>The most happiest time of the day!. Praesent tristique hendrerit ex ut laoreet. </p>
+                        <!-- <p>The most happiest time of the day!. Praesent tristique hendrerit ex ut laoreet. </p> -->
                     </div>
                 </div>
             </div>
@@ -54,7 +54,7 @@
                     <div class="team-desc">
                         <h3>H. IMAM GHAZALI, SH, MH</h3>
                         <span>DOSEN</span>
-                        <p>The most happiest time of the day!. Praesent tristique hendrerit ex ut laoreet. </p>
+                        <!-- <p>The most happiest time of the day!. Praesent tristique hendrerit ex ut laoreet. </p> -->
                     </div>
                 </div>
             </div>

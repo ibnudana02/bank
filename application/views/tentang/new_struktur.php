@@ -1,11 +1,11 @@
 <head>
-    <script src="<?php echo base_url('assets/'); ?>js/orgchart.js"></script>
+    <script src="<?php echo base_url('assets/new/'); ?>js/orgchart.js"></script>
 </head>
 <section id="page-content">
-    <div class="container">
+    <div class="container-fluid">
         <div class="heading-text heading-section text-center" data-animate="rubberBand">
             <?php $title = explode('|', $judul) ?>
-            <h2><?= $title[0] ?></h2>
+            <h4><?= $title[0] ?></h4>
         </div>
         <hr>
         <div id="tree" data-animate="zoomIn"></div>
@@ -48,6 +48,7 @@
     OrgChart.templates.dir.node =
         '<rect x="0" y="0" width="330" height="50" fill="#ffffff" stroke-width="1" stroke="#aeaeae"></rect>';
     OrgChart.templates.dir.field_0 = '<text style="font-size: 24px;" fill="#aeaeae" x="165" y="30" text-anchor="middle">{val}</text>';
+    OrgChart.templates.dir.field_1 = '<text style="font-size: 24px;" fill="#aeaeae" x="165" y="30" text-anchor="middle">{val}</text>';
 
     OrgChart.templates.dir.ripple = {
         radius: 0,
@@ -80,33 +81,29 @@
     };
 
     var chart = new OrgChart(document.getElementById("tree"), {
-        // template: "mila",
         template: "diva",
-        // scaleInitial: 0.5,
+        // scaleInitial: 0.8,
+        enableSearch: false,
         mouseScrool: OrgChart.action.scroll,
-        scaleInitial: OrgChart.match.boundary,
+        showYScroll: OrgChart.scroll.visible,
+        showXScroll: OrgChart.scroll.visible,
         menu: {
             pdf: {
                 text: "Export PDF"
             },
             png: {
                 text: "Export PNG"
-            },
-            svg: {
-                text: "Export SVG"
-            },
-            csv: {
-                text: "Export CSV"
             }
         },
         nodeBinding: {
             field_0: "Nama",
+            // field_1: "Jabatan",
         },
         tags: {
             "Company": {
                 template: "company"
             },
-            "Department": {
+            "Kepala Bagian": {
                 template: "department"
             },
             "Staff": {
@@ -119,19 +116,19 @@
                 template: "dekom"
             }
         },
-        // slinks: [{
-        //         from: "5e8c20fddbda8",
-        //         to: "5e8c291741b01",
-        //         template: 'yellow',
-        //         // label: 'Koo'
-        //     },
-        //     {
-        //         from: "5e8c20fddbda8",
-        //         to: "5e8c20ceb1416",
-        //         template: 'blue',
-        //         // label: 'Laporkan Hasil Audit'
-        //     },
-        // ],
+        slinks: [{
+                from: "5e8c20fddbda8",
+                to: "5e8c291741b01",
+                template: 'yellow',
+                // label: 'Koo'
+            },
+            {
+                from: "5e8c20fddbda8",
+                to: "5e8c20ceb1416",
+                template: 'blue',
+                // label: 'Laporkan Hasil Audit'
+            },
+        ],
     });
 
     chart.on('redraw', function(sender) {
@@ -198,12 +195,6 @@
                 if (skipBlurLink.indexOf(id) == -1)
                     linksElements[i].setAttribute('filter', 'url(#f1)');
             }
-        }
-
-        function preview() {
-            OrgChart.pdfPrevUI.show(chart, {
-                format: 'A4'
-            });
         }
     }
 

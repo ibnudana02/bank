@@ -38,6 +38,8 @@ $route['admin/jenis'] = 'admin/jenis';
 // Routes for Jabatan
 $route['admin/add_jabatan'] = 'admin/jabatan/tambahJabatan';
 $route['admin/jabatan'] = 'admin/jabatan/jabatan';
+$route['admin/delete_jab/(:any)'] = 'admin/jabatan/delete/$1';
+$route['edit_jab/(:any)'] = 'admin/jabatan/edit_jab/$1';
 
 // Routes for Pegawai
 $route['admin/pegawai'] = 'admin/pegawai';

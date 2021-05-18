@@ -1,19 +1,19 @@
 <section>
     <div class="container">
-        <div class="heading-text heading-line text-center" data-animate="bounce">
+        <div class="heading-text heading-line text-center animate__animated animate__bounceInDown">
             <h4>Visi</h4>
         </div>
         <div class="row">
-            <div class="col-lg-12" data-animate="fadeInLeftBig">
-                <h5 class="text-center"><strong>"Menjadi BPR yang Sehat, Kuat, Tumbuh dan Berkembang dengan mengutamakan prinsip Transparancy, Accountability, Responsibility, Independency, and Fairness” di Tahun 2023"</strong></h5>
+            <div class="col-lg-12">
+                <h5 class="text-center animate__animated animate__fadeInLeftBig"><strong>"Menjadi BPR yang Sehat, Kuat, Tumbuh dan Berkembang dengan mengutamakan prinsip Transparancy, Accountability, Responsibility, Independency, and Fairness” di Tahun 2023"</strong></h5>
             </div>
         </div>
         <hr class="space">
-        <div class="heading-text heading-line text-center" data-animate="bounce">
+        <div class="heading-text heading-line text-center animate__animated animate__bounceInDown animate__delay-1s">
             <h4>Misi</h4>
         </div>
         <div class="row">
-            <div class="col-lg-6" data-animate="fadeInLeftBig">
+            <div class="col-lg-6 animate__animated animate__fadeInLeftBig animate__delay-1s">
                 <ul class="list-icon list-icon-check list-icon-colored">
                     <li>Memberikan pelayanan yang prima kepada nasabah.</li>
                     <li>Menjalankan operasional BPR secara effisien dan efektif.</li>
@@ -30,7 +30,7 @@
 
                 </ul>
             </div>
-            <div class="col-lg-6" data-animate="fadeInLeftBig">
+            <div class="col-lg-6 animate__animated animate__fadeInLeftBig animate__delay-1s">
                 <ul class="list-icon list-icon-check list-icon-colored">
                     <li>Meningkatkan penghimpunan dana dan penyaluran dana.</li>
                     <li>Menjaga dan menciptakan image positif nasabah terhadap BPR.</li>

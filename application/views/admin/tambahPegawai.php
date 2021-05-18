@@ -30,11 +30,22 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
+                                    <label>Tag Jabatan</label>
+                                    <select class="form-control custom-select custom-select-md" name="tag" id="tag">
+                                        <option value="" disabled diselected>--Pilih--</option>
+                                        <option value="Dewan Komisaris">Dewan Komisaris</option>
+                                        <option value="Direksi">Direksi</option>
+                                        <option value="Department">Department</option>
+                                        <option value="Staff">Staff</option>
+                                    </select>
+                                    <?php echo form_error('tag', '<small class="text-danger pl-3">', '</small>'); ?>
+                                </div>
+                                <div class="form-group">
                                     <label>Atasan</label>
                                     <select class="form-control custom-select custom-select-md" id="atasan" name="atasan">
                                         <option value="" disabled diselected>--Pilih Atasan--</option>
-                                        <?php foreach ($jabatan as $row) : ?>
-                                            <option value="<?= $row->id_jabatan; ?>"><?= $row->jabatan; ?></option>
+                                        <?php foreach ($atasan as $row) : ?>
+                                            <option value="<?= $row->id_pegawai; ?>"><?= $row->jabatan; ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
