@@ -150,7 +150,8 @@ class Produk_model extends CI_Model
         $this->db->select('*')
             ->from($this->_table)
             ->join('jenis', $this->_table . '.jenis=jenis.id_jenis');
-        $this->db->where($this->_table . '.jenis', '5ebc8092d915b');
+        // $this->db->where($this->_table . '.jenis', '5ebc8092d915b');
+        $this->db->where('jenis.jenis', 'Layanan');
         return $this->db->get();
     }
 

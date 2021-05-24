@@ -25,12 +25,12 @@
                             <div class="widget">
                                 <div class="widget-title">Tentang</div>
                                 <ul class="list">
-                                    <li><a href="#">Profil</a></li>
-                                    <li><a href="#">Visi & Misi</a></li>
-                                    <li><a href="#">Manajemen</a></li>
-                                    <li><a href="#">Struktur</a></li>
-                                    <li><a href="#">Penghargaan</a></li>
-                                    <li><a href="#">Lokasi Kantor</a></li>
+                                    <li><a href="<?= base_url('profil') ?>">Profil</a></li>
+                                    <li><a href="<?= base_url('visi_misi') ?>">Visi & Misi</a></li>
+                                    <li><a href="<?= base_url('manajemen') ?>">Manajemen</a></li>
+                                    <li><a href="<?= base_url('struktur') ?>">Struktur</a></li>
+                                    <li><a href="<?= base_url('awards') ?>">Penghargaan</a></li>
+                                    <li><a href="<?= base_url('location') ?>">Lokasi Kantor</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -38,10 +38,10 @@
                             <div class="widget">
                                 <div class="widget-title">Produk</div>
                                 <ul class="list">
-                                    <li><a href="#">Layanan</a></li>
-                                    <li><a href="#">Tabungan</a></li>
-                                    <li><a href="#">Deposito</a></li>
-                                    <li><a href="#">Kredit</a></li>
+                                    <li><a href="<?= base_url('layanan') ?>">Layanan</a></li>
+                                    <li><a href="<?= base_url('tabungan') ?>">Tabungan</a></li>
+                                    <li><a href="<?= base_url('deposito') ?>">Deposito</a></li>
+                                    <li><a href="<?= base_url('kredit') ?>">Kredit</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -49,10 +49,10 @@
                             <div class="widget">
                                 <div class="widget-title">News</div>
                                 <ul class="list">
-                                    <li><a href="#">Berita</a></li>
-                                    <li><a href="#">Laporan Publikasi</a></li>
-                                    <li><a href="#">GCG Report</a></li>
-                                    <li><a href="#">Pengkinian Data</a></li>
+                                    <li><a href="<?= base_url('berita') ?>">Berita</a></li>
+                                    <li><a href="<?= base_url('publikasi') ?>">Laporan Publikasi</a></li>
+                                    <li><a href="<?= base_url('gcg') ?>">GCG Report</a></li>
+                                    <li><a href="<?= base_url('pengkinian-data') ?>">Pengkinian Data</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -71,7 +71,7 @@
     </div>
     <div class="copyright-content background-darkgrey">
         <div class="container">
-            <div class="copyright-text text-center">&copy; 2020 All Rights Reserved.</div>
+            <div class="copyright-text text-center">&copy; 2020 - bprunisritama.com</div>
         </div>
     </div>
 </footer>
@@ -82,6 +82,7 @@
 <a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
 
 <script src="<?= base_url('assets/new/') ?>js/jquery.js"></script>
+<script src="<?= base_url('assets/new/js/') ?>owl.carousel.min.js"></script>
 <script src="<?= base_url('assets/new/') ?>js/plugins.js"></script>
 <script src="<?= base_url('assets/new/') ?>js/functions.js"></script>
 </body>

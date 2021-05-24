@@ -104,6 +104,17 @@ class Produk extends CI_Controller
         $this->load->view('produk/new_produk', $data);
         $this->load->view('template/new_footer');
     }
+    public function layanan()
+    {
+        $data = $this->data;
+        $data['judul'] = 'Layanan | Bank Unisritama';
+        $data['bread'] = 'Home';
+        $data['crumb'] = 'Layanan';
+        $data['data'] = $this->produk->getLayanan()->result();
+        $this->load->view('template/new_header', $data);
+        $this->load->view('produk/new_produk', $data);
+        $this->load->view('template/new_footer');
+    }
 
     public function produk()
     {

@@ -41,6 +41,15 @@ class News extends CI_Controller
         $this->load->view('news/new_berita', $data);
         $this->load->view('template/new_footer');
     }
+    public function mason()
+    {
+        $data = $this->data;
+        $data['judul'] = 'Berita Terbaru | Bank Unisritama';
+        $data['berita'] = $this->berita->getAll()->result();
+        $this->load->view('template/new_header', $data);
+        $this->load->view('news/masonry', $data);
+        $this->load->view('template/new_footer');
+    }
 
     public function detailBerita($slug)
     {

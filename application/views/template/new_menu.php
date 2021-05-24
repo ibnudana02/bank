@@ -20,7 +20,7 @@
                             <div class="row">
                                 <div class="col-lg-3">
                                     <ul>
-                                        <li class="mega-menu-title">Layanan</li>
+                                        <li><a href="<?= base_url('layanan') ?>" class="mega-menu-title">Layanan</a></li>
                                         <?php foreach ($layanan as $value) : ?>
                                             <li><a href="<?= base_url('produk/' . strtolower($value->slug)) ?>"><?= strtoupper(strtolower($value->produk)) ?><span class="badge badge-danger">HOT</span></a></li>
                                         <?php endforeach; ?>
@@ -28,7 +28,7 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <ul>
-                                        <li class="mega-menu-title">Tabungan</li>
+                                        <li><a href="<?= base_url('tabungan') ?>" class="mega-menu-title">Tabungan</a></li>
                                         <?php foreach ($tabungan as $key => $value) : ?>
                                             <li><a href="<?= base_url('produk/' . $value->slug) ?>"><?= strtoupper($value->produk) ?><span class="badge badge-info">INFO</span></a></li>
                                         <?php endforeach; ?>

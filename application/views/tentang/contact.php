@@ -6,13 +6,8 @@
         <div class="row">
             <div class="col-lg-6" data-animate="swing">
                 <h3 class="text-uppercase"><?= $title[0] ?></h3>
-                <p>The most happiest time of the day!. Suspendisse condimentum porttitor cursus. Duis nec nulla
-                    turpis. Nulla lacinia laoreet odio, non lacinia nisl malesuada vel. Aenean malesuada
-                    fermentum bibendum.</p>
-                <p>The most happiest time of the day!. Morbi sagittis, sem quis lacinia faucibus, orci ipsum
-                    gravida tortor, vel interdum mi sapien ut justo. Nulla varius consequat magna, id molestie
-                    ipsum volutpat quis. A true story, that never been told!. Fusce id mi diam, non ornare orci.
-                    Pellentesque ipsum erat, facilisis ut venenatis eu, sodales vel dolor.</p>
+                <p>Terima kasih telah mengunjungi situs kami.</p>
+                <p>Jika terdapat keluhan, pengaduan dan saran terkait kinerja pelayanan kami, silahkan mengirimkannya dengan mengisi form ini.</p>
                 <div class="row m-t-40">
                     <div class="col-lg-6">
                         <address>
