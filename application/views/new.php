@@ -1,9 +1,9 @@
 <section id="page-content" class="p-b-0 p-t-60">
     <div class="container">
-        <div class="heading-text heading-section text-center">
+        <div class="heading-text heading-section text-center wow animate__fadeInDown" data-wow-duration="2s">
             <h4>Produk & Layanan</h4>
         </div>
-        <div class="row">
+        <div class="row wow fadeInLeft">
             <div class="col-lg p-b-20">
                 <div class="text-box text-box-light">
                     <a href="<?= base_url('kredit') ?>">
@@ -20,7 +20,6 @@
                         <i class="fas fa-chart-pie"></i>
                         <h3>Tabungan </h3>
                         <p>Saving Dana anda dengan Aman sekaligus bisa berinvestasi dengan Suku Bunga bersaing dan Pastinya dijamin LPS.</p>
-                        <!-- <a href="<?= base_url('pembukaan-rekening-tabungan') ?>" class="btn">e-Form Rekening <i class="icon-chevron-right"></i></a> -->
                     </a>
                 </div>
                 <div class="shape-divider" data-style="4" data-height="220"></div>
@@ -41,14 +40,14 @@
 </section>
 <section class="p-b-0 p-t-10">
     <div class="container-fluid">
-        <div class="heading-text heading-section text-center">
+        <div class="heading-text heading-section text-center wow animate__fadeInDown" data-wow-duration="2s">
             <h4>Berita Terkini</h4>
         </div>
         <div class="row">
-            <div class="content col">
-                <div class="carousel" data-items="4">
+            <div class="content col" data-wow-duration="1s" data-wow-delay="1s">
+                <div class="carousel wow animate__bounceInUp" data-items="4">
                     <?php foreach ($berita as $row) : ?>
-                        <div class="post-item border shadow">
+                        <div class="post-item border shadow ">
                             <div class="post-item-wrap">
                                 <div class="post-image">
                                     <a href="<?= 'berita/' . $row->slug ?>">
@@ -72,7 +71,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg col-xs">
-                <div class="carousel client-logos" data-items="5">
+                <div class="carousel client-logos wow animate__fadeInLeft" data-items="5">
                     <div>
                         <a href="#" target="_blank"><img alt="" src="<?= base_url('assets/') ?>img/client/ayokebank.jpg">
                         </a>

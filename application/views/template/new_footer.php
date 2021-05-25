@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-5">
-                    <div class="widget">
+                    <div class="widget wow animate__fadeInUp">
                         <div class="widget-title">PT. Bank Perkreditan Rakyat Unisritama</div>
                         <p class="mb-5">B<br>
                             All rights reserved.</p>
@@ -22,7 +22,7 @@
                 <div class="col-lg-7">
                     <div class="row">
                         <div class="col-lg-3">
-                            <div class="widget">
+                            <div class="widget wow animate__fadeInDown">
                                 <div class="widget-title">Tentang</div>
                                 <ul class="list">
                                     <li><a href="<?= base_url('profil') ?>">Profil</a></li>
@@ -35,7 +35,7 @@
                             </div>
                         </div>
                         <div class="col-lg-3">
-                            <div class="widget">
+                            <div class="widget wow animate__fadeInUp">
                                 <div class="widget-title">Produk</div>
                                 <ul class="list">
                                     <li><a href="<?= base_url('layanan') ?>">Layanan</a></li>
@@ -46,7 +46,7 @@
                             </div>
                         </div>
                         <div class="col-lg-3">
-                            <div class="widget">
+                            <div class="widget wow animate__fadeInDown">
                                 <div class="widget-title">News</div>
                                 <ul class="list">
                                     <li><a href="<?= base_url('berita') ?>">Berita</a></li>
@@ -57,7 +57,7 @@
                             </div>
                         </div>
                         <div class="col-lg-3">
-                            <div class="widget">
+                            <div class="widget wow animate__fadeInUp">
                                 <div class="widget-title">Support</div>
                                 <ul class="list">
                                     <li><a href="#">Hubungi Kami</a></li>
@@ -82,9 +82,13 @@
 <a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
 
 <script src="<?= base_url('assets/new/') ?>js/jquery.js"></script>
-<script src="<?= base_url('assets/new/js/') ?>owl.carousel.min.js"></script>
+<script src="<?= base_url('assets/new/') ?>js/owl.carousel.min.js"></script>
 <script src="<?= base_url('assets/new/') ?>js/plugins.js"></script>
 <script src="<?= base_url('assets/new/') ?>js/functions.js"></script>
+<script src="<?= base_url('assets/new/') ?>js/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
 </body>
 
 </html>

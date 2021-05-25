@@ -20299,3 +20299,34 @@ body[data-bg-image] {
 .syarat {
     padding: 1.8rem 2rem !important;
 }
+
+.wrap-headline:hover .overlay-effect {
+    opacity: 1;
+    -webkit-transition: top 0.35s ease 0s;
+    -o-transition: top 0.35s ease 0s;
+    transition: top 0.35s ease 0s;
+    top: 0;
+    left: 15px;
+}
+
+.overlay-effect {
+    position: absolute;
+    height: 100%;
+    width: 95%;
+    opacity: 0;
+    cursor: pointer;
+    top: -207px;
+    -webkit-transition: top 0.35s ease 0s;
+    -o-transition: top 0.35s ease 0s;
+    transition: top 0.35s ease 0s;
+    z-index: 10;
+    background: rgba(0, 158, 227, 0.98);
+    overflow: hidden;
+}
+
+.overlay-effect {
+    text-align: left;
+    padding: 20px;
+    color: #FFF !important;
+
+}

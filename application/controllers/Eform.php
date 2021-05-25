@@ -59,7 +59,7 @@ class Eform extends CI_Controller
                 $this->load->view('produk/jenisRekening');
                 $this->load->view('template/footer_eform');
             } else {
-                redirect('statusNasabah', 'refresh');
+                redirect('dataDiri', 'refresh');
             }
         } else {
             // $this->session->set_flashdata('message', '<strong>Please read and accept our terms and conditions.</strong>');

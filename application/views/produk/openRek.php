@@ -218,7 +218,6 @@
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="surname">Penghasilan per Tahun</label>
-                                        <!-- <input type="text" class="form-control" name="surname"> -->
                                         <select name="penghasilan_tahun" id="penghasilan_tahun" class="form-control">
                                             <option value="" selected="true" disabled="disabled">Pilih</option>
                                             <option value=""> Kurang dari Rp 36 Juta</option>
@@ -226,14 +225,11 @@
                                             <option value=""> Lebih dari Rp 150 Juta</option>
                                         </select> </div>
                                 </div>
-                                <!-- <div id="captcha">
-                                                    <?= $img ?>
-                                    </div> -->
                             </div>
 
-                            <h3>Confirmation</h3>
+                            <h3>Upload Documents</h3>
                             <div class="wizard-content">
-                                <div class="h5 mb-4">Confimration</div>
+                                <div class="h5 mb-4">Siapkan dokumen untuk di upload.</div>
                                 <p>Customize your experience by confirming your personalization settings and the
                                     data
                                     stored with your account. You can always learn more about these options,
