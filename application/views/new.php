@@ -3,8 +3,8 @@
         <div class="heading-text heading-section text-center wow animate__fadeInDown" data-wow-duration="2s">
             <h4>Produk & Layanan</h4>
         </div>
-        <div class="row wow fadeInLeft">
-            <div class="col-lg p-b-20">
+        <div class="row">
+            <div class="col-lg p-b-20 wow fadeInLeft">
                 <div class="text-box text-box-light">
                     <a href="<?= base_url('kredit') ?>">
                         <i class="far fa-paper-plane"></i>
@@ -14,7 +14,7 @@
                 </div>
                 <div class="shape-divider" data-style="4" data-height="220"></div>
             </div>
-            <div class="col-lg p-b-20">
+            <div class="col-lg p-b-20 wow fadeInLeft">
                 <div class="text-box text-box-light">
                     <a href="<?= base_url('tabungan') ?>">
                         <i class="fas fa-chart-pie"></i>
@@ -24,7 +24,7 @@
                 </div>
                 <div class="shape-divider" data-style="4" data-height="220"></div>
             </div>
-            <div class="col-lg p-b-20">
+            <div class="col-lg p-b-20 wow fadeInLeft">
                 <div class="text-box text-box-light">
                     <a href="<?= base_url('eform') ?>">
                         <i class="fa fa-mobile-alt"></i>
@@ -38,7 +38,7 @@
         </div>
     </div>
 </section>
-<section class="p-t-10">
+<section class="p-t-60 background-grey">
     <div class="container-fluid">
         <div class="heading-text heading-section text-center wow animate__fadeInDown" data-wow-duration="2s">
             <h4>Berita Terkini</h4>
@@ -47,7 +47,7 @@
             <div class="content col" data-wow-duration="1s" data-wow-delay="1s">
                 <div class="carousel wow animate__bounceInUp" data-items="4">
                     <?php foreach ($berita as $row) : ?>
-                        <div class="post-item border shadow ">
+                        <div class="post-item border ">
                             <div class="post-item-wrap">
                                 <div class="post-image">
                                     <a href="<?= 'berita/' . $row->slug ?>">
@@ -56,25 +56,13 @@
                                 </div>
                                 <div class="post-item-description">
                                     <span class="post-meta-date"><i class="fa fa-calendar-o"></i><?php echo date('d F Y', strtotime($row->publis)) ?></span>
-                                    <h5><a href="<?= 'berita/' . $row->slug ?>"><?= ucwords($row->judul) ?></a></h5>
+                                    <h2 style="height: 80px;"><a href="<?= 'berita/' . $row->slug ?>"><?= ucwords($row->judul) ?></a></h2>
                                     <a href="<?= 'berita/' . $row->slug ?>" class="btn">Read More <i class="icon-chevron-right"></i></a>
                                 </div>
                             </div>
                         </div>
                     <?php endforeach; ?>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="p-t-200 p-b-200" data-bg-parallax="<?= base_url('assets/new/') ?>images/parallax/11.jpg">
-    <div class="bg-overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-9 center text-center text-light">
-                <h1>Parallax</h1>
-                <p class="lead">To easily add a parallax effect behind an element, add data-bg-parallax="images/parallax1.jpg"</p>
-                <a href="#" class="btn btn-light btn-outline btn-rounded">Shortcode Index Page</a>
             </div>
         </div>
     </div>
