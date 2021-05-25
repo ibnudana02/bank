@@ -38,7 +38,7 @@
         </div>
     </div>
 </section>
-<section class="p-b-0 p-t-10">
+<section class="p-t-10">
     <div class="container-fluid">
         <div class="heading-text heading-section text-center wow animate__fadeInDown" data-wow-duration="2s">
             <h4>Berita Terkini</h4>
@@ -51,18 +51,30 @@
                             <div class="post-item-wrap">
                                 <div class="post-image">
                                     <a href="<?= 'berita/' . $row->slug ?>">
-                                        <img alt="" src="<?= base_url('upload/berita/' . $row->gambar) ?>"></a>
+                                        <img alt="" src="<?= base_url('upload/berita/' . $row->thumb) ?>"></a>
                                     <span class="post-meta-category"><a href="#"><?= $row->kategori ?></a></span>
                                 </div>
                                 <div class="post-item-description">
-                                    <span class="post-meta-date"><i class="fa fa-calendar-o"></i><?php echo date('M d, Y', strtotime($row->created_on)) ?></span>
-                                    <h2><a href="<?= 'berita/' . $row->slug ?>"><?= ucwords($row->judul) ?></a></h2>
+                                    <span class="post-meta-date"><i class="fa fa-calendar-o"></i><?php echo date('d F Y', strtotime($row->publis)) ?></span>
+                                    <h5><a href="<?= 'berita/' . $row->slug ?>"><?= ucwords($row->judul) ?></a></h5>
                                     <a href="<?= 'berita/' . $row->slug ?>" class="btn">Read More <i class="icon-chevron-right"></i></a>
                                 </div>
                             </div>
                         </div>
                     <?php endforeach; ?>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="p-t-200 p-b-200" data-bg-parallax="<?= base_url('assets/new/') ?>images/parallax/11.jpg">
+    <div class="bg-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 center text-center text-light">
+                <h1>Parallax</h1>
+                <p class="lead">To easily add a parallax effect behind an element, add data-bg-parallax="images/parallax1.jpg"</p>
+                <a href="#" class="btn btn-light btn-outline btn-rounded">Shortcode Index Page</a>
             </div>
         </div>
     </div>

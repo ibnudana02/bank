@@ -32,11 +32,10 @@
                             </thead>
                             <tbody>
                                 <?php $no = 1;
-                                date_default_timezone_set('Asia/Jakarta');
                                 foreach ($data as $row) : ?>
                                     <tr>
                                         <th><?= $no++; ?></th>
-                                        <th><?php echo $row->update_on; ?></th>
+                                        <th><?php echo $row->publis; ?> WIB</th>
                                         <th><img src="<?= base_url('upload/berita/' . $row->gambar); ?>" width="70" height="70"> </th>
                                         <th><?= htmlspecialchars($row->kategori); ?></th>
                                         <th><?= html_entity_decode($row->judul); ?></th>
@@ -93,3 +92,8 @@
     </div>
 </div>
 <!-- /.container-fluid -->
+<script>
+    $(document).ready(function() {
+        $('#dataTable').DataTable();
+    });
+</script>

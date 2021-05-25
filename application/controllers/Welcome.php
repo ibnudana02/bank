@@ -25,6 +25,8 @@ class Welcome extends CI_Controller
 		$data['judul'] = 'BPR Unisritama - Mitra Ekonomi Kerakyatan';
 		$data['slider'] = $this->slider->getAll()->result();
 		$data['berita'] = $this->berita->getAll()->result();
+		// print_r($data['berita']);
+		// die;
 		$this->load->view('template/new_header', $data, FALSE);
 		$this->load->view('template/new_slider', $data, FALSE);
 		$this->load->view('new', $data, FALSE);
@@ -144,11 +146,24 @@ class Welcome extends CI_Controller
 
 	public function tes()
 	{
-		header('Content-Type: text/event-stream');
-		header('Cache-Control: no-cache');
+		$this->load->dbutil();
 
-		$time = date('r');
-		echo "data: The server time is: {$time}\n\n";
-		flush();
+		$prefs = array(
+			'format'      => 'zip',
+			'filename'    => 'my_db_backup.sql'
+		);
+
+
+		$backup = &$this->dbutil->backup($prefs);
+
+		$db_name = 'backup-on-' . date("Y-m-d") . '.zip';
+		$save = 'database/' . $db_name;
+
+		$this->load->helper('file');
+		write_file($save, $backup);
+
+
+		$this->load->helper('download');
+		force_download($db_name, $backup);
 	}
 }

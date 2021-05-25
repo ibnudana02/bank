@@ -18,7 +18,8 @@ class Berita_model extends CI_Model
 
     public function getAll()
     {
-        $this->db->select('*, berita.image as gambar, user.image as profil')
+        date_default_timezone_set("Asia/Jakarta");
+        $this->db->select('*, berita.image as gambar, user.image as profil, DATE_FORMAT(berita.created_on, "%Y-%m-%d %H:%i") as publis', FALSE)
             ->from($this->_table)
             ->join('kategori', 'kategori.id_kategori = berita.id_kategori')
             ->join('user', 'user.id_user=berita.penulis', 'left');
@@ -68,7 +69,7 @@ class Berita_model extends CI_Model
 
     public function save()
     {
-        date_default_timezone_set('Asia/Jakarta');
+
         $post = $this->input->post();
         $this->id_berita = uniqid();
         $this->id_kategori = htmlspecialchars($post['kategori']);
@@ -82,13 +83,14 @@ class Berita_model extends CI_Model
         $this->penulis = $this->session->userdata('id_user');
         $this->created_on = date('Y-m-d H:i:s');
         $this->update_by = '';
-        $this->update_on = date('Y-m-d H:i:s');
+        print_r($this);
+        // die;
         $this->db->insert($this->_table, $this);
     }
 
     public function update()
     {
-        date_default_timezone_set('Asia/Jakarta');
+
         $post = $this->input->post();
         $this->id_berita = htmlspecialchars($post['id_berita']);
         $this->id_kategori = htmlspecialchars($post['kategori']);
@@ -96,18 +98,21 @@ class Berita_model extends CI_Model
         $out = explode(" ", $this->judul);
         $this->slug = implode("-", $out);
         $this->isi = htmlspecialchars($post['isi']);
-        if (!empty($_FILES["image"]["name"])) {
+        if (empty($_FILES["image"]["name"])) {
+            $this->image = $post["old_image"];
+            $this->thumb = $post['thumbnail'];
+        } else {
             $this->_deleteImage($post['id_berita']);
             $files = $this->_uploadImage();
             $this->image = $files['image'];
             $this->thumb = $files['thumbnail'];
-        } else {
-            $this->image = $post["old_image"];
         }
         $this->penulis = $post['penulis'];
         $this->created_on = date('Y-m-d H:i:s');
         $this->update_by = $this->session->userdata('id_user');
         $this->update_on = date('Y-m-d H:i:s');
+        print_r($this);
+        // die;
         return $this->db->update($this->_table, $this, array('id_berita' => $post['id_berita']));
     }
 
@@ -117,7 +122,7 @@ class Berita_model extends CI_Model
         $config['allowed_types'] = 'gif|jpg|png|jpeg';
         $config['file_name'] = $this->id_berita;
         $config['overwrite'] = true;
-        $config['max_size'] = 1024;
+        // $config['max_size'] = 1024;
 
         $this->upload->initialize($config);
 
@@ -131,8 +136,8 @@ class Berita_model extends CI_Model
             $set['source_image'] = './upload/berita/' . $gbr['file_name'];
             $set['create_thumb'] = TRUE;
             $set['maintain_ratio'] = FALSE;
-            $set['width'] = 300;
-            $set['height'] = 300;
+            $set['width'] = 600;
+            $set['height'] = 400;
             $this->load->library('image_lib', $set);
             $this->image_lib->resize();
 
@@ -152,7 +157,7 @@ class Berita_model extends CI_Model
     private function _deleteImage($id)
     {
         $berita = $this->getById($id);
-        if ($berita->image != null && $berita->thumb != null) {
+        if ($berita->image != '') {
             unlink("./upload/berita/" . $berita->image);
             unlink("./upload/berita/" . $berita->thumb);
         }
