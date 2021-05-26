@@ -36,7 +36,7 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <ul>
-                                        <li class="mega-menu-title">Deposito</li>
+                                        <li><a href="<?= base_url('deposito') ?>" class="mega-menu-title"> Deposito</a></li>
                                         <?php foreach ($deposito as $value) : ?>
                                             <li><a href="<?= base_url('produk/' . $value->slug) ?>"><?= strtoupper($value->produk) ?><span class="badge badge-info">INFO</span></a></li>
                                         <?php endforeach; ?>
@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <ul>
-                                        <li class="mega-menu-title">Kredit</li>
+                                        <li><a href="<?= base_url('kredit') ?>" class="mega-menu-title"> Kredit</a></li>
                                         <?php foreach ($kredit as $value) : ?>
                                             <li><a href="<?= base_url('produk/' . $value->slug)  ?>"><?= strtoupper($value->produk) ?><span class="badge badge-info">INFO</span></a></li>
                                         <?php endforeach; ?>

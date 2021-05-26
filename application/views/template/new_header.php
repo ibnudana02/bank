@@ -19,7 +19,8 @@
 
     <link href="<?= base_url('assets/new/') ?>css/plugins.css" rel="stylesheet">
     <link href="<?= base_url('assets/new/') ?>css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="<?= base_url('assets/new/') ?>css/animate.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
 </head>
 
 <body>

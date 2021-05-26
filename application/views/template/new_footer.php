@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-5">
-                    <div class="widget wow animate__fadeInUp">
+                    <div class="widget wow animate__fadeInLeft">
                         <div class="widget-title">PT. Bank Perkreditan Rakyat Unisritama</div>
                         <p class="mb-5">B<br>
                             All rights reserved.</p>
@@ -22,7 +22,7 @@
                 <div class="col-lg-7">
                     <div class="row">
                         <div class="col-lg-3">
-                            <div class="widget wow animate__fadeInDown">
+                            <div class="widget wow animate__fadeInLeft" data-wow-delay="0.2s">
                                 <div class="widget-title">Tentang</div>
                                 <ul class="list">
                                     <li><a href="<?= base_url('profil') ?>">Profil</a></li>
@@ -35,7 +35,7 @@
                             </div>
                         </div>
                         <div class="col-lg-3">
-                            <div class="widget wow animate__fadeInUp">
+                            <div class="widget wow animate__fadeInLeft" data-wow-delay="0.4s">
                                 <div class="widget-title">Produk</div>
                                 <ul class="list">
                                     <li><a href="<?= base_url('layanan') ?>">Layanan</a></li>
@@ -46,7 +46,7 @@
                             </div>
                         </div>
                         <div class="col-lg-3">
-                            <div class="widget wow animate__fadeInDown">
+                            <div class="widget wow animate__fadeInLeft" data-wow-delay="0.6s">
                                 <div class="widget-title">News</div>
                                 <ul class="list">
                                     <li><a href="<?= base_url('berita') ?>">Berita</a></li>
@@ -57,7 +57,7 @@
                             </div>
                         </div>
                         <div class="col-lg-3">
-                            <div class="widget wow animate__fadeInUp">
+                            <div class="widget wow animate__fadeInLeft" data-wow-delay="0.8s">
                                 <div class="widget-title">Support</div>
                                 <ul class="list">
                                     <li><a href="#">Hubungi Kami</a></li>

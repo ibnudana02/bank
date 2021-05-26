@@ -62,7 +62,7 @@ class Produk extends CI_Controller
         $data = $this->data;
         $data['judul'] = 'Deposito | Bank Unisritama';
         $data['bread'] = 'Home';
-        $data['crumb'] = 'Deposito';
+        $data['crumb'] = 'Produk Deposito';
         $data['data'] = $this->produk->getDep()->result();
         $this->load->view('template/new_header', $data);
         $this->load->view('produk/new_produk', $data);
@@ -74,7 +74,7 @@ class Produk extends CI_Controller
         $data = $this->data;
         $data['judul'] = 'Tabungan | Bank Unisritama';
         $data['bread'] = 'Home';
-        $data['crumb'] = 'Tabungan';
+        $data['crumb'] = 'Produk Tabungan';
         $data['data'] = $this->produk->getTab()->result();
         $this->load->view('template/new_header', $data);
         $this->load->view('produk/new_produk', $data);
@@ -86,7 +86,7 @@ class Produk extends CI_Controller
         $data = $this->data;
         $data['judul'] = 'Kredit | Bank Unisritama';
         $data['bread'] = 'Home';
-        $data['crumb'] = 'Kredit';
+        $data['crumb'] = 'Produk Kredit';
         $data['data'] = $this->produk->getKrd()->result();
         $this->load->view('template/new_header', $data);
         $this->load->view('produk/new_produk', $data);
