@@ -25,6 +25,7 @@ class Master extends CI_Controller
         }
         $this->load->model('Nasabah_model', 'nsb');
         $this->load->library('Pdf');
+        $this->load->helper('tanggal');
     }
 
     public function index()
