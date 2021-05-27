@@ -100,12 +100,12 @@ class Berita_model extends CI_Model
         $this->isi = htmlspecialchars($post['isi']);
         if (empty($_FILES["image"]["name"])) {
             $this->image = $post["old_image"];
-            $this->thumb = $post['thumbnail'];
+            $this->thumb = $post['old_thumb'];
         } else {
             $this->_deleteImage($post['id_berita']);
             $files = $this->_uploadImage();
             $this->image = $files['image'];
-            $this->thumb = $files['thumbnail'];
+            $this->thumb = $files['old_thumb'];
         }
         $this->penulis = $post['penulis'];
         $this->created_on = date('Y-m-d H:i:s');
@@ -141,7 +141,7 @@ class Berita_model extends CI_Model
             $this->load->library('image_lib', $set);
             $this->image_lib->resize();
 
-            $image = array('image' => $gbr['file_name'], 'thumbnail' => $gbr['raw_name'] . '_thumb' . $gbr['file_ext']);
+            $image = array('image' => $gbr['file_name'], 'thumb' => $gbr['raw_name'] . '_thumb' . $gbr['file_ext']);
             // print_r($image);
             // die;
             return $image;

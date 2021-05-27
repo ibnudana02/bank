@@ -18,13 +18,9 @@
                             <span class="post-meta-category"><a href="#"><?= $value->kategori ?></a></span>
                         </div>
                         <div class="post-item-description">
-                            <span class="post-meta-date"><i class="fa fa-calendar-o"></i><?php echo date('M d, Y', strtotime($value->created_on)) ?></span>
+                            <span class="post-meta-date"><i class="fa fa-calendar-o"></i><?php echo date('d F Y', strtotime($value->publis)) ?></span>
                             <h2 style="height: 80px;"><a href="<?= base_url('berita/' . $value->slug) ?>"><?= ucwords($value->judul) ?>
                                 </a></h2>
-                            <!-- <p><?= substr(html_entity_decode($value->isi), 0, 40) ?></p> -->
-                            <!-- <div class="post-author"> <img src="<?= base_url('upload/user/' . $value->profil) ?>">
-                                <p>by <a href="https://instagram.com/m_ibnuwardana" target="_blank"><?= ucwords(strtolower($value->name)) ?></a></p>
-                            </div> -->
                         </div>
                     </div>
                 </div>

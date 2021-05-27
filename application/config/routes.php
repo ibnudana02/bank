@@ -15,8 +15,10 @@ $route['payment-point'] = 'produk/ppob';
 $route['admin/profil'] = 'admin/profil';
 $route['pengkinian-data'] = 'news/pengkinian_data';
 
-
+// Routes for Users
 $route['admin/registration'] = 'admin/welcome/registration';
+$route['admin/users'] = 'admin/welcome/users';
+
 $route['admin/add_slider'] = 'admin/slider/tambahSlider';
 $route['admin/slider'] = 'admin/slider';
 

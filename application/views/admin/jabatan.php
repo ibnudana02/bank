@@ -6,7 +6,7 @@
     <?= $this->session->flashdata('message'); ?>
     <!-- DataTales Example -->
     <div class="row">
-        <div class="col-lg-5">
+        <div class="col-lg-4">
             <div class="card shadow mb-2">
                 <div class="card-header py-3">
                     <div class="row">
@@ -45,7 +45,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-7">
+        <div class="col-lg-8">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <div class="row">
@@ -57,6 +57,7 @@
                         <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
+                                    <th>No.</th>
                                     <th>Jabatan</th>
                                     <th>Alias</th>
                                     <th>Action</th>
@@ -64,9 +65,10 @@
                             </thead>
                             <tbody>
                                 <?php
-                                $no = 0;
+                                $no = 1;
                                 foreach ($data as $row) : ?>
                                     <tr>
+                                        <th><?= $no++ ?></th>
                                         <th><?= html_entity_decode($row->jabatan); ?></th>
                                         <th><?= htmlspecialchars($row->alias); ?></th>
                                         <th>
@@ -103,8 +105,17 @@
     </div>
 </div>
 <!-- /.container-fluid -->
+<script src="<?= base_url('assets/admin/'); ?>vendor/jquery/jquery.min.js"></script>
+<script src="<?= base_url('assets/admin/'); ?>vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="<?= base_url('assets/admin/'); ?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
 <script>
-    $(document).ready(function() {
-
+    var table = $('#dataTable').DataTable({
+        "lengthChange": false,
+        "searching": false,
+        pageLength: 5,
+        // lengthMenu: [
+        //     [5, 10, 15, 20],
+        //     [5, 10, 15, 20]
+        // ]
     });
 </script>

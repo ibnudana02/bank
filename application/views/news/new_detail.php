@@ -1,7 +1,7 @@
 <section id="page-content" class="sidebar-right">
     <div class="container">
         <div class="row">
-            <div class="content col-lg-9">
+            <div class="content col-lg-9 col-xs-9">
                 <div id="blog" class="single-post">
                     <div class="post-item">
                         <div class="post-item-wrap">
@@ -30,7 +30,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <?= htmlspecialchars_decode($row->isi) ?>
+                                <?php echo html_entity_decode($row->isi) ?>
                             </div>
                             <div class="seperator"><i class="fa fa-chevron-down"></i></div>
                         </div>

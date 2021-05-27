@@ -1,6 +1,7 @@
-<section id="page-content" class="sidebar-right">
+<section id="page-content" class="sidebar-right m-t-30">
     <div class="container">
         <div class="row">
+            <?php $this->load->view('produk/accordion') ?>
             <div class="content col-lg-9">
                 <div id="blog" class="single-post">
                     <div class="post-item">

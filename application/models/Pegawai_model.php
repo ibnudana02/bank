@@ -40,7 +40,7 @@ class Pegawai_model extends CI_Model
         $this->nama = htmlspecialchars(strtoupper($post['nama']));
         $files = $this->_uploadImage();
         $this->foto = $files['foto'];
-        print_r($this);
+        // print_r($this);
         // die;
         $this->db->where('id_pegawai', $id);
         $this->db->update($this->_table, $this);
@@ -57,7 +57,12 @@ class Pegawai_model extends CI_Model
         $this->upload->initialize($config);
 
         if (!$this->upload->do_upload('gambar')) {
-            $this->session->set_flashdata('message', $this->upload->display_errors());
+            $this->session->set_flashdata(
+                'message',
+                '<div class="alert alert-success alert-dismissible fade show" role="alert">' . $this->upload->display_errors() . '
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span></button></div>'
+            );
             redirect(current_url());
         } else {
             $gbr = $this->upload->data();

@@ -31,7 +31,7 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#masterPegawai" aria-expanded="true" aria-controls="masterData">
                 <i class="fas fa-fw fa-users"></i>
-                <span>Pegawai</span>
+                <span>Organiasasi</span>
             </a>
             <div id="masterPegawai" class="collapse" aria-labelledby="masterPegawai" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
@@ -63,9 +63,9 @@
             <div id="masterUser" class="collapse" aria-labelledby="masterData" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Components</h6>
-                    <a class="collapse-item" href="<?= base_url('admin/jenis') ?>">Managemen User</a>
-                    <a class="collapse-item" href="<?= base_url('admin/jenis') ?>">Registrasi User</a>
-                    <a class="collapse-item" href="<?= base_url('admin/produk') ?>">Profil</a>
+                    <a class="collapse-item" href="<?= base_url('admin/users') ?>">Managemen User</a>
+                    <a class="collapse-item" href="<?= base_url('admin/registration') ?>">Registrasi User</a>
+                    <a class="collapse-item" href="<?= base_url('admin/profil') ?>">Profil</a>
                 </div>
             </div>
         </li>
