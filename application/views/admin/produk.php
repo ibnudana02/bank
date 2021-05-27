@@ -97,3 +97,17 @@
     </div>
 </div>
 <!-- /.container-fluid -->
+<script src="<?= base_url('assets/admin/'); ?>vendor/jquery/jquery.min.js"></script>
+<script src="<?= base_url('assets/admin/'); ?>vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="<?= base_url('assets/admin/'); ?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script>
+    var table = $('#dataTable').DataTable({
+        "lengthChange": false,
+        "searching": false,
+        pageLength: 5,
+        // lengthMenu: [
+        //     [5, 10, 15, 20],
+        //     [5, 10, 15, 20]
+        // ]
+    });
+</script>

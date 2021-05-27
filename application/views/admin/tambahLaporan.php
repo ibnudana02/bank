@@ -29,8 +29,13 @@
                             <form class="user" method="post" action="<?= base_url('admin/add_laporan'); ?>" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label>Laporan</label>
-                                    <input type="text" class="form-control form-control-user" name="laporan" id="laporan" placeholder="Enter Laporan" value="<?= set_value('laporan'); ?>">
+                                    <input type="text" class="form-control" name="laporan" id="laporan" placeholder="Enter Laporan" value="<?= set_value('laporan'); ?>">
                                     <?php echo form_error('laporan', '<small class="text-danger pl-3">', '</small>'); ?>
+                                </div>
+                                <div class="form-group">
+                                    <label>Periode Data</label>
+                                    <input type="date" class="form-control" name="periode" id="periode" placeholder="Enter Periode Data" value="<?= set_value('periode'); ?>">
+                                    <?php echo form_error('periode', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                                 <div class="form-group">
                                     <label>Tipe</label>

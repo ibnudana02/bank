@@ -21,7 +21,7 @@
                             <form name="produk" class="user" method="post" action="<?= base_url('admin/add_produk'); ?>" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label>Produk</label>
-                                    <input type="text" class="form-control form-control-user" name="produk" id="produk" placeholder="Enter produk" value="<?= set_value('produk'); ?>">
+                                    <input type="text" class="form-control" name="produk" id="produk" placeholder="Enter produk" value="<?= set_value('produk'); ?>">
                                     <?php echo form_error('produk', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                                 <div class="form-group">
@@ -36,7 +36,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="Link">Link - Pembukaan Produk</label>
-                                    <input type="text" class="form-control form-control-user" readonly id="link" name="link" placeholder="Link" value="<?= set_value('link'); ?>">
+                                    <input type="text" class="form-control" readonly id="link" name="link" placeholder="Link" value="<?= set_value('link'); ?>">
                                     <?php echo form_error('link', '<small class="text-danger pl-5">', '</small>'); ?>
                                 </div>
                                 <div class="form-group">

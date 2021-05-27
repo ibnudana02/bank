@@ -70,6 +70,11 @@ class Nasabah_model extends CI_Model
     public $status;
     public $upload_date;
 
+    public function tesCreateNsb()
+    {
+        print_r($this->input->post());
+    }
+
     public function createNsb()
     {
         $post = $this->input->post();

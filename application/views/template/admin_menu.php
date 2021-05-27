@@ -6,9 +6,7 @@
         <div class="sidebar-brand-text mx-3">Bank Unisritama</div>
     </a>
     <hr class="sidebar-divider">
-    <div class="sidebar-heading">
-        Admin
-    </div>
+
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url(); ?>" target="_blank">
             <i class="fas fa-fw fa-external-link-alt"></i>

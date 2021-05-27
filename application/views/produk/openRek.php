@@ -4,18 +4,18 @@
             <div class="content col-12">
                 <div class="card">
                     <div class="card-body">
-                        <form id="wizard7" class="wizard needs-validation" data-style="1" novalidate>
+                        <form id="wizard7" class="wizard needs-validation" action="<?= current_url(); ?>" method="POST" data-style="1" novalidate>
                             <h3>Data Diri</h3>
                             <div class="wizard-content">
                                 <div class="h3 mb-3">Informasi Data Diri</div>
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <label for="nik">NIK</label>
-                                        <input type="text" class="form-control" value="<?php echo set_value('nik'); ?>" name="nik" maxlength="16" required>
+                                        <input type="number" class="form-control" value="<?php echo set_value('nik'); ?>" name="nik" maxlength="16" required>
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="nama">Nama</label>
-                                        <input type="text" class="form-control" style="text-transform: uppercase" value="<?php echo set_value('nama'); ?>" name="nama" required>
+                                        <input type="text" class="form-control" style="text-transform: uppercase" value="<?php echo set_value('nm_lengkap'); ?>" name="nm_lengkap" required>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -118,39 +118,39 @@
                                 <div id="bekerja">
                                     <div class="form-group col-md-12">
                                         <label for="surname">Penghasilan per Tahun</label>
-                                        <input type="text" class="form-control" name="surname">
+                                        <input type="number" class="form-control" name="gaji_th">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="surname">Nama Kantor</label>
-                                        <input type="text" class="form-control" name="surname">
+                                        <input type="text" class="form-control" style="text-transform: uppercase" name="kantor">
                                     </div>
                                     <div class="form-row m-r-10 m-l-10">
                                         <div class="form-group col-md-10">
                                             <label for="surname">Alamat Kantor</label>
-                                            <input type="text" class="form-control" name="surname">
+                                            <input type="text" class="form-control" style="text-transform: uppercase" name="alamat_kantor">
                                         </div>
                                         <div class="form-group col-md-2">
                                             <label for="surname">Kode Pos</label>
-                                            <input type="text" class="form-control" name="surname">
+                                            <input type="text" class="form-control" name="pos_kantor">
                                         </div>
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="surname">Jabatan</label>
-                                        <input type="text" class="form-control" name="surname">
+                                        <input type="text" class="form-control" style="text-transform: uppercase" name="jabatan">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="surname">Mulai Bekerja</label>
-                                        <input type="date" class="form-control" name="surname">
+                                        <input type="date" class="form-control" name="mulai_bekerja">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="surname">Telpon Kantor</label>
-                                        <input type="text" class="form-control" name="surname">
+                                        <input type="text" class="form-control" name="telp_kantor">
                                     </div>
                                 </div>
                                 <div id="pemberiDana">
                                     <div class="form-group col-md-12">
                                         <label for="surname">Nama Pemberi Dana</label>
-                                        <input type="text" class="form-control" name="nama_dana">
+                                        <input type="text" class="form-control" style="text-transform: uppercase" name="nama_dana">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="surname">Jenis Identitas</label>
@@ -167,7 +167,7 @@
                                     <div class="form-row m-r-10 m-l-10">
                                         <div class="form-group col-md-8">
                                             <label for="surname">Alamat Tempat Tinggal Pemberi Dana</small></label>
-                                            <input type="text" class="form-control" name="alamat_dana">
+                                            <input type="text" class="form-control" style="text-transform: uppercase" name="alamat_dana">
                                         </div>
                                         <div class="form-group col-md-2">
                                             <label for="surname">RT</small></label>
@@ -230,20 +230,8 @@
                             <h3>Upload Documents</h3>
                             <div class="wizard-content">
                                 <div class="h5 mb-4">Siapkan dokumen untuk di upload.</div>
-                                <p>Customize your experience by confirming your personalization settings and the
-                                    data
-                                    stored with your account. You can always learn more about these options,
-                                    adjust
-                                    them, and review your activity in your Account</p>
+                                <p>Customize your experience by confirming your</p>
                                 <p>These settings apply wherever you are signed in to your new Account.</p>
-                                <div class="form-group mb-1 mt-5">
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" name="reminders" id="reminders" class="custom-control-input">
-                                        <label class="custom-control-label" for="reminders">Send me occasional
-                                            reminders
-                                            about these settings</a></label>
-                                    </div>
-                                </div>
                                 <div class="form-group">
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" name="terms_conditions" id="terms_conditions" class="custom-control-input">
@@ -288,8 +276,9 @@
             return wizard7.valid();
         },
         onFinished: function(event, currentIndex) {
-            INSPIRO.elements.notification("Submited",
-                "Thank you, your account has been registed successfully", "success");
+            $("#wizard7").submit();
+            //     INSPIRO.elements.notification("Submited",
+            //         "Thank you, your account has been registed successfully", "success");
         }
     });
     wizard7.validate({

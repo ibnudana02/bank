@@ -7,6 +7,7 @@ class Laporan_model extends CI_Model
     private $_table = 'laporan';
     public $id_laporan;
     public $laporan;
+    public $periode_data;
     public $tipe;
     public $dokumen;
     public $created_on;
@@ -22,6 +23,7 @@ class Laporan_model extends CI_Model
         $this->dokumen = $this->_uploadFile();
         $this->created_by = $this->session->userdata('name');
         $this->created_on = date('Y-m-d H:i:s');
+        $this->periode_data = $post['periode'];
         // var_dump($this);die;
         $this->db->insert($this->_table, $this);
     }
@@ -61,16 +63,21 @@ class Laporan_model extends CI_Model
     public function getGcg()
     {
         $this->db->select('*')
-            ->from($this->_table)
-            ->where('tipe', '5ebfa858d95c0');
+            ->from($this->_table);
+        $this->db->join('tipe', $this->_table . '.tipe = tipe.id_tipe', 'left');
+        $this->db->where('tipe.tipe', 'GCG Report');
+        $this->db->order_by('periode_data', 'desc');
         return $this->db->get();
     }
 
     public function getPub()
     {
         $this->db->select('*')
-            ->from($this->_table)
-            ->where('tipe', '5ebfa858d95c2');
+            ->from($this->_table);
+        $this->db->join('tipe', $this->_table . '.tipe = tipe.id_tipe', 'left');
+        $this->db->where('tipe.tipe', 'Laporan Publikasi');
+        $this->db->order_by('periode_data', 'desc');
+
         return $this->db->get();
     }
     public function getById($id)
