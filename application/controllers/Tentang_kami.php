@@ -25,6 +25,7 @@ class Tentang_kami extends CI_Controller
     {
         $data = $this->data;
         $data['judul'] = 'Profil Perusahaan | Bank Unisritama';
+        $data['psp'] = $this->kantor->getPsp()->result();
         $this->load->view('template/new_header', $data);
         $this->load->view('tentang/new_profil');
         $this->load->view('template/new_footer');

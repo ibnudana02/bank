@@ -43,4 +43,9 @@ class Tentang_model extends CI_Model
             ->order_by('berita.created_on', 'asc');
         return $this->db->get();
     }
+
+    public function getPsp()
+    {
+        return $this->db->get('saham');
+    }
 }

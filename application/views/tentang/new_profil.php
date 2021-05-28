@@ -34,19 +34,20 @@
         </div>
         <div class="row team-members team-members-shadow">
             <div class="col-lg-3"></div>
-            <div class="col-lg-3">
-                <div class="team-member wow animate__fadeInLeft" data-wow-delay="0.5s">
-                    <div class="team-image">
-                        <img src="<?= base_url('assets/') ?>img/client/YLPI.jpg">
-                    </div>
-                    <div class="team-desc">
-                        <h3>YLPI RIAU</h3>
-                        <span>YAYASAN PENDIDIKAN</span>
-                        <!-- <p>The most happiest time of the day!. Praesent tristique hendrerit ex ut laoreet. </p> -->
+            <?php foreach ($psp as $key => $value) : ?>
+                <div class="col-lg-3">
+                    <div class="team-member wow animate__fadeInLeft" data-wow-delay="0.5s">
+                        <div class="team-image">
+                            <img src="<?= base_url('assets/') ?>img/client/YLPI.jpg">
+                        </div>
+                        <div class="team-desc">
+                            <h3><?= $value->shm_nama ?></h3>
+                            <span><?= $value->shm_ket ?></span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3">
+            <?php endforeach; ?>
+            <!-- <div class="col-lg-3">
                 <div class="team-member wow animate__fadeInLeft" data-wow-delay="1s">
                     <div class="team-image">
                         <img src="<?= base_url('assets/new/images/team/9.jpg') ?>">
@@ -54,10 +55,9 @@
                     <div class="team-desc">
                         <h3>H. IMAM GHAZALI, SH, MH</h3>
                         <span>DOSEN</span>
-                        <!-- <p>The most happiest time of the day!. Praesent tristique hendrerit ex ut laoreet. </p> -->
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
