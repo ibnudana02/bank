@@ -10,10 +10,7 @@ $route['admin/add_kantor'] = 'admin/manage/tambah_kantor';
 $route['admin/dashboard'] = 'admin/welcome/home';
 $route['admin/welcome'] = 'admin/welcome/index';
 $route['admin/corporate'] = 'admin/corporate';
-$route['pembayaran_mahasiswa_uir'] = 'produk/pmb';
-$route['payment-point'] = 'produk/ppob';
 $route['admin/profil'] = 'admin/profil';
-$route['pengkinian-data'] = 'news/pengkinian_data';
 
 // Routes for Users
 $route['admin/registration'] = 'admin/welcome/registration';
@@ -71,7 +68,6 @@ $route['admin/add_laporan'] = 'admin/laporan/tambah_laporan';
 // Routes for Master Nasabah
 $route['admin/nasabah'] = 'admin/master';
 
-
 //Routes for Auth function
 $route['admin'] = 'admin/welcome/index';
 $route['admin/logout'] = 'admin/welcome/logout';
@@ -84,31 +80,37 @@ $route['acc-nsb'] = 'admin/master/test';
 $route['acc/(:any)/(:num)'] = 'admin/master/approve/$1/$2';
 $route['cetak-nasabah-tab/(:any)'] = 'admin/master/print_nasabah/$1';
 
-
+// Routes for news controller
 $route['gcg'] = 'news/gcg';
 $route['unduh-gcg/(:any)'] = 'news/unduh/$1';
 $route['publikasi'] = 'news/publikasi';
 $route['berita'] = 'news/berita';
 $route['berita/(:any)'] = 'news/detailBerita/$1';
-$route['produk/(:any)'] = 'produk/detailProduk/$1';
 $route['kategori_berita/(:any)'] = 'news/kategoriBerita/$1';
+$route['pengkinian-data'] = 'news/pengkinian_data';
 
-//Routes for Page Tentang
+//Routes for Front end Produk
 $route['syaratKetentuan'] = 'eform';
 $route['eform'] = 'eform';
 $route['jenisRekening'] = 'eform/jenisRekening';
-$route['statusNasabah'] = 'eform/statusNasabah';
 $route['dataDiri'] = 'produk/createTab';
+$route['pembayaran_mahasiswa_uir'] = 'produk/pmb';
+$route['payment-point'] = 'produk/ppob';
+$route['produk/(:any)'] = 'produk/detailProduk/$1';
 $route['pembukaan-rekening-tabungan'] = 'eform';
 $route['pembukaan-rekening-deposito'] = 'produk/createDps';
 $route['pengajuan-aplikasi-kredit'] = 'produk/createKrd';
 $route['produk'] = 'produk/produk';
-$route['getDati'] = 'welcome/getDati';
+$route['getDati'] = 'produk/getDati';
+$route['getJenis'] = 'produk/getJenis';
 $route['dana'] = 'produk/dana';
 $route['deposito'] = 'produk/deposito';
 $route['kredit'] = 'produk/kredit';
 $route['tabungan'] = 'produk/tabungan';
 $route['layanan'] = 'produk/layanan';
+
+
+// Routes for tentang page
 $route['profil'] = 'tentang_kami/index';
 $route['sejarah'] = 'tentang_kami/sejarah';
 $route['visi_misi'] = 'tentang_kami/visi_misi';
@@ -117,6 +119,6 @@ $route['struktur'] = 'tentang_kami/struktur';
 $route['awards'] = 'tentang_kami/awards';
 $route['location'] = 'tentang_kami/location';
 $route['contact'] = 'tentang_kami/contact';
-$route['getJenis'] = 'welcome/getJenis';
+// Rule for access controller
 // $route['(.*)'] = 'custom404';
 $route['translate_uri_dashes'] = FALSE;

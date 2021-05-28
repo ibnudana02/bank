@@ -123,8 +123,6 @@ class Produk extends CI_Controller
         $data['bread'] = 'Home';
         $data['crumb'] = 'Produk';
         $data['data'] = $this->produk->getAll();
-        // print_r($data['data']);
-        // die;
         $this->load->view('template/new_header', $data);
         $this->load->view('produk/new_produk', $data);
         $this->load->view('template/new_footer');
@@ -132,7 +130,6 @@ class Produk extends CI_Controller
 
     public function detailProduk($slug)
     {
-        // $row = $this->produk->getById($id);
         $data = $this->data;
         $row = $this->produk->getBySlug($slug);
         $data['judul'] = ucwords($row->produk) . ' | Bank Unisritama';
@@ -189,15 +186,6 @@ class Produk extends CI_Controller
             $this->load->view('produk/jenisRekening');
             $this->load->view('template/footer_eform');
         }
-    }
-
-    public function statusNasabah()
-    {
-        $data['judul'] = 'e-Form - Bank Unisritama';
-        // $this->session->set_flashdata('message', '<strong>Next.</strong>');
-        $this->load->view('template/header_eform', $data);
-        $this->load->view('produk/statusNasabah');
-        $this->load->view('template/footer_eform');
     }
 
     public function createTab()
@@ -269,7 +257,7 @@ class Produk extends CI_Controller
         $data['pendidikan'] = $this->db->get_enum('nasabah_tab', 'pendidikan');
         $data['aw'] = $this->db->get_enum('nasabah_tab', 'hb_ahli_waris');
         $data['status'] = $this->db->get_enum('nasabah_tab', 'status_menikah');
-        $data['profesi'] = $this->produk->getProfesi()->result();
+        $data['profesi'] = $this->nsb->getProfesi();
         $data['jenis_pekerjaan'] = $this->db->get_enum('nasabah_tab', 'jenis_pekerjaan');
         $data['status_pekerjaan'] = $this->db->get_enum('nasabah_tab', 'status_pekerjaan');
         $data['sumber_dana'] = $this->db->get_enum('nasabah_tab', 'sumber_dana');
@@ -300,24 +288,10 @@ class Produk extends CI_Controller
     {
         $data = $this->data;
         $data['judul'] = 'e-Form Rekening Tabungan - Bank Unisritama';
-        $data['agama'] = $this->db->get_enum('nasabah_tab', 'agama');
-        $data['tujuan_buka'] = $this->db->get_enum('nasabah_tab', 'tujuan_buka');
-        $data['status_rumah'] = $this->db->get_enum('nasabah_tab', 'status_rumah');
-        $data['pendidikan'] = $this->db->get_enum('nasabah_tab', 'pendidikan');
-        $data['aw'] = $this->db->get_enum('nasabah_tab', 'hb_ahli_waris');
-        $data['status'] = $this->db->get_enum('nasabah_tab', 'status_menikah');
-        $data['profesi'] = $this->db->get_enum('nasabah_tab', 'profesi');
-        $data['jenis_pekerjaan'] = $this->db->get_enum('nasabah_tab', 'jenis_pekerjaan');
-        $data['status_pekerjaan'] = $this->db->get_enum('nasabah_tab', 'status_pekerjaan');
-        $data['sumber_dana'] = $this->db->get_enum('nasabah_tab', 'sumber_dana');
-        $data['wn'] = $this->db->get_enum('nasabah_tab', 'warga_negara');
-        $data['identitas'] = $this->db->get_enum('nasabah_tab', 'jenis_identitas');
-        $data['jk'] = $this->db->get_enum('nasabah_tab', 'jenis_kelamin');
         $data['bread'] = 'Home';
         $data['crumb'] = 'Produk';
         $data['jenis'] = $this->produk->getTab()->result();
         $data['prop'] = $this->user->getProv();
-        // $data['kab'] = $this->user->viewByProvinsi();
         $this->load->view('template/header', $data);
         $this->load->view('produk/opRek', $data);
         $this->load->view('template/footer');
@@ -325,26 +299,11 @@ class Produk extends CI_Controller
     public function createKrd()
     {
         $data = $this->data;
-        $data['agama'] = $this->db->get_enum('nasabah_tab', 'agama');
-        $data['tujuan_buka'] = $this->db->get_enum('nasabah_tab', 'tujuan_buka');
-        $data['status_rumah'] = $this->db->get_enum('nasabah_tab', 'status_rumah');
-        $data['pendidikan'] = $this->db->get_enum('nasabah_tab', 'pendidikan');
-        $data['aw'] = $this->db->get_enum('nasabah_tab', 'hb_ahli_waris');
-        $data['status'] = $this->db->get_enum('nasabah_tab', 'status_menikah');
-        $data['profesi'] = $this->db->get_enum('nasabah_tab', 'profesi');
-        $data['jenis_pekerjaan'] = $this->db->get_enum('nasabah_tab', 'jenis_pekerjaan');
-        $data['status_pekerjaan'] = $this->db->get_enum('nasabah_tab', 'status_pekerjaan');
-        $data['sumber_dana'] = $this->db->get_enum('nasabah_tab', 'sumber_dana');
-        $data['wn'] = $this->db->get_enum('nasabah_tab', 'warga_negara');
-        $data['identitas'] = $this->db->get_enum('nasabah_tab', 'jenis_identitas');
-        $data['jk'] = $this->db->get_enum('nasabah_tab', 'jenis_kelamin');
         $data['bread'] = 'Home';
         $data['crumb'] = 'Produk';
         $data['jenis'] = $this->produk->getTab()->result();
         $data['prop'] = $this->user->getProv();
         $data['judul'] = 'Pengajuan Kredit | Bank Unisritama';
-        $data['bread'] = 'Home';
-        $data['crumb'] = 'Produk';
         $data['jenis'] = $this->produk->getDep()->result();
         $data['prop'] = $this->user->getProv();
         $this->load->view('template/header', $data);
@@ -383,5 +342,66 @@ class Produk extends CI_Controller
         $message = "<html><head><head></head><body><p>Hi,</p><p>Terdapat Nasabah Baru yang sudah selesai Registrasi. Harap segera di verifikasi!</p><br/><p>Sincerely,</p><p>www.bprunisritama.com</p></body></html>";
         $this->email->message($message);
         return $this->email->send();
+    }
+
+    public function getDati()
+    {
+        $id = $this->input->post('id');
+        $data = $this->input->post('data');
+
+        if ($data == "kabupaten") {
+            $daerah = $this->user->viewKab($id);
+            $lists = "<option value='' selected='true' disabled='disabled'> Pilih Kabupaten</option>";
+            foreach ($daerah as $data) {
+                $lists .= "<option value='" . $data->id_kab . "' " . set_select('kab_identitas', $data->id_kab) . ">";
+                $lists .= $data->nama . "</option>";
+            }
+            $callback = array('list_kota' => $lists); // Masukan variabel lists tadi ke dalam array $callback dengan index array : list_kota
+            echo json_encode($callback);
+        } elseif ($data == "kecamatan") {
+            $daerah = $this->user->viewKec($id);
+            $lists = "<option value='' selected='true' disabled='disabled'> Pilih Kecamatan</option>";
+            foreach ($daerah as $data) {
+                $lists .= "<option value='" . $data->id_kec . "'>";
+                $lists .= $data->nama . "</option>";
+            }
+            $callback = array('list_kota' => $lists); // Masukan variabel lists tadi ke dalam array $callback dengan index array : list_kota
+            echo json_encode($callback);
+        } elseif ($data = "desa") {
+            $daerah = $this->user->viewDesa($id);
+            $lists = "<option value='' selected='true' disabled='disabled'> Pilih Desa/Kelurahan</option>";
+            foreach ($daerah as $data) {
+                $lists .= "<option value='" . $data->id_kel . "'>";
+                $lists .= $data->nama . "</option>";
+            }
+            $callback = array('list_kota' => $lists); // Masukan variabel lists tadi ke dalam array $callback dengan index array : list_kota
+            echo json_encode($callback);
+        }
+    }
+
+    public function getJenis()
+    {
+        $data = $this->input->post('data');
+        // echo $data;
+        // die;
+        if ($data == "Simpanan") {
+            $jenis = $this->user->getSimpanan();
+            $lists = "<option value='' selected='true' disabled='disabled'>Pilih Jenis Produk Tabungan</option>";
+            foreach ($jenis as $data) {
+                $lists .= "<option value='" . $data->id_produk . "' >";
+                $lists .= ucwords($data->produk) . "</option>";
+            }
+            $callback = array('list_jenis' => $lists);
+            echo json_encode($callback);
+        } else {
+            $jenis = $this->user->getUmum();
+            $lists = "<option value='' selected='true' disabled='disabled'>Pilih Jenis Produk Tabungan</option>";
+            foreach ($jenis as $data) {
+                $lists .= "<option value='" . $data->id_produk . "' >";
+                $lists .= ucwords($data->produk) . "</option>";
+            }
+            $callback = array('list_jenis' => $lists);
+            echo json_encode($callback);
+        }
     }
 }

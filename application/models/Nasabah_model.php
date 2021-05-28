@@ -338,6 +338,11 @@ class Nasabah_model extends CI_Model
     {
         return $this->db->delete($this->_table, array('id_nsb' => $id_nsb));
     }
+
+    public function getProfesi()
+    {
+        return $this->db->get('pekerjaan')->result();
+    }
 }
 
 /* End of file Nasabah_model.php */

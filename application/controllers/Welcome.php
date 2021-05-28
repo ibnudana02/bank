@@ -56,67 +56,6 @@ class Welcome extends CI_Controller
 		$this->load->view('template/footer');
 	}
 
-	public function getDati()
-	{
-		$id = $this->input->post('id');
-		$data = $this->input->post('data');
-
-		if ($data == "kabupaten") {
-			$daerah = $this->user->viewKab($id);
-			$lists = "<option value='' selected='true' disabled='disabled'> Pilih Kabupaten</option>";
-			foreach ($daerah as $data) {
-				$lists .= "<option value='" . $data->id_kab . "' " . set_select('kab_identitas', $data->id_kab) . ">";
-				$lists .= $data->nama . "</option>";
-			}
-			$callback = array('list_kota' => $lists); // Masukan variabel lists tadi ke dalam array $callback dengan index array : list_kota
-			echo json_encode($callback);
-		} elseif ($data == "kecamatan") {
-			$daerah = $this->user->viewKec($id);
-			$lists = "<option value='' selected='true' disabled='disabled'> Pilih Kecamatan</option>";
-			foreach ($daerah as $data) {
-				$lists .= "<option value='" . $data->id_kec . "'>";
-				$lists .= $data->nama . "</option>";
-			}
-			$callback = array('list_kota' => $lists); // Masukan variabel lists tadi ke dalam array $callback dengan index array : list_kota
-			echo json_encode($callback);
-		} elseif ($data = "desa") {
-			$daerah = $this->user->viewDesa($id);
-			$lists = "<option value='' selected='true' disabled='disabled'> Pilih Desa/Kelurahan</option>";
-			foreach ($daerah as $data) {
-				$lists .= "<option value='" . $data->id_kel . "'>";
-				$lists .= $data->nama . "</option>";
-			}
-			$callback = array('list_kota' => $lists); // Masukan variabel lists tadi ke dalam array $callback dengan index array : list_kota
-			echo json_encode($callback);
-		}
-	}
-
-	public function getJenis()
-	{
-		$data = $this->input->post('data');
-		// echo $data;
-		// die;
-		if ($data == "Simpanan") {
-			$jenis = $this->user->getSimpanan();
-			$lists = "<option value='' selected='true' disabled='disabled'>Pilih Jenis Produk Tabungan</option>";
-			foreach ($jenis as $data) {
-				$lists .= "<option value='" . $data->id_produk . "' >";
-				$lists .= ucwords($data->produk) . "</option>";
-			}
-			$callback = array('list_jenis' => $lists);
-			echo json_encode($callback);
-		} else {
-			$jenis = $this->user->getUmum();
-			$lists = "<option value='' selected='true' disabled='disabled'>Pilih Jenis Produk Tabungan</option>";
-			foreach ($jenis as $data) {
-				$lists .= "<option value='" . $data->id_produk . "' >";
-				$lists .= ucwords($data->produk) . "</option>";
-			}
-			$callback = array('list_jenis' => $lists);
-			echo json_encode($callback);
-		}
-	}
-
 	public function imageUpload()
 	{
 		// echo 'page upload ckeditor';

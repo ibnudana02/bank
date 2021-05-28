@@ -11,39 +11,39 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <label for="nik">NIK</label>
-                                        <input type="number" class="form-control" value="<?php echo set_value('nik'); ?>" name="nik" maxlength="16" required>
+                                        <input type="number" class="form-control" value="<?php echo set_value('nik'); ?>" name="nsb_nik" maxlength="16" required>
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="nama">Nama</label>
-                                        <input type="text" class="form-control" style="text-transform: uppercase" value="<?php echo set_value('nm_lengkap'); ?>" name="nm_lengkap" required>
+                                        <input type="text" class="form-control" style="text-transform: uppercase" value="<?php echo set_value('nm_lengkap'); ?>" name="nsb_nama" required>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <label for="nama">Email</label>
-                                        <input type="email" class="form-control" style="text-transform: uppercase" value="<?php echo set_value('email'); ?>" name="email" required>
+                                        <input type="email" class="form-control" style="text-transform: uppercase" value="<?php echo set_value('email'); ?>" name="nsb_email" required>
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="nama">No. Handphone</label>
-                                        <input type="number" class="form-control" value="<?php echo set_value('hp'); ?>" name="hp" maxlength="13" required>
+                                        <input type="number" class="form-control" value="<?php echo set_value('hp'); ?>" name="nsb_hp" maxlength="13" required>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <label for="nama">Pendidikan Terakhir</label>
-                                        <select class="form-control" name="pendidikan" required>
+                                        <select class="form-control" name="nsb_pendidikan" required>
                                             <option value="" selected="true"> </option>
                                             <?php foreach ($pendidikan as $key => $row) : ?>
-                                                <option value="<?= $row; ?>" <?= set_select('pendidikan', $row) ?>><?= $row; ?></option>
+                                                <option value="<?= $row; ?>" <?= set_select('nsb_pendidikan', $row) ?>><?= $row; ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="nama">Tujuan Pembukaan Rekening</label>
-                                        <select class="form-control" style="text-transform: uppercase" name="tujuan_buka" id="" required>
+                                        <select class="form-control" style="text-transform: uppercase" name="nsb_tujuan_buka" id="" required>
                                             <option value="" selected="true" disabled="disabled"> </option>
                                             <?php foreach ($tujuan_buka as $key => $row) : ?>
-                                                <option value="<?= $row ?>" <?= set_select('tujuan_buka', $row) ?>><?= $row ?></option>
+                                                <option value="<?= $row ?>" <?= set_select('nsb_tujuan_buka', $row) ?>><?= $row ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
@@ -60,7 +60,7 @@
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="nama">Perkiraan Nilai Transaksi Dalam 1 Tahun</label>
-                                        <select class="form-control" style="text-transform: uppercase" name="transaksi" id="" required>
+                                        <select class="form-control" style="text-transform: uppercase" name="nsb_transaksi" id="" required>
                                             <option value="" selected="true" disabled="disabled"></option>
                                             <option value="4000000">Kurang dari 5 Juta</option>
                                             <option value="22000000">Rp 5 Juta sd 25 Juta</option>
@@ -71,7 +71,7 @@
                                         </select> </div>
                                     <div class="form-group col-md-12">
                                         <label for="nama">NPWP <small>Optional, Jika tidak ada kosongkan</small></label>
-                                        <input type="text" class="form-control" value="<?php echo set_value('npwp'); ?>" name="npwp" id="npwp">
+                                        <input type="text" class="form-control" value="<?php echo set_value('nsb_npwp'); ?>" name="nsb_npwp" id="npwp">
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -81,11 +81,11 @@
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="nama">RT</label>
-                                        <input type="number" class="form-control" value="<?php echo set_value('rt'); ?>" name="rt" id="rt" required>
+                                        <input type="number" class="form-control" value="<?php echo set_value('rt'); ?>" name="nsb_rt" id="rt" required>
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="nama">RW</label>
-                                        <input type="number" class="form-control" value="<?php echo set_value('rw'); ?>" name="rw" id="rw" required>
+                                        <input type="number" class="form-control" value="<?php echo set_value('rw'); ?>" name="nsb_rw" id="rw" required>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -108,7 +108,7 @@
                                 <div class="h5 mb-4">Data Pekerjaan</div>
                                 <div class="form-group col-md-12">
                                     <label for="nama">Jenis Pekerjaan</label>
-                                    <select class="form-control" style="text-transform: uppercase" name="profesi" id="profesi" required>
+                                    <select class="form-control" style="text-transform: uppercase" name="nsb_profesi" id="nsb_profesi" required>
                                         <option value="" selected="true" disabled="disabled"> </option>
                                         <?php foreach ($profesi as $value) : ?>
                                             <option value="<?= $value->id ?>" <?= set_select('profesi', $value->id) ?>><?= $value->nm_pekerjaan ?></option>
@@ -118,11 +118,11 @@
                                 <div id="bekerja">
                                     <div class="form-group col-md-12">
                                         <label for="surname">Penghasilan per Tahun</label>
-                                        <input type="number" class="form-control" name="gaji_th">
+                                        <input type="number" class="form-control" name="nsb_gaji_th">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="surname">Nama Kantor</label>
-                                        <input type="text" class="form-control" style="text-transform: uppercase" name="kantor">
+                                        <input type="text" class="form-control" style="text-transform: uppercase" name="nsb_kantor">
                                     </div>
                                     <div class="form-row m-r-10 m-l-10">
                                         <div class="form-group col-md-10">
@@ -144,72 +144,72 @@
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="surname">Telpon Kantor</label>
-                                        <input type="text" class="form-control" name="telp_kantor">
+                                        <input type="number" class="form-control" name="telp_kantor">
                                     </div>
                                 </div>
                                 <div id="pemberiDana">
                                     <div class="form-group col-md-12">
                                         <label for="surname">Nama Pemberi Dana</label>
-                                        <input type="text" class="form-control" style="text-transform: uppercase" name="nama_dana">
+                                        <input type="text" class="form-control" style="text-transform: uppercase" name="dana_nama">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="surname">Jenis Identitas</label>
-                                        <input type="text" class="form-control" name="identitas_dana">
+                                        <input type="text" class="form-control" name="dana_id">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="surname">Nomor Identitas</label>
-                                        <input type="text" class="form-control" name="nik_dana">
+                                        <input type="text" class="form-control" name="dana_noid">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="surname">NPWP <small>(Optional, jika tidak ada kosongkan</small></label>
-                                        <input type="text" class="form-control" name="npwp">
+                                        <input type="text" class="form-control" name="dana_npwp">
                                     </div>
                                     <div class="form-row m-r-10 m-l-10">
                                         <div class="form-group col-md-8">
                                             <label for="surname">Alamat Tempat Tinggal Pemberi Dana</small></label>
-                                            <input type="text" class="form-control" style="text-transform: uppercase" name="alamat_dana">
+                                            <input type="text" class="form-control" style="text-transform: uppercase" name="dana_alamat">
                                         </div>
                                         <div class="form-group col-md-2">
                                             <label for="surname">RT</small></label>
-                                            <input type="text" class="form-control" name="rt_dana">
+                                            <input type="text" class="form-control" name="dana_rt">
                                         </div>
                                         <div class="form-group col-md-2">
                                             <label for="surname">RW</small></label>
-                                            <input type="text" class="form-control" name="rw_dana">
+                                            <input type="text" class="form-control" name="dana_rw">
                                         </div>
                                     </div>
                                     <div class="form-row m-r-10 m-l-10">
                                         <div class="form-group col-md-3">
                                             <label for="surname">Provinsi</small></label>
-                                            <select name="provinsi_identitas" id="propinsi" class="form-control">
+                                            <select name="dana_prov" id="dana_prov" class="form-control">
                                                 <option value="" selected="true" disabled="disabled">Pilih</option>
                                                 <?php foreach ($prop as $row) : ?>
-                                                    <option value="<?= $row->id_prov; ?>" <?= set_select('provinsi_identitas', $row->id_prov) ?>><?= ucwords($row->nama); ?></option>
+                                                    <option value="<?= $row->id_prov; ?>" <?= set_select('dana_prov', $row->id_prov) ?>><?= ucwords($row->nama); ?></option>
                                                 <?php endforeach; ?>
                                             </select>
                                         </div>
                                         <div class="form-group col-md-3">
                                             <label for="Kabupaten/Kota">Kabupaten/Kota</label>
-                                            <select name="kab_identitas" id="kota" class="form-control">
+                                            <select name="dana_kota" id="dana_kota" class="form-control">
                                                 <option value="">Pilih</option>
                                             </select>
                                         </div>
                                         <div class="form-group col-md-3">
                                             <label for="Kabupaten/Kota">Kecamatan</label>
-                                            <select name="kec_identitas" id="camat" class="form-control">
+                                            <select name="dana_kec" id="dana_kec" class="form-control">
                                                 <option value="">Pilih</option>
                                             </select>
                                         </div>
                                         <div class="form-group col-md-3">
                                             <label for="Kabupaten/Kota">Desa/Kelurahan</label>
-                                            <select name="kel_identitas" id="desa" class="form-control">
+                                            <select name="dana_kel" id="dana_kel" class="form-control">
                                                 <option value="">Pilih</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="sumber dana">Sumber Dana</label>
-                                        <select name="sumber_dana" id="sumber_dana" class="form-control">
+                                        <select name="dana_sumber_dana" id="dana_sumber_dana" class="form-control">
                                             <option value="" selected="true" disabled="disabled">Pilih</option>
                                             <?php foreach ($sumber_dana as $value) : ?>
                                                 <option value="<?= $value ?>"><?= $value ?></option>
@@ -218,26 +218,29 @@
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="surname">Penghasilan per Tahun</label>
-                                        <select name="penghasilan_tahun" id="penghasilan_tahun" class="form-control">
+                                        <select name="dana_hasil_thn" id="dana_hasil_thn" class="form-control">
                                             <option value="" selected="true" disabled="disabled">Pilih</option>
-                                            <option value=""> Kurang dari Rp 36 Juta</option>
-                                            <option value=""> Rp 36 Juta sd < Rp 60 Juta</option> <option value=""> Rp 60 Juta sd Rp 150 Juta</option>
-                                            <option value=""> Lebih dari Rp 150 Juta</option>
+                                            <option value="Kurang dari Rp 36 Juta"> Kurang dari Rp 36 Juta</option>
+                                            <option value="Rp 36 Juta sd < Rp 60 Juta"> Rp 36 Juta sd < Rp 60 Juta</option> <option value="Rp 60 Juta sd Rp 150 Juta"> Rp 60 Juta sd Rp 150 Juta</option>
+                                            <option value="Lebih dari Rp 150 Juta"> Lebih dari Rp 150 Juta</option>
                                         </select> </div>
                                 </div>
                             </div>
-                            <h3>Upload Documents</h3>
+                            <h3>Upload Documents & Agreements</h3>
                             <div class="wizard-content">
-                                <div class="h5 mb-4">Siapkan dokumen untuk di upload.</div>
-                                <p>Customize your experience by confirming your</p>
-                                <p>These settings apply wherever you are signed in to your new Account.</p>
+                                <div class="h5 mb-4">Upload dokumen dan Syarat & Persetujuan.</div>
+                                <div class="form-group col-md-12">
+                                    <label for="surname">Upload KTP</label>
+                                    <input type="file" class="form-control" style="text-transform: uppercase" name="nsb_ktp" required>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="surname">Upload Swafoto</label>
+                                    <input type="file" class="form-control" style="text-transform: uppercase" name="nsb_swafoto" required>
+                                </div>
                                 <div class="form-group">
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" name="terms_conditions" id="terms_conditions" class="custom-control-input">
-                                        <label class="custom-control-label" for="terms_conditions">By checking
-                                            this
-                                            option, you agree to acceot with the <a href="#">Terms and
-                                                Conditions</a>.</label>
+                                        <label class="custom-control-label" for="terms_conditions">Dengan memberi centang pada form ini, nasabah telah setuju dengan <a href="#">Syarat & Ketentuan</a> yang berlaku pada Bank Unisritama.</label>
                                     </div>
                                 </div>
                             </div>
@@ -359,7 +362,7 @@
         }
     });
     $(document).ready(function() {
-        $("#propinsi").change(function() {
+        $("#dana_prov").change(function() {
             var id = $(this).val();
             var data = "kabupaten";
             $.ajax({
@@ -371,12 +374,12 @@
                     data: data,
                 },
                 success: function(response) {
-                    $("#kota").html(response.list_kota).show();
+                    $("#dana_kota").html(response.list_kota).show();
                 }
             });
         });
 
-        $("#kota").change(function() {
+        $("#dana_kota").change(function() {
             var id = $(this).val();
             var data = "kecamatan";
             $.ajax({
@@ -388,11 +391,11 @@
                     data: data,
                 },
                 success: function(response) {
-                    $("#camat").html(response.list_kota).show();
+                    $("#dana_kec").html(response.list_kota).show();
                 }
             });
         });
-        $("#camat").change(function() {
+        $("#dana_kec").change(function() {
             var id = $(this).val();
             var data = "desa";
             $.ajax({
@@ -404,7 +407,7 @@
                     data: data,
                 },
                 success: function(response) {
-                    $("#desa").html(response.list_kota).show();
+                    $("#dana_kel").html(response.list_kota).show();
                 }
             });
         });
