@@ -226,7 +226,6 @@
                                         </select> </div>
                                 </div>
                             </div>
-
                             <h3>Upload Documents</h3>
                             <div class="wizard-content">
                                 <div class="h5 mb-4">Siapkan dokumen untuk di upload.</div>
@@ -255,9 +254,7 @@
 <script src="<?= base_url('assets/new/') ?>plugins/jquery-steps/jquery.steps.min.js"></script>
 
 <script>
-    //Advanced - with validation
     var wizard7 = $('#wizard7');
-    // var wizard7 = $('#wizard1');
     wizard7.steps({
         headerTag: "h3",
         bodyTag: '.wizard-content',
@@ -265,7 +262,6 @@
         enableAllSteps: true,
         titleTemplate: '<span class="number">#index#</span><span class="title">#title#</span>',
         onStepChanging: function(event, currentIndex, newIndex) {
-            // Allways allow previous action even if the current form is not valid!
             if (currentIndex > newIndex) {
                 return true;
             }
@@ -286,7 +282,6 @@
         validClass: 'is-valid',
         errorElement: "div",
         rules: {
-            // Step 1 - Account information
             nik: {
                 required: true,
                 digits: true,
@@ -323,20 +318,7 @@
             pendidikan: {
                 required: true,
             },
-            password: {
-                required: true,
-                minlength: 5,
-                maxlength: 12
-            },
-            password2: {
-                required: true,
-                minlength: 5,
-                maxlength: 12
-            },
-            // Step 4 - Confirmation
-            reminders: {
-                required: true
-            },
+            // Step 4 - Confirmation            
             terms_conditions: {
                 required: true
             },
@@ -349,11 +331,8 @@
 </script>
 <script type="text/javascript">
     var profesi = $('#profesi').val();
-    // console.log(profesi);
-    // var pemberiKerja = document.getElementById("bekerja");
     var pemberiKerja = $('#bekerja');
     var pemberiDana = document.getElementById("pemberiDana");
-    // var reset = document.getElementById("formPekerjaan");
 
     if (profesi === null) {
         $('#bekerja').hide();
@@ -368,11 +347,9 @@
 
     $('#profesi').change(function() {
         var value = $(this).val();
-        // console.log(value);
         if (value === "") {
             $('#bekerja').hide();
             $('#pemberiDana').hide();
-            // pemberiDana.style.display = "none";
         } else if (value === "3" || value === "4" || value === "5") {
             $('#bekerja').hide();
             $('#pemberiDana').show();

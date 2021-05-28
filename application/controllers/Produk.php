@@ -290,10 +290,8 @@ class Produk extends CI_Controller
             $this->load->view('produk/openRek', $data);
             $this->load->view('template/new_footer');
         } else {
-            // $this->load->view('template/new_header', $data);
             $this->load->view('template/header_eform', $data);
             $this->load->view('produk/openRek', $data);
-            // $this->load->view('template/new_footer');
             $this->load->view('template/footer_eform');
         }
     }

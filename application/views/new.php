@@ -14,7 +14,7 @@
                 </div>
                 <div class="shape-divider" data-style="4" data-height="220"></div>
             </div>
-            <div class="col-lg p-b-20 wow fadeInLeft">
+            <div class="col-lg p-b-20 wow fadeInLeft" data-wow-delay="0.3s">
                 <div class="text-box text-box-light">
                     <a href="<?= base_url('tabungan') ?>">
                         <i class="fas fa-chart-pie"></i>
@@ -24,7 +24,7 @@
                 </div>
                 <div class="shape-divider" data-style="4" data-height="220"></div>
             </div>
-            <div class="col-lg p-b-20 wow fadeInLeft">
+            <div class="col-lg p-b-20 wow fadeInLeft" data-wow-delay="0.6s">
                 <div class="text-box text-box-light">
                     <a href="<?= base_url('eform') ?>">
                         <i class="fa fa-mobile-alt"></i>
@@ -44,8 +44,8 @@
             <h4>Berita Terkini</h4>
         </div>
         <div class="row">
-            <div class="content col" data-wow-duration="1s" data-wow-delay="1s">
-                <div class="carousel wow animate__bounceInUp" data-items="4">
+            <div class="content col">
+                <div class="carousel wow animate__bounceInUp" data-wow-duration="1s" data-wow-delay="1s" data-items="4">
                     <?php foreach ($berita as $row) : ?>
                         <div class="post-item border ">
                             <div class="post-item-wrap">

@@ -75,11 +75,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost:3307',
-	'username' => 'root',
-	// 'username' => 'bprn5677_ibndana ',
-	'password' => 'smd',
-	// 'password' => 'Ibndana1102',
+	'hostname' => 'localhost',
+	// 'username' => 'root',
+	'username' => 'bprn5677_ibndana',
+	// 'password' => 'smd',
+	'password' => 'Ibndana1102',
 	'database' => 'bprn5677_webbpr',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
