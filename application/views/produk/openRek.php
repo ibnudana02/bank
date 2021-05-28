@@ -108,7 +108,7 @@
                                 <div class="h5 mb-4">Data Pekerjaan</div>
                                 <div class="form-group col-md-12">
                                     <label for="nama">Jenis Pekerjaan</label>
-                                    <select class="form-control" style="text-transform: uppercase" name="nsb_profesi" id="nsb_profesi" required>
+                                    <select class="form-control" style="text-transform: uppercase" name="nsb_profesi" id="profesi" required>
                                         <option value="" selected="true" disabled="disabled"> </option>
                                         <?php foreach ($profesi as $value) : ?>
                                             <option value="<?= $value->id ?>" <?= set_select('profesi', $value->id) ?>><?= $value->nm_pekerjaan ?></option>
