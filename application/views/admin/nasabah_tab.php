@@ -39,23 +39,23 @@
                                     <tr>
                                         <th><?= $no++; ?></th>
                                         <th><?= htmlspecialchars($row->kd_ref); ?></th>
-                                        <th><?= htmlspecialchars($row->nm_lengkap); ?></th>
-                                        <th><?= htmlspecialchars($row->tujuan_buka); ?></th>
+                                        <th><?= htmlspecialchars($row->nsb_nama); ?></th>
+                                        <th><?= htmlspecialchars($row->nsb_tujuan); ?></th>
                                         <th><?= htmlspecialchars(strtoupper($row->produk)); ?></th>
-                                        <th><?= htmlspecialchars($row->status); ?></th>
+                                        <th><?= htmlspecialchars($row->nsb_status); ?></th>
                                         <th>
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <?php if ($row->status == 'APPROVED') {
-                                                    echo '<a href="' . $row->id_nsb . '" class="btn btn-sm btn-info disabled float-center" data-target="#acc' . $row->id_nsb . '" data-toggle="modal"><i class="fas fa-check"></i></a>';
+                                                <?php if ($row->nsb_status == 'APPROVED') {
+                                                    echo '<a href="' . $row->nsb_id . '" class="btn btn-sm btn-info disabled float-center" data-target="#acc' . $row->nsb_id . '" data-toggle="modal"><i class="fas fa-check"></i></a>';
                                                 } else {
-                                                    echo '<a href="' . $row->id_nsb . '" class="btn btn-sm btn-info float-center" data-target="#acc' . $row->id_nsb . '" data-toggle="modal"><i class="fas fa-check"></i></a>';
+                                                    echo '<a href="' . $row->nsb_id . '" class="btn btn-sm btn-info float-center" data-target="#acc' . $row->nsb_id . '" data-toggle="modal"><i class="fas fa-check"></i></a>';
                                                 } ?>
-                                                <a href="<?= base_url('cetak-nasabah-tab/' . $row->id_nsb) ?>" target="_blank" class="btn btn-sm btn-success float-center"><i class="fas fa-print"></i></a>
-                                                <a href="<?php echo $row->id_nsb; ?>" class="btn btn-sm btn-danger float-center" data-target="#hapus<?php echo $row->id_nsb; ?>" data-toggle="modal"><i class="fas fa-trash"></i></a>
+                                                <a href="<?= base_url('cetak-nasabah-tab/' . $row->nsb_id) ?>" target="_blank" class="btn btn-sm btn-success float-center"><i class="fas fa-print"></i></a>
+                                                <a href="<?php echo $row->nsb_id; ?>" class="btn btn-sm btn-danger float-center" data-target="#hapus<?php echo $row->nsb_id; ?>" data-toggle="modal"><i class="fas fa-trash"></i></a>
                                             </div>
                                         </th>
                                     </tr>
-                                    <div id="hapus<?= $row->id_nsb; ?>" class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                    <div id="hapus<?= $row->nsb_id; ?>" class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -66,13 +66,13 @@
                                                     <h5 class="modal-body mt-0">Yakin menghapus data ini?</h5>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <a href="<?= base_url('del-nsb/' . $row->id_nsb) ?>" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Delete User">Hapus</a>
+                                                    <a href="<?= base_url('del-nsb/' . $row->nsb_id) ?>" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Delete User">Hapus</a>
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="tooltip" data-placement="top" title="Kembali">Tidak</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="acc<?= $row->id_nsb; ?>" class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                    <div id="acc<?= $row->nsb_id; ?>" class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -83,8 +83,8 @@
                                                     <h5 class="modal-body mt-0">Apakah yakin Approve data ini?</h5>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <a href="<?= base_url('acc/' . $row->id_nsb . '/0') ?>" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Approve">Approve</a>
-                                                    <a href="<?= base_url('acc/' . $row->id_nsb . '/1') ?>" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Approve & Cetak">Approve & Cetak</a>
+                                                    <a href="<?= base_url('acc/' . $row->nsb_id . '/0') ?>" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Approve">Approve</a>
+                                                    <a href="<?= base_url('acc/' . $row->nsb_id . '/1') ?>" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Approve & Cetak">Approve & Cetak</a>
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="tooltip" data-placement="top" title="Kembali">Batal</button>
                                                 </div>
                                             </div>

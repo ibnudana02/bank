@@ -5,163 +5,75 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Nasabah_model extends CI_Model
 {
 
-    private $_table = "nasabah_tab";
-    public $id_nsb;
-    public $kd_ref;
-    public $nm_lengkap;
-    public $nm_identitas;
-    public $jenis_kelamin;
-    public $agama;
-    public $warga_negara;
-    public $jenis_identitas;
-    public $masa_berlaku;
-    public $no_identitas;
-    public $alamat_identitas;
-    public $provinsi_identitas;
-    public $kab_identitas;
-    public $kec_identitas;
-    public $kel_identitas;
-    public $pos_identitas;
-    public $tempat_lahir;
-    public $tgl_lahir;
-    public $no_hp;
-    public $email;
-    public $alamat_domisili;
-    public $prov_domisili;
-    public $kab_domisili;
-    public $kec_domisili;
-    public $kel_domisili;
-    public $pos_domisili;
-    public $npwp;
-    public $nm_ayah;
-    public $nm_ibu;
-    public $nm_ahli_waris;
-    public $hb_ahli_waris;
-    public $alamat_ahli_waris;
-    public $no_ahli_waris;
-    public $status_menikah;
-    public $nm_pasangan;
-    public $tmp_lhr_pasangan;
-    public $tgl_lhr_pasangan;
-    public $identitas_pasangan;
-    public $no_identitas_pasangan;
-    public $alamat_pasangan;
-    public $no_pasangan;
-    public $profesi;
-    public $jenis_pekerjaan;
-    public $status_pekerjaan;
-    public $sumber_dana;
-    public $jabatan;
-    public $gaji_bln;
-    public $perusahaan;
-    public $alamat_kantor;
-    public $telp_kantor;
-    public $email_kantor;
-    public $status_rumah;
-    public $tanggungan;
-    public $tujuan_buka;
-    public $jenis_tab;
-    public $pendidikan;
-    public $ft_identitas;
-    public $ft_kk;
-    public $ft_diri;
-    public $ft_ttd;
-    public $ft_npwp;
-    public $status;
-    public $upload_date;
+    private $_table = "reg_nasabah";
 
-    public function tesCreateNsb()
-    {
-        print_r($this->input->post());
-    }
-
-    public function createNsb()
+    public function saveNsb()
     {
         $post = $this->input->post();
-        $this->id_nsb = uniqid();
-        $this->kd_ref = $this->createRef();
-        $this->nm_lengkap = $post['nm_lengkap'];
-        $this->nm_identitas = $post['nm_identitas'];
-        $this->jenis_kelamin = $post['jenis_kelamin'];
-        $this->agama = $post['agama'];
-        $this->warga_negara = $post['warga_negara'];
-        $this->jenis_identitas = $post['jenis_identitas'];
-        $this->masa_berlaku = $post['masa_berlaku'];
-        $this->no_identitas = $post['no_identitas'];
-        $this->alamat_identitas = $post['alamat_identitas'];
-        $this->provinsi_identitas = $post['provinsi_identitas'];
-        $this->kab_identitas = $post['kab_identitas'];
-        $this->kec_identitas = $post['kec_identitas'];
-        $this->kel_identitas = $post['kel_identitas'];
-        $this->pos_identitas = $post['pos_identitas'];
-        $this->tempat_lahir = $post['tempat_lahir'];
-        $this->tgl_lahir = $post['tgl_lahir'];
-        $this->no_hp = $post['no_hp'];
-        $this->email = $post['email'];
-        $this->alamat_domisili = $post['alamat_domisili'];
-        $this->prov_domisili = $post['prov_domisili'];
-        $this->kab_domisili = $post['kab_domisili'];
-        $this->kec_domisili = $post['kec_domisili'];
-        $this->kel_domisili = $post['kel_domisili'];
-        $this->pos_domisili = $post['pos_domisili'];
-        $this->npwp = $post['npwp'];
-        $this->nm_ayah = $post['nm_ayah'];
-        $this->nm_ibu = $post['nm_ibu'];
-        $this->nm_ahli_waris = $post['nm_ahli_waris'];
-        $this->hb_ahli_waris = $post['hb_ahli_waris'];
-        $this->alamat_ahli_waris = $post['alamat_ahli_waris'];
-        $this->no_ahli_waris = $post['no_ahli_waris'];
-        $this->status_menikah = $post['status_menikah'];
-        $this->nm_pasangan = $post['nm_pasangan'];
-        $this->tmp_lhr_pasangan = $post['tmp_lhr_pasangan'];
-        $this->tgl_lhr_pasangan = $post['tgl_lhr_pasangan'];
-        $this->identitas_pasangan = $post['identitas_pasangan'];
-        $this->no_identitas_pasangan = $post['no_identitas_pasangan'];
-        $this->alamat_pasangan = $post['alamat_pasangan'];
-        $this->no_pasangan = $post['no_pasangan'];
-        $this->profesi = $post['profesi'];
-        $this->jenis_pekerjaan = $post['jenis_pekerjaan'];
-        $this->status_pekerjaan = $post['status_pekerjaan'];
-        $this->sumber_dana = $post['sumber_dana'];
-        $this->jabatan = $post['jabatan'];
-        $this->gaji_bln = $post['gaji_bln'];
-        $this->perusahaan = $post['perusahaan'];
-        $this->alamat_kantor = $post['alamat_kantor'];
-        $this->telp_kantor = $post['telp_kantor'];
-        $this->email_kantor = $post['email_kantor'];
-        $this->status_rumah = $post['status_rumah'];
-        $this->tanggungan = $post['tanggungan'];
-        $this->tujuan_buka = $post['tujuan_buka'];
-        $this->jenis_tab = $post['jenis_tab'];
-        $this->pendidikan = $post['pendidikan'];
-        $files = $this->upload();
-        $this->ft_identitas = $files['ft_identitas']['file_name'];
-        $this->ft_kk = $files['ft_kk']['file_name'];
-        $this->ft_diri = $files['ft_diri']['file_name'];
-        $this->ft_ttd = $files['ft_ttd']['file_name'];
-        $this->ft_npwp = $files['ft_npwp']['file_name'];
-        $this->upload_date = date('Y-m-d');
-        $this->status = 'WAITING';
-        // print_r($files);
-        // echo json_encode($files);
+        if (isset($post['dana_prov']) && isset($post['dana_sumber_dana']) && isset($post['dana_hasil_thn'])) {
+            $dana_prov = $post['dana_prov'];
+            $dana_sumber_dana = $post['dana_sumber_dana'];
+            $dana_hasil_thn = $post['dana_hasil_thn'];
+        } else {
+            $dana_prov = '';
+            $dana_hasil_thn = '';
+            $dana_sumber_dana = '';
+        }
+        $upload = $this->upload();
+        $dana = array();
+        if ($post['nsb_profesi'] == 3 | $post['nsb_profesi'] == 4 | $post['nsb_profesi'] == 5) {
+            echo 'Nasabah ini tidak bekerja';
+        }
+        $object = array(
+            'nsb_id' => uniqid(),
+            'kd_ref' => $this->createRef(),
+            'nsb_nik' => $post['nsb_nik'],
+            'nsb_nama' => $post['nsb_nama'],
+            'nsb_email' => $post['nsb_email'],
+            'nsb_hp' => $post['nsb_hp'],
+            'nsb_pendidikan' => $post['nsb_pendidikan'],
+            'nsb_tujuan' => $post['nsb_tujuan_buka'],
+            'nsb_sumberdana' => $post['nsb_sumber'],
+            'nsb_trx_thn' => $post['nsb_transaksi'],
+            'nsb_npwp' => $post['nsb_npwp'],
+            'nsb_alamat' => $post['alamat_domisili'],
+            'nsb_rt' => $post['nsb_rt'],
+            'nsb_rw' => $post['nsb_rw'],
+            'nsb_kelurahan' => $post['kel_domisili'],
+            'nsb_kecamatan' => $post['kec_domisili'],
+            'nsb_pos_alamat' => $post['pos_domisili'],
+            'nsb_kerja' => $post['nsb_profesi'],
+            'nsb_gaji_thn' => $post['nsb_gaji_th'],
+            'nsb_kantor' => $post['nsb_kantor'],
+            'nsb_alamat_kantor' => $post['alamat_kantor'],
+            'nsb_pos_kantor' => $post['pos_kantor'],
+            'nsb_jabatan' => $post['nsb_jabatan'],
+            'nsb_mulai_kerja' => $post['mulai_bekerja'],
+            'nsb_telp_kantor' => $post['telp_kantor'],
+            'nsb_ktp' => $upload['nsb_ktp']['file_name'],
+            'nsb_swafoto' => $upload['nsb_swafoto']['file_name'],
+            // field utk pemberi dana
+            'nsb_pemberi_dana' => $post['dana_nama'],
+            'nsb_id_dana' => $post['dana_id'],
+            'nsb_noid_dana' => $post['dana_noid'],
+            'nsb_npwp_dana' => $post['dana_npwp'],
+            'nsb_alamat_dana' => $post['dana_alamat'],
+            'nsb_rt_dana' => $post['dana_rt'],
+            'nsb_rw_dana' => $post['dana_rw'],
+            'nsb_prov_dana' => $dana_prov,
+            'nsb_kota_dana' => $post['dana_kota'],
+            'nsb_kec_dana' => $post['dana_kec'],
+            'nsb_kel_dana' => $post['dana_kel'],
+            'nsb_sb_dana' => $dana_sumber_dana,
+            'nsb_dana_thn' => $dana_hasil_thn,
+
+            'nsb_status' => 'WAITING',
+            'nsb_created' => date('Y-m-d')
+        );
+        // print_r($object);
         // die;
-        $this->db->insert($this->_table, $this);
-        $this->session->set_flashdata('success', '<strong>Congratulation!</strong> Kode Referensi: ' . $this->kd_ref . ' Data anda telah disimpan. Mohon tunggu verifikasi dari pihak Bank Unisritama.');
-    }
-
-    public function unggah()
-    {
-        $this->id_nsb = uniqid();
-        $data['nama'] = $this->input->post('nama');
-        $fill = $this->upload();
-        $data['ft_identitas'] = $fill['ft_identitas']['file_name'];
-        $data['ft_kk'] = $fill['ft_kk']['file_name'];
-        $data['ft_diri'] = $fill['ft_diri']['file_name'];
-        $data['ft_ttd'] = $fill['ft_ttd']['file_name'];
-        $data['ft_npwp'] = $fill['ft_npwp']['file_name'];
-
-        echo json_encode($data);
-        die;
+        $this->db->insert('reg_nasabah', $object);
+        $this->session->set_flashdata('message', '<strong>Congratulation!</strong> Kode Referensi: ' . $object['kd_ref'] . ' Data anda telah disimpan. Mohon tunggu verifikasi dari pihak Bank Unisritama.');
     }
 
     private function upload()
@@ -169,48 +81,22 @@ class Nasabah_model extends CI_Model
         $config['upload_path'] = './upload/nasabah/';
         $config['allowed_types'] = 'gif|jpg|png|jpeg';
         $config['max_size'] = 0;
-        // $config['file_name'] = $this->id_nsb;
         $config['encrypt_name'] = true;
 
         $this->upload->initialize($config);
-        if (!$this->upload->do_upload('ft_identitas')) {
-            $this->session->set_flashdata('success', $this->upload->display_errors());
-            redirect('pembukaan-rekening-tabungan');
+        if (!$this->upload->do_upload('nsb_ktp')) {
+            $this->session->set_flashdata('message', $this->upload->display_errors());
+            redirect('dataDiri');
         } else {
-            $ft_identitas = $this->upload->data();
+            $nsb_ktp = $this->upload->data();
         }
-        if (!$this->upload->do_upload('ft_kk')) {
-            $this->session->set_flashdata('success', $this->upload->display_errors());
-            redirect('pembukaan-rekening-tabungan');
+        if (!$this->upload->do_upload('nsb_swafoto')) {
+            $this->session->set_flashdata('message', $this->upload->display_errors());
+            redirect('dataDiri');
         } else {
-            $ft_kk = $this->upload->data();
+            $nsb_swafoto = $this->upload->data();
         }
-        if (!$this->upload->do_upload('ft_diri')) {
-            $this->session->set_flashdata('success', $this->upload->display_errors());
-            redirect('pembukaan-rekening-tabungan');
-        } else {
-            $ft_diri = $this->upload->data();
-        }
-        if (!$this->upload->do_upload('ft_ttd')) {
-            $this->session->set_flashdata('success', $this->upload->display_errors());
-            redirect('pembukaan-rekening-tabungan');
-        } else {
-            $ft_ttd = $this->upload->data();
-        }
-        // if (empty($_FILES['ft_npwp']['file_name'])) {
-        if (!file_exists($_FILES['ft_npwp']['tmp_name']) || !is_uploaded_file($_FILES['ft_npwp']['tmp_name'])) {
-            $ft_npwp = array('file_name' => 'NULL');
-        } else {
-            if (!$this->upload->do_upload('ft_npwp')) {
-                $this->session->flashdata('success', '<strong>Foto NPWP gagal di Upload!</strong>');
-                redirect('pembukaan-rekening-tabungan');
-            } else {
-                $ft_npwp = $this->upload->data();
-            }
-        }
-        $files = array('ft_identitas' => $ft_identitas, 'ft_kk' => $ft_kk, 'ft_diri' => $ft_diri, 'ft_ttd' => $ft_ttd, 'ft_npwp' => $ft_npwp);
-        // print_r($files);
-        // die;
+        $files = array('nsb_ktp' => $nsb_ktp, 'nsb_swafoto' => $nsb_swafoto);
         return $files;
     }
 
@@ -224,23 +110,19 @@ class Nasabah_model extends CI_Model
 
     public function getByIdNsb($id_nsb)
     {
-        $this->db->select('*, provinsi.nama as prop, kabupaten.nama as kab_id, 
-                            kecamatan.nama as kec_id, kelurahan.nama as kel_id, 
-                            kelurahan.id_jenis as daerah, p.nama as prop_dom, kab.nama as kab_dom,
-                            kec.nama as kec_dom, kel.nama as kel_dom, kel.id_jenis as daerah1
-                            ')
-            ->from('nasabah_tab')
-            ->join('produk', $this->_table . '.jenis_tab=produk.id_produk', 'left')
-            ->join('provinsi', $this->_table . '.provinsi_identitas=provinsi.id_prov', 'inner')
-            ->join('kabupaten', $this->_table . '.kab_identitas=kabupaten.id_kab', 'inner')
-            ->join('kecamatan', $this->_table . '.kec_identitas=kecamatan.id_kec', 'inner')
-            ->join('kelurahan', $this->_table . '.kel_identitas=kelurahan.id_kel', 'inner')
-            ->join('provinsi as p', $this->_table . '.prov_domisili=p.id_prov', 'inner')
-            ->join('kabupaten as kab', $this->_table . '.kab_domisili=kab.id_kab', 'inner')
-            ->join('kecamatan as  kec', $this->_table . '.kec_domisili=kec.id_kec', 'inner')
-            ->join('kelurahan as  kel', $this->_table . '.kel_domisili=kel.id_kel', 'inner')
-            ->where('id_nsb', $id_nsb);
+        $this->db->where('nsb_id', $id_nsb);
         return $this->db->get();
+    }
+    public function getByID($nsb_id)
+    {
+        $this->db->select('nsb_nama,kd_ref, produk.produk')
+            ->join('produk', $this->_table . '.jenis_tab=produk.id_produk', 'left')
+            // ->join('provinsi', $this->_table . '.nsb_prov_dana=provinsi.id_prov', 'inner')
+            // ->join('kabupaten', $this->_table . '.nsb_kota_dana=kabupaten.id_kab', 'inner')
+            // ->join('kecamatan', $this->_table . '.nsb_kec_dana=kecamatan.id_kec', 'inner')
+            // ->join('kelurahan', $this->_table . '.nsb_kel_dana=kelurahan.id_kel', 'inner')
+            ->where('nsb_id', $nsb_id);
+        return $this->db->get('reg_nasabah');
     }
 
     public function getAll()
@@ -252,34 +134,31 @@ class Nasabah_model extends CI_Model
 
     public function getJumlah()
     {
-        // $this->db->select('MONTH(upload_date) AS bulan, COUNT(*) AS jumlah_bulanan');
-        // SELECT  COUNT(IF( YEAR(tgl_byr) = 2016, jml_byr, NULL)) AS item_2016,        
         $this->db->select('
-        COUNT(IF(MONTH(upload_date) = 01, upload_date,null)) AS bulan_1,
-        COUNT(IF(MONTH(upload_date) = 02, upload_date,null)) AS bulan_2,
-        COUNT(IF(MONTH(upload_date) = 03, upload_date,null)) AS bulan_3,
-        COUNT(IF(MONTH(upload_date) = 04, upload_date,null)) AS bulan_4,
-        COUNT(IF(MONTH(upload_date) = 04, upload_date,null)) AS bulan_4,
-        COUNT(IF(MONTH(upload_date) = 05, upload_date,null)) AS bulan_5,
-        COUNT(IF(MONTH(upload_date) = 06, upload_date,null)) AS bulan_6,
-        COUNT(IF(MONTH(upload_date) = 07, upload_date,null)) AS bulan_7,
-        COUNT(IF(MONTH(upload_date) = 08, upload_date,null)) AS bulan_8,
-        COUNT(IF(MONTH(upload_date) = 09, upload_date,null)) AS bulan_9,
-        COUNT(IF(MONTH(upload_date) = 10, upload_date,null)) AS bulan_10,
-        COUNT(IF(MONTH(upload_date) = 11, upload_date,null)) AS bulan_11,
-        COUNT(IF(MONTH(upload_date) = 12, upload_date,null)) AS bulan_12,
+        COUNT(IF(MONTH(nsb_created) = 01, nsb_created,null)) AS bulan_1,
+        COUNT(IF(MONTH(nsb_created) = 02, nsb_created,null)) AS bulan_2,
+        COUNT(IF(MONTH(nsb_created) = 03, nsb_created,null)) AS bulan_3,
+        COUNT(IF(MONTH(nsb_created) = 04, nsb_created,null)) AS bulan_4,
+        COUNT(IF(MONTH(nsb_created) = 04, nsb_created,null)) AS bulan_4,
+        COUNT(IF(MONTH(nsb_created) = 05, nsb_created,null)) AS bulan_5,
+        COUNT(IF(MONTH(nsb_created) = 06, nsb_created,null)) AS bulan_6,
+        COUNT(IF(MONTH(nsb_created) = 07, nsb_created,null)) AS bulan_7,
+        COUNT(IF(MONTH(nsb_created) = 08, nsb_created,null)) AS bulan_8,
+        COUNT(IF(MONTH(nsb_created) = 09, nsb_created,null)) AS bulan_9,
+        COUNT(IF(MONTH(nsb_created) = 10, nsb_created,null)) AS bulan_10,
+        COUNT(IF(MONTH(nsb_created) = 11, nsb_created,null)) AS bulan_11,
+        COUNT(IF(MONTH(nsb_created) = 12, nsb_created,null)) AS bulan_12,
         ');
-        // $this->db->group_by('MONTH(upload_date)');
         $this->db->from($this->_table);
         return $this->db->get();
     }
 
-    public function getTujuan()
+    public function getStatTujuan()
     {
         $this->db->select('
-        COUNT(IF(tujuan_buka= "Simpanan", tujuan_buka, null)) AS simpanan,
-        COUNT(IF(tujuan_buka= "Penerimaan Gaji", tujuan_buka, null)) AS gaji,
-        COUNT(IF(tujuan_buka= "Penyaluran Kredit", tujuan_buka, null)) AS kredit,
+        COUNT(IF(nsb_tujuan= 1, nsb_tujuan, null)) AS simpanan,
+        COUNT(IF(nsb_tujuan= 2, nsb_tujuan, null)) AS gaji,
+        COUNT(IF(nsb_tujuan= 3, nsb_tujuan, null)) AS kredit,
         ');
         $this->db->from($this->_table);
         return $this->db->get();
@@ -287,10 +166,10 @@ class Nasabah_model extends CI_Model
 
     private function createRef()
     {
-        $this->db->select('RIGHT(nasabah_tab.kd_ref,4) as kode', FALSE);
+        $this->db->select('RIGHT(reg_nasabah.kd_ref,4) as kode', FALSE);
         $this->db->order_by('kd_ref', 'DESC');
         $this->db->limit(1);
-        $query = $this->db->get('nasabah_tab');      //cek dulu apakah ada sudah ada kode di tabel.    
+        $query = $this->db->get('reg_nasabah');      //cek dulu apakah ada sudah ada kode di tabel.    
         if ($query->num_rows() <> 0) {
             //jika kode ternyata sudah ada.      
             $data = $query->row();
@@ -342,6 +221,27 @@ class Nasabah_model extends CI_Model
     public function getProfesi()
     {
         return $this->db->get('pekerjaan')->result();
+    }
+
+    public function getSumber()
+    {
+        return $this->db->get('sumber_dana')->result();
+    }
+
+    public function getTujuan()
+    {
+        return $this->db->get('tujuan')->result();
+    }
+
+    public function getIdentitas()
+    {
+        return $this->db->get('jenis_identitas')->result();
+    }
+
+    public function getPendidikan()
+    {
+        $this->db->order_by('id_pd', 'desc');
+        return $this->db->get('pendidikan')->result();
     }
 }
 

@@ -36,7 +36,7 @@ class Welcome extends CI_Controller
 		$data['laporanCount'] = $this->laporan->getAll()->num_rows();
 		$data['nasabahCount'] = $this->nsb->getAll()->num_rows();
 		$data['statNasabah'] = $this->nsb->getJumlah()->result();
-		$data['tujuanBuka'] = $this->nsb->getTujuan()->result();
+		$data['tujuanBuka'] = $this->nsb->getStatTujuan()->result();
 		// print_r(date('Y-m-d'));
 		// die;
 		$this->load->view('template/admin_header', $data);
