@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: May 28, 2021 at 05:21 PM
+-- Generation Time: May 31, 2021 at 06:22 PM
 -- Server version: 10.3.22-MariaDB
 -- PHP Version: 7.2.12
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `bprn5677_webbpr`
 --
-CREATE DATABASE IF NOT EXISTS `bprn5677_webbpr` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `bprn5677_webbpr`;
 
 -- --------------------------------------------------------
 
@@ -91899,6 +91897,8 @@ INSERT INTO `provinsi` (`id_prov`, `nama`) VALUES
 
 CREATE TABLE `reg_nasabah` (
   `nsb_id` varchar(64) NOT NULL,
+  `kd_ref` varchar(64) NOT NULL,
+  `jenis_tab` varchar(64) NOT NULL,
   `nsb_nik` varchar(20) NOT NULL,
   `nsb_nama` varchar(128) NOT NULL,
   `nsb_email` varchar(128) NOT NULL,
@@ -91937,10 +91937,18 @@ CREATE TABLE `reg_nasabah` (
   `nsb_dana_thn` double DEFAULT NULL,
   `nsb_ktp` varchar(128) DEFAULT NULL,
   `nsb_swafoto` varchar(128) DEFAULT NULL,
-  `nsb_status` varchar(128) DEFAULT NULL,
+  `nsb_status` enum('WAITING','APPROVED') NOT NULL,
   `nsb_created` date DEFAULT NULL,
   `nsb_updated` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `reg_nasabah`
+--
+
+INSERT INTO `reg_nasabah` (`nsb_id`, `kd_ref`, `jenis_tab`, `nsb_nik`, `nsb_nama`, `nsb_email`, `nsb_hp`, `nsb_pendidikan`, `nsb_tujuan`, `nsb_sumberdana`, `nsb_trx_thn`, `nsb_npwp`, `nsb_alamat`, `nsb_rt`, `nsb_rw`, `nsb_kelurahan`, `nsb_kecamatan`, `nsb_pos_alamat`, `nsb_kerja`, `nsb_gaji_thn`, `nsb_kantor`, `nsb_alamat_kantor`, `nsb_pos_kantor`, `nsb_jabatan`, `nsb_mulai_kerja`, `nsb_telp_kantor`, `nsb_pemberi_dana`, `nsb_id_dana`, `nsb_noid_dana`, `nsb_npwp_dana`, `nsb_alamat_dana`, `nsb_rt_dana`, `nsb_rw_dana`, `nsb_prov_dana`, `nsb_kota_dana`, `nsb_kec_dana`, `nsb_kel_dana`, `nsb_sb_dana`, `nsb_dana_thn`, `nsb_ktp`, `nsb_swafoto`, `nsb_status`, `nsb_created`, `nsb_updated`) VALUES
+('60b45fcadce3d', 'TAB-2105-0001', '5e96bb4b21ce7', '1403090210960006', 'ibnu', 'ibnu02@gmail.com', '085274823527', '8', 1, 1, 4000000, '', 'jl. kadiran', '02', '11', 'pebatuan', 'kulim', '25631', 2, 35000000, 'bpr unisritama', 'jl. soekarno hatta', '21365', 'staff ti', '2019-02-04', '076163381', '', 0, '', '', '', '', '', '', '', '', '', 0, 0, '295a95af8bdf5f6cf87c0f1e849532c7.png', 'd998f1f90dee4a06ec068f52b55be174.png', 'WAITING', '2021-05-31', NULL),
+('60b46a443252f', 'TAB-2105-0002', '5eaa92ba0efa1', '1403090210960006', 'ibnu', 'ibnu02@gmail.com', '085274823527', '8', 1, 1, 4000000, '', 'jl. kadiran', '02', '11', 'pebatuan', 'kulim', '28284', 2, 35000000, 'bpr unisritama', 'jl. soekarno hatta', '25845', 'staff ti', '2019-02-04', '076163381', '', 0, '', '', '', '', '', '', '', '', '', 0, 0, '68e64483e3eb24195fbddfb20278b890.png', '2712a48d7cd3adf6ef243d371a222776.png', 'WAITING', '2021-05-31', NULL);
 
 -- --------------------------------------------------------
 
@@ -92021,7 +92029,10 @@ CREATE TABLE `sumber_dana` (
 
 INSERT INTO `sumber_dana` (`id_sumber`, `sumber`) VALUES
 (1, 'Gaji'),
-(2, 'Hasil Usaha');
+(2, 'Hasil Usaha'),
+(3, 'Hasil Investasi'),
+(4, 'Hibah / Warisan'),
+(5, 'Lainnya');
 
 -- --------------------------------------------------------
 
@@ -92116,68 +92127,6 @@ INSERT INTO `user` (`id_user`, `name`, `username`, `email`, `password`, `role_id
 ('2147483647', 'PARHAN', 'HAN', 'parhan@gmail.com', '$2y$10$0S3kbB0l2jfmDHZWxpYjLOGQo/iAwvsdPYicOoNg.pXtREUwrl4Qy', 2, '5e9d44df60b1f.jpg', '2020-05-03 14:07:45'),
 ('5e9d4d8b2788d', 'MUHAMMAD IBNU WARDANA', 'IBNDANA', 'ibnudana02@gmail.com', '$2y$10$18ib9dmwmvDw3E8TQoTyx.W1G/wG8EdEewwtx1i98O86bCtWvobA.', 1, '5e9d4d8b2788d.jpg', '0000-00-00 00:00:00'),
 ('5ee04224b6014', 'ADMINISTRATOR', 'ADMIN', 'admin@bprunisritama.com', '$2y$10$MIolaiCcNelLxsEFHzxs2eVMaxju9BGMYwQ.JAgycgnjeU6KdDF2y', 1, '5ee04224b6014.jpg', '0000-00-00 00:00:00');
-
--- --------------------------------------------------------
-
---
--- Stand-in structure for view `view registered nasabah`
--- (See below for the actual view)
---
-CREATE TABLE `view registered nasabah` (
-`nsb_id` varchar(64)
-,`nsb_nik` varchar(20)
-,`nsb_nama` varchar(128)
-,`nsb_email` varchar(128)
-,`nsb_hp` varchar(13)
-,`nsb_trx_thn` double
-,`nsb_npwp` varchar(64)
-,`nsb_alamat` text
-,`nsb_rt` varchar(5)
-,`nsb_rw` varchar(5)
-,`nsb_kelurahan` varchar(64)
-,`nsb_kecamatan` varchar(64)
-,`nsb_pos_alamat` varchar(6)
-,`nsb_kerja` int(3)
-,`nsb_gaji_thn` double
-,`nsb_kantor` varchar(128)
-,`nsb_alamat_kantor` text
-,`nsb_pos_kantor` varchar(6)
-,`nsb_jabatan` varchar(128)
-,`nsb_mulai_kerja` date
-,`nsb_telp_kantor` varchar(12)
-,`nsb_pemberi_dana` varchar(128)
-,`nsb_id_dana` int(11)
-,`nsb_noid_dana` varchar(20)
-,`nsb_npwp_dana` varchar(64)
-,`nsb_alamat_dana` text
-,`nsb_rt_dana` varchar(3)
-,`nsb_rw_dana` varchar(3)
-,`nsb_sb_dana` int(11)
-,`nsb_dana_thn` double
-,`nsb_ktp` varchar(128)
-,`nsb_swafoto` varchar(128)
-,`nsb_status` varchar(128)
-,`nsb_created` date
-,`nsb_updated` date
-,`dana_kec` tinytext
-,`dana_kel` tinytext
-,`dana_kota` tinytext
-,`dana_prov` tinytext
-,`tingkat` varchar(128)
-,`tujuan` varchar(128)
-,`sumber` varchar(128)
-,`nm_pekerjaan` varchar(255)
-,`jenis_identitas` varchar(128)
-);
-
--- --------------------------------------------------------
-
---
--- Structure for view `view registered nasabah`
---
-DROP TABLE IF EXISTS `view registered nasabah`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view registered nasabah`  AS SELECT `reg_nasabah`.`nsb_id` AS `nsb_id`, `reg_nasabah`.`nsb_nik` AS `nsb_nik`, `reg_nasabah`.`nsb_nama` AS `nsb_nama`, `reg_nasabah`.`nsb_email` AS `nsb_email`, `reg_nasabah`.`nsb_hp` AS `nsb_hp`, `reg_nasabah`.`nsb_trx_thn` AS `nsb_trx_thn`, `reg_nasabah`.`nsb_npwp` AS `nsb_npwp`, `reg_nasabah`.`nsb_alamat` AS `nsb_alamat`, `reg_nasabah`.`nsb_rt` AS `nsb_rt`, `reg_nasabah`.`nsb_rw` AS `nsb_rw`, `reg_nasabah`.`nsb_kelurahan` AS `nsb_kelurahan`, `reg_nasabah`.`nsb_kecamatan` AS `nsb_kecamatan`, `reg_nasabah`.`nsb_pos_alamat` AS `nsb_pos_alamat`, `reg_nasabah`.`nsb_kerja` AS `nsb_kerja`, `reg_nasabah`.`nsb_gaji_thn` AS `nsb_gaji_thn`, `reg_nasabah`.`nsb_kantor` AS `nsb_kantor`, `reg_nasabah`.`nsb_alamat_kantor` AS `nsb_alamat_kantor`, `reg_nasabah`.`nsb_pos_kantor` AS `nsb_pos_kantor`, `reg_nasabah`.`nsb_jabatan` AS `nsb_jabatan`, `reg_nasabah`.`nsb_mulai_kerja` AS `nsb_mulai_kerja`, `reg_nasabah`.`nsb_telp_kantor` AS `nsb_telp_kantor`, `reg_nasabah`.`nsb_pemberi_dana` AS `nsb_pemberi_dana`, `reg_nasabah`.`nsb_id_dana` AS `nsb_id_dana`, `reg_nasabah`.`nsb_noid_dana` AS `nsb_noid_dana`, `reg_nasabah`.`nsb_npwp_dana` AS `nsb_npwp_dana`, `reg_nasabah`.`nsb_alamat_dana` AS `nsb_alamat_dana`, `reg_nasabah`.`nsb_rt_dana` AS `nsb_rt_dana`, `reg_nasabah`.`nsb_rw_dana` AS `nsb_rw_dana`, `reg_nasabah`.`nsb_sb_dana` AS `nsb_sb_dana`, `reg_nasabah`.`nsb_dana_thn` AS `nsb_dana_thn`, `reg_nasabah`.`nsb_ktp` AS `nsb_ktp`, `reg_nasabah`.`nsb_swafoto` AS `nsb_swafoto`, `reg_nasabah`.`nsb_status` AS `nsb_status`, `reg_nasabah`.`nsb_created` AS `nsb_created`, `reg_nasabah`.`nsb_updated` AS `nsb_updated`, `kecamatan`.`nama` AS `dana_kec`, `kelurahan`.`nama` AS `dana_kel`, `kabupaten`.`nama` AS `dana_kota`, `provinsi`.`nama` AS `dana_prov`, `pendidikan`.`tingkat` AS `tingkat`, `tujuan`.`tujuan` AS `tujuan`, `sumber_dana`.`sumber` AS `sumber`, `pekerjaan`.`nm_pekerjaan` AS `nm_pekerjaan`, `jenis_identitas`.`jenis_identitas` AS `jenis_identitas` FROM (((((((((`reg_nasabah` join `pendidikan` on(`reg_nasabah`.`nsb_pendidikan` = `pendidikan`.`id_pd`)) join `sumber_dana` on(`reg_nasabah`.`nsb_sumberdana` = `sumber_dana`.`id_sumber`)) join `tujuan` on(`reg_nasabah`.`nsb_tujuan` = `tujuan`.`id_tujuan`)) join `pekerjaan` on(`reg_nasabah`.`nsb_kerja` = `pekerjaan`.`id`)) join `provinsi` on(`reg_nasabah`.`nsb_prov_dana` = `provinsi`.`id_prov`)) join `kabupaten` on(`reg_nasabah`.`nsb_kota_dana` = `kabupaten`.`id_kab`)) join `jenis_identitas` on(`reg_nasabah`.`nsb_id_dana` = `jenis_identitas`.`id_identitas`)) join `kecamatan` on(`reg_nasabah`.`nsb_kec_dana` = `kecamatan`.`id_kec`)) join `kelurahan` on(`reg_nasabah`.`nsb_kel_dana` = `kelurahan`.`id_kel`)) ;
 
 --
 -- Indexes for dumped tables
@@ -92383,7 +92332,7 @@ ALTER TABLE `pendidikan`
 -- AUTO_INCREMENT for table `sumber_dana`
 --
 ALTER TABLE `sumber_dana`
-  MODIFY `id_sumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_sumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tujuan`
