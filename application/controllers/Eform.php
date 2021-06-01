@@ -27,13 +27,9 @@ class Eform extends CI_Controller
     public function index()
     {
         $data['judul'] = 'e-Form - Bank Unisritama';
-        $data['tos'] = '<strong>Please read and accept our terms and conditions.</strong>';
         $this->form_validation->set_rules('ketentuan', 'Syarat & Ketentuan', 'trim|required');
-        // print_r($data);
-        // die;
         if ($this->form_validation->run() === TRUE) {
             if (!$this->input->post('ketentuan')) {
-                // $this->session->set_flashdata('message', '<strong>Please read and accept our terms and conditions.</strong>');
                 $this->load->view('template/header_eform', $data);
                 $this->load->view('produk/syaratKetentuan', $data);
                 $this->load->view('template/footer_eform');
@@ -47,35 +43,47 @@ class Eform extends CI_Controller
         }
     }
 
-    public function jenisRekening()
+    public function form_by($id = null)
     {
         $data['judul'] = 'e-Form - Bank Unisritama';
-        $data['jenis'] = $this->produk->getTab()->result();
-        $this->form_validation->set_rules('jenis', 'Jenis Rekening', 'trim|required');
+        $this->form_validation->set_rules('ketentuan', 'Syarat & Ketentuan', 'trim|required');
         if ($this->form_validation->run() === TRUE) {
-            if (!$this->input->post('jenis')) {
-                // $this->session->set_flashdata('message', '<strong>Please read and accept our terms and conditions.</strong>');
+            if (!$this->input->post('ketentuan')) {
                 $this->load->view('template/header_eform', $data);
-                $this->load->view('produk/jenisRekening');
+                $this->load->view('produk/syaratKetentuan', $data);
                 $this->load->view('template/footer_eform');
             } else {
-                redirect('dataDiri', 'refresh');
+                redirect(base_url('dataDiri/' . $id), 'refresh');
             }
         } else {
-            // $this->session->set_flashdata('message', '<strong>Please read and accept our terms and conditions.</strong>');
             $this->load->view('template/header_eform', $data);
-            $this->load->view('produk/jenisRekening');
+            $this->load->view('produk/syaratKetentuan');
             $this->load->view('template/footer_eform');
         }
     }
 
-    public function statusNasabah()
+    public function jenisRekening()
     {
         $data['judul'] = 'e-Form - Bank Unisritama';
-        // $this->session->set_flashdata('message', '<strong>Next.</strong>');
-        $this->load->view('template/header_eform', $data);
-        $this->load->view('produk/statusNasabah');
-        $this->load->view('template/footer_eform');
+        $data['jenis'] = json_encode($this->produk->getTab()->result());
+        // print_r($data['jenis']);
+        $this->form_validation->set_rules('jenis', 'Jenis Rekening', 'trim|required');
+        if ($this->form_validation->run() === TRUE) {
+            if (!$this->input->post('jenis')) {
+                $this->load->view('template/header_eform', $data);
+                $this->load->view('produk/jenisRekening');
+                $this->load->view('template/footer_eform');
+            } else {
+                // print_r($this->input->post('jenis'));
+                // die;
+                $id_produk = $this->input->post('jenis');
+                redirect(base_url('dataDiri/' . $id_produk), 'refresh');
+            }
+        } else {
+            $this->load->view('template/header_eform', $data);
+            $this->load->view('produk/jenisRekening');
+            $this->load->view('template/footer_eform');
+        }
     }
 }
 

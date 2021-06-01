@@ -5,7 +5,7 @@
             <div class="content col-12">
                 <div class="card">
                     <div class="card-body">
-                        <form id="wizard7" class="wizard needs-validation" action="<?= current_url(); ?>" enctype="multipart/form-data" method="POST" data-style="1" novalidate>
+                        <form id="wizard7" class="wizard needs-validation" action="<?= current_url(); ?>" enctype="multipart/form-data" method="POST" data-style="1">
                             <h3>Data Diri</h3>
                             <div class="wizard-content">
                                 <div class="h3 mb-3">Informasi Data Diri</div>

@@ -14,7 +14,7 @@
                             <div class="post-item-description">
                                 <h2><?= ucwords($row->produk); ?></h2>
                                 <div class="post-meta">
-                                    <span class="post-meta-date"><i class="fa fa-calendar-o"></i><?php echo date('M d, Y', strtotime($row->created_on)) ?></span>
+                                    <span class="post-meta-date"><i class="fa fa-calendar-o"></i><?php echo date('M d, Y', strtotime($row->publis)) ?></span>
                                     <span class="post-meta-category"><a href="#"><i class="fa fa-tag"></i><?= $row->jenis ?></a></span>
                                     <div class="post-meta-share">
                                         <a class="btn btn-xs btn-slide btn-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?= current_url(); ?>" target="_blank">
@@ -43,7 +43,8 @@
                                     $buka = '';
                                 }
                                 ?>
-                                <a href="<?= base_url($row->link) ?>" id="btn-open" class="btn"><i class="icon-send"></i> &nbsp; <?= $buka ?> </a>
+                                <a href="<?= base_url($row->link . '/' . $row->id_produk) ?>" id="btn-open" class="btn"><i class="icon-send"></i> &nbsp; <?= $buka ?> </a>
+                                <!-- <a href="</?= base_url($row->link) ?>" id="btn-open" class="btn"><i class="icon-send"></i> &nbsp; <?= $buka ?> </a> -->
                             </div>
                             <div class="seperator"><i class="fa fa-chevron-down"></i></div>
                         </div>

@@ -9,7 +9,8 @@
                 </div>
             </div>
         <?php endif; ?>
-        <form action="<?= base_url('syaratKetentuan') ?>" method="post">
+        <!-- <form action="</?= base_url('syaratKetentuan') ?>" method="post"> -->
+        <form action="<?= current_url() ?>" method="post">
             <div class="row justify-content-center">
                 <div class="content col-md-10">
                     <div class="card">

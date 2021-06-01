@@ -7,7 +7,7 @@ class Nasabah_model extends CI_Model
 
     private $_table = "reg_nasabah";
 
-    public function saveNsb()
+    public function saveNsb($id)
     {
         $post = $this->input->post();
         if (isset($post['dana_prov']) && isset($post['dana_sumber_dana']) && isset($post['dana_hasil_thn'])) {
@@ -19,14 +19,12 @@ class Nasabah_model extends CI_Model
             $dana_hasil_thn = '';
             $dana_sumber_dana = '';
         }
+        $jenis_tab = $id;
         $upload = $this->upload();
-        $dana = array();
-        if ($post['nsb_profesi'] == 3 | $post['nsb_profesi'] == 4 | $post['nsb_profesi'] == 5) {
-            echo 'Nasabah ini tidak bekerja';
-        }
         $object = array(
             'nsb_id' => uniqid(),
             'kd_ref' => $this->createRef(),
+            'jenis_tab' => $jenis_tab,
             'nsb_nik' => $post['nsb_nik'],
             'nsb_nama' => $post['nsb_nama'],
             'nsb_email' => $post['nsb_email'],
@@ -74,6 +72,7 @@ class Nasabah_model extends CI_Model
         // die;
         $this->db->insert('reg_nasabah', $object);
         $this->session->set_flashdata('message', '<strong>Congratulation!</strong> Kode Referensi: ' . $object['kd_ref'] . ' Data anda telah disimpan. Mohon tunggu verifikasi dari pihak Bank Unisritama.');
+        redirect('dataDiri', 'refresh');
     }
 
     private function upload()

@@ -64,7 +64,7 @@ class Produk_model extends CI_Model
 
     public function getBySlug($slug)
     {
-        $this->db->select('*')
+        $this->db->select('*, DATE_FORMAT(created_on, "%Y-%m-%d %H:%i") as publis')
             ->from($this->_table);
         $this->db->join('jenis', $this->_table . '.jenis = jenis.id_jenis', 'left');
         $this->db->where('slug', $slug);
@@ -169,7 +169,8 @@ class Produk_model extends CI_Model
         $this->db->select('*')
             ->from($this->_table)
             ->join('jenis', 'produk.jenis=jenis.id_jenis')
-            ->where('id_jenis', '5e9545a2ecf3e')
+            // ->where('id_jenis', '5e9545a2ecf3e')
+            ->where('jenis.jenis', 'Tabungan')
             ->order_by('produk', 'asc');
         return $this->db->get();
     }

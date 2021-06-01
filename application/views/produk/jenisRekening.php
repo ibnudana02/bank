@@ -1,15 +1,6 @@
 <section id="page-content" class="background-grey p-b-0">
     <div class="container-fluid ">
-        <?php if ($this->session->flashdata('message')) : ?>
-            <div class="row justify-content-center">
-                <div class="col-md-10 ">
-                    <div role="alert" class="alert alert-success alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span> </button>
-                        <strong><i class="fa fa-check-circle"></i> <?= $this->session->flashdata('message'); ?> </div>
-                </div>
-            </div>
-        <?php endif; ?>
-        <form action="<?= base_url('jenisRekening') ?>" method="post">
+20        <form action="<?= current_url(); ?>" method="post">
             <div class="row justify-content-center">
                 <div class="content col-md-10">
                     <div class="card">
@@ -18,17 +9,18 @@
                         </div>
                         <div class="card-body">
                             <div class="syarat">
-                                <?php foreach ($jenis as $data) : ?>
+                                <?php
+                                $produk = json_decode($jenis);
+                                foreach ($produk as $data) : ?>
                                     <div class="col-sm pb-3">
                                         <div class="custom-controls-stacked">
                                             <label class="custom-control custom-radio">
-                                                <input type="radio" class="custom-control-input" name="jenis" id="<?= $data->id_produk ?>" value="<?= $data->slug ?>">
+                                                <input type="radio" class="custom-control-input" name="jenis" id="#<?= $data->id_produk ?>" value="<?= $data->id_produk ?>">
                                                 <span class="custom-control-label"><?= strtoupper($data->produk); ?></span>
                                                 <button id="<?= $data->slug ?>" class="btn btn-sm btn-light float-right" type="button">INFO</button>
                                             </label>
                                         </div>
                                     </div>
-                                    <!-- <br> -->
                                 <?php endforeach; ?>
                             </div>
                         </div>
@@ -90,6 +82,8 @@
                 $('#btnLanjut').prop('disabled', true);
             }
         });
+
+
 
         $('#tabungan-qurban-warga').click(function() {
             window.open('<?= base_url('produk/tabungan-qurban-warga') ?>', '_blank');
