@@ -115,7 +115,7 @@ class Nasabah_model extends CI_Model
     }
     public function getByID($nsb_id)
     {
-        $this->db->select('nsb_nama,kd_ref, produk.produk')
+        $this->db->select('nsb_nama,kd_ref, produk.produk, nsb_ktp,nsb_swafoto')
             ->join('produk', $this->_table . '.jenis_tab=produk.id_produk', 'left')
             // ->join('provinsi', $this->_table . '.nsb_prov_dana=provinsi.id_prov', 'inner')
             // ->join('kabupaten', $this->_table . '.nsb_kota_dana=kabupaten.id_kab', 'inner')

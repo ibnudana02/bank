@@ -23,6 +23,10 @@ $html =
 <table cellspacing="1" cellpadding="2">
 <tr><td>Nama Nasabah</td><td>: ' . strtoupper($data_nsb->nsb_nama) . '</td></tr>
 <tr><td>Kode Referensi</td><td>: ' . $data_nsb->kd_ref . '</td></tr>
+<tr>
+<td align="center">KTP:<br><img src="' . $file . $data_nsb->nsb_ktp . '" width="220px" height="140px"></td>
+<td align="center">Kartu Keluarga: <img src="' . $file . $data_nsb->nsb_swafoto . '" width="220px" height="140px"></td>
+</tr>
 <tr><td colspan="2" align="right">Pekanbaru, ' .  tanggal(date("Y-m-d")) . '</td></tr>
 <tr><th height="70px"></th></tr>
 </table>
