@@ -8,7 +8,7 @@
 </section>
 <div class="container">
     <?php if ($this->session->flashdata('message')) { ?>
-        <div class="col-lg-8">
+        <div class="col-lg-12">
             <div role="alert" class="alert alert-info alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span> </button>
                 <strong><i class="fa fa-check-circle"></i> </strong>Sukses! <?php echo $this->session->flashdata('message'); ?>
