@@ -1,6 +1,6 @@
 <section id="page-content" class="background-grey p-b-0">
     <div class="container-fluid ">
-20        <form action="<?= current_url(); ?>" method="post">
+        <form action="<?= current_url(); ?>" method="post">
             <div class="row justify-content-center">
                 <div class="content col-md-10">
                     <div class="card">
@@ -9,13 +9,11 @@
                         </div>
                         <div class="card-body">
                             <div class="syarat">
-                                <?php
-                                $produk = json_decode($jenis);
-                                foreach ($produk as $data) : ?>
+                                <?php foreach ($jenis as $data) : ?>
                                     <div class="col-sm pb-3">
                                         <div class="custom-controls-stacked">
                                             <label class="custom-control custom-radio">
-                                                <input type="radio" class="custom-control-input" name="jenis" id="#<?= $data->id_produk ?>" value="<?= $data->id_produk ?>">
+                                                <input type="radio" class="custom-control-input" name="jenis" id="<?= $data->id_produk ?>" value="<?= $data->id_produk ?>">
                                                 <span class="custom-control-label"><?= strtoupper($data->produk); ?></span>
                                                 <button id="<?= $data->slug ?>" class="btn btn-sm btn-light float-right" type="button">INFO</button>
                                             </label>
@@ -33,7 +31,7 @@
                             <button id="btnLanjut" class="btn btn-google btnMobile float-right" type="submit" name="input" value="input" disabled>Selanjutnya <i class="fa fa-arrow-right"></i></button>
                         </div>
                     </div>
-
+                    <p id="demo"></p>
                 </div>
             </div>
         </form>
@@ -42,27 +40,25 @@
 <script src="<?= base_url('assets/new/') ?>js/jquery.js"></script>
 <script>
     $(document).ready(function() {
+        var data = '<?php echo json_encode($slug) ?>';
+        var arr = JSON.parse(data);
+        $.each(arr, function(i, item) {
+            var slug = arr[i].slug;
+            $('#' + slug + '').click(function() {
+                window.open('<?= base_url('produk/') ?>' + slug + '', '_blank');
+            });
+        });
+
         var jenis = '';
 
         function checkRadio(jenis) {
-            if (jenis === "tabungan-qurban-warga") {
-                $("#5eaa93647a4cb").prop('checked', true);
-            }
-            if (jenis === "tabungan-sejahtera") {
-                $("#5eaa92ba0efa1").prop('checked', true);
-            }
-            if (jenis === "tabungan-sejahtera-kas") {
-                $("#5ee0aba96f640").prop('checked', true);
-            }
-            if (jenis === "tabungan-simpel") {
-                $("#5fb5ff891c02c").prop('checked', true);
-            }
-            if (jenis === "tabungan-umroh") {
-                $("#5eaa93a989a72").prop('checked', true);
-            }
-            if (jenis === "tabunganku") {
-                $("#5e96bb4b21ce7").prop('checked', true);
-            }
+            $.each(arr, function(i, item) {
+                var slug = arr[i].slug;
+                var id = arr[i].id_produk;
+                if (jenis === slug) {
+                    $("#" + id_produk).prop('checked', true);
+                }
+            });
         }
 
         if (jenis !== null || jenis !== "") {
@@ -81,27 +77,6 @@
             } else {
                 $('#btnLanjut').prop('disabled', true);
             }
-        });
-
-
-
-        $('#tabungan-qurban-warga').click(function() {
-            window.open('<?= base_url('produk/tabungan-qurban-warga') ?>', '_blank');
-        });
-        $('#tabungan-sejahtera').click(function() {
-            window.open('<?= base_url('produk/tabungan-sejahtera') ?>', '_blank');
-        });
-        $('#tabungan-sejahtera-kas').click(function() {
-            window.open('<?= base_url('produk/tabungan-sejahtera-kas') ?>', '_blank');
-        });
-        $('#tabungan-simpel').click(function() {
-            window.open('<?= base_url('produk/tabungan-simpel') ?>', '_blank');
-        });
-        $('#tabungan-umroh').click(function() {
-            window.open('<?= base_url('produk/tabungan-umroh') ?>', '_blank');
-        });
-        $('#tabunganku').click(function() {
-            window.open('<?= base_url('produk/tabunganku') ?>', '_blank');
         });
 
         $('#btnKembali').click(function() {

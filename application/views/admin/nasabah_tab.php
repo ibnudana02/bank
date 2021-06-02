@@ -40,7 +40,7 @@
                                         <th><?= $no++; ?></th>
                                         <th><?= htmlspecialchars($row->kd_ref); ?></th>
                                         <th><?= htmlspecialchars($row->nsb_nama); ?></th>
-                                        <th><?= htmlspecialchars($row->nsb_tujuan); ?></th>
+                                        <th><?= htmlspecialchars($row->tujuan); ?></th>
                                         <th><?= htmlspecialchars(strtoupper($row->produk)); ?></th>
                                         <th><?= htmlspecialchars($row->nsb_status); ?></th>
                                         <th>
@@ -100,3 +100,9 @@
     </div>
 </div>
 <!-- /.container-fluid -->
+<script src="<?= base_url('assets/admin/'); ?>vendor/jquery/jquery.min.js"></script>
+<script src="<?= base_url('assets/admin/'); ?>vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="<?= base_url('assets/admin/'); ?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script>
+    var table = $('#dataTable').DataTable({});
+</script>

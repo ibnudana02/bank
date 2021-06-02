@@ -210,6 +210,14 @@ class Produk_model extends CI_Model
         $this->db->select('id, nm_pekerjaan');
         return $this->db->get('pekerjaan');
     }
+
+    public function getId()
+    {
+        $this->db->select('id_produk, slug');
+        $this->db->join('jenis', 'produk.jenis=jenis.id_jenis');
+        $this->db->where('jenis.jenis', 'Tabungan');
+        return $this->db->get('produk');
+    }
 }
 
 /* End of file Porduk_model.php */

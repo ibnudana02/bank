@@ -283,10 +283,6 @@ class Produk extends CI_Controller
 
         if ($this->form_validation->run() == true) {
             $this->nsb->saveNsb($id);
-            // $input['jenis_tab'] = $id;
-            // $input['post'] = $this->input->post();
-            // print_r($input);
-            // die;
         } else {
             $this->load->view('template/header_eform', $data);
             $this->load->view('produk/openRek', $data);

@@ -65,17 +65,15 @@ class Eform extends CI_Controller
     public function jenisRekening()
     {
         $data['judul'] = 'e-Form - Bank Unisritama';
-        $data['jenis'] = json_encode($this->produk->getTab()->result());
-        // print_r($data['jenis']);
+        $data['jenis'] = $this->produk->getTab()->result();
+        $data['slug'] = $this->produk->getId()->result();
         $this->form_validation->set_rules('jenis', 'Jenis Rekening', 'trim|required');
         if ($this->form_validation->run() === TRUE) {
             if (!$this->input->post('jenis')) {
                 $this->load->view('template/header_eform', $data);
-                $this->load->view('produk/jenisRekening');
+                $this->load->view('produk/jenisRekening', $data);
                 $this->load->view('template/footer_eform');
             } else {
-                // print_r($this->input->post('jenis'));
-                // die;
                 $id_produk = $this->input->post('jenis');
                 redirect(base_url('dataDiri/' . $id_produk), 'refresh');
             }
@@ -84,6 +82,14 @@ class Eform extends CI_Controller
             $this->load->view('produk/jenisRekening');
             $this->load->view('template/footer_eform');
         }
+    }
+
+    public function completed()
+    {
+        $data['judul'] = 'e-Form - Bank Unisritama';
+        $this->load->view('template/header_eform', $data);
+        $this->load->view('produk/sukses', $data);
+        $this->load->view('template/new_footer');
     }
 }
 

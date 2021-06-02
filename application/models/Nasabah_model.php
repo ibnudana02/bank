@@ -71,8 +71,8 @@ class Nasabah_model extends CI_Model
         // print_r($object);
         // die;
         $this->db->insert('reg_nasabah', $object);
-        $this->session->set_flashdata('message', '<strong>Congratulation!</strong> Kode Referensi: ' . $object['kd_ref'] . ' Data anda telah disimpan. Mohon tunggu verifikasi dari pihak Bank Unisritama.');
-        redirect('dataDiri', 'refresh');
+        $this->session->set_flashdata('message', 'Kode Referensi: ' . $object['kd_ref'] . ' Mohon tunggu verifikasi dari pihak Bank Unisritama.');
+        redirect('sukses', 'refresh');
     }
 
     private function upload()
@@ -103,7 +103,8 @@ class Nasabah_model extends CI_Model
     {
         $this->db->select('*')
             ->from($this->_table)
-            ->join('produk', $this->_table . '.jenis_tab=produk.id_produk');
+            ->join('produk', $this->_table . '.jenis_tab=produk.id_produk')
+            ->join('tujuan', $this->_table . '.nsb_tujuan=tujuan.id_tujuan');
         return $this->db->get();
     }
 

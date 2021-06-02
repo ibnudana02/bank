@@ -96,6 +96,7 @@ $route['jenisRekening'] = 'eform/jenisRekening';
 // $route['jenisRekening/(:any)'] = 'eform/jenisRekening/$1';
 $route['pembukaan-rekening-tabungan/(:any)'] = 'produk/form_by/$1';
 $route['dataDiri/(:any)'] = 'produk/create_Tab/$1';
+$route['sukses'] = 'eform/completed';
 
 $route['pembukaan-rekening-deposito'] = 'produk/createDps';
 $route['pengajuan-aplikasi-kredit'] = 'produk/createKrd';

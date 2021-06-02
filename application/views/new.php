@@ -1,44 +1,40 @@
-<section id="page-content" class="p-b-0 p-t-60">
-    <div class="container">
+<section class="">
+    <div class="container m-b-40">
         <div class="heading-text heading-section text-center wow animate__fadeInDown" data-wow-duration="2s">
             <h4>Produk & Layanan</h4>
         </div>
-        <div class="row">
-            <div class="col-lg p-b-20 wow fadeInLeft">
-                <div class="text-box text-box-light">
+        <div class="row col-no-margin equalize" data-equalize-item=".text-box">
+            <div class="col-lg-4 wow fadeInLeft" style="background-color: #506681;">
+                <div class="text-box hover-effect">
                     <a href="<?= base_url('kredit') ?>">
                         <i class="far fa-paper-plane"></i>
                         <h3>Kredit </h3>
                         <p>Solusi kebutuhan modal usaha Anda, kredit kendaraan bermotor, biaya pendidikan dan keperluan mendesak lainnya.</p>
                     </a>
                 </div>
-                <div class="shape-divider" data-style="4" data-height="220"></div>
             </div>
-            <div class="col-lg p-b-20 wow fadeInLeft" data-wow-delay="0.3s">
-                <div class="text-box text-box-light">
+            <div class="col-lg-4 wow fadeInLeft" data-wow-delay="0.3s" style="background-color: #41566f;">
+                <div class="text-box hover-effect">
                     <a href="<?= base_url('tabungan') ?>">
                         <i class="fas fa-chart-pie"></i>
                         <h3>Tabungan </h3>
                         <p>Saving Dana anda dengan Aman sekaligus bisa berinvestasi dengan Suku Bunga bersaing dan Pastinya dijamin LPS.</p>
                     </a>
                 </div>
-                <div class="shape-divider" data-style="4" data-height="220"></div>
             </div>
-            <div class="col-lg p-b-20 wow fadeInLeft" data-wow-delay="0.6s">
-                <div class="text-box text-box-light">
+            <div class="col-lg-4 wow fadeInLeft" data-wow-delay="0.6s" style="background-color: #32475f;">
+                <div class="text-box hover-effect">
                     <a href="<?= base_url('eform') ?>">
                         <i class="fa fa-mobile-alt"></i>
                         <h3>Layanan Digital</h3>
                         <p>Buka rekening tabungan kini bisa melalui aplikasi. Praktis, cepat dan mudah. Jadilah bagian dari transformasi Bank Unisritama.</p>
                     </a>
-
                 </div>
-                <div class="shape-divider" data-style="4" data-height="220"></div>
             </div>
         </div>
     </div>
 </section>
-<section class="p-t-60 background-grey">
+<section class="background-grey">
     <div class="container-fluid">
         <div class="heading-text heading-section text-center wow animate__fadeInDown" data-wow-duration="2s">
             <h4>Berita Terkini</h4>
