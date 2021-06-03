@@ -106,6 +106,9 @@
             "Kepala Bagian": {
                 template: "department"
             },
+            "Audit": {
+                template: "department"
+            },
             "Staff": {
                 template: "staff"
             },
@@ -120,13 +123,11 @@
                 from: "5e8c20fddbda8",
                 to: "5e8c291741b01",
                 template: 'yellow',
-                // label: 'Koo'
             },
             {
                 from: "5e8c20fddbda8",
                 to: "5e8c20ceb1416",
                 template: 'blue',
-                // label: 'Laporkan Hasil Audit'
             },
         ],
     });

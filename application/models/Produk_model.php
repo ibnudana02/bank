@@ -169,7 +169,6 @@ class Produk_model extends CI_Model
         $this->db->select('*')
             ->from($this->_table)
             ->join('jenis', 'produk.jenis=jenis.id_jenis')
-            // ->where('id_jenis', '5e9545a2ecf3e')
             ->where('jenis.jenis', 'Tabungan')
             ->order_by('produk', 'asc');
         return $this->db->get();

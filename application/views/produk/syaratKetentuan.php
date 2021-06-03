@@ -19,11 +19,11 @@
                         </div>
                         <div class="card-body">
                             <div class="syarat text-justify">
-                                <p>Dengan ini, saya/kami sebagai pemohon, selanjutnya disebut &quot;Nasabah&quot;, menyatakan setuju atas semua Ketentuan Umum dan Persyaratan Pembukaan Rekening yang berlaku di PT. Bank Negara Indonesia (Persero) Tbk, yang selanjutnya disebut &quot;Bank&quot;, sebagai berikut :</p>
+                                <p>Dengan ini, saya/kami sebagai pemohon, selanjutnya disebut &quot;Nasabah&quot;, menyatakan setuju atas semua Ketentuan Umum dan Persyaratan Pembukaan Rekening yang berlaku di PT. Bank Perkreditan Rakyat Unisritama, yang selanjutnya disebut &quot;Bank&quot;, sebagai berikut :</p>
 
                                 <h4>I. Rekening</h4>
 
-                                <ol>
+                                <ol class="px-4">
                                     <li>Rekening adalah catatan pembukuan Bank atas produk simpanan yang dibuka oleh Nasabah perorangan pada Bank baik dalam Rupiah maupun mata uang asing atas dasar permohonan tertulis dari Nasabah atau melalui permohonan nasabah melalui sistem e-Banking milik Bank menurut tata cara dan persyaratan yang tercantum baik dalam Ketentuan Umum dan Persyaratan Pembukaan Rekening ini maupun dalam Ketentuan Umum dan Persyaratan Pembukaan Rekening melalui Elektronik Banking (e-Banking).</li>
                                     <li>Dalam hal Rekening dibuka dengan mata uang asing maka Bank tidak bertanggung jawab atas perubahan nilai mata uang asing terhadap Rupiah.</li>
                                     <li>Jenis-jenis Rekening adalah: Tabungan dan Deposito. Pembukaan rekening melalui e-Form hanya untuk rekening Tabungan Perseorangan.</li>
@@ -34,7 +34,7 @@
 
                                 <h4>II. Data Nasabah/Customer Information File(CIF)</h4>
 
-                                <ol>
+                                <ol class="px-4">
                                     <li>Dalam rangka penggunaan produk/fasilitas/jasa Bank, Nasabah wajib menunjukkan dan menyampaikan informasi, data dan dokumen pendukung yang dipersyaratkan Bank sebagaimana yang disampaikan oleh Petugas Bank dan dimuat dalam media resmi Bank.</li>
                                     <li>Bank berhak meminta informasi, data dan dokumen pendukung serta menatakerjakan data profil Nasabah sesuai dengan kebutuhan dan peraturan perundang-undangan yang berlaku.</li>
                                     <li>Nasabah dengan ini menjamin bahwa semua data, informasi dan dokumen pendukung yang ditunjukkan dan diserahkan kepada Bank adalah benar, lengkap, asli, sah dan terbaru sesuai dengan peraturan perundang-undangan yang berlaku.</li>
@@ -44,7 +44,7 @@
 
                                 <h4>III. Transaksi</h4>
 
-                                <ol>
+                                <ol class="px-4">
                                     <li>Transaksi adalah kegiatan pembukuan pada suatu Rekening termasuk penambahan saldo dan pengurangan saldo pada Rekening yang pengaturannya mengacu pada media resmi Bank.</li>
                                     <li>Dana yang disetorkan/dipergunakan/ditransaksikan pada Bank tidak berasal dari/untuk tujuan tindak pidana pencucian uang (moneylaundering).</li>
                                     <li>Setiap Transaksi yang menggunakan suratberharga/ warkat kliring dan sarana perbankan lainnya berlaku pula ketentuan perundangundangan yang mengatur tentang hal tersebut.</li>
@@ -59,21 +59,21 @@
 
                                 <h4>IV. Bunga, Pajak, dan Biaya</h4>
 
-                                <ol>
+                                <ol class="px-4">
                                     <li>Pendapatan bunga yang diterima oleh Nasabah akan dikenakan pajak yang besarnya sesuai dengan ketentuan perpajakan yang berlaku.</li>
                                     <li>Ketentuan mengenai bunga yang diterima dan pajak atas bunga yang diterima serta biaya yang harus ditanggung oleh Nasabah terkait dengan produk/fasilitas/jasa Bank ditentukan oleh Bank, dan dapat berubah sewaktu-waktu, dengan pemberitahuan terlebih dahulu dari Bank kepada Nasabah melalui media resmi Bank. Dengan ini, Nasabah memberikan kuasa kepada Bank untuk sewaktu-waktu mendebetRekening Nasabah untuk keperluan pembayaran pajak dan biayadimaksud.</li>
                                 </ol>
 
                                 <h4>V. Nasabah Meninggal Dunia/Pailit/Dibubarkan</h4>
 
-                                <ol>
+                                <ol class="px-4">
                                     <li>Dalam hal Nasabah meninggal dunia atau dinyatakan pailit atau diletakkan dibawah pengawasan pihak yang ditunjuk untuk itu, Bank sewaktu-waktu berhak untuk menonaktifkan rekening Nasabah dan hanya akan mengalihkan/menyerahkan hak Nasabah kepada ahli waris atau pihak yang sah yang ditunjuk sesuai ketentuan Bank sebagaimana yang tertuang dalam media resmi Bank maupun peraturan perundang undangan yang berlaku.</li>
                                     <li>Bank berhak meminta dokumen yang dapat diterima sebagai bukti yang sah bagi Bank terkait kedudukan ahli waris atau pihak yang ditunjuk sebagaimana dimaksud.</li>
                                 </ol>
 
                                 <h4>VI. Kehilangan dan Penyalahgunaan Rekening/Fasilitas Lainnya</h4>
 
-                                <ol>
+                                <ol class="px-4">
                                     <li>Dalam hal bukti kepemilikan Rekening hilang, maka Nasabah wajib memberitahukan kepada Bank, melalui Kantor Cabang terdekat selama jam kerja dengan disertai dokumen pendukung sebagaimana yang tertuang dalam media resmi Bank.</li>
                                     <li>Dalam hal kartu ATM atau perangkat fasilitas Transaksi Bank melalui sarana elektronik/e-Banking (telepon seluler, Bank Unisritama e-Secure/m Secure,dsb) hilang atau terjadi permasalahan atas penggunaan fasilitas e-Banking, maka Nasabah wajib memberitahukan kepada Bank, melaluiKantor Cabang Bank Unisritama terdekat atau Bank Unisritama Call di 1500046 atau melalui ponsel di (021)1500046/68888.</li>
                                     <li>Bank akan segera melakukan pemblokiran atas Rekening dan/atau kartu ATM dan/atau penggunaan fasilitas e-Banking berdasarkan laporan Nasabah apabila terindikasi terjadi penyalahgunaan rekening yang dilengkapi dengan dokumen pendukung sebagaimana yang tertuang dalam media resmi Bank.</li>
@@ -87,7 +87,7 @@
 
                                 <h5> Tabungan</h5>
 
-                                <ol>
+                                <ol class="px-4">
                                     <li>Sebagai bukti kepemilikan Rekening Tabungan, Bank menerbitkan Buku Tabungan, Kartu Debit Bank Unisritama , rekening koran atau estatementyang ditetapkan oleh Bank dan bukti tersebut harus dipegang/disimpan Nasabah.</li>
                                     <li>Nasabah wajib menunjukkan bukti kepemilikan Rekening setiap kali melakukan penarikan dana melalui teller Bank ataupun untuk memberikan instruksi Transaksi lainnya kepada Bank.</li>
                                     <li>Untuk pembukaan Tabungan, Nasabah harus melakukan setoran sebesar minimum nominal yang dipersyaratkan Bank sesuai jenis tabungannya yang tertuang pada media resmi Bank.</li>
@@ -99,7 +99,7 @@
 
                                 <h4>VIII. Rekening Tidak Aktif, Pemblokiran dan Penutupan Rekening</h4>
 
-                                <ol>
+                                <ol class="px-4">
                                     <li>Untuk kepentingan perlindungan Nasabah dan simpanannya, Bank atas pertimbangannya sendiri berhak melakukan pemblokiran fasilitas e-Banking tanpa persetujuan Nasabah terlebih dahulu.</li>
                                     <li>Bank berhak memblokir dan/atau menutup Rekening apabila terdapat dugaan penyalahgunaan Rekening dan/atau pembukaan/penggunaan Rekening serta data/informasi/dokumen pendukung terkait Rekening yang tidak sesuai dengan ketentuan perundang-undangan yang berlaku.</li>
                                     <li>Dalam hal Rekening Tabungan dan Giro selama 6 (enam) bulan berturut-turut maupun untuk periode lain yang ditetapkan tidak bermutasi debet maupun kredit selain pendebetan dan pengkreditan yang dilakukan oleh sistem Bank untuk biaya administrasi, pajak, denda dan bunga, maka Rekening Tabungan dan Giro akan diberi status tidak aktif. Perubahan periode untuk rekening yang diberi status tidak aktif akan diberitahukan oleh Bank kepada Nasabah dalam media resmi Bank.</li>
@@ -112,7 +112,7 @@
 
                                 <h4>IX. Lain-lain</h4>
 
-                                <ol>
+                                <ol class="px-4">
                                     <li>Media Resmi Bank adalah sarana penyampaian informasi dari Bank kepada Nasabah berupa website/SMS/Bank Unisritama Call/Surat/Pengumuman di Kantor Cabang Bank/Publikasi resmi di media massa.</li>
                                     <li>Dana yang tersedia dalam Rekening Nasabah dijamin dalam program penjaminan yang diselenggarakan Lembaga Penjamin Simpanan (LPS) sesuai dengan syarat dan ketentuan yang ditetapkan oleh LPS.</li>
                                     <li>Perjanjian ini telah disesuaikan dengan Ketentuan PeraturanPerundang-undangan termasuk Ketentuan Peraturan Otoritas JasaKeuangan.</li>
@@ -123,7 +123,7 @@
 
                                 <h4>X. Hukum Yang Berlaku dan Domisili</h4>
 
-                                <ol>
+                                <ol class="px-4">
                                     <li>Ketentuan Umum dan Persyaratan Pembukaan Rekening ini serta pelaksanaannya lebih lanjut tunduk pada hukum negara Republik Indonesia.</li>
                                     <li>Bank dan Nasabah dengan ini sepakat bahwa segala gugatan akandiajukan di Pengadilan Negeri di wilayah hukum dimana Kantor Cabang Bank Unisritama pembuka Rekening Nasabah berada.</li>
                                     <li>Penundukan pada domisili tersebut di atas tidak membatasi hak Bank untuk mengajukan gugatan terhadap Nasabah dalam domisili lainnya dalam wilayah Indonesia maupun luar Indonesia. Dengan menandatangani Formulir Ketentuan Umum dan Persyaratan Pembukaan Rekening ini, saya/kami menyatakan dengan ini menerima dan setuju mengikatkan diri pada semua syarat dan ketentuan umum yang tertuang dalam Formulir ini.</li>

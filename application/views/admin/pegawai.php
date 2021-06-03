@@ -32,7 +32,8 @@
                                         <option value="" disabled diselected>--Pilih--</option>
                                         <option value="Dewan Komisaris">Dewan Komisaris</option>
                                         <option value="Direksi">Direksi</option>
-                                        <option value="Department">Department</option>
+                                        <option value="Audit">Audit</option>
+                                        <option value="Kepala Bagian">Kepala Bagian</option>
                                         <option value="Staff">Staff</option>
                                     </select>
                                     <?php echo form_error('tag', '<small class="text-danger pl-3">', '</small>'); ?>

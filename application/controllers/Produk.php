@@ -165,69 +165,6 @@ class Produk extends CI_Controller
         }
     }
 
-    public function createTab()
-    {
-        $this->form_validation->set_rules('nsb_nama', 'Nama Lengkap', 'required|trim', ['required' => 'Nama Lengkap harus diisi!']);
-        $this->form_validation->set_rules('nsb_nik', 'No Identitas', 'required|trim', ['required' => 'NIK harus diisi!']);
-        $this->form_validation->set_rules('nsb_email', 'Email', 'required|trim|valid_email', ['required' => 'Email harus diisi!']);
-        $this->form_validation->set_rules('nsb_hp', 'No. HP', 'required|trim', ['required' => 'No. HP harus diisi!']);
-        $this->form_validation->set_rules('nsb_pendidikan', 'Pendidikan', 'required|trim', ['required' => 'Pendidikan harus diisi!']);
-        $this->form_validation->set_rules('nsb_tujuan_buka', 'Tujuan Pembukaan', 'required|trim', ['required' => 'Tujuan Pembukaan harus diisi!']);
-        $this->form_validation->set_rules('nsb_sumber', 'Sumber Dana', 'required|trim', ['required' => 'Tujuan Pembukaan harus diisi!']);
-        $this->form_validation->set_rules('nsb_transaksi', 'Perkiraan Transaksi', 'required|trim', ['required' => 'Perkiraan Transaksi harus diisi!']);
-        $this->form_validation->set_rules('nsb_npwp', 'NPWP', 'trim');
-        $this->form_validation->set_rules('alamat_domisili', 'Alamat', 'required|trim', ['required' => 'Alamat Saat ini harus diisi!']);
-        $this->form_validation->set_rules('nsb_rt', 'RT', 'required|trim', ['required' => 'RT harus diisi!']);
-        $this->form_validation->set_rules('nsb_rw', 'RW', 'required|trim', ['required' => 'RW harus diisi!']);
-        $this->form_validation->set_rules('kel_domisili', 'Kelurahan', 'required|trim', ['required' => 'Kelurahan harus diisi!']);
-        $this->form_validation->set_rules('kec_domisili', 'Kecamatan', 'required|trim', ['required' => 'Kecamatan harus diisi!']);
-        $this->form_validation->set_rules('pos_domisili', 'Kode Pos Domisili', 'trim|alpha_numeric');
-        $this->form_validation->set_rules('nsb_ktp', 'Dokumen KTP', 'trim');
-        $this->form_validation->set_rules('nsb_swafoto', 'Swafoto memegang KTP', 'trim');
-        $this->form_validation->set_rules('nsb_profesi', 'Profesi', 'required|trim', ['required' => 'Profesi harus diisi!']);
-        // Rules untuk nasabah yang bekerja
-        $this->form_validation->set_rules('nsb_gaji_th', 'Gaji', 'trim|alpha_numeric');
-        $this->form_validation->set_rules('nsb_jabatan', 'Jabatan', 'trim');
-        $this->form_validation->set_rules('nsb_kantor', 'Nama Perusahaan / Usaha', 'trim');
-        $this->form_validation->set_rules('alamat_kantor', 'Alamat Perusahaan/Usaha', 'trim');
-        $this->form_validation->set_rules('pos_kantor', 'Kode Pos Perusahaan/Usaha', 'trim|alpha_numeric');
-        $this->form_validation->set_rules('telp_kantor', 'Telp Kantor', 'trim|alpha_numeric');
-        $this->form_validation->set_rules('mulai_bekerja', 'Mulai Bekerja', 'trim');
-        // Rules untuk nasabah (Mahasiswa/IRT/Tidak bekerja)
-        $this->form_validation->set_rules('dana_nama', 'Nama Pemberi Dana', 'trim');
-        $this->form_validation->set_rules('dana_id', 'Jenis Identitas', 'trim');
-        $this->form_validation->set_rules('dana_noid', 'No. Identitas Pemberi Dana', 'trim');
-        $this->form_validation->set_rules('dana_npwp', 'NPWP Pemberi Dana', 'trim');
-        $this->form_validation->set_rules('dana_alamat', 'Alamat Pemberi Dana', 'trim');
-        $this->form_validation->set_rules('dana_rt', 'RT Pemberi Dana', 'trim');
-        $this->form_validation->set_rules('dana_rw', 'RW Pemberi Dana', 'trim');
-        $this->form_validation->set_rules('dana_prov', 'Provinsi Pemberi Dana', 'trim');
-        $this->form_validation->set_rules('dana_kota', 'Kabupaten Pemberi Dana', 'trim');
-        $this->form_validation->set_rules('dana_kec', 'Kecamatan Pemberi Dana', 'trim');
-        $this->form_validation->set_rules('dana_kel', 'Kelurahan Pemberi Dana', 'trim');
-        $this->form_validation->set_rules('dana_sumber_dana', 'Sumber Penghasilan', 'trim');
-        $this->form_validation->set_rules('dana_hasil_thn', 'Jumlah Penghasilan per Tahun', 'trim');
-
-        $data = $this->data;
-        $data['pendidikan'] = $this->nsb->getPendidikan();
-        $data['profesi'] = $this->nsb->getProfesi();
-        $data['sumber_dana'] = $this->nsb->getSumber();
-        $data['tujuan_buka'] = $this->nsb->getTujuan();
-        $data['identitas'] = $this->nsb->getIdentitas();
-        $data['jenis'] = $this->produk->getTab()->result();
-        $data['prop'] = $this->user->getProv();
-        $data['judul'] = 'e-Form Rekening Tabungan - Bank Unisritama';
-
-        if ($this->form_validation->run() == true) {
-            $this->nsb->saveNsb();
-            // print_r($this->input->post());
-            // die;
-        } else {
-            $this->load->view('template/header_eform', $data);
-            $this->load->view('produk/openRek', $data);
-            $this->load->view('template/footer_eform');
-        }
-    }
     public function create_Tab($id)
     {
         $this->form_validation->set_rules('nsb_nama', 'Nama Lengkap', 'required|trim', ['required' => 'Nama Lengkap harus diisi!']);

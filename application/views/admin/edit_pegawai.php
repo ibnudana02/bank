@@ -35,6 +35,7 @@
                                         <option value="" disabled diselected>--Pilih--</option>
                                         <option value="Dewan Komisaris">Dewan Komisaris</option>
                                         <option value="Direksi">Direksi</option>
+                                        <option value="assistant">Audit</option>
                                         <option value="Department">Department</option>
                                         <option value="Staff">Staff</option>
                                     </select>

@@ -33,7 +33,7 @@ class Pegawai_model extends CI_Model
     public function update($id)
     {
         $post = $this->input->post();
-        $this->id_pegawai = htmlspecialchars($post['jabatan']);
+        // $this->id_pegawai = $post['jabatan'];
         $this->id_jabatan = htmlspecialchars($post['jabatan']);
         $this->parent_job = htmlspecialchars($post['atasan']);
         $this->tag = htmlspecialchars($post['tag']);

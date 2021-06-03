@@ -20230,7 +20230,7 @@ body[data-bg-image] {
     }
 
     .wizard>.steps ul li {
-        flex: 1;
+        /* flex: 1; */
         margin-bottom: 10px
     }
 }
@@ -20329,4 +20329,10 @@ body[data-bg-image] {
     padding: 20px;
     color: #FFF !important;
 
+}
+
+@media only screen and (min-width: 768px) {
+    .container-fluid {
+        padding: 0 60px;
+    }
 }
