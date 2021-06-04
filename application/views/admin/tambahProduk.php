@@ -40,18 +40,7 @@
                                     <?php echo form_error('link', '<small class="text-danger pl-5">', '</small>'); ?>
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Peruntukan Produk</label>
-                                    <select class="form-control custom-select custom-select-md" id="untuk" name="untuk">
-                                        <option value="" selected="true" disabled="disabled">--Pilih Peruntukan Produk--</option>
-                                        <?php foreach ($untuk as $key => $value) : ?>
-                                            <option value="<?= $value; ?>" <?= set_select('untuk', $value) ?>><?= ucwords($value); ?></option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                    <?php echo form_error('untuk', '<small class="text-danger pl-5">', '</small>'); ?>
-                                </div>
-                                <div class="form-group">
                                     <label>Deskripsi</label>
-                                    <!-- <textarea id="editor" name="deskripsi"></textarea> -->
                                     <textarea name="deskripsi" id="editor" rows="3" class="form-control" required data-error="Write your deskripsi" value="<?php echo set_value('deskripsi') ?>"></textarea>
                                 </div>
                                 <?php echo form_error('image', '<small class="text-danger pl-5">', '</small>'); ?>
@@ -61,12 +50,12 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 ">
-                                        <a href="<?= base_url('admin/produk'); ?>" class="btn btn-google btn-user btn-block">
+                                        <a href="<?= base_url('admin/produk'); ?>" class="btn btn-google btn-block">
                                             Cancel
                                         </a>
                                     </div>
                                     <div class="col-sm-6">
-                                        <button type="submit" class="btn btn-facebook btn-user btn-block">
+                                        <button type="submit" class="btn btn-facebook btn-block">
                                             Save
                                         </button>
                                     </div>

@@ -18,7 +18,7 @@
                     <ul class="dropdown-menu">
                         <li class="mega-menu-content">
                             <div class="row">
-                                <div class="col-lg-3">
+                                <div class="col-lg-3 pr-1">
                                     <ul>
                                         <li><a href="<?= base_url('layanan') ?>" class="mega-menu-title">Layanan</a></li>
                                         <?php foreach ($layanan as $value) : ?>

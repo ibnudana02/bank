@@ -53,12 +53,12 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 ">
-                                        <a href="<?= base_url('admin/produk'); ?>" class="btn btn-google btn-user btn-block">
+                                        <a href="<?= base_url('admin/produk'); ?>" class="btn btn-google btn-block">
                                             Cancel
                                         </a>
                                     </div>
                                     <div class="col-sm-6">
-                                        <button type="submit" class="btn btn-facebook btn-user btn-block">
+                                        <button type="submit" class="btn btn-facebook btn-block">
                                             Save
                                         </button>
                                     </div>

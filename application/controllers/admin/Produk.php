@@ -39,7 +39,7 @@ class Produk extends CI_Controller
         $this->form_validation->set_rules('produk', 'Produk', 'required|trim');
         $this->form_validation->set_rules('jenis', 'Jenis', 'required|trim');
         $this->form_validation->set_rules('link', 'Link', 'trim');
-        $this->form_validation->set_rules('untuk', 'Peruntukan', 'required|trim');
+        $this->form_validation->set_rules('untuk', 'Peruntukan', 'trim');
         $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required|trim');
         $produk = $this->produk; //produk model disimpan dalam variable
         if ($this->form_validation->run()) { //jika form_validation berhasil dijalankan, fungsi save() atau simpan data dijalankan
@@ -47,7 +47,6 @@ class Produk extends CI_Controller
             $this->session->set_flashdata('message', 'Berhasil ditambahkan');
             redirect('admin/produk', 'refresh');
         }
-        //Tampilkan Form tambah kategori
         $data['data'] = $this->jenis->getAll()->result();
         $data['untuk'] = $this->db->get_enum('produk', 'untuk');
         $data['title'] = 'Tambah Produk';

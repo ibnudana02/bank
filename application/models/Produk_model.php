@@ -9,7 +9,6 @@ class Produk_model extends CI_Model
     public $deskripsi;
     public $slug;
     public $link;
-    public $untuk;
     public $jenis;
     public $image;
     public $thumb;
@@ -20,15 +19,20 @@ class Produk_model extends CI_Model
 
     public function save()
     {
-        date_default_timezone_set('Asia/Jakarta');
         $post = $this->input->post();
+        if (isset($post['link'])) {
+            $link = $post['link'];
+        } else {
+            $link = '';
+        }
+
+        date_default_timezone_set('Asia/Jakarta');
         $this->id_produk = uniqid();
         $this->produk = htmlspecialchars($post['produk']);
         $this->deskripsi = $post['deskripsi'];
-        $out = explode(" ", $this->produk);
+        $out = explode(" ", strtolower($this->produk));
         $this->slug = implode("-", $out);
-        $this->link = htmlspecialchars($post['link']);
-        $this->untuk = $post['untuk'];
+        $this->link = $link;
         $this->jenis = $post['jenis'];
         $files = $this->_uploadImage();
         $this->image = $files['image'];
@@ -43,12 +47,18 @@ class Produk_model extends CI_Model
     {
         date_default_timezone_set('Asia/Jakarta');
         $post = $this->input->post();
+        if (isset($post['link'])) {
+            $link = $post['link'];
+        } else {
+            $link = '';
+        }
+
         $this->id_produk = $post['id'];
         $this->produk = htmlspecialchars($post['produk']);
         $this->deskripsi = $post['deskripsi'];
-        $out = explode(" ", $this->produk);
+        $out = explode(" ", strtolower($this->produk));
         $this->slug = implode("-", $out);
-        $this->link = $post['link'];
+        $this->link = $link;
         $this->jenis = $post['jenis'];
         if (!empty($_FILES["image"]["name"])) {
             $files = $this->_uploadImage();
@@ -216,6 +226,23 @@ class Produk_model extends CI_Model
         $this->db->join('jenis', 'produk.jenis=jenis.id_jenis');
         $this->db->where('jenis.jenis', 'Tabungan');
         return $this->db->get('produk');
+    }
+
+    public function getBunga()
+    {
+        return $this->db->get('bunga')->result();
+    }
+
+    public function simpan_sb()
+    {
+        $post = $this->input->post();
+        $object = array(
+            'id_bunga' => uniqid(),
+            'suku_bunga' => $post['produk'],
+            'rate' => $post['persen'],
+            'jenis' => $post['jenis']
+        );
+        $this->db->insert('bunga', $object);
     }
 }
 

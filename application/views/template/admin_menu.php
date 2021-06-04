@@ -49,7 +49,6 @@
                     <h6 class="collapse-header">Components</h6>
                     <a class="collapse-item" href="<?= base_url('admin/jenis') ?>">Jenis Produk</a>
                     <a class="collapse-item" href="<?= base_url('admin/produk') ?>">Produk</a>
-                    <a class="collapse-item" href="<?= base_url('admin/layanan') ?>">Layanan</a>
                 </div>
             </div>
         </li>

@@ -64,6 +64,9 @@ $route['admin/delete_berita/(:any)'] = 'admin/berita/delete/$1';
 $route['admin/laporan'] = 'admin/laporan/index';
 $route['admin/delete_laporan/(:any)'] = 'admin/laporan/delete/$1';
 $route['admin/add_laporan'] = 'admin/laporan/tambah_laporan';
+// Routes for suku bunga
+$route['admin/suku_bunga'] = 'admin/bunga';
+$route['admin/add_bunga'] = 'admin/bunga/add';
 
 // Routes for Master Nasabah
 $route['admin/nasabah'] = 'admin/master';

@@ -41,9 +41,9 @@
         </div>
         <div class="row">
             <div class="content col">
-                <div class="carousel wow animate__bounceInUp" data-wow-duration="1s" data-wow-delay="1s" data-items="4">
+                <div class="carousel" data-items="3">
                     <?php foreach ($berita as $row) : ?>
-                        <div class="post-item border ">
+                        <div class="post-item border wow fadeInLeft " data-wow-duration="1s" data-wow-delay="1s">
                             <div class="post-item-wrap">
                                 <div class="post-image">
                                     <a href="<?= 'berita/' . $row->slug ?>">
