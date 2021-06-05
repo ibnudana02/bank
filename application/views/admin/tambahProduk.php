@@ -1,10 +1,5 @@
-<!-- Begin Page Content -->
 <div class="container-fluid">
-
-    <!-- Page Heading -->
-
     <?= $this->session->flashdata('message'); ?>
-    <!-- DataTales Example -->
     <div class="row">
         <div class="col-lg-10">
             <div class="card shadow mb-4">
@@ -38,6 +33,11 @@
                                     <label for="Link">Link - Pembukaan Produk</label>
                                     <input type="text" class="form-control" readonly id="link" name="link" placeholder="Link" value="<?= set_value('link'); ?>">
                                     <?php echo form_error('link', '<small class="text-danger pl-5">', '</small>'); ?>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Link">Suku Bunga Produk</label>
+                                    <input type="text" class="form-control" id="suku_bunga" name="suku_bunga" placeholder="ex: 5.5" value="<?= set_value('suku_bunga'); ?>">
+                                    <?php echo form_error('suku_bunga', '<small class="text-danger pl-5">', '</small>'); ?>
                                 </div>
                                 <div class="form-group">
                                     <label>Deskripsi</label>

@@ -38,8 +38,7 @@ class Produk extends CI_Controller
     {
         $this->form_validation->set_rules('produk', 'Produk', 'required|trim');
         $this->form_validation->set_rules('jenis', 'Jenis', 'required|trim');
-        $this->form_validation->set_rules('link', 'Link', 'trim');
-        $this->form_validation->set_rules('untuk', 'Peruntukan', 'trim');
+        $this->form_validation->set_rules('suku_bunga', 'Suku Bunga', 'trim');
         $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required|trim');
         $produk = $this->produk; //produk model disimpan dalam variable
         if ($this->form_validation->run()) { //jika form_validation berhasil dijalankan, fungsi save() atau simpan data dijalankan
@@ -48,7 +47,6 @@ class Produk extends CI_Controller
             redirect('admin/produk', 'refresh');
         }
         $data['data'] = $this->jenis->getAll()->result();
-        $data['untuk'] = $this->db->get_enum('produk', 'untuk');
         $data['title'] = 'Tambah Produk';
         $data['heading'] = 'Tambah Produk';
         $data['user'] = $this->db->get_where('user', ['name' => $this->session->userdata('name')])->row_array();
@@ -63,6 +61,7 @@ class Produk extends CI_Controller
 
         $this->form_validation->set_rules('produk', 'Produk', 'required|trim');
         $this->form_validation->set_rules('jenis', 'Jenis', 'required|trim');
+        $this->form_validation->set_rules('suku_bunga', 'Suku Bunga', 'trim');
         $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required|trim');
         $produk = $this->produk; //produk model disimpan dalam variable
         if ($this->form_validation->run()) { //jika form_validation berhasil dijalankan, fungsi save() atau simpan data dijalankan

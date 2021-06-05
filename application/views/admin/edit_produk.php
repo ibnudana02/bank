@@ -41,6 +41,11 @@
                                     <input type="text" class="form-control form-control-user link" disabled id="link" name="link" placeholder="Link" value="<?= $produk->link ?>">
                                 </div>
                                 <div class="form-group">
+                                    <label for="Link">Suku Bunga Produk</label>
+                                    <input type="text" class="form-control" id="suku_bunga" name="suku_bunga" placeholder="ex: 5.5" value="<?= $produk->suku_bunga; ?>">
+                                    <?php echo form_error('suku_bunga', '<small class="text-danger pl-5">', '</small>'); ?>
+                                </div>
+                                <div class="form-group">
                                     <label>Deskripsi</label>
                                     <textarea name="deskripsi" id="editor" rows="3" class="form-control" required data-error="Write your deskripsi"><?= $produk->deskripsi ?></textarea>
                                 </div>

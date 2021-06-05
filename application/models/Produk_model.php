@@ -34,6 +34,7 @@ class Produk_model extends CI_Model
         $this->slug = implode("-", $out);
         $this->link = $link;
         $this->jenis = $post['jenis'];
+        $this->suku_bunga = $post['suku_bunga'];
         $files = $this->_uploadImage();
         $this->image = $files['image'];
         $this->thumb = $files['thumbnail'];
@@ -60,6 +61,7 @@ class Produk_model extends CI_Model
         $this->slug = implode("-", $out);
         $this->link = $link;
         $this->jenis = $post['jenis'];
+        $this->suku_bunga = $post['suku_bunga'];
         if (!empty($_FILES["image"]["name"])) {
             $files = $this->_uploadImage();
             $this->image = $files['image'];
@@ -231,6 +233,13 @@ class Produk_model extends CI_Model
     public function getBunga()
     {
         return $this->db->get('bunga')->result();
+    }
+
+    public function getUmum()
+    {
+        $this->db->order_by('suku_bunga', 'asc');
+        $this->db->where('jenis', 'Umum');
+        return $this->db->get('bunga');
     }
 
     public function simpan_sb()

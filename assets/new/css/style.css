@@ -4839,11 +4839,6 @@ h6.font-parisienne {
     margin-right: auto
 }
 
-.inspiro-slider .slide .slide-captions.text-center .strong::after {
-    margin-left: auto;
-    margin-right: auto
-}
-
 .inspiro-slider .slide .slide-captions.text-right .strong::after {
     margin-left: auto;
     margin-right: 0

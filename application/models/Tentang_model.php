@@ -48,4 +48,10 @@ class Tentang_model extends CI_Model
     {
         return $this->db->get('saham');
     }
+
+    public function getJamkerja()
+    {
+        $this->db->where('status', 1);
+        return $this->db->get('jam_kerja');
+    }
 }

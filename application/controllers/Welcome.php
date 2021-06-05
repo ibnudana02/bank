@@ -9,7 +9,8 @@ class Welcome extends CI_Controller
 		parent::__construct();
 		$this->load->model(array(
 			'Layanan_model' => 'layanan', 'Slider_model' => 'slider',
-			'Berita_model' => 'berita', 'Produk_model' => 'produk', 'User_model' => 'user'
+			'Berita_model' => 'berita', 'Produk_model' => 'produk', 'User_model' => 'user',
+			'Tentang_model' => 'tentang'
 		));
 		$this->data = array(
 			'tabungan' => $this->produk->getTab()->result(),
@@ -25,7 +26,9 @@ class Welcome extends CI_Controller
 		$data['judul'] = 'BPR Unisritama - Mitra Ekonomi Kerakyatan';
 		$data['slider'] = $this->slider->getAll()->result();
 		$data['berita'] = $this->berita->getAll()->result();
-		// print_r($data['berita']);
+		$data['jenis'] = $this->produk->getUmum()->result();
+		$data['jam'] = $this->tentang->getJamkerja()->result();
+		// print_r($data['jenis']);
 		// die;
 		$this->load->view('template/new_header', $data, FALSE);
 		$this->load->view('template/new_slider', $data, FALSE);
@@ -79,8 +82,8 @@ class Welcome extends CI_Controller
 
 	public function tes1()
 	{
-		# code...
-		$this->load->view('sse');
+		$id = uniqid();
+		echo $id;
 	}
 
 	public function tes()
