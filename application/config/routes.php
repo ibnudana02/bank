@@ -126,5 +126,5 @@ $route['awards'] = 'tentang_kami/awards';
 $route['location'] = 'tentang_kami/location';
 $route['contact'] = 'tentang_kami/contact';
 // Rule for access controller
-// $route['(.*)'] = 'custom404';
+$route['(.*)'] = 'custom404';
 $route['translate_uri_dashes'] = FALSE;

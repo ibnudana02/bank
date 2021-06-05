@@ -8,7 +8,7 @@
             </div>
         <?php endforeach; ?>
     </div>
-    <div class="col-lg-3 pt-4 wow fadeInRight">
+    <div class="col pt-4 wow fadeInRight">
         <table border="0" cellspacing="2" cellpadding="7" style="font-family: Tahoma,Geneva,sans-serif;font-size: 12px;font-weight: normal;width: auto;background-color: #ffffff;height: auto;border-color: #ffffff;margin-left: auto;margin-right: auto;">
             <tbody>
                 <tr style="height: 20px;">
@@ -34,7 +34,7 @@
                 </tr>
                 <?php foreach ($deposito as $dps) : ?>
                     <tr style="height:20px;">
-                        <td style="padding-left:10px;"><a href="<?= base_url('produk/'.$dps->slug) ?>"><?= ucwords($dps->produk) ?></a></td>
+                        <td style="padding-left:10px;"><a href="<?= base_url('produk/' . $dps->slug) ?>"><?= ucwords($dps->produk) ?></a></td>
                         <td style="padding-left:10px;text-align:center;"><?= $dps->suku_bunga ?> %</td>
                     </tr>
                 <?php endforeach; ?>
