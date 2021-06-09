@@ -124,7 +124,7 @@ $route['visi_misi'] = 'tentang_kami/visi_misi';
 $route['manajemen'] = 'tentang_kami/manajemen';
 $route['struktur'] = 'tentang_kami/struktur';
 $route['awards'] = 'tentang_kami/awards';
-$route['location'] = 'tentang_kami/location';
+$route['jaringan_kantor'] = 'tentang_kami/location';
 $route['contact'] = 'tentang_kami/contact';
 // Rule for access controller
 $route['(.*)'] = 'custom404';

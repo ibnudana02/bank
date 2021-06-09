@@ -5,8 +5,7 @@
                 <div class="col-lg-5">
                     <div class="widget wow animate__fadeInLeft">
                         <div class="widget-title">PT. Bank Perkreditan Rakyat Unisritama</div>
-                        <p class="mb-5">B<br>
-                            All rights reserved.</p>
+                        <p class="mb-5">Terdaftar dan diawasi oleh <b>Otoritas Jasa Keuangan</b> <br>Bank Peserta Penjaminan <b>LPS</b>.</p>
                         <div class="social-icons social-icons-colored">
                             <ul>
                                 <li class="social-facebook"><a href="https://www.facebook.com/bankunisritama" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
@@ -30,7 +29,7 @@
                                     <li><a href="<?= base_url('manajemen') ?>">Manajemen</a></li>
                                     <li><a href="<?= base_url('struktur') ?>">Struktur</a></li>
                                     <li><a href="<?= base_url('awards') ?>">Penghargaan</a></li>
-                                    <li><a href="<?= base_url('location') ?>">Lokasi Kantor</a></li>
+                                    <li><a href="<?= base_url('jaringan_kantor') ?>">Jaringan Kantor</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -71,7 +70,7 @@
     </div>
     <div class="copyright-content background-darkgrey">
         <div class="container">
-            <div class="copyright-text text-center">&copy; 2020 - bprunisritama.com</div>
+            <div class="copyright-text text-center">Copyright &copy; 2020 - bprunisritama.com</div>
         </div>
     </div>
 </footer>

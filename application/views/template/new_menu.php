@@ -11,7 +11,7 @@
                         <li><a href="<?= base_url('manajemen') ?>">BOARD MANAJEMEN</a></li>
                         <li><a href="<?= base_url('struktur') ?>">STRUKTUR ORGANISASI</a></li>
                         <li><a href="<?= base_url('awards') ?>">PENGHARGAAN</a></li>
-                        <li><a href="<?= base_url('location') ?>">LOKASI KANTOR</a></li>
+                        <li><a href="<?= base_url('jaringan_kantor') ?>">JARINGAN KANTOR</a></li>
                     </ul>
                 </li>
                 <li class="dropdown mega-menu-item"><a href="#">Produk dan Layanan</a>
