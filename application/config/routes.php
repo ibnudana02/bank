@@ -15,9 +15,10 @@ $route['admin/profil'] = 'admin/profil';
 // Routes for Users
 $route['admin/registration'] = 'admin/welcome/registration';
 $route['admin/users'] = 'admin/welcome/users';
-
+// Routes for slider
 $route['admin/add_slider'] = 'admin/slider/tambahSlider';
 $route['admin/slider'] = 'admin/slider';
+$route['admin/delete_slider/(:any)'] = 'admin/slider/delete/$1';
 
 // Routes for Layanan
 $route['admin/layanan'] = 'admin/layanan';

@@ -52,7 +52,7 @@ class Slider_model extends CI_Model
         $config['allowed_types'] = 'gif|jpg|png';
         $config['file_name'] = $this->id_slider;
         $config['overwrite'] = true;
-        $config['max_size'] = 2048;
+        $config['max_size'] = 0;
 
         $this->upload->initialize($config);
 
@@ -64,16 +64,20 @@ class Slider_model extends CI_Model
             $gbr = $this->upload->data();
             //Compress Image
             $config['image_library'] = 'gd2';
-            $config['source_image'] = './upload/slider/' . $gbr['file_name'];
-            $config['create_thumb'] = FALSE;
-            $config['maintain_ratio'] = FALSE;
-            $config['quality'] = '70%';
+            // $config['source_image'] = './upload/slider/' . $gbr['file_name'];
+            $config['source_image'] = $gbr['full_path'];
+            $config['create_thumb'] = TRUE;
+            // $config['maintain_ratio'] = TRUE;
+            $config['quality'] = '60%';
             $config['width'] = 1920;
             $config['height'] = 920;
+            $config['new_image'] = './upload/slider/' . $gbr["file_name"];
             $this->load->library('image_lib', $config);
             $this->image_lib->resize();
 
-            return $gbr['file_name'];
+            return $gbr['raw_name'] . '_thumb' . $gbr['file_ext'];
+            print_r($gbr);
+            die;
         }
     }
 }

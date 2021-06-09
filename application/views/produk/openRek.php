@@ -121,43 +121,43 @@
                         <div id="bekerja">
                             <div class="form-group col-md-12">
                                 <label for="surname">Penghasilan per Tahun</label>
-                                <input type="number" class="form-control" name="nsb_gaji_th" value="<?= set_value('nsb_gaji_th') ?>">
+                                <input type="number" class="form-control" name="nsb_gaji_th" id="nsb_gaji_th" value="<?= set_value('nsb_gaji_th') ?>">
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="surname">Nama Kantor</label>
-                                <input type="text" class="form-control" style="text-transform: uppercase" value="<?= set_value('nsb_kantor') ?>" name="nsb_kantor">
+                                <input type="text" class="form-control" style="text-transform: uppercase" value="<?= set_value('nsb_kantor') ?>" id="nsb_kantor" name="nsb_kantor">
                             </div>
                             <div class="form-row m-r-10 m-l-10">
                                 <div class="form-group col-md-10">
                                     <label for="surname">Alamat Kantor</label>
-                                    <input type="text" class="form-control" style="text-transform: uppercase" value="<?= set_value('alamat_kantor') ?>" name="alamat_kantor">
+                                    <input type="text" class="form-control" style="text-transform: uppercase" value="<?= set_value('alamat_kantor') ?>" id="alamat_kantor" name="alamat_kantor">
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="surname">Kode Pos</label>
-                                    <input type="number" class="form-control" value="<?= set_value('pos_kantor') ?>" minlength="5" name="pos_kantor">
+                                    <input type="number" class="form-control" value="<?= set_value('pos_kantor') ?>" minlength="5" id="pos_kantor" name="pos_kantor">
                                 </div>
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="surname">Jabatan</label>
-                                <input type="text" class="form-control" style="text-transform: uppercase" value="<?= set_value('nsb_jabatan') ?>" name="nsb_jabatan">
+                                <input type="text" class="form-control" style="text-transform: uppercase" value="<?= set_value('nsb_jabatan') ?>" id="nsb_jabatan" name="nsb_jabatan">
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="surname">Mulai Bekerja</label>
-                                <input type="text" class="form-control tanggal" name="mulai_bekerja" value="<?= set_value('mulai_bekerja') ?>">
+                                <input type="text" class="form-control tanggal" id="mulai_bekerja" name="mulai_bekerja" value="<?= set_value('mulai_bekerja') ?>">
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="surname">Telpon Kantor</label>
-                                <input type="number" class="form-control" name="telp_kantor" minlength="9" value="<?= set_value('telp_kantor') ?>">
+                                <input type="number" class="form-control" id="telp_kantor" name="telp_kantor" minlength="9" value="<?= set_value('telp_kantor') ?>">
                             </div>
                         </div>
                         <div id="pemberiDana">
                             <div class="form-group col-md-12">
                                 <label for="surname">Nama Pemberi Dana</label>
-                                <input type="text" class="form-control" style="text-transform: uppercase" name="dana_nama">
+                                <input type="text" class="form-control" style="text-transform: uppercase" id="dana_nama" name="dana_nama">
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="surname">Jenis Identitas</label>
-                                <select name="dana_id" id="dana_id" class="fomr-control">
+                                <select name="dana_id" id="dana_id" class="form-control">
                                     <option value="" selected="true">Pilih</option>
                                     <?php foreach ($identitas as $key => $value) : ?>
                                         <option value="<?= $value->id_identitas ?>" <?= set_select('dana_id', $value->id_identitas) ?>><?= $value->jenis_identitas ?></option>
@@ -166,24 +166,24 @@
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="surname">Nomor Identitas</label>
-                                <input type="text" class="form-control" name="dana_noid">
+                                <input type="number" class="form-control" id="dana_noid" name="dana_noid">
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="surname">NPWP <small>(Optional, jika tidak ada kosongkan</small></label>
-                                <input type="text" class="form-control" name="dana_npwp">
+                                <input type="text" class="form-control" id="dana_npwp" name="dana_npwp">
                             </div>
                             <div class="form-row m-r-10 m-l-10">
                                 <div class="form-group col-md-8">
                                     <label for="surname">Alamat Tempat Tinggal Pemberi Dana</small></label>
-                                    <input type="text" class="form-control" style="text-transform: uppercase" name="dana_alamat">
+                                    <input type="text" class="form-control" style="text-transform: uppercase" id="dana_alamat" name="dana_alamat">
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="surname">RT</small></label>
-                                    <input type="text" class="form-control" name="dana_rt">
+                                    <input type="number" class="form-control" name="dana_rt" id="dana_rt">
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="surname">RW</small></label>
-                                    <input type="text" class="form-control" name="dana_rw">
+                                    <input type="number" class="form-control" name="dana_rw" id="dana_rw">
                                 </div>
                             </div>
                             <div class="form-row m-r-10 m-l-10">
@@ -239,16 +239,17 @@
                         <div class="h5 mb-4">Upload dokumen dan Syarat & Persetujuan.</div>
                         <div class="form-group col-md-12">
                             <label for="surname">Upload KTP <small>Ukuran file max. 2 MB</small> </label>
-                            <input type="file" class="form-control" style="text-transform: uppercase" name="nsb_ktp">
+                            <input type="file" class="form-control" id="ktp" style="text-transform: uppercase" name="nsb_ktp" required>
+                            <label for="sizektp" id="sizeKtp"></label>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="surname">Upload Swafoto <small>Ukuran file max. 2 MB</small> </label>
-                            <input type="file" class="form-control" style="text-transform: uppercase" name="nsb_swafoto">
+                            <input type="file" class="form-control" id="swafoto" style="text-transform: uppercase" name="nsb_swafoto" required>
                         </div>
                         <div class="form-group">
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" name="terms_conditions" id="terms_conditions" class="custom-control-input">
-                                <label class="custom-control-label" for="terms_conditions">Dengan memberi centang pada form ini, nasabah telah setuju dengan <a href="#">Syarat & Ketentuan</a> yang berlaku pada Bank Unisritama.</label>
+                                <label class="custom-control-label" for="terms_conditions">Dengan menyetujui form ini, nasabah telah menerima <a href="#">Syarat & Ketentuan</a> yang berlaku pada Bank Unisritama.</label>
                             </div>
                         </div>
                     </div>
@@ -269,6 +270,7 @@
 
 <script>
     var wizard7 = $('#wizard7');
+
     wizard7.steps({
         headerTag: "h3",
         bodyTag: '.wizard-content',
@@ -291,73 +293,259 @@
             //         "Thank you, your account has been registed successfully", "success");
         }
     });
-    wizard7.validate({
-        errorClass: 'is-invalid',
-        validClass: 'is-valid',
-        errorElement: "div",
-        rules: {
-            nik: {
-                required: true,
-                digits: true,
-                minlength: 16,
-                maxlength: 17
+
+    var profesi = $('#profesi').val();
+    // alert(profesi);
+    if (profesi === "3" || profesi === "4" || profesi === "5") {
+        wizard7.validate({
+            errorClass: 'is-invalid',
+            validClass: 'is-valid',
+            errorElement: "div",
+            rules: {
+                // 1. Informasi data diri
+                nsb_nik: {
+                    required: true,
+                    digits: true,
+                    minlength: 16,
+                    maxlength: 17
+                },
+                nsb_nama: {
+                    required: true,
+                    minlength: 4,
+                },
+                nsb_email: {
+                    required: true,
+                    email: true,
+                    minlength: 8
+                },
+                nsb_hp: {
+                    required: true,
+                    digits: true,
+                    minlength: 10,
+                    maxlength: 13
+                },
+                nsb_pendidikan: {
+                    required: true,
+                },
+                nsb_tujuan_buka: {
+                    required: true,
+                },
+                nsb_sumber: {
+                    required: true,
+                },
+                nsb_transaksi: {
+                    required: true,
+                },
+                // nsb_npwp: {
+                //     required: true,
+                // },
+                alamat_domisili: {
+                    required: true,
+                },
+                nsb_rt: {
+                    required: true,
+                    digits: true,
+                    minlength: 2,
+                    maxlength: 3
+                },
+                nsb_rw: {
+                    required: true,
+                    digits: true,
+                    minlength: 2,
+                    maxlength: 3
+                },
+                kel_domisili: {
+                    required: true,
+                },
+                kec_domisili: {
+                    required: true,
+                },
+                pos_domisili: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 5
+                },
+                nsb_profesi: {
+                    required: true,
+                },
+                ktp: {
+                    required: true,
+                },
+                swafoto: {
+                    required: true,
+                },
+                // Step 4 - Confirmation            
+                terms_conditions: {
+                    required: true
+                },
+                // Tidak bekerja
+                dana_nama: {
+                    required: true,
+                },
+                dana_id: {
+                    required: true,
+                },
+                dana_noid: {
+                    required: true,
+                    digits: true
+                },
+                // dana_npwp: {
+                //     required: true,
+                // },
+                dana_alamat: {
+                    required: true,
+                },
+                dana_rt: {
+                    required: true,
+                    minlength: 2,
+                    maxlength: 3
+                },
+                dana_rw: {
+                    required: true,
+                    minlength: 2,
+                    maxlength: 3
+                },
+                dana_prov: {
+                    required: true,
+                },
+                dana_kota: {
+                    required: true,
+                },
+                dana_kec: {
+                    required: true,
+                },
+                dana_kel: {
+                    required: true,
+                },
+                dana_sumber_dana: {
+                    required: true,
+                    digits: true
+                }
             },
-            nama: {
-                required: true
+            errorPlacement: function(error, element) {
+                $(element).parents(".form-group").append(error);
+            }
+        });
+    } else {
+        wizard7.validate({
+            errorClass: 'is-invalid',
+            validClass: 'is-valid',
+            errorElement: "div",
+            rules: {
+                // 1. Informasi data diri
+                nsb_nik: {
+                    required: true,
+                    digits: true,
+                    minlength: 16,
+                    maxlength: 17
+                },
+                nsb_nama: {
+                    required: true,
+                    minlength: 4,
+                },
+                nsb_email: {
+                    required: true,
+                    email: true,
+                    minlength: 8
+                },
+                nsb_hp: {
+                    required: true,
+                    digits: true,
+                    minlength: 10,
+                    maxlength: 13
+                },
+                nsb_pendidikan: {
+                    required: true,
+                },
+                nsb_tujuan_buka: {
+                    required: true,
+                },
+                nsb_sumber: {
+                    required: true,
+                },
+                nsb_transaksi: {
+                    required: true,
+                },
+                // nsb_npwp: {
+                //     required: true,
+                // },
+                alamat_domisili: {
+                    required: true,
+                },
+                nsb_rt: {
+                    required: true,
+                    digits: true,
+                    minlength: 2,
+                    maxlength: 3
+                },
+                nsb_rw: {
+                    required: true,
+                    digits: true,
+                    minlength: 2,
+                    maxlength: 3
+                },
+                kel_domisili: {
+                    required: true,
+                },
+                kec_domisili: {
+                    required: true,
+                },
+                pos_domisili: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 5
+                },
+                nsb_profesi: {
+                    required: true,
+                },
+                ktp: {
+                    required: true,
+                },
+                swafoto: {
+                    required: true,
+                },
+                // Step 4 - Confirmation            
+                terms_conditions: {
+                    required: true
+                },
+                // Bekerja
+                nsb_gaji_th: {
+                    required: true,
+                    digits: true
+                },
+                nsb_kantor: {
+                    required: true,
+                },
+                alamat_kantor: {
+                    required: true,
+                },
+                pos_kantor: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 5
+                },
+                nsb_jabatan: {
+                    required: true,
+                },
+                mulai_bekerja: {
+                    required: true,
+                },
+                telp_kantor: {
+                    required: true,
+                    digits: true
+                }
             },
-            email: {
-                required: true,
-                email: true,
-                minlength: 8
-            },
-            hp: {
-                required: true,
-                digits: true,
-                minlength: 10,
-                maxlength: 13
-            },
-            alamat_domisili: {
-                required: true,
-            },
-            rt: {
-                required: true,
-                digits: true,
-                maxlength: 3
-            },
-            rw: {
-                required: true,
-                digits: true,
-                maxlength: 3
-            },
-            pendidikan: {
-                required: true,
-            },
-            // Step 4 - Confirmation            
-            terms_conditions: {
-                required: true
-            },
-        },
-        errorPlacement: function(error, element) {
-            $(element).parents(".form-group").append(error);
-        }
-    });
+            errorPlacement: function(error, element) {
+                $(element).parents(".form-group").append(error);
+            }
+        });
+    }
     $('.wizard').find(".actions ul > li > a").addClass("btn");
 </script>
 <script type="text/javascript">
     var profesi = $('#profesi').val();
     var pemberiKerja = $('#bekerja');
     var pemberiDana = document.getElementById("pemberiDana");
-
-    if (profesi === null) {
-        $('#bekerja').hide();
-        $('#pemberiDana').hide();
-    } else if (profesi === "3" || profesi === "4" || profesi === "5") {
-        $('#bekerja').hide();
-        $('#pemberiDana').show();
-    } else {
-        $('#bekerja').show();
-        $('#pemberiDana').hide();
-    }
 
     $('#profesi').change(function() {
         var value = $(this).val();
@@ -366,13 +554,58 @@
             $('#pemberiDana').hide();
         } else if (value === "3" || value === "4" || value === "5") {
             $('#bekerja').hide();
+            $('#nsb_gaji_th').val('');
+            $('#nsb_kantor').val('');
+            $('#alamat_kantor').val('');
+            $('#pos_kantor').val('');
+            $('#nsb_jabatan').val('');
+            $('#mulai_bekerja').val('');
+            $('#telp_kantor').val('');
             $('#pemberiDana').show();
         } else {
             $('#bekerja').show();
             $('#pemberiDana').hide();
+            $('#dana_nama').val('');
+            $('#dana_id').val('');
+            $('#dana_noid').val('');
+            $('#dana_npwp').val('');
+            $('#dana_alamat').val('');
+            $('#dana_rt').val('');
+            $('#dana_rw').val('');
+            $('#dana_prov').val('');
+            $('#dana_kota').val('');
+            $('#dana_kec').val('');
+            $('#dana_kel').val('');
+            $('#dana_sumber_dana').val('');
+            $('#dana_hasil_thn').val('');
+
         }
     });
+
+    var MAX_SIZE = 1024 * 1024;
+
     $(document).ready(function() {
+        $('#ktp').change(function() {
+            filesize = this.files[0].size;
+            if (filesize > MAX_SIZE) {
+                this.setCustomValidity("File must not exceed 1 MB!");
+                this.reportValidity();
+                $('#ktp').val('');
+            } else {
+                this.setCustomValidity("");
+            }
+        });
+        $('#swafoto').change(function() {
+            filesize = this.files[0].size;
+            if (filesize > MAX_SIZE) {
+                this.setCustomValidity("File must not exceed 1 MB!");
+                this.reportValidity();
+                $('#swafoto').val('');
+            } else {
+                this.setCustomValidity("");
+            }
+        });
+
         $(".tanggal").datepicker({
             format: 'dd-mm-yyyy',
             autoclose: true,
