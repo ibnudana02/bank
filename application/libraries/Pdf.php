@@ -17,12 +17,14 @@ class Pdf extends TCPDF
         $image_file = base_url('assets/img/logo/logo-bpr.png');
         $this->Image($image_file, 10, 2, 19, '', 'PNG', '', 'M', false, 300, '', false, false, 0, false, false, false);
         // Set font
-        $this->SetFont('times', 'B', 18);
+        $this->SetFont('times', 'B', 20);
         // Title
-        $this->MultiCell(0, 0, 'PT. BANK PERKREDITAN RAKYAT UNISRITAMA', 0, 'L', 0, 1, 30, 5, true, 0, false, true, 20, 'T');
-        $this->SetFont('times', 'B', 10);
-        $this->MultiCell(0, 0, 'Jl. Soekarno-Hatta No. 3, Desa Kubang Jaya, Kec. Siak Hulu - Kampar', 0, 'L', 0, 1, 30, 12, true, 1, false, true, 0, 'T');
-        $this->Ln(2);
+        $this->MultiCell(0, 0, 'PT. BPR UNISRITAMA', 0, 'L', 0, 1, 30, 1, true, 0, false, true, 25, 'T');
+        $this->SetFont('times', '', 11);
+        $this->MultiCell(0, 0, 'Jl. Soekarno-Hatta No. 3, Desa Kubang Jaya, Kec. Siak Hulu - Kampar', 0, 'L', 0, 1, 30, 8, true, 1, false, true, 0, 'T');
+        $this->MultiCell(0, 0, 'Telp : (0761) 63381 / Fax : (0761) 63696', 0, 'L', 0, 1, 30, 12, true, 1, false, true, 0, 'T');
+        $this->MultiCell(0, 0, 'Email : unisritamabpr@yahoo.co.id', 0, 'L', 0, 1, 30, 16, true, 1, false, true, 0, 'T');
+        $this->Ln(1);
         $this->writeHTML('<hr>', true, false, false, false, '');
     }
 

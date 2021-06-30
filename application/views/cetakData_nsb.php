@@ -15,12 +15,12 @@ $pdf->SetCreator('BPR Unisritama');
 $pdf->SetSubject('eForm Bank Unisritama');
 $pdf->SetKeywords('eForm, online-form');
 $pdf->SetDisplayMode('real', 'default');
-$pdf->SetMargins(8, 20, 8, false);
+$pdf->SetMargins(8, 25, 8, false);
 $pdf->AddPage();
 $html =
     '<h2 align="center">e-Form ' . ucwords($data_nsb->produk) . '</h2><br>
 <div>
-<table cellspacing="1" cellpadding="2">
+<table>
 <tr><td>Nama Nasabah</td><td>: ' . strtoupper($data_nsb->nsb_nama) . '</td></tr>
 <tr><td>Kode Referensi</td><td>: ' . $data_nsb->kd_ref . '</td></tr>
 <tr>
