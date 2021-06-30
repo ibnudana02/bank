@@ -34,7 +34,7 @@ class Laporan_model extends CI_Model
         $config['allowed_types'] = 'pdf';
         $config['file_name'] = $this->id_laporan;
         $config['overwrite'] = true;
-        $config['max_size'] = 2048;
+        $config['max_size'] = 0;
 
         $this->upload->initialize($config);
 
